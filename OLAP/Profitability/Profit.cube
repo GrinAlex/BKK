@@ -1,0 +1,838 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="010cba74-ab7a-4725-9433-46f33d2ec70a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Profit</ID>
+  <Name>Profit</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="46" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10452" scrolltop="-10035" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="70" x="18309" y="22093" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Date" left="-5109" top="12398" logicalid="22" controlid="1" masterid="0" hint1="0" hint2="0" width="3281" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d10c000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Outlets" left="46793" top="-5662" logicalid="23" controlid="2" masterid="0" hint1="0" hint2="0" width="7329" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000a11c000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="33014" top="-5662" logicalid="24" controlid="3" masterid="0" hint1="0" hint2="0" width="4498" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00009211000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Products" left="-5378" top="12364" logicalid="25" controlid="4" masterid="0" hint1="0" hint2="0" width="4471" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00007711000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="-5389" top="12485" logicalid="26" controlid="5" masterid="0" hint1="0" hint2="0" width="4419" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004311000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Products" left="-5415" top="12518" logicalid="27" controlid="6" masterid="0" hint1="0" hint2="0" width="4419" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004311000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Date" left="40512" top="-5662" logicalid="28" controlid="7" masterid="0" hint1="0" hint2="0" width="3281" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d10c000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="-5452" top="12364" logicalid="29" controlid="8" masterid="0" hint1="0" hint2="0" width="4419" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004311000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="-5140" top="12745" logicalid="30" controlid="9" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="-1748" top="-9157" logicalid="31" controlid="10" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Products" left="7679" top="-2641" logicalid="32" controlid="11" masterid="0" hint1="0" hint2="0" width="4419" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004311000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Outlets" left="7333" top="7900" logicalid="33" controlid="12" masterid="0" hint1="0" hint2="0" width="7276" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00006c1c000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Date" left="-4499" top="3855" logicalid="34" controlid="13" masterid="0" hint1="0" hint2="0" width="3281" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d10c000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="19920" top="15006" logicalid="35" controlid="14" masterid="0" hint1="0" hint2="0" width="4536" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b811000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="22531" top="-1701" logicalid="36" controlid="15" masterid="0" hint1="0" hint2="0" width="4536" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b811000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="11798" top="-1701" logicalid="37" controlid="16" masterid="0" hint1="0" hint2="0" width="11033" height="860" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Profitability-qry_Products]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="15" sourceattachpoint="19" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="12098" y="-1241" />
+              <point x="17314" y="-1241" />
+              <point x="17314" y="-1401" />
+              <point x="22531" y="-1401" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7272" top="2999" logicalid="38" controlid="17" masterid="0" hint1="0" hint2="0" width="19477" height="5401" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Profitability-qry_Outlets]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="12" destid="15" sourceattachpoint="0" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7671" y="7900" />
+              <point x="7671" y="5600" />
+              <point x="26449" y="5600" />
+              <point x="26449" y="3299" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-2158" top="2999" logicalid="39" controlid="18" masterid="0" hint1="0" hint2="0" width="25607" height="1356" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Profitability-qry_Date]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="13" destid="15" sourceattachpoint="8" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1759" y="3855" />
+              <point x="-1759" y="3455" />
+              <point x="10695" y="3455" />
+              <point x="10695" y="3699" />
+              <point x="23149" y="3699" />
+              <point x="23149" y="3299" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Products" left="-1701" top="-1701" logicalid="40" controlid="19" masterid="0" hint1="0" hint2="0" width="4460" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00006c11000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_qry_Products" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Outlets" left="17036" top="-4801" logicalid="41" controlid="20" masterid="0" hint1="0" hint2="0" width="7446" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000161d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="cd_qry_Outlets" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="qry_Date" left="5759" top="-1701" logicalid="42" controlid="21" masterid="0" hint1="0" hint2="0" width="3326" height="4347" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000fe0c0000fb100000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="cd_qry_Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="0" top="0" logicalid="44" controlid="23" masterid="0" hint1="0" hint2="0" width="4536" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b811000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Profitability" left="0" top="0" logicalid="45" controlid="24" masterid="0" hint1="0" hint2="0" width="4536" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b811000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="cd_Profitability" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-10452</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-10035</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-5452</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-9157</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>70</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="bd13b2ca-bd3d-44eb-854f-359ca0763a87">
+      <ID>Продукция</ID>
+      <Name>Продукция</Name>
+      <DimensionID>Продукция</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="47322adf-3838-4bc3-b894-117dc45f24fc">
+          <AttributeID>SK Product ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3eff2d84-f66a-42c5-8c92-49182fbb5a20">
+          <AttributeID>Product Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7ff9ad5e-7a4c-4394-a7eb-3c3422040ab8">
+          <AttributeID>Product Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="962b646d-4bcb-430f-9895-8fb367e0ad20">
+          <AttributeID>Group Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="00e938c5-f376-40af-ba63-fb72ca77c288">
+          <AttributeID>Groupping Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ca77e577-8623-49ca-b612-480b12df7592">
+          <AttributeID>Main Product Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e86e5b2b-4ec7-457f-9fdc-daa856b6fc1e">
+          <AttributeID>Nodal Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fc88a287-63f3-4d3d-9680-0b8dc6985821">
+          <AttributeID>Weight</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="1a87e0a0-db39-4f04-8a86-da072f7590da">
+      <ID>Торговые точки</ID>
+      <Name>Торговые точки</Name>
+      <DimensionID>Торговые точки</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cf5ec427-1107-411b-a725-694e2470cc75">
+          <AttributeID>SK Outlet ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="38d4ad0d-94c5-4992-9fe7-3c0b3b0528d6">
+          <AttributeID>Transport Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0753116b-ecb2-4f8f-9399-5efdef6935de">
+          <AttributeID>Delivery Address</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4eaac5c1-7019-4f0e-a4e9-2a5239f2780e">
+          <AttributeID>Buyer Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="41af5842-0c71-4cb4-abe9-d113bfaccba1">
+          <AttributeID>Chain Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5f4c50b3-cab5-4922-b684-09aee5f7acf5">
+          <AttributeID>Buyer Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01dec216-61f5-4e75-8d99-38de7a5333ae">
+          <AttributeID>Sales Channel Mki Pdh Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5e6575fb-2ccb-4015-900b-46233c6ddba5">
+          <AttributeID>Territory Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1abab67b-e8be-44d8-92ea-fcf148592d73">
+          <AttributeID>Territory Main Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dbf4697b-0fb4-42ba-a5a1-7c7304986087">
+          <AttributeID>Region Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="37b33f9e-ba8c-4ac2-82e6-5a19f34fc5cb">
+          <AttributeID>Delivery Area Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="62cd4d99-cbde-41a0-9b3d-c81685613f77">
+      <ID>Дата</ID>
+      <Name>Дата</Name>
+      <DimensionID>Дата</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="faff187e-5afe-4739-b99e-28f747f9b54b">
+          <AttributeID>SK Month ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46aa5891-25b5-4f88-aaf7-1c19ca7df652">
+          <AttributeID>Month Name Ru</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e5cadbc-0320-48be-80e9-64a02f796ef3">
+          <AttributeID>Month Name Ru3</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ab886bae-5777-4efd-95da-91e6e523082a">
+          <AttributeID>Month Name Ru6</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cf85091c-bced-430e-a2e3-480be0865826">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a29c4f7f-3877-4e62-bdc3-19ca705e27f2">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c2eaa55c-1f3e-4e78-97b6-33a4eeb3c85f">
+          <AttributeID>Quarter Name Ru</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0d3347e-883e-4324-8d63-fe2389d439c7">
+          <AttributeID>Month Of Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="24d6c5c1-d48b-47fa-95b3-b57a67dc868a">
+          <HierarchyID>Иерархия</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <CubePermissions>
+    <CubePermission dwd:design-time-name="78628ddb-4f19-4356-b1f1-daae4339e21c">
+      <ID>CubePermission</ID>
+      <Name>CubePermission</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Role</RoleID>
+      <Read>Allowed</Read>
+      <ReadSourceData>None</ReadSourceData>
+    </CubePermission>
+    <CubePermission dwd:design-time-name="f6666e14-6339-4847-8ab3-b4e0da855968">
+      <ID>CubePermission 1</ID>
+      <Name>CubePermission 1</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Role 1</RoleID>
+      <Read>Allowed</Read>
+      <ReadSourceData>None</ReadSourceData>
+    </CubePermission>
+  </CubePermissions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="2a97b3d1-b282-4b1c-aa87-5f2e0d2665e2">
+      <ID>Profitability</ID>
+      <Name>Profitability</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="8559e227-b7cf-4c4b-9efd-beb7aa78610a">
+          <ID>Val Pryb Otk UAH</ID>
+          <Name>Валовая прибыль отк грн</Name>
+          <Source dwd:design-time-name="424fbcbf-d957-40d0-a1e5-37073529dda2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="56d3f4e7-353c-4ce0-8546-3ca761f889be">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>ValPrybOtk_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="c947f932-345f-47ff-895a-700dd278275b">
+          <ID>Ret Weight</ID>
+          <Name>Возврат кг</Name>
+          <Source dwd:design-time-name="e780d54f-c458-46ae-be8f-d46b819f51f6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="63acebc2-8518-4532-9c8e-9b641f8730df">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>RetWeight</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="9faa220c-486f-4b2d-9ffb-31c07febdf7a">
+          <ID>Vyruchka Weight</ID>
+          <Name>Выручка кг</Name>
+          <Source dwd:design-time-name="0529ed5f-de29-4384-b2d0-05a793771247">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2e40214f-848e-4cef-bf03-57e1c2506de5">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>VyruchkaWeight</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="9bcc211b-7a89-406d-b83c-ae475d89ae70">
+          <ID>Ret UAH</ID>
+          <Name>Возврат грн</Name>
+          <Source dwd:design-time-name="484ebbc2-aaf4-45ba-b3ae-5863408d61cd">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c6b25edb-06b1-4bca-acf4-27098588012b">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Ret_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="73e949cd-67cd-404f-829a-03326b8554fc">
+          <ID>Vyruchka UAH</ID>
+          <Name>Выручка грн</Name>
+          <Source dwd:design-time-name="80326287-9604-4812-83da-69777196f24a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e091c593-049e-4dae-b1dc-06d10cc86063">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Vyruchka_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="911b52ed-78e3-473c-858b-f5fae9efb900">
+          <ID>Margin Profit</ID>
+          <Name>Маржинальная прибыль грн</Name>
+          <Source dwd:design-time-name="f877aebc-41d3-4df5-875b-bf7b7fea795e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8c87173e-d276-4200-92b1-53e9fd4d3092">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>MarginProfit</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="3a627886-527c-4f06-8d76-2dc8ffb18cd2">
+          <ID>Oper Profit</ID>
+          <Name>Операционная прибыль грн</Name>
+          <Source dwd:design-time-name="0523c1a0-6caa-4629-9d5b-fc62cc1a94ab">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="553a93db-a68d-42a5-a213-69158bd41f6f">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>OperProfit</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="3d810d35-779b-40c6-9eca-d613a80f6dab">
+          <ID>Shipment Weight</ID>
+          <Name>Отгрузка кг</Name>
+          <Source dwd:design-time-name="0ecd5ab8-7220-40b0-a91c-59056533e547">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c769a47a-5285-43bc-8a95-4c37dee92032">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>ShipmentWeight</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="2ced7a80-54d5-4f57-ae70-f4acb574da63">
+          <ID>Shipment UAH</ID>
+          <Name>Отгрузка грн</Name>
+          <Source dwd:design-time-name="57c7bd38-1916-463f-b212-c662a0ff3794">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="80efeb5b-ad78-43ae-8979-d63365cd95b1">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Shipment_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="bcf267c1-0529-46f9-9b0c-154f25a6e7a8">
+          <ID>Marketing</ID>
+          <Name>Маркетинг грн</Name>
+          <Source dwd:design-time-name="122b46f0-5e4c-4d4d-931e-db4e49af1b33">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e1501762-abf7-4a71-8e83-f5c673c51159">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Marketing</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="61e88fe0-c6e4-47a5-a7bc-2128591f9b81">
+          <ID>Profit</ID>
+          <Name>Прибыль грн</Name>
+          <Source dwd:design-time-name="1488badc-2b1a-40af-8f95-bfac37f23cc5">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8e312e11-3571-42da-b7f6-f26309a8709e">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Profit</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="295c2929-0371-4f16-8edf-d3fce6379293">
+          <ID>SS UAH</ID>
+          <Name>Себестоимость грн</Name>
+          <Source dwd:design-time-name="4a5ebc28-5901-4a82-97fd-5957a1a876e2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f7f077cb-eecd-4bd3-bbf4-f6f9a3513b9a">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>SS_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="2dd1fed4-95c5-4f3f-91fe-8b31ccfcb104">
+          <ID>Spisanie UAH</ID>
+          <Name>Списание грн</Name>
+          <Source dwd:design-time-name="c8524552-caa6-467d-8221-12b76ecdf795">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0cdd034e-1752-46b0-81ed-604dee6dfcce">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Spisanie_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="9f9fc794-6f29-463f-b537-db44819dcf59">
+          <ID>Transport UAH</ID>
+          <Name>Транспорт грн</Name>
+          <Source dwd:design-time-name="29e404f8-0bc0-47e3-9be3-2e30e6c4181f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="76998ec1-da19-407c-9dbf-710a2c716ff6">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>Transport_UAH</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3747e55d-63ec-49f2-a0cc-75da922ee214">
+          <CubeDimensionID>Продукция</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="35706c99-9c31-475d-b950-e015140acbc1">
+              <AttributeID>SK Product ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3a8f04c2-4758-482d-bb81-c8522142fb9a">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b7b0d6e9-fd8c-42f9-a0cf-926dc2eb57ce">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Product_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f463ebf9-9aaf-4cfb-a948-ed33c4465db1">
+          <CubeDimensionID>Торговые точки</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5f1193e7-7707-4a41-bcee-2d0d54c60943">
+              <AttributeID>SK Outlet ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d03a9cb9-8b6b-43c9-9bf1-e034f463e3db">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d364e404-3ac0-4843-86f1-41ae5bf49e8a">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Outlet_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7daaf179-4baa-4cad-9d02-2568fd6a6b83">
+          <CubeDimensionID>Дата</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d5348bd6-bdf6-4741-bb30-022f5b0c360e">
+              <AttributeID>SK Month ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="31788141-4c8d-400c-bb1b-a70cafb5d587">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c2e904c5-3d90-4381-89df-76403e8ad9fe">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Month_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="e02ea80b-89da-4677-831c-490ff24f94e4">
+      <ID>Profitability 1</ID>
+      <Name>Profitability 1</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="e9f367ee-b85d-4752-ad60-af2482806a59">
+          <ID>Число различных объектов SK Outlet ID</ID>
+          <Name>Кол-во ТТ</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="39fec7d3-d430-4a3f-84e5-4241e5b898b9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d808c3ae-94d0-4462-8af1-4e6060a20aa9">
+              <TableID>cd_Profitability</TableID>
+              <ColumnID>SK_Outlet_ID</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>###,#</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d8c4b215-fc1d-4752-8235-13063f14b83c">
+          <CubeDimensionID>Продукция</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fcac8a82-b9d3-4454-a056-f789bb7ab89f">
+              <AttributeID>SK Product ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cc7cbca1-10df-4fa3-a810-022bd4a57639">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9be267d2-4004-40de-9cb6-27484038fa9a">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Product_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="73037c7b-4935-479d-b6e2-6ff4fdd7939e">
+          <CubeDimensionID>Торговые точки</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9afd6d21-1916-4ac1-9c69-6568c0c864a5">
+              <AttributeID>SK Outlet ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="17e8a575-e337-447e-becc-03fda50cbfd9">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6e59fb23-477e-409b-a7dd-1960004e9801">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Outlet_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="06a16715-3377-40aa-9c6f-1f9e81c2cc0e">
+          <CubeDimensionID>Дата</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="13009205-d15c-4e5b-80cc-9a6cfcbed815">
+              <AttributeID>SK Month ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6fe76262-29bd-48a8-a799-96b88f69ea6f">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="85e1af9a-eab9-4e04-b5f7-7e173c0381a5">
+                    <TableID>cd_Profitability</TableID>
+                    <ColumnID>SK_Month_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="b66820eb-8948-4756-9561-3bafa851664e">
+    <DataSourceViewID>CAKE WH</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="3484094a-fb14-4107-9545-a9d508e60b6e">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+Команда CALCULATE контролирует агрегатное выражение конечных ячеек в кубе.
+Удаление или изменение команды CALCULATE приведет к изменению данных, содержащихся в кубе.
+Эту команду следует изменять только в том случае, если способ статистической обработки куба задается вручную.
+*/
+CALCULATE;    
+CREATE MEMBER CURRENTCUBE.[Measures].[% транспорта к выручке]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Транспорт грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';   
+CREATE MEMBER CURRENTCUBE.[Measures].[% маркетинга к выручке]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Маркетинг грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';   
+CREATE MEMBER CURRENTCUBE.[Measures].[% списания к выручке]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Списание грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';      
+CREATE MEMBER CURRENTCUBE.[Measures].[% возврата в кг]
+ AS iif(ISEMPTY([Measures].[Выручка кг]), 0, [Measures].[Возврат кг] / [Measures].[Выручка кг]), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка кг] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';   
+CREATE MEMBER CURRENTCUBE.[Measures].[% возврата в грн]
+ AS iif(ISEMPTY([Measures].[Выручка грн]), 0, [Measures].[Возврат грн] / [Measures].[Выручка грн]), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Возврат грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';  
+CREATE MEMBER CURRENTCUBE.[Measures].[% возврат + списание]
+ AS iif(ISEMPTY([Measures].[Выручка грн]), 0, ([Measures].[Возврат грн] + [Measures].[Списание грн]) / [Measures].[Выручка грн]), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability';  
+CREATE MEMBER CURRENTCUBE.[Measures].[Рентабельность продаж %]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Прибыль грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability'; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Ренабельность наценки в %]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Себестоимость грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Валовая рентабельность в %]
+ AS IIF(ISEMPTY([Measures].[Выручка грн] ), 0, [Measures].[Валовая прибыль отк грн] / [Measures].[Выручка грн] ), 
+FORMAT_STRING = "0.0%", 
+NON_EMPTY_BEHAVIOR = { [Выручка грн] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Стоимость доставки 1 кг]
+ AS IIF(ISEMPTY([Measures].[Отгрузка кг]), 0, [Measures].[Транспорт грн] / [Measures].[Отгрузка кг] ), 
+FORMAT_STRING = "#,0.00", 
+NON_EMPTY_BEHAVIOR = { [Отгрузка кг] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Profitability'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

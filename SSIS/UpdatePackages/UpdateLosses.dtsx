@@ -1,0 +1,2645 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/19/2019 3:39:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OLAPBKK2"
+  DTS:CreatorName="TARGET\o.grynenko"
+  DTS:DTSID="{3D36E0D9-D53B-4D87-A9EE-30545F6E8937}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="UpdateLosses"
+  DTS:PackageType="5"
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{9D8FB25B-026C-402C-8905-07A247F32AEC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Losses]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{75C23B78-7700-49A1-A0CE-B55C28AEDD35}"
+      DTS:ObjectName="Losses">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\filebkk\BKK\Управління операційною діяльністю\ADMIN\Losses.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{17759F9C-9198-4414-9054-D662CA8AFF72}"
+      DTS:ObjectName="olapbkk2.CAKE_WH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Заливка информации в tmp_CorrDemand"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{EB3FE125-CACD-449E-839A-DE034A055423}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Заливка информации в tmp_CorrDemand">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{B241BA50-F875-445F-A62A-9F23F325F17D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Импорт данных в таблицу tmp_Losses"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Источник &quot;Excel&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+                  description="Источник &quot;Excel&quot;"
+                  name="Losses"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">Losses$</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставление между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Losses]"
+                      connectionManagerRefId="Package.ConnectionManagers[Losses]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;]"
+                      name="Выход источника &quot;Excel&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductName]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Date]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BuyerName]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerName]"
+                          name="BuyerName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductCode]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]"
+                          name="ProductCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ReasonForLosses]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BuyerCode]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerCode]"
+                          name="BuyerCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[OrderWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[OrderWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[OrderWeight]"
+                          name="OrderWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[RealisationWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[RealisationWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[RealisationWeight]"
+                          name="RealisationWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[LossesWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[LossesWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[LossesWeight]"
+                          name="LossesWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ReasonForLossesCode]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Date]"
+                          dataType="date"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BuyerName]"
+                          dataType="wstr"
+                          length="255"
+                          name="BuyerName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="255"
+                          name="ReasonForLosses" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BuyerCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="BuyerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[OrderWeight]"
+                          dataType="r8"
+                          name="OrderWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[RealisationWeight]"
+                          dataType="r8"
+                          name="RealisationWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[LossesWeight]"
+                          dataType="r8"
+                          name="LossesWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="ReasonForLossesCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;Excel&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductName]"
+                          name="ProductName" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Date]"
+                          dataType="date"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Date]"
+                          name="Date" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[BuyerName]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[BuyerName]"
+                          name="BuyerName" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductCode]"
+                          name="ProductCode" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[BuyerCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[BuyerCode]"
+                          name="BuyerCode" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[OrderWeight]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[OrderWeight]"
+                          name="OrderWeight" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[RealisationWeight]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[RealisationWeight]"
+                          name="RealisationWeight" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[LossesWeight]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[LossesWeight]"
+                          name="LossesWeight" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="tmp_Losses"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dbo].[tmp_Losses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[OrderWeight]"
+                          cachedDataType="r8"
+                          cachedName="OrderWeight"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[OrderWeight]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[RealisationWeight]"
+                          cachedDataType="r8"
+                          cachedName="RealisationWeight"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[RealisationWeight]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LossesWeight]"
+                          cachedDataType="r8"
+                          cachedName="LossesWeight"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[LossesWeight]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLossesNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="57"
+                          cachedName="ReasonForLossesNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCodeNorm]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCodeNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[BuyerNameNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="BuyerNameNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerNameNorm]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductNameNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ProductNameNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductNameNorm]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[BuyerCodeNorm]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="BuyerCodeNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerCodeNorm]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLossesCodeNorm]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="ReasonForLossesCodeNorm"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesCodeNorm]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="BuyerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          dataType="wstr"
+                          length="100"
+                          name="BuyerName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          dataType="dbDate"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="57"
+                          name="ReasonForLosses" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          dataType="r8"
+                          name="OrderWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          dataType="r8"
+                          name="RealisationWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          dataType="r8"
+                          name="LossesWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="ReasonForLossesCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[ReasonForLosses]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ReasonForLosses"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLosses]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[ProductCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductCode"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[BuyerName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="BuyerName"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerName]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductName"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[BuyerCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="BuyerCode"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[BuyerCode]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца].Columns[ReasonForLossesCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ReasonForLossesCode"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[ReasonForLossesCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="57"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]"
+                          name="ReasonForLossesNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,57)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[ReasonForLosses]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,57)ReasonForLosses</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="11"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]"
+                          name="ProductCodeNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,11,1251)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[ProductCode]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,11,1251)ProductCode</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerNameNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerNameNorm]"
+                          name="BuyerNameNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,100)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[BuyerName]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,100)BuyerName</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductNameNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ProductNameNorm]"
+                          name="ProductNameNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,100)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[ProductName]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,100)ProductName</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerCodeNorm]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="9"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[BuyerCodeNorm]"
+                          name="BuyerCodeNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,9,1251)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[BuyerCode]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,9,1251)BuyerCode</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesCodeNorm]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="9"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesCodeNorm]"
+                          name="ReasonForLossesCodeNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,9,1251)([ISNULL](#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[ReasonForLossesCode]}) ? "-777" : #{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[ReasonForLossesCode]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,9,1251)(ISNULL(ReasonForLossesCode) ? "-777" : ReasonForLossesCode)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Условное разбиение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Распределяет строки данных по разным выходам в зависимости от содержимого данных. Используйте условие (выражения SSIS), чтобы указать распределяемые строки. Пример: разделение записей, которые необходимо очистить, от подготовленных к загрузке или распределение только подмножества записей."
+                  name="Условное разбиение"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения]"
+                      description="Ввод преобразования &quot;Условное разбиение&quot;"
+                      name="Вход условного разбиения">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;].Columns[Date]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Пустые значения]"
+                      description="Вывод 1 преобразования &quot;Условное разбиение&quot;"
+                      errorOrTruncationOperation="Вычисление"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Пустые значения"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Указывает выражение. Версия этого выражения использует вместо имен столбцов идентификаторы журнала обращений и преобразований."
+                          name="Expression">[ISNULL](#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника "Excel"].Columns[Date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Задает понятную версию выражения. Эта версия выражения использует имена столбцов."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Date)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает положение условия в списке условий, который вычисляется преобразованием. Вычисление производится в порядке от меньшего к большему значению."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Выход по умолчанию условного разбиения]"
+                      description="Выход по умолчанию преобразования &quot;Условное разбиение&quot;"
+                      exclusionGroup="1"
+                      name="Выход по умолчанию условного разбиения"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Вывод ошибок условного разбиения]"
+                      description="Вывод ошибок преобразования &quot;Условное разбиение&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок условного разбиения"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход источника &quot;Excel&quot;]"
+                  endId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Inputs[Вход условного разбиения]"
+                  name="Выход источника &quot;Excel&quot;"
+                  startId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses.Outputs[Выход источника &quot;Excel&quot;]" />
+                <path
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход по умолчанию условного разбиения]"
+                  endId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Inputs[Вход производного столбца]"
+                  name="Выход по умолчанию условного разбиения"
+                  startId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение.Outputs[Выход по умолчанию условного разбиения]" />
+                <path
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход производного столбца]"
+                  endId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_Losses"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Задача &quot;Выполнение SQL&quot;"
+          DTS:DTSID="{B67B21F6-2CBE-4D23-919B-761777094C55}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Очистка таблицы tmp_Losses"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17759F9C-9198-4414-9054-D662CA8AFF72}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.tmp_Losses" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{2D83B213-8087-4848-8C75-EEE649C02B8D}"
+          DTS:From="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_Losses"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Обновление информации в таблице tmp_Losses"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{DB7BDB12-BC39-4209-BF3C-306BB2F7F362}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Обновление информации в таблице tmp_Losses">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{71A6396A-D517-42A9-AE0F-49FFCF900E06}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Заливка новых данных"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Уточняющий запрос;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;6"
+                  description="Присоединяет дополнительные столбцы к потоку данных путем поиска значений в таблице. Пример: соединение со столбцом &quot;employee id&quot; таблицы employees позволяет получить значения &quot;hire date&quot; и &quot;employee name&quot;. Рекомендуется воспользоваться этим преобразованием, если таблица подстановки не помещается в памяти."
+                  name="dimBuyers"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SK_Buyer_ID]
+       ,[BuyerCode]
+  FROM [CAKE_WH].[dim].[Buyers]
+  WHERE Source_ID = 2</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [SK_Buyer_ID]
+       ,[BuyerCode]
+  FROM [CAKE_WH].[dim].[Buyers]
+  WHERE Source_ID = 2) [refTable]
+where [refTable].[BuyerCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип соединения, используемого для доступа к эталонному набору данных."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип кэша таблицы уточняющих запросов."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает, как преобразование &quot;Уточняющий запрос&quot; обрабатывает строки без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает долю кэша (в процентах), выделенную для строк без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Максимальный объем памяти для кэша ссылок на 32-разрядной платформе."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Максимальный объем памяти для кэша ссылок на 64-разрядной платформе."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает, следует ли ссылаться на метаданные в формате XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_Buyer_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BuyerCode" dataType="DT_STR" length="9" precision="0" scale="0" codePage="1251"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
+                      name="ParameterMap">#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[BuyerCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Диспетчер соединений, используемый для доступа к данным уточняющих запросов."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                      name="Ввод преобразования &quot;Уточняющий запрос&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[BuyerCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="BuyerCode"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                              name="JoinToReferenceColumn">BuyerCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                      errorOrTruncationOperation="Уточняющий запрос"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Buyer_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Копировать столбец"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Buyer_ID]"
+                          name="SK_Buyer_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn">SK_Buyer_ID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Выход несовпадающих строк уточняющего запроса]"
+                      description="Вывод преобразования &quot;Уточняющий запрос&quot;, которое обрабатывает строки без совпадающих элементов в эталонном наборе данных. Используйте этот выход, если свойство NoMatchBehavior имеет значение &quot;Отправить строки без совпадающих элементов в выход несовпадающих строк&quot;."
+                      exclusionGroup="1"
+                      name="Выход несовпадающих строк уточняющего запроса"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Уточняющий запрос;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;6"
+                  description="Присоединяет дополнительные столбцы к потоку данных путем поиска значений в таблице. Пример: соединение со столбцом &quot;employee id&quot; таблицы employees позволяет получить значения &quot;hire date&quot; и &quot;employee name&quot;. Рекомендуется воспользоваться этим преобразованием, если таблица подстановки не помещается в памяти."
+                  name="dimProducts"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Products]</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Products]) [refTable]
+where [refTable].[ProductCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип соединения, используемого для доступа к эталонному набору данных."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип кэша таблицы уточняющих запросов."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает, как преобразование &quot;Уточняющий запрос&quot; обрабатывает строки без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает долю кэша (в процентах), выделенную для строк без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Максимальный объем памяти для кэша ссылок на 32-разрядной платформе."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Максимальный объем памяти для кэша ссылок на 64-разрядной платформе."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает, следует ли ссылаться на метаданные в формате XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_Product_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Sourse_ID" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductCode" dataType="DT_STR" length="11" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="VendorCode" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFullName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Weight" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeightForRecalculating" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PW" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OwnBrand" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OwnBrandNetwork" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SK_MainProduct_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MainProductName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NodalName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Unit" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PackingWeighting" dataType="DT_WSTR" length="13" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GroupName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Group_ID" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrouppingName" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Groupping_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ShelfLife" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ExpirationPeriod" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrouppingForFT_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subgroup" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SizeСharacteristic" dataType="DT_WSTR" length="13" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MarketingovieKharakteristiky" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatistichniKharakteristiky" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KharakteristikiViddiluProdagh" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KatUpakovaniy" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFocusGroup_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFocusGroupName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Valid" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValidForPlanning" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValidForSpot2R" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BaseLine" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartSellingDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LogName" dataType="DT_WSTR" length="128" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LogDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
+                      name="ParameterMap">#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[ProductCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Диспетчер соединений, используемый для доступа к данным уточняющих запросов."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                      name="Ввод преобразования &quot;Уточняющий запрос&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[ProductCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCode"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                              name="JoinToReferenceColumn">ProductCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                      errorOrTruncationOperation="Уточняющий запрос"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Копировать столбец"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]"
+                          name="SK_Product_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn">SK_Product_ID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Выход несовпадающих строк уточняющего запроса]"
+                      description="Вывод преобразования &quot;Уточняющий запрос&quot;, которое обрабатывает строки без совпадающих элементов в эталонном наборе данных. Используйте этот выход, если свойство NoMatchBehavior имеет значение &quot;Отправить строки без совпадающих элементов в выход несовпадающих строк&quot;."
+                      exclusionGroup="1"
+                      name="Выход несовпадающих строк уточняющего запроса"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="factLosses"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[fact].[Losses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCode"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[BuyerCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="BuyerCode"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerCode]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[BuyerName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="BuyerName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Date]"
+                          cachedDataType="dbDate"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogDate]"
+                          cachedDataType="date"
+                          cachedName="LogDate"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogName]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="LogName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          cachedDataType="i4"
+                          cachedName="SK_Date_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SK_Date_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Product_ID]"
+                          cachedDataType="i4"
+                          cachedName="SK_Product_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Buyer_ID]"
+                          cachedDataType="i4"
+                          cachedName="SK_Buyer_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Buyer_ID]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Buyer_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLossesNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="57"
+                          cachedName="ReasonForLossesNorm"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LossesWeightNorm]"
+                          cachedDataType="r8"
+                          cachedName="LossesWeightNorm"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LossesWeightNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[OrderWeightNorm]"
+                          cachedDataType="r8"
+                          cachedName="OrderWeightNorm"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[OrderWeightNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[RealisationWeightNorm]"
+                          cachedDataType="r8"
+                          cachedName="RealisationWeightNorm"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[RealisationWeightNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="ReasonForLossesCode"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          dataType="i4"
+                          name="SK_Date_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
+                          dataType="i4"
+                          name="SK_Product_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Buyer_ID]"
+                          dataType="i4"
+                          name="SK_Buyer_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="BuyerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          dataType="wstr"
+                          length="100"
+                          name="BuyerName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          dataType="dbDate"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="57"
+                          name="ReasonForLosses" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          dataType="r8"
+                          name="OrderWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          dataType="r8"
+                          name="RealisationWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          dataType="r8"
+                          name="LossesWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="ReasonForLossesCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+                  description="Источник &quot;OLE DB&quot;"
+                  name="tmp_Losses"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dbo].[tmp_CorrDemand]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ProductCode]
+      ,[ProductName]
+      ,[BuyerCode]
+      ,[BuyerName]
+      ,[Date]
+      ,[ReasonForLossesCode]
+      ,[ReasonForLosses]
+      ,[OrderWeight]
+      ,[RealisationWeight]
+      ,[LossesWeight]
+  FROM [CAKE_WH].[dbo].[tmp_Losses]
+WHERE [BuyerName] &lt;&gt; 'ААА'</property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставления между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;]"
+                      name="Выход источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          length="11"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          name="ProductCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerCode]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          length="9"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerCode]"
+                          name="BuyerCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BuyerName]"
+                          name="BuyerName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Date]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          length="57"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrderWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrderWeight]"
+                          name="OrderWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[RealisationWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[RealisationWeight]"
+                          name="RealisationWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LossesWeight]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LossesWeight]"
+                          name="LossesWeight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          length="9"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BuyerCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="BuyerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BuyerName]"
+                          dataType="wstr"
+                          length="100"
+                          name="BuyerName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          dataType="dbDate"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="57"
+                          name="ReasonForLosses" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[OrderWeight]"
+                          dataType="r8"
+                          name="OrderWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[RealisationWeight]"
+                          dataType="r8"
+                          name="RealisationWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LossesWeight]"
+                          dataType="r8"
+                          name="LossesWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          name="ReasonForLossesCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          name="ProductName" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          name="ProductCode" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BuyerCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BuyerCode]"
+                          name="BuyerCode" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BuyerName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BuyerName]"
+                          name="BuyerName" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Date]"
+                          dataType="dbDate"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Date]"
+                          name="Date" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="9"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="57"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[OrderWeight]"
+                          dataType="r8"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[OrderWeight]"
+                          name="OrderWeight" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[RealisationWeight]"
+                          dataType="r8"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[RealisationWeight]"
+                          name="RealisationWeight" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LossesWeight]"
+                          dataType="r8"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LossesWeight]"
+                          name="LossesWeight" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[Date]"
+                          cachedDataType="dbDate"
+                          cachedName="Date"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[OrderWeight]"
+                          cachedDataType="r8"
+                          cachedName="OrderWeight"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrderWeight]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[RealisationWeight]"
+                          cachedDataType="r8"
+                          cachedName="RealisationWeight"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[RealisationWeight]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[LossesWeight]"
+                          cachedDataType="r8"
+                          cachedName="LossesWeight"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LossesWeight]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[ReasonForLosses]"
+                          cachedDataType="wstr"
+                          cachedLength="57"
+                          cachedName="ReasonForLosses"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SK_Date_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SK_Date_ID]"
+                          name="SK_Date_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[YEAR](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[Date]}) * 10000 + [MONTH](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[Date]}) * 100 + [DAY](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[Date]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">YEAR(Date) * 10000 + MONTH(Date) * 100 + DAY(Date)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[OrderWeightNorm]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[OrderWeightNorm]"
+                          name="OrderWeightNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[ISNULL](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[OrderWeight]}) ? 0 : #{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[OrderWeight]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(OrderWeight) ? 0 : OrderWeight</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[RealisationWeightNorm]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[RealisationWeightNorm]"
+                          name="RealisationWeightNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[ISNULL](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[RealisationWeight]}) ? 0 : #{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[RealisationWeight]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(RealisationWeight) ? 0 : RealisationWeight</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LossesWeightNorm]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LossesWeightNorm]"
+                          name="LossesWeightNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[ISNULL](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[LossesWeight]}) ? 0 : #{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[LossesWeight]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(LossesWeight) ? 0 : LossesWeight</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="57"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[ReasonForLossesNorm]"
+                          name="ReasonForLossesNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[ISNULL](#{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[ReasonForLosses]}) ? "" : #{Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника "OLE DB"].Columns[ReasonForLosses]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(ReasonForLosses) ? "" : ReasonForLosses</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                  endId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                  name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                  startId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]" />
+                <path
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;1]"
+                  endId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                  startId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]" />
+                <path
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
+                  endId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]"
+                  name="Выход источника &quot;OLE DB&quot;"
+                  startId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses.Outputs[Выход источника &quot;OLE DB&quot;]" />
+                <path
+                  refId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Выход производного столбца]"
+                  endId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Обновление информации в таблице tmp_Losses\Удаление старых данных"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{79DEFFFF-033F-48B7-8BE4-6F6C239B9F89}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Удаление старых данных"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17759F9C-9198-4414-9054-D662CA8AFF72}"
+              SQLTask:SqlStatementSource="DECLARE @DateFrom date&#xA;DECLARE @DateTo date&#xA;&#xA;SELECT&#x9;&#xA;&#x9;@DateFrom = MIN(Date),&#xA;&#x9;@DateTo = MAX(Date)&#xA;FROM dbo.tmp_Losses&#xA;WHERE Date &lt;&gt; '01/01/2010'&#xA;&#xA;&#xA;DELETE&#xA;FROM fact.Losses&#xA;WHERE Date BETWEEN @DateFrom AND @DateTo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Обновление информации в таблице tmp_Losses.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{E2CE2D7D-7E77-4866-B335-F424BB692A60}"
+          DTS:From="Package\Обновление информации в таблице tmp_Losses\Удаление старых данных"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{75978C39-547E-495A-ACBD-EF3D5BA8D7F5}"
+      DTS:From="Package\Заливка информации в tmp_CorrDemand"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Обновление информации в таблице tmp_Losses" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses"
+          TopLeft="5.50000000000003,109.5" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_Losses"
+          TopLeft="26,10.5" />
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand.PrecedenceConstraints[Ограничение]"
+          TopLeft="138,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="305,205"
+          Size="305,248"
+          Id="Package\Заливка информации в tmp_CorrDemand"
+          TopLeft="34.0000000000001,5.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных"
+          TopLeft="86,108.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Удаление старых данных"
+          TopLeft="76.5,3.5" />
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице tmp_Losses.PrecedenceConstraints[Ограничение]"
+          TopLeft="180,45.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="362,205"
+          Size="362,248"
+          Id="Package\Обновление информации в таблице tmp_Losses"
+          TopLeft="5.50000000000009,313.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="186.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Производный столбец"
+          TopLeft="279,244" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses"
+          TopLeft="259,344" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses"
+          TopLeft="329,46" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Условное разбиение"
+          TopLeft="318,140" />
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход по умолчанию условного разбиения]"
+          TopLeft="408,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35,62"
+              Start="0,0"
+              End="-35,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="-4,31" />
+                  <mssgle:LineSegment
+                    End="-31,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31,31"
+                    Point2="-35,31"
+                    Point3="-35,35" />
+                  <mssgle:LineSegment
+                    End="-35,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.3034765625,36,199.606953125,11.6533203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход источника &quot;Excel&quot;]"
+          TopLeft="384,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,52"
+              Start="0,0"
+              End="24,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="20,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,26"
+                    Point2="24,26"
+                    Point3="24,30" />
+                  <mssgle:LineSegment
+                    End="24,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses.Paths[Выход производного столбца]"
+          TopLeft="373,286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47,58"
+              Start="0,0"
+              End="-47,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-43,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43,29"
+                    Point2="-47,29"
+                    Point3="-47,33" />
+                  <mssgle:LineSegment
+                    End="-47,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\tmp_Losses">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_Losses\Losses">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses"
+          TopLeft="89,45" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts"
+          TopLeft="104,251" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\Производный столбец"
+          TopLeft="76,162" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers"
+          TopLeft="113,325" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses"
+          TopLeft="165,423" />
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Выход производного столбца]"
+          TopLeft="171.25,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="156,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,75"
+              Start="0,0"
+              End="14,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="10,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,37.5"
+                    Point2="14,37.5"
+                    Point3="14,41.5" />
+                  <mssgle:LineSegment
+                    End="14,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;1]"
+          TopLeft="177,367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.5,56"
+              Start="0,0"
+              End="51.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="47.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,28"
+                    Point2="51.5,28"
+                    Point3="51.5,32" />
+                  <mssgle:LineSegment
+                    End="51.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.93986328125,33,269.3797265625,12"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+          TopLeft="174.75,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.68986328125,6.25,269.3797265625,12"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimProducts">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[Products]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\factLosses">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\dimBuyers">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице tmp_Losses\Заливка новых данных\tmp_Losses">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

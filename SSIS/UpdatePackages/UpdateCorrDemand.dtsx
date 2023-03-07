@@ -1,0 +1,2262 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/19/2019 3:39:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OLAPBKK2"
+  DTS:CreatorName="TARGET\o.grynenko"
+  DTS:DTSID="{ACC72CB1-344C-405C-93F8-1DEEC0993E56}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="UpdateCorrDemand"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{D3B57E06-28A0-402F-ABBE-63FEA4DA4AB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CorrDemand]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{1DCEC358-386C-4310-8740-63C3BB6AF4D2}"
+      DTS:ObjectName="CorrDemand">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\filebkk\BKK\Управління операційною діяльністю\ADMIN\Доп_спрос.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4A8D93F0-590F-44B1-85B4-ED8EEAA128F2}"
+      DTS:ObjectName="olapbkk2.CAKE_WH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Заливка информации в tmp_CorrDemand"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{A6F2BB4C-AEEA-4FCA-8B0D-496FDC7E9FF6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Заливка информации в tmp_CorrDemand">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{86060A05-A8B3-464A-A3CD-7386C8AF13F0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Импорт данных в таблицу tmp_CorrDemand"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Источник &quot;Excel&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+                  description="Источник &quot;Excel&quot;"
+                  name="CorrDemand"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">Лист1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставление между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CorrDemand]"
+                      connectionManagerRefId="Package.ConnectionManagers[CorrDemand]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;]"
+                      name="Выход источника &quot;Excel&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Сеть]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Сеть]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Сеть]"
+                          name="Сеть"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Номенклатура]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Номенклатура]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Номенклатура]"
+                          name="Номенклатура"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_отгрузки]"
+                          dataType="date"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Дата_отгрузки]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_отгрузки]"
+                          name="Дата_отгрузки"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductCode]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]"
+                          name="ProductCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Date_ID]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SK_Date_ID]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Date_ID]"
+                          name="SK_Date_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Code]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Code]"
+                          name="Code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Login]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Login]"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Login]"
+                          name="Login"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Chain_ID]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Chain_ID]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Chain_ID]"
+                          name="Chain_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_подачи]"
+                          dataType="date"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Дата_подачи]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_подачи]"
+                          name="Дата_подачи"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Количество_шт]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Количество_шт]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Количество_шт]"
+                          name="Количество_шт"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Вес_кг]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Вес_кг]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Вес_кг]"
+                          name="Вес_кг"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Сеть]"
+                          dataType="wstr"
+                          length="255"
+                          name="Сеть" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Номенклатура]"
+                          dataType="wstr"
+                          length="255"
+                          name="Номенклатура" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Дата_отгрузки]"
+                          dataType="date"
+                          name="Дата_отгрузки" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ProductCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SK_Date_ID]"
+                          dataType="r8"
+                          name="SK_Date_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Code]"
+                          dataType="wstr"
+                          length="255"
+                          name="Code" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Login]"
+                          dataType="wstr"
+                          length="255"
+                          name="Login" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Chain_ID]"
+                          dataType="r8"
+                          name="Chain_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Дата_подачи]"
+                          dataType="date"
+                          name="Дата_подачи" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Количество_шт]"
+                          dataType="r8"
+                          name="Количество_шт" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Вес_кг]"
+                          dataType="r8"
+                          name="Вес_кг" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;Excel&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Сеть]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Сеть]"
+                          name="Сеть" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Номенклатура]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Номенклатура]"
+                          name="Номенклатура" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Дата_отгрузки]"
+                          dataType="date"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Дата_отгрузки]"
+                          name="Дата_отгрузки" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Количество_шт]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Количество_шт]"
+                          name="Количество_шт" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Вес_кг]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Вес_кг]"
+                          name="Вес_кг" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ProductCode]"
+                          name="ProductCode" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[SK_Date_ID]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[SK_Date_ID]"
+                          name="SK_Date_ID" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Code]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Code]"
+                          name="Code" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Login]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Login]"
+                          name="Login" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Chain_ID]"
+                          dataType="r8"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Chain_ID]"
+                          name="Chain_ID" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Дата_подачи]"
+                          dataType="date"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Дата_подачи]"
+                          name="Дата_подачи" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="Назначение &quot;OLE DB&quot;"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dbo].[tmp_CorrDemand]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          cachedDataType="r8"
+                          cachedName="SK_Date_ID"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Date_ID]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCodeNew]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCodeNew"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNew]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[CodeNew]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="19"
+                          cachedName="CodeNew"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Code]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[CodeNew]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Дата_отгрузки]"
+                          cachedDataType="date"
+                          cachedName="Дата_отгрузки"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ShipDate]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_отгрузки]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Дата_подачи]"
+                          cachedDataType="date"
+                          cachedName="Дата_подачи"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Дата_подачи]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogName]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="LogName"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogDate]"
+                          cachedDataType="date"
+                          cachedName="LogDate"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LoginN]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="LoginN"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LoginN]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Количество_шт]"
+                          cachedDataType="r8"
+                          cachedName="Количество_шт"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Amount]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Количество_шт]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Вес_кг]"
+                          cachedDataType="r8"
+                          cachedName="Вес_кг"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Вес_кг]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          cachedDataType="r8"
+                          cachedName="Chain_ID"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Chain_ID]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ChainName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ChainName"
+                          externalMetadataColumnId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ChainName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ShipDate]"
+                          dataType="dbDate"
+                          name="ShipDate" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Amount]"
+                          dataType="r8"
+                          name="Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                          dataType="wstr"
+                          length="10"
+                          name="Weight" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          dataType="i4"
+                          name="SK_Date_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Code]"
+                          codePage="1251"
+                          dataType="str"
+                          length="19"
+                          name="Code" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          dataType="dbTimeStamp"
+                          name="SendingInfoDate" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          dataType="i4"
+                          name="Chain_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          dataType="wstr"
+                          length="50"
+                          name="ChainName" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          dataType="wstr"
+                          length="20"
+                          name="Login" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца].Columns[ProductCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductCode"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца].Columns[Code]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Code"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Code]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца].Columns[Номенклатура]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Номенклатура"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Номенклатура]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца].Columns[Login]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Login"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Login]" />
+                        <inputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца].Columns[Сеть]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Сеть"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;].Columns[Сеть]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNew]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="11"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNew]"
+                          name="ProductCodeNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,11,1251)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника "Excel"].Columns[ProductCode]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,11,1251)ProductCode</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[CodeNew]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="19"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[CodeNew]"
+                          name="CodeNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,19,1251)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника "Excel"].Columns[Code]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,19,1251)Code</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,100)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника "Excel"].Columns[Номенклатура]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,100)[Номенклатура]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LoginN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[LoginN]"
+                          name="LoginN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,20)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника "Excel"].Columns[Login]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,20)Login</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ChainName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца].Columns[ChainName]"
+                          name="ChainName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_WSTR,50)#{Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника "Excel"].Columns[Сеть]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,50)[Сеть]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand.Paths[Выход источника &quot;Excel&quot;]"
+                  endId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Inputs[Вход производного столбца]"
+                  name="Выход источника &quot;Excel&quot;"
+                  startId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand.Outputs[Выход источника &quot;Excel&quot;]" />
+                <path
+                  refId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand.Paths[Выход производного столбца]"
+                  endId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_CorrDemand"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Задача &quot;Выполнение SQL&quot;"
+          DTS:DTSID="{AA87283C-AC55-43B2-B1C6-34851243A921}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Очистка таблицы tmp_CorrDemand"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4A8D93F0-590F-44B1-85B4-ED8EEAA128F2}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.tmp_CorrDemand" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Заливка информации в tmp_CorrDemand.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{EEB485B8-CB9E-449E-B345-C66169FD90D3}"
+          DTS:From="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_CorrDemand"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Обновление информации в таблице CorrDemand"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{39E525D5-A483-455E-866D-03AD964B0F95}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Обновление информации в таблице CorrDemand">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{35AA71E8-F29A-4F77-AEBF-6CDECD67DDE6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Заливка новых данных"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="CorrDemand"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[fact].[CorrDemand]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCode"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          cachedDataType="i4"
+                          cachedName="SK_Date_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SK_Date_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogDate]"
+                          cachedDataType="date"
+                          cachedName="LogDate"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogName]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="LogName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Weight]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Weight"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CorrWeight]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Weight]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Amount]"
+                          cachedDataType="r8"
+                          cachedName="Amount"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CorrAmount]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Amount]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ShipDate]"
+                          cachedDataType="dbDate"
+                          cachedName="ShipDate"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ShipDate]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_Product_ID]"
+                          cachedDataType="i4"
+                          cachedName="SK_Product_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Login]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Login"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Login]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          cachedDataType="i4"
+                          cachedName="Chain_ID"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Chain_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ChainName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ChainName"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ChainName]" />
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SendingInfoDateNew]"
+                          cachedDataType="date"
+                          cachedName="SendingInfoDateNew"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SendingInfoDateNew]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Date]"
+                          dataType="dbDate"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          dataType="i4"
+                          name="SK_Date_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RegionDirectionName]"
+                          dataType="wstr"
+                          length="50"
+                          name="RegionDirectionName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[RegionDirection_ID]"
+                          dataType="i4"
+                          name="RegionDirection_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          dataType="i4"
+                          name="Chain_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          dataType="wstr"
+                          length="50"
+                          name="ChainName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
+                          dataType="i4"
+                          name="SK_Product_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CorrAmount]"
+                          dataType="r8"
+                          name="CorrAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CorrWeight]"
+                          dataType="r8"
+                          name="CorrWeight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Comments]"
+                          dataType="wstr"
+                          length="100"
+                          name="Comments" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          dataType="dbTimeStamp"
+                          name="SendingInfoDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogUpdate]"
+                          dataType="dbTimeStamp"
+                          name="LogUpdate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          dataType="wstr"
+                          length="20"
+                          name="Login" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Уточняющий запрос;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;6"
+                  description="Присоединяет дополнительные столбцы к потоку данных путем поиска значений в таблице. Пример: соединение со столбцом &quot;employee id&quot; таблицы employees позволяет получить значения &quot;hire date&quot; и &quot;employee name&quot;. Рекомендуется воспользоваться этим преобразованием, если таблица подстановки не помещается в памяти."
+                  name="dimProducts"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Products]</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Products]) [refTable]
+where [refTable].[ProductCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип соединения, используемого для доступа к эталонному набору данных."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип кэша таблицы уточняющих запросов."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает, как преобразование &quot;Уточняющий запрос&quot; обрабатывает строки без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает долю кэша (в процентах), выделенную для строк без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Максимальный объем памяти для кэша ссылок на 32-разрядной платформе."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Максимальный объем памяти для кэша ссылок на 64-разрядной платформе."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает, следует ли ссылаться на метаданные в формате XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_Product_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Sourse_ID" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductCode" dataType="DT_STR" length="11" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="VendorCode" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFullName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Weight" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeightForRecalculating" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PW" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OwnBrand" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OwnBrandNetwork" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SK_MainProduct_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MainProductName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NodalName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Unit" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PackingWeighting" dataType="DT_WSTR" length="13" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GroupName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Group_ID" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrouppingName" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Groupping_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ShelfLife" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ExpirationPeriod" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrouppingForFT_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subgroup" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SizeСharacteristic" dataType="DT_WSTR" length="13" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MarketingovieKharakteristiky" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatistichniKharakteristiky" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KharakteristikiViddiluProdagh" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KatUpakovaniy" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFocusGroup_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductFocusGroupName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Valid" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValidForPlanning" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValidForSpot2R" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BaseLine" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartSellingDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LogName" dataType="DT_WSTR" length="128" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LogDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
+                      name="ParameterMap">#{Package\Обновление информации в таблице CorrDemand\Заливка новых данных\90:invalid};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Диспетчер соединений, используемый для доступа к данным уточняющих запросов."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                      name="Ввод преобразования &quot;Уточняющий запрос&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[ProductCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="ProductCode"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                              name="JoinToReferenceColumn">ProductCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                      errorOrTruncationOperation="Уточняющий запрос"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Копировать столбец"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[SK_Product_ID]"
+                          name="SK_Product_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn">SK_Product_ID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Выход несовпадающих строк уточняющего запроса]"
+                      description="Вывод преобразования &quot;Уточняющий запрос&quot;, которое обрабатывает строки без совпадающих элементов в эталонном наборе данных. Используйте этот выход, если свойство NoMatchBehavior имеет значение &quot;Отправить строки без совпадающих элементов в выход несовпадающих строк&quot;."
+                      exclusionGroup="1"
+                      name="Выход несовпадающих строк уточняющего запроса"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+                  description="Источник &quot;OLE DB&quot;"
+                  name="tmp_CorrDemand_"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+	  Chain_ID
+	  ,ChainName
+	  ,[ProductName]
+      ,[ShipDate]
+      ,[Amount]
+      ,[Weight]
+      ,[ProductCode]
+      ,[SK_Date_ID]
+      ,[Code]
+      ,[Login]
+      ,CAST([SendingInfoDate] AS DATETIME) AS SendingInfoDate
+      ,[LogDate]
+      ,[LogName]
+  FROM [CAKE_WH].[dbo].[tmp_CorrDemand]
+  WHERE SK_Date_ID &gt;= dbo.ufn_DateToInt(GETDATE())</property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставления между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;]"
+                      name="Выход источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          name="Chain_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ChainName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          length="50"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ChainName]"
+                          name="ChainName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ShipDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ShipDate]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ShipDate]"
+                          name="ShipDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Amount]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Amount]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Amount]"
+                          name="Amount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Weight]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                          length="10"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Weight]"
+                          name="Weight"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          length="11"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          name="ProductCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          name="SK_Date_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Code]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Code]"
+                          length="19"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Code]"
+                          name="Code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Login]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          length="20"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Login]"
+                          name="Login"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SendingInfoDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SendingInfoDate]"
+                          name="SendingInfoDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          length="128"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Chain_ID]"
+                          dataType="i4"
+                          name="Chain_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          dataType="wstr"
+                          length="50"
+                          name="ChainName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ShipDate]"
+                          dataType="dbDate"
+                          name="ShipDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Amount]"
+                          dataType="r8"
+                          name="Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                          dataType="wstr"
+                          length="10"
+                          name="Weight" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
+                          dataType="i4"
+                          name="SK_Date_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Code]"
+                          codePage="1251"
+                          dataType="str"
+                          length="19"
+                          name="Code" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Login]"
+                          dataType="wstr"
+                          length="20"
+                          name="Login" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SendingInfoDate]"
+                          dataType="dbTimeStamp"
+                          name="SendingInfoDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Chain_ID]"
+                          name="Chain_ID" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ChainName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ChainName]"
+                          name="ChainName" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductName]"
+                          name="ProductName" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ShipDate]"
+                          dataType="dbDate"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ShipDate]"
+                          name="ShipDate" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Amount]"
+                          dataType="r8"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Amount]"
+                          name="Amount" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Weight]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Weight]"
+                          name="Weight" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductCode]"
+                          name="ProductCode" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SK_Date_ID]"
+                          name="SK_Date_ID" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Code]"
+                          codePage="1251"
+                          dataType="str"
+                          length="19"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Code]"
+                          name="Code" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Login]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Login]"
+                          name="Login" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SendingInfoDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SendingInfoDate]"
+                          name="SendingInfoDate" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          name="LogDate" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogName]"
+                          name="LogName" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца].Columns[SendingInfoDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="SendingInfoDate"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SendingInfoDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SendingInfoDateNew]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца].Columns[SendingInfoDateNew]"
+                          name="SendingInfoDateNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_DATE)#{Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника "OLE DB"].Columns[SendingInfoDate]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DATE)SendingInfoDate</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                  endId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                  startId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]" />
+                <path
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
+                  endId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Inputs[Вход производного столбца]"
+                  name="Выход источника &quot;OLE DB&quot;"
+                  startId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_.Outputs[Выход источника &quot;OLE DB&quot;]" />
+                <path
+                  refId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Выход производного столбца]"
+                  endId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Обновление информации в таблице CorrDemand\Удаление старых данных"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1C243145-3790-47EF-9236-3F7AF0988A8B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Удаление старых данных"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4A8D93F0-590F-44B1-85B4-ED8EEAA128F2}"
+              SQLTask:SqlStatementSource="DELETE&#xA;FROM fact.CorrDemand&#xA;WHERE SK_Date_ID &gt;= dbo.ufn_DateToInt(GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Обновление информации в таблице CorrDemand.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{BC446C0C-D4A3-4EF7-9448-CF4AC94ED114}"
+          DTS:From="Package\Обновление информации в таблице CorrDemand\Удаление старых данных"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Обновление информации в таблице CorrDemand\Заливка новых данных" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{C1C8940B-7F1B-419D-A5A9-8467BF417DC6}"
+      DTS:From="Package\Заливка информации в tmp_CorrDemand"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Обновление информации в таблице CorrDemand" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="294,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Очистка таблицы tmp_CorrDemand"
+          TopLeft="27,5.5" />
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand.PrecedenceConstraints[Ограничение]"
+          TopLeft="152.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="305,205"
+          Size="305,248"
+          Id="Package\Заливка информации в tmp_CorrDemand"
+          TopLeft="34.0000000000001,5.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных"
+          TopLeft="86,107.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Удаление старых данных"
+          TopLeft="76.5,3.5" />
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице CorrDemand.PrecedenceConstraints[Ограничение]"
+          TopLeft="180,45.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="362,205"
+          Size="362,248"
+          Id="Package\Обновление информации в таблице CorrDemand"
+          TopLeft="5.50000000000009,313.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="186.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;"
+          TopLeft="62,226" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Производный столбец"
+          TopLeft="58,118" />
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand.Paths[Выход производного столбца]"
+          TopLeft="153.25,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand.Paths[Выход источника &quot;Excel&quot;]"
+          TopLeft="74.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5,70.5"
+              Start="0,0"
+              End="77.5,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.25"
+                    Point2="0,35.25"
+                    Point3="4,35.25" />
+                  <mssgle:LineSegment
+                    End="73.5,35.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,35.25"
+                    Point2="77.5,35.25"
+                    Point3="77.5,39.25" />
+                  <mssgle:LineSegment
+                    End="77.5,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\Назначение &quot;OLE DB&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Заливка информации в tmp_CorrDemand\Импорт данных в таблицу tmp_CorrDemand\CorrDemand">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Обновление информации в таблице CorrDemand\Заливка новых данных">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\Производный столбец"
+          TopLeft="78,161" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand"
+          TopLeft="102,351" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts"
+          TopLeft="104,250" />
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Выход производного столбца]"
+          TopLeft="172.25,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+          TopLeft="170.75,292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.68986328125,19.75,269.3797265625,12"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_"
+          TopLeft="100.5,37.5" />
+        <EdgeLayout
+          Id="Package\Обновление информации в таблице CorrDemand\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="184.5,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,81.5"
+              Start="0,0"
+              End="-12.5,74">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.75"
+                    Point2="0,40.75"
+                    Point3="-4,40.75" />
+                  <mssgle:LineSegment
+                    End="-8.5,40.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,40.75"
+                    Point2="-12.5,40.75"
+                    Point3="-12.5,44.75" />
+                  <mssgle:LineSegment
+                    End="-12.5,74" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\CorrDemand">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\dimProducts">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[Products]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Обновление информации в таблице CorrDemand\Заливка новых данных\tmp_CorrDemand_">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

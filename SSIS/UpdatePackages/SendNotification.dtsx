@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2018 1:28:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OLAPBKK"
+  DTS:CreatorName="TARGET\o.grynenko"
+  DTS:DTSID="{B968C361-3BAE-414A-A5E6-992496F8725E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="SendNotification"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{535F647F-5C03-43C1-B25E-E03EE6B326F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP_OLAPBKK2]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{43EC4656-57A3-4F8F-B787-236380A20007}"
+      DTS:ObjectName="SMTP_OLAPBKK2">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=olapbkk2.target.inc;UseWindowsAuthentication=False;EnableSsl=False;Timeout=1000;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{26F34DEF-0879-4BE9-B535-B1715F885A40}"
+      DTS:ObjectName="EmailConect">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">SMTP_OLAPBKK</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D2FDA169-4094-4AB4-B9B4-9E324C62252C}"
+      DTS:ObjectName="EmailFrom">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">o.grynenko@bkk-kyiv.com</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C86028B3-E03F-4D8A-8097-05A0BB66B503}"
+      DTS:ObjectName="EmailSubject">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Пересчет куба</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{3E11FD24-1F36-48FA-B145-36AFBBAB5408}"
+      DTS:ObjectName="EmailTo">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">o.grynenko@bkk-kyiv.com</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3637CCC-ADB1-475E-BC6A-7A1BDF7913AB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::EmailConect]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarEmailConnect">
+      <DTS:VariableValue
+        DTS:DataType="8">SMTP_OLAPBKK</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E529D7D5-9FE3-42A2-8E1D-4A7D5AE73F79}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::EmailFrom]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarEmailFrom">
+      <DTS:VariableValue
+        DTS:DataType="8">o.grynenko@bkk-kyiv.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED63BBF8-ED0D-40EC-8172-BE6C6EDF07FB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::EmailSubject]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarEmailSubject">
+      <DTS:VariableValue
+        DTS:DataType="8">Пересчет куба</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{65B588D0-1ADA-4136-9C04-B6746C0B1AE1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::EmailTo]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarEmailTo">
+      <DTS:VariableValue
+        DTS:DataType="8">o.grynenko@bkk-kyiv.com</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task"
+      DTS:DTSID="{338F6749-6460-4DD2-A895-20315871447A}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{43EC4656-57A3-4F8F-B787-236380A20007}"
+          SendMailTask:From="o.grynenko@bkk-kyiv.com"
+          SendMailTask:To="a.yahoda@bkk-kyiv.com"
+          SendMailTask:CC="o.grynenko@bkk-kyiv.com"
+          SendMailTask:Subject="Пересчет куба Promo"
+          SendMailTask:MessageSource="Куб PROMO пересчитан!" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task 1"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{24A9AD5E-66E5-44C4-8FA8-2F78AA8EDC62}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task 1"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{43EC4656-57A3-4F8F-B787-236380A20007}"
+          SendMailTask:From="o.grynenko@bkk-kyiv.com"
+          SendMailTask:To="o.grynenko@bkk-kyiv.com"
+          SendMailTask:Subject="Test3" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Send Mail Task"
+          TopLeft="266,220" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Send Mail Task 1"
+          TopLeft="520,216" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

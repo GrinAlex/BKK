@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/24/2021 3:15:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OLAPBKK2"
+  DTS:CreatorName="TARGET\o.grynenko"
+  DTS:DTSID="{3A25DA24-5AED-4AEA-A467-A78ABF36D931}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="UpdateChains"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{E22F3A88-20A7-4F90-AF14-59450CA896DA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D9A3F1C5-5A42-4DD1-9F6A-338FAEC62D32}"
+      DTS:ObjectName="OLAPBKK2.CAKE_ST">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OLAPBKK2;Initial Catalog=CAKE_ST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4E9EC7A9-802D-4D85-BD2E-3A54134ACE63}"
+      DTS:ObjectName="olapbkk2.CAKE_WH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Контейнер последовательности"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{7BAB9890-9732-4A70-950B-C27C3CF72B9D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Контейнер последовательности">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Контейнер последовательности\Очистка таблицы CAKE_ST dim Chains"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{998EA1E0-7E3D-413F-BC85-6D8372B2205B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Очистка таблицы CAKE_ST dim Chains"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9A3F1C5-5A42-4DD1-9F6A-338FAEC62D32}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dim].[Chains]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Контейнер последовательности\Очистка таблицы CAKE_ST dim Chains"
+          TopLeft="52,27" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="435,214"
+          Size="435,257"
+          Id="Package\Контейнер последовательности"
+          TopLeft="131,45" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
