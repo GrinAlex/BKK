@@ -54,15 +54,12 @@ WHERE(Domain +Login = @paramLoginFull)
           <QueryParameter Name="@SK_OrderDateTo">
             <Value>=Parameters!SK_OrderDateTo.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@SK_Groupping_ID">
-            <Value>=Parameters!SK_Groupping_ID.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@paramLoginFull">
             <Value>=Parameters!paramLoginFull.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.ShipmentsAndOrdersByTtAndProductsNew</CommandText>
+        <CommandText>rpt.ShipmentsAndOrdersByTtAndProducts</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Outlet_ID">
@@ -121,6 +118,10 @@ WHERE(Domain +Login = @paramLoginFull)
           <DataField>SK_Product_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="IsTargetBonus">
+          <DataField>IsTargetBonus</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
         <Field Name="ProductName">
           <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -174,9 +175,7 @@ WHERE(Domain +Login = @paramLoginFull)
                             <TextRuns>
                               <TextRun>
                                 <Label>НазваниеГруппировок</Label>
-                                <Value>=iif(Parameters!paramAssortFirst.Value = True,
-"Група / СКЮ / ТА / Контрагент та Адреса доставки",
-"ТА / Контрагент та Адреса доставки / Група / СКЮ")</Value>
+                                <Value>ТА / Контрагент та Адреса доставки / Категорія / СКЮ</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -184,7 +183,9 @@ WHERE(Domain +Login = @paramLoginFull)
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Textbox139</rd:DefaultName>
@@ -358,16 +359,14 @@ WHERE(Domain +Login = @paramLoginFull)
                                   <Value>=Sum(Fields!Weight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>=iif(Parameters!paramAssortFirst.Value = False And 
-Fields!DataType.Value = "Заказы",
+                                    <FontWeight>=iif(Fields!DataType.Value = "Заказы",
 iif(Sum(Fields!Weight.Value) &lt; 3.0,
 "Bold",
 "Default"),
 "Default"
 )</FontWeight>
                                     <Format>#,0.0</Format>
-                                    <Color>=iif(Parameters!paramAssortFirst.Value = False And 
-Fields!DataType.Value = "Заказы",
+                                    <Color>=iif(Fields!DataType.Value = "Заказы",
 iif(Sum(Fields!Weight.Value) &lt; 3.0,
 "Red",
 "#480c04"),
@@ -667,6 +666,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!DataType.Value</Value>
+                      <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -697,7 +697,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                             <Color>DarkGoldenrod</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>= iif(Fields!DataType.Value = "Заказы", "LightGreen","Orange")</BackgroundColor>
+                          <BackgroundColor>= iif(Fields!DataType.Value = "Замовлення", "LightGreen","Orange")</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -746,7 +746,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                                 <Color>DarkGoldenrod</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>= iif(Fields!DataType.Value = "Заказы", "LightGreen","Orange")</BackgroundColor>
+                              <BackgroundColor>= iif(Fields!DataType.Value = "Замовлення", "LightGreen","Orange")</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -786,7 +786,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                                     <Color>DarkGoldenrod</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>= iif(Fields!DataType.Value = "Заказы", "LightGreen","Orange")</BackgroundColor>
+                                  <BackgroundColor>= iif(Fields!DataType.Value = "Замовлення", "LightGreen","Orange")</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -832,7 +832,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                                             <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>= iif(Fields!DataType.Value = "Заказы", "LightGreen","Orange")</BackgroundColor>
+                                          <BackgroundColor>= iif(Fields!DataType.Value = "Замовлення", "LightGreen","Orange")</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -882,7 +882,7 @@ iif(Fields!DataType.Value = "Акции",
                                             <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>= iif(Fields!DataType.Value = "Заказы", "LightGreen","Orange")</BackgroundColor>
+                                          <BackgroundColor>= iif(Fields!DataType.Value = "Замовлення", "LightGreen","Orange")</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -915,16 +915,12 @@ iif(Fields!DataType.Value = "Акции",
                 <TablixMember>
                   <Group Name="TAName">
                     <GroupExpressions>
-                      <GroupExpression>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!GroupName.Value,
-Fields!TAName.Value)</GroupExpression>
+                      <GroupExpression>=Fields!TAName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!GroupName.Value,
-Fields!TAName.Value)</Value>
+                      <Value>=Fields!TAName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -932,16 +928,14 @@ Fields!TAName.Value)</Value>
                       <TablixHeader>
                         <Size>10.94021cm</Size>
                         <CellContents>
-                          <Textbox Name="TAName1">
+                          <Textbox Name="TAName">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!GroupName.Value,
-Fields!TAName.Value)</Value>
+                                    <Value>=Fields!TAName.Value</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -952,7 +946,7 @@ Fields!TAName.Value)</Value>
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>TAName1</rd:DefaultName>
+                            <rd:DefaultName>TAName</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -1011,16 +1005,12 @@ Fields!TAName.Value)</Value>
                     <TablixMember>
                       <Group Name="BuyerAndDeliveryAddress">
                         <GroupExpressions>
-                          <GroupExpression>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!ProductName.Value,
-Fields!BuyerAndDeliveryAddress.Value)</GroupExpression>
+                          <GroupExpression>=Fields!BuyerAndDeliveryAddress.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!ProductName.Value,
-Fields!BuyerAndDeliveryAddress.Value)</Value>
+                          <Value>=Fields!BuyerAndDeliveryAddress.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -1035,9 +1025,7 @@ Fields!BuyerAndDeliveryAddress.Value)</Value>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!ProductName.Value,
-Fields!BuyerAndDeliveryAddress.Value)</Value>
+                                        <Value>=Fields!BuyerAndDeliveryAddress.Value</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -1105,20 +1093,14 @@ Fields!BuyerAndDeliveryAddress.Value)</Value>
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="GroupName">
+                          <Group Name="GrouppingName">
                             <GroupExpressions>
-                              <GroupExpression>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!TAName.Value,
-Fields!GroupName.Value
-)</GroupExpression>
+                              <GroupExpression>=Fields!GrouppingName.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!TAName.Value,
-Fields!GroupName.Value
-)</Value>
+                              <Value>=Fields!GrouppingName.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
@@ -1126,17 +1108,14 @@ Fields!GroupName.Value
                               <TablixHeader>
                                 <Size>10.94021cm</Size>
                                 <CellContents>
-                                  <Textbox Name="GroupName1">
+                                  <Textbox Name="GrouppingName">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!TAName.Value,
-Fields!GroupName.Value
-)</Value>
+                                            <Value>=Fields!GrouppingName.Value</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
                                               <Color>#480c04</Color>
@@ -1146,7 +1125,7 @@ Fields!GroupName.Value
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>GroupName1</rd:DefaultName>
+                                    <rd:DefaultName>GrouppingName</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
@@ -1205,34 +1184,29 @@ Fields!GroupName.Value
                             <TablixMember>
                               <Group Name="ProductName1">
                                 <GroupExpressions>
-                                  <GroupExpression>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!BuyerAndDeliveryAddress.Value,
-Fields!ProductName.Value)</GroupExpression>
+                                  <GroupExpression>=Fields!ProductName.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!BuyerAndDeliveryAddress.Value,
-Fields!ProductName.Value)</Value>
+                                  <Value>=Fields!ProductName.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
                                 <Size>10.94021cm</Size>
                                 <CellContents>
-                                  <Textbox Name="ProductName11">
+                                  <Textbox Name="ProductName">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=iif(Parameters!paramAssortFirst.Value = True,
-Fields!BuyerAndDeliveryAddress.Value,
-Fields!ProductName.Value)</Value>
+                                            <Value>=Fields!ProductName.Value</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
-                                              <Color>#480c04</Color>
+                                              <FontWeight>=iif(Fields!IsTargetBonus.Value, "Bold", "Default")</FontWeight>
+                                              <Color>=iif(Fields!IsTargetBonus.Value, "Red","#480c04")</Color>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -1240,7 +1214,7 @@ Fields!ProductName.Value)</Value>
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>ProductName11</rd:DefaultName>
+                                    <rd:DefaultName>ProductName</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
@@ -1295,7 +1269,7 @@ Fields!ProductName.Value)</Value>
                               </TablixMembers>
                               <Visibility>
                                 <Hidden>true</Hidden>
-                                <ToggleItem>GroupName1</ToggleItem>
+                                <ToggleItem>GrouppingName</ToggleItem>
                               </Visibility>
                             </TablixMember>
                           </TablixMembers>
@@ -1306,7 +1280,7 @@ Fields!ProductName.Value)</Value>
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
-                        <ToggleItem>TAName1</ToggleItem>
+                        <ToggleItem>TAName</ToggleItem>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
@@ -1408,7 +1382,7 @@ Fields!ProductName.Value)</Value>
         <Height>2.22846in</Height>
         <Style />
       </Body>
-      <Width>6.60194in</Width>
+      <Width>6.61744in</Width>
       <Page>
         <PageHeader>
           <Height>1.60653cm</Height>
@@ -1424,7 +1398,7 @@ Fields!ProductName.Value)</Value>
                     <TextRun>
                       <Label>Отчет</Label>
                       <Value>=Switch(
-Globals!PageNumber = 1, "Набрані замовлення по ")</Value>
+Globals!PageNumber = 1, "Набрані замовлення по ТТ")</Value>
                       <Style>
                         <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1442,19 +1416,7 @@ Globals!PageNumber = 1, "Набрані замовлення по ")</Value>
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Label>Группировка</Label>
-                      <Value>=Switch(Parameters!SK_Groupping_ID.Value = 1, "МКВ",
-Parameters!SK_Groupping_ID.Value = 5, "ККС",
-Parameters!SK_Groupping_ID.Value = 6, "ЛВШ")</Value>
-                      <Style>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                        <Language>ru-RU</Language>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value> для </Value>
+                      <Value>для </Value>
                       <Style>
                         <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1711,27 +1673,6 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       </DefaultValue>
       <Prompt>param Lonin Full</Prompt>
     </ReportParameter>
-    <ReportParameter Name="paramAssortFirst">
-      <DataType>Boolean</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=False</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Ассортимент по ТТ</Prompt>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>=False</Value>
-            <Label>ТТ по СКЮ</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>=True</Value>
-            <Label>СКЮ по ТТ</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
-    </ReportParameter>
     <ReportParameter Name="SK_OrderDateFrom">
       <DataType>Integer</DataType>
       <DefaultValue>
@@ -1759,15 +1700,6 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
         </DataSetReference>
       </DefaultValue>
       <Prompt>paramUserName</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="SK_Groupping_ID">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>1</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>SK Groupping ID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -1804,16 +1736,6 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>paramUserName</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>SK_Groupping_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>paramAssortFirst</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
