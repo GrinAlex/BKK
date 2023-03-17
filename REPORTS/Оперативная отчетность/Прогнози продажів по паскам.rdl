@@ -139,9 +139,8 @@ ORDER BY
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Номенклатура / Часть прогноза / Сеть / Документ</Value>
+                                <Value>Номенклатура / Частина прогнозу / Мережа / Документ</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -200,7 +199,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -235,7 +233,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastAmount.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -275,7 +272,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -309,7 +305,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastAmount.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -348,7 +343,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -382,7 +376,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastAmount.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -421,7 +414,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -455,7 +447,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastAmount.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -494,7 +485,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -529,7 +519,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Sum(Fields!ForecastAmount.Value)</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -582,7 +571,6 @@ ORDER BY
                               <TextRun>
                                 <Value>=FormatDateTime(Fields!Date.Value, DateFormat.ShortDate)</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -631,7 +619,6 @@ ORDER BY
                                   <TextRun>
                                     <Value>=Fields!DayOfWeekShortRu.Value</Value>
                                     <Style>
-                                      <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -718,7 +705,6 @@ ORDER BY
                                           <TextRun>
                                             <Value>шт</Value>
                                             <Style>
-                                              <FontFamily>Arial</FontFamily>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
                                           </TextRun>
@@ -782,7 +768,6 @@ ORDER BY
                                   <TextRun>
                                     <Value>=Fields!ProductName.Value</Value>
                                     <Style>
-                                      <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -830,9 +815,7 @@ ORDER BY
                                     <TextRuns>
                                       <TextRun>
                                         <Value>=Fields!ForecastPart.Value</Value>
-                                        <Style>
-                                          <FontFamily>Arial</FontFamily>
-                                        </Style>
+                                        <Style />
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
@@ -879,9 +862,7 @@ ORDER BY
                                         <TextRuns>
                                           <TextRun>
                                             <Value>=Fields!ChainName.Value</Value>
-                                            <Style>
-                                              <FontFamily>Arial</FontFamily>
-                                            </Style>
+                                            <Style />
                                           </TextRun>
                                         </TextRuns>
                                         <Style />
@@ -929,9 +910,7 @@ ORDER BY
                                                 <Value>=IIF(Fields!ForecastPart.Value = "Акционные продажи",
 "Номер акции " + CStr(Fields!DocNumber.Value),
 "Номер док.доп.спроса " + CStr(Fields!DocNumber.Value)) + ": " + Fields!Comments.Value</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                </Style>
+                                                <Style />
                                               </TextRun>
                                             </TextRuns>
                                             <ListLevel>1</ListLevel>
@@ -985,9 +964,8 @@ ORDER BY
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Итого</Value>
+                                <Value>Разом</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -1135,9 +1113,8 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Часть прогноза</Value>
+                                  <Value>Частина прогнозу</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1169,7 +1146,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Ответственный</Value>
+                                  <Value>Відповідальний</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1204,7 +1181,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>Номер документа</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1236,9 +1212,8 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Комментарий</Value>
+                                  <Value>Коментар</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1272,7 +1247,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>Прогноз, шт</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1306,7 +1280,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>Прогноз, кг</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1404,9 +1377,7 @@ ORDER BY
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ForecastPart.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1498,9 +1469,7 @@ ORDER BY
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Comments.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1531,7 +1500,6 @@ ORDER BY
                                 <TextRun>
                                   <Value>=Fields!ForecastAmount.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -1633,7 +1601,7 @@ ORDER BY
             </SortExpressions>
             <Top>5.11745cm</Top>
             <Height>1.2cm</Height>
-            <Width>28.30853cm</Width>
+            <Width>28.30854cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1681,7 +1649,7 @@ ORDER BY
                   <TextRuns>
                     <TextRun>
                       <Label>Название отчета</Label>
-                      <Value>="Прогнозы продаж по паскам за период с "</Value>
+                      <Value>="Прогнози продажів по паскам за період з "</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1748,7 +1716,7 @@ ORDER BY
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Сформирован</Value>
+                      <Value>Сформовано</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1866,16 +1834,16 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=Now()</Value>
+          <Value>=DateSerial(Year(Now()),Month(Now()),Day(Now()))</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Дата с</Prompt>
+      <Prompt>Дата з</Prompt>
     </ReportParameter>
     <ReportParameter Name="DateTo">
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>05/31/2021 00:00:00</Value>
+          <Value>05/31/2023 00:00:00</Value>
         </Values>
       </DefaultValue>
       <Prompt>Дата по</Prompt>
