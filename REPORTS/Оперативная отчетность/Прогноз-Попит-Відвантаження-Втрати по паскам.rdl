@@ -173,7 +173,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Номенклатура / Канал сбыта / Сеть / Детализация</Value>
+                                <Value>Номенклатура / Канал збуту / Мережа / Деталізація</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -806,6 +806,7 @@
                                   <Value>=Sum(Fields!LossesAmount.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
                                 </TextRun>
@@ -826,6 +827,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -3612,7 +3614,6 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -3799,7 +3800,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>Заказ</Value>
+                                            <Value>Замовлення</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -3918,7 +3919,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>Отгрузка</Value>
+                                            <Value>Відвантаження</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -4037,7 +4038,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>Недопоставка</Value>
+                                            <Value>Втрата</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -4162,7 +4163,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Итог</Value>
+                                <Value>Підсумок</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -4321,7 +4322,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Заказ</Value>
+                                    <Value>Замовлення</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -4440,7 +4441,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Отгрузка</Value>
+                                    <Value>Відвантаження</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -4559,7 +4560,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Недопоставка</Value>
+                                    <Value>Втрата</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -4936,7 +4937,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Итог</Value>
+                                <Value>Разом</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -5015,7 +5016,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                   <TextRuns>
                     <TextRun>
                       <Label>Название отчета</Label>
-                      <Value>="Прогнозы-Заказы-Отгрузки-Потери продаж по паскам за перио с "</Value>
+                      <Value>="Прогноз-Попит-Відвантаження-Втрати продажів по паскам за перио з "</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5082,7 +5083,7 @@ FormatDateTime(Fields!Date.Value, DateFormat.ShortDate) &gt; FormatDateTime(Now(
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Сформирован</Value>
+                      <Value>Сформовано</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5200,7 +5201,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>04/22/2021 00:00:00</Value>
+          <Value>04/01/2023 00:00:00</Value>
         </Values>
       </DefaultValue>
       <Prompt>Дата с</Prompt>
@@ -5209,7 +5210,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>05/15/2021 00:00:00</Value>
+          <Value>04/30/2023 00:00:00</Value>
         </Values>
       </DefaultValue>
       <Prompt>Дата по</Prompt>
