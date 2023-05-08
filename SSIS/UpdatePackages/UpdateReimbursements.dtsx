@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateReimbursements"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{CAB2E665-AA94-4764-9DC4-CA1223936072}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{6481E21B-331D-4CA9-9E59-4F1FE3F15B26}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -136,13 +136,6 @@
                       name="Вход назначения &quot;OLE DB&quot;">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ChainName]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="ChainName"
-                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
-                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[ChainName]" />
-                        <inputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Дата списания]"
                           cachedDataType="date"
                           cachedName="Дата списания"
@@ -162,7 +155,8 @@
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Outlet_ID]" />
                         <inputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[TransportCode]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="TransportCode"
                           externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[TransportCode]"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[TransportCode]" />
@@ -173,25 +167,11 @@
                           externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Product_ID]" />
                         <inputColumn
-                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCode]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="ProductCode"
-                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
-                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]" />
-                        <inputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SK_TypeOfMarketingExpenses_ID]"
                           cachedDataType="r8"
                           cachedName="SK_TypeOfMarketingExpenses_ID"
                           externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_TypeOfMarketingExpenses_ID]"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_TypeOfMarketingExpenses_ID]" />
-                        <inputColumn
-                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[TypeOfMarketingExpensesName]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="TypeOfMarketingExpensesName"
-                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[TypeOfMarketingExpensesName]"
-                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[TypeOfMarketingExpensesName]" />
                         <inputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Weight_Kg]"
                           cachedDataType="r8"
@@ -216,13 +196,34 @@
                           cachedName="SK_Fact_Month_ID"
                           externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Fact_Month_ID]"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[SK_Fact_Month_ID]" />
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[TypeOfMarketingExpensesNameNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TypeOfMarketingExpensesNameNorm"
+                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[TypeOfMarketingExpensesName]"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[TypeOfMarketingExpensesNameNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ProductCodeNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="11"
+                          cachedName="ProductCodeNorm"
+                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]" />
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ChainNameNorm]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ChainNameNorm"
+                          externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ChainNameNorm]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ChainName]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="ChainName" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Дата списания]"
@@ -230,33 +231,33 @@
                           name="Дата списания" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Date_ID]"
-                          dataType="r8"
+                          dataType="i4"
                           name="SK_Date_ID" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Outlet_ID]"
-                          dataType="r8"
+                          dataType="i4"
                           name="SK_Outlet_ID" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[TransportCode]"
-                          dataType="r8"
+                          dataType="i4"
                           name="TransportCode" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Product_ID]"
-                          dataType="r8"
+                          dataType="i4"
                           name="SK_Product_ID" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ProductCode]"
                           dataType="wstr"
-                          length="255"
+                          length="11"
                           name="ProductCode" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_TypeOfMarketingExpenses_ID]"
-                          dataType="r8"
+                          dataType="i4"
                           name="SK_TypeOfMarketingExpenses_ID" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[TypeOfMarketingExpensesName]"
                           dataType="wstr"
-                          length="255"
+                          length="50"
                           name="TypeOfMarketingExpensesName" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight_Kg]"
@@ -272,7 +273,7 @@
                           name="SumWithVAT" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_Fact_Month_ID]"
-                          dataType="r8"
+                          dataType="i4"
                           name="SK_Fact_Month_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -394,10 +395,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[TransportCode]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Преобразование"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[TransportCode]"
+                          length="255"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[TransportCode]"
                           name="TransportCode"
                           truncationRowDisposition="FailComponent" />
@@ -497,7 +499,8 @@
                           name="SK_Outlet_ID" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[TransportCode]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           name="TransportCode" />
                         <externalMetadataColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SK_Product_ID]"
@@ -563,7 +566,8 @@
                           name="SK_Outlet_ID" />
                         <outputColumn
                           refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[TransportCode]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[TransportCode]"
                           name="TransportCode" />
                         <outputColumn
@@ -625,13 +629,158 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца].Columns[TypeOfMarketingExpensesName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="TypeOfMarketingExpensesName"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[TypeOfMarketingExpensesName]" />
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца].Columns[ProductCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductCode"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[ProductCode]" />
+                        <inputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца].Columns[ChainName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ChainName"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;].Columns[ChainName]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[TypeOfMarketingExpensesNameNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[TypeOfMarketingExpensesNameNorm]"
+                          name="TypeOfMarketingExpensesNameNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[LEFT](#{Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника "Excel"].Columns[TypeOfMarketingExpensesName]},50)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEFT(TypeOfMarketingExpensesName,50)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="11"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ProductCodeNorm]"
+                          name="ProductCodeNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[LEFT](#{Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника "Excel"].Columns[ProductCode]},11)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEFT(ProductCode,11)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ChainNameNorm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца].Columns[ChainNameNorm]"
+                          name="ChainNameNorm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">[LEFT](#{Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника "Excel"].Columns[ChainName]},100)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEFT(ChainName,100)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements.Paths[Выход источника &quot;Excel&quot;]"
-                  endId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  endId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Inputs[Вход производного столбца]"
                   name="Выход источника &quot;Excel&quot;"
                   startId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний.Outputs[Выход источника &quot;Excel&quot;]" />
+                <path
+                  refId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements.Paths[Выход производного столбца]"
+                  endId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец.Outputs[Выход производного столбца]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -721,7 +870,7 @@
     design-time-name="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="193,42"
           Id="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Компенсации списаний"
@@ -729,29 +878,53 @@
         <NodeLayout
           Size="203,42"
           Id="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\dbo tmp_Reimbursements"
-          TopLeft="98,195" />
+          TopLeft="97,282" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements\Производный столбец"
+          TopLeft="106,167" />
         <EdgeLayout
           Id="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements.Paths[Выход источника &quot;Excel&quot;]"
-          TopLeft="200.5,116">
+          TopLeft="200.75,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,79"
+              EndConnector="0,51"
               Start="0,0"
-              End="0,71.5">
+              End="0,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71.5" />
+                    End="0,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,27.75,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление данных новыми в tmp_Reimbursements\Заливка новых данных во tmp_Reimbursements.Paths[Выход производного столбца]"
+          TopLeft="199.25,209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
