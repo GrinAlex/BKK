@@ -384,13 +384,18 @@ WHERE(Domain +Login = @paramLoginFull)
                                 <TextRun>
                                   <Value>=Sum(Fields!Weight.Value)</Value>
                                   <Style>
-                                    <FontWeight>=iif(Fields!DataType.Value = "Заказы",
+                                    <FontWeight>=iif(Fields!DataType.Value = "Замовлення",
 iif(Sum(Fields!Weight.Value) &lt; 3.0,
 "Bold",
 "Default"),
 "Default"
 )</FontWeight>
-                                    <Format>#,0.0</Format>
+                                    <Format>=iif(Fields!DataType.Value = "Замовлення",
+iif(Sum(Fields!Weight.Value) &lt; 3.0,
+"#,0.00",
+"#,0.0"),
+"#,0.0"
+)</Format>
                                     <Color>=iif(Fields!DataType.Value = "Замовлення",
 iif(Sum(Fields!Weight.Value) &lt; 3.0,
 "Red",
@@ -416,6 +421,7 @@ iif(Sum(Fields!Weight.Value) &lt; 3.0,
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1435,7 +1441,7 @@ iif(Fields!DataType.Value = "Акции",
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>ТА / Категорія</Value>
+                                <Value>Категорія / ТА</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>#480c04</Color>
@@ -1797,14 +1803,14 @@ iif(Fields!DataType.Value = "Акции",
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="TAName1">
+                  <Group Name="GrouppingName1">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!TAName.Value</GroupExpression>
+                      <GroupExpression>=Fields!GrouppingName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!TAName.Value</Value>
+                      <Value>=Fields!GrouppingName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -1812,14 +1818,14 @@ iif(Fields!DataType.Value = "Акции",
                       <TablixHeader>
                         <Size>10.94021cm</Size>
                         <CellContents>
-                          <Textbox Name="TAName1">
+                          <Textbox Name="GrouppingName2">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!TAName.Value</Value>
+                                    <Value>=Fields!GrouppingName.Value</Value>
                                     <Style>
                                       <FontWeight>Bold</FontWeight>
                                       <Color>#480c04</Color>
@@ -1829,7 +1835,7 @@ iif(Fields!DataType.Value = "Акции",
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>TAName1</rd:DefaultName>
+                            <rd:DefaultName>GrouppingName2</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -1847,27 +1853,27 @@ iif(Fields!DataType.Value = "Акции",
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="GrouppingName1">
+                      <Group Name="TAName1">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!GrouppingName.Value</GroupExpression>
+                          <GroupExpression>=Fields!TAName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!GrouppingName.Value</Value>
+                          <Value>=Fields!TAName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
                         <Size>10.94021cm</Size>
                         <CellContents>
-                          <Textbox Name="GrouppingName1">
+                          <Textbox Name="TAName1">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!GrouppingName.Value</Value>
+                                    <Value>=Fields!TAName.Value</Value>
                                     <Style>
                                       <Color>#480c04</Color>
                                     </Style>
@@ -1876,7 +1882,7 @@ iif(Fields!DataType.Value = "Акции",
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>GrouppingName1</rd:DefaultName>
+                            <rd:DefaultName>TAName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -1891,8 +1897,7 @@ iif(Fields!DataType.Value = "Акции",
                         </CellContents>
                       </TablixHeader>
                       <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>TAName1</ToggleItem>
+                        <ToggleItem>GrouppingName2</ToggleItem>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>

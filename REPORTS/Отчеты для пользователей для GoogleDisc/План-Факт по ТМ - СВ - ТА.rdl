@@ -13609,7 +13609,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                                 <TextRun>
                                   <Value>Перелік продукції у цільовому бонусі</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
                                   </Style>
@@ -13679,16 +13678,15 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="GrouppingName1">
+                        <Textbox Name="ProductName">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GrouppingName.Value</Value>
+                                  <Value>=Fields!ProductName.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
@@ -13696,13 +13694,12 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>GrouppingName1</rd:DefaultName>
+                          <rd:DefaultName>ProductName</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -13727,7 +13724,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                                 <TextRun>
                                   <Value>=Fields!GroupName.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
@@ -13741,7 +13737,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -13757,15 +13753,16 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ProductName">
+                        <Textbox Name="GrouppingName">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ProductName.Value</Value>
+                                  <Value>=Fields!GrouppingName.Value</Value>
                                   <Style>
+                                    <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
@@ -13773,12 +13770,13 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ProductName</rd:DefaultName>
+                          <rd:DefaultName>GrouppingName</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -13813,9 +13811,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                   </SortExpressions>
                   <TablixMembers>
                     <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
                       <Group Name="GroupName">
                         <GroupExpressions>
                           <GroupExpression>=Fields!GroupName.Value</GroupExpression>
@@ -13828,9 +13823,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                       </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
-                          <KeepWithGroup>After</KeepWithGroup>
-                        </TablixMember>
-                        <TablixMember>
                           <Group Name="Подробности" />
                           <SortExpressions>
                             <SortExpression>
@@ -13842,11 +13834,17 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                             <ToggleItem>GroupName</ToggleItem>
                           </Visibility>
                         </TablixMember>
+                        <TablixMember>
+                          <KeepWithGroup>Before</KeepWithGroup>
+                        </TablixMember>
                       </TablixMembers>
                       <Visibility>
                         <Hidden>true</Hidden>
-                        <ToggleItem>GrouppingName1</ToggleItem>
+                        <ToggleItem>GrouppingName</ToggleItem>
                       </Visibility>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>

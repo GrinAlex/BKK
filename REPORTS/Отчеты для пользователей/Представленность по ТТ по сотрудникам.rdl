@@ -14,10 +14,10 @@
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@ParamDateFrom">
+          <QueryParameter Name="@SK_DateFrom_ID">
             <Value>=Parameters!ParamDateFrom.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@ParamDateTo">
+          <QueryParameter Name="@SK_DateTo_ID">
             <Value>=Parameters!ParamDateTo.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@paramLoginFull">
@@ -159,6 +159,31 @@
         <Field Name="FactAvailabilityNormWithPriority">
           <DataField>FactAvailabilityNormWithPriority</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ForParams">
+      <Query>
+        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
+        <CommandText>SELECT 
+	MIN(d.SK_Date_ID) AS paramDateFrom
+	,MAX(d.SK_Date_ID) AS paramDateTo
+FROM dim.Date AS d WITH (NOLOCK)
+WHERE SK_Month_ID = 
+    CASE 
+		WHEN (SELECT WorkDayOfMonth FROM dim.[Date] WITH (NOLOCK) WHERE SK_Date_ID = dbo.ufn_DateToInt(GETDATE())) &lt;= 1 
+		THEN dbo.ufn_DateToInt(EOMONTH(DATEADD(MONTH, -1,GETDATE()))) / 100
+    ELSE dbo.ufn_DateToInt(GETDATE()) / 100
+    END</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="paramDateFrom">
+          <DataField>paramDateFrom</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="paramDateTo">
+          <DataField>paramDateTo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -5726,7 +5751,7 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>5.81444in</Height>
+        <Height>5.08527in</Height>
         <Style />
       </Body>
       <Width>9.97137in</Width>
@@ -5817,20 +5842,22 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
   </ReportSections>
   <ReportParameters>
     <ReportParameter Name="ParamDateFrom">
-      <DataType>DateTime</DataType>
+      <DataType>Integer</DataType>
       <DefaultValue>
-        <Values>
-          <Value>=DateSerial(YEAR(Now()), MONTH(Now()), 1)</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>ForParams</DataSetName>
+          <ValueField>paramDateFrom</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Param Date From</Prompt>
     </ReportParameter>
     <ReportParameter Name="ParamDateTo">
-      <DataType>DateTime</DataType>
+      <DataType>Integer</DataType>
       <DefaultValue>
-        <Values>
-          <Value>=DateSerial(YEAR(Now()), MONTH(Now()), DAY(NOW()))</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>ForParams</DataSetName>
+          <ValueField>paramDateTo</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Param Date To</Prompt>
     </ReportParameter>

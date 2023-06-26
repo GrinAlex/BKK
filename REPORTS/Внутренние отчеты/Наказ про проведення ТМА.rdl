@@ -98,6 +98,14 @@
           <DataField>VendorCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="PromoValid">
+          <DataField>PromoValid</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="PromoIsPlan">
+          <DataField>PromoIsPlan</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -771,12 +779,19 @@
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -802,12 +817,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -833,12 +855,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -865,12 +894,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -897,12 +933,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -929,12 +972,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -950,6 +1000,7 @@
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontSize>8pt</FontSize>
+                                    <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -961,12 +1012,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -982,6 +1040,7 @@
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontSize>8pt</FontSize>
+                                    <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -993,12 +1052,19 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
+	"LightGrey",
+	iif(Fields!PromoIsPlan.Value = 1,
+	"Gold",
+	"Transparent")
+	)</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

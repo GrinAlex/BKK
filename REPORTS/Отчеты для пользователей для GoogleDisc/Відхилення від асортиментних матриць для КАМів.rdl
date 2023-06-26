@@ -12,35 +12,6 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Updating">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@paramDate">
-            <Value>=Parameters!paramDate.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>--declare @paramSK_Month_ID int = 201512
-
-SELECT max(ud.Updating) AS Updating
-from
-(
-select max(s.LogDate) AS Updating
-from fact.Shipments AS s WITH (NOLOCK) inner join dim.[Date] AS d WITH (NOLOCK) ON s.SK_Date_ID = s.SK_Date_ID
-where d.SK_Month_ID = @paramDate/100
-union all
-select max(r.LogDate) AS Updating
-from fact.RAR AS r WITH (NOLOCK) inner join dim.[Date] as d WITH (NOLOCK) ON r.SK_Date_ID = d.SK_Date_ID
-where d.SK_Month_ID =  @paramDate/100
-) as ud</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Updating">
-          <DataField>Updating</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
     <DataSet Name="UserName">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
@@ -157,22 +128,6 @@ WHERE(Login = @paramUser)
           <DataField>PlanAvailability</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="RealizationWeight">
-          <DataField>RealizationWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ReturnWeight">
-          <DataField>ReturnWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="NetRealizationWeight">
-          <DataField>NetRealizationWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="FactAvailability">
-          <DataField>FactAvailability</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="ShipWeight">
           <DataField>ShipWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
@@ -234,7 +189,7 @@ WHERE(Login = @paramUser)
                                   <Value>СВ</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -246,10 +201,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox166</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -271,7 +226,7 @@ WHERE(Login = @paramUser)
                                   <Value>ТА</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -283,10 +238,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -308,7 +263,7 @@ WHERE(Login = @paramUser)
                                   <Value>SK Outlet ID</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -320,10 +275,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox144</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -345,7 +300,7 @@ WHERE(Login = @paramUser)
                                   <Value>SK Product ID</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -357,10 +312,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox138</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -379,10 +334,10 @@ WHERE(Login = @paramUser)
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>План  по ассорт.матрице</Value>
+                                  <Value>План  по асорт.матриці</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -394,10 +349,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -416,10 +371,10 @@ WHERE(Login = @paramUser)
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Факт по отгрузке</Value>
+                                  <Value>Факт по відвантаженням</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -431,10 +386,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -471,10 +426,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox19</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -505,10 +460,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -539,10 +494,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -573,10 +528,10 @@ WHERE(Login = @paramUser)
                           <rd:DefaultName>Textbox21</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -596,7 +551,7 @@ WHERE(Login = @paramUser)
                                 <TextRun>
                                   <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
 " в т.ч. " + 
-CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -611,10 +566,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -653,10 +608,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox30</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#feffbf</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -688,10 +643,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#feffbf</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -723,10 +678,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox31</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#feffbf</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -758,10 +713,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox32</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#feffbf</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -781,7 +736,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                 <TextRun>
                                   <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
 " в т.ч. " + 
-CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontWeight>Bold</FontWeight>
@@ -797,10 +752,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox33</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#feffbf</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -837,11 +792,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>ManagerName1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailability.Value = 0, "Red",
-Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange")</BackgroundColor>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -871,11 +825,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange
                           <rd:DefaultName>TAName</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailability.Value = 0, "Red",
-Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange")</BackgroundColor>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -905,11 +858,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange
                           <rd:DefaultName>Textbox43</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailability.Value = 0, "Red",
-Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange")</BackgroundColor>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -939,11 +891,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange
                           <rd:DefaultName>Textbox44</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailability.Value = 0, "Red",
-Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange")</BackgroundColor>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -963,7 +914,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailability.Value = 1, "Orange
                                 <TextRun>
                                   <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
 " в т.ч. " + 
-CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
                                     <Color>#480c04</Color>
                                   </Style>
@@ -977,11 +928,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox48</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=Switch(SUM(Fields!DeviationLost.Value)&gt;0, "Red",
- SUM(Fields!DeviationLost.Value) = 0, "Orange")</BackgroundColor>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1019,7 +969,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox47</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1054,7 +1004,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1089,7 +1039,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>SK_Outlet_ID1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1124,7 +1074,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>SK_Product_ID1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1159,7 +1109,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>PlanAvailability</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1194,7 +1144,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>FactAvailability</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
@@ -1224,7 +1174,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                                   <Value />
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1234,10 +1184,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1258,7 +1208,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                                   <Value />
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1268,10 +1218,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1292,7 +1242,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                                   <Value />
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1302,10 +1252,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1326,7 +1276,7 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                                   <Value />
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1336,10 +1286,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                           <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1359,10 +1309,10 @@ Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "
                                 <TextRun>
                                   <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
 " в т.ч. " + 
-CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1374,10 +1324,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#480c04</BackgroundColor>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1435,10 +1385,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>КАМ / Сеть / Территория /Адрес доставки / Наименование</Value>
+                                <Value>КАМ / Сеть / Територія /Адреса доставки / СКЮ</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>White</Color>
+                                  <Color>#480c04</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -1450,10 +1400,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                         <rd:DefaultName>Textbox72</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>DarkGoldenrod</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>#480c04</BackgroundColor>
+                          <BackgroundColor>Orange</BackgroundColor>
                           <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
@@ -1515,10 +1465,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                 <rd:DefaultName>ChainName_ON_BuyerMain</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
+                                    <Color>DarkGoldenrod</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>#e8c46a</BackgroundColor>
+                                  <BackgroundColor>Gold</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -1565,10 +1515,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                     <rd:DefaultName>TerritoryMainName_ON_DeliveryAddressMain</rd:DefaultName>
                                     <Style>
                                       <Border>
-                                        <Color>LightGrey</Color>
+                                        <Color>DarkGoldenrod</Color>
                                         <Style>Solid</Style>
                                       </Border>
-                                      <BackgroundColor>#feffbf</BackgroundColor>
+                                      <BackgroundColor>Yellow</BackgroundColor>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1619,17 +1569,16 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                         <rd:DefaultName>DeliveryAddressMain1</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
+                                            <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <TopBorder>
-                                            <Color>#480c04</Color>
                                             <Style>Solid</Style>
                                           </TopBorder>
                                           <BottomBorder>
-                                            <Color>#480c04</Color>
                                             <Style>Solid</Style>
                                           </BottomBorder>
+                                          <BackgroundColor>Khaki</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1680,7 +1629,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                         <rd:DefaultName>ProductName</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
+                                            <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
@@ -1729,7 +1678,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                                     <Value>=Fields!KAMName.Value</Value>
                                     <Style>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>White</Color>
+                                      <Color>#480c04</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1739,10 +1688,10 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                             <rd:DefaultName>KAMName</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>LightGrey</Color>
+                                <Color>DarkGoldenrod</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>#480c04</BackgroundColor>
+                              <BackgroundColor>Orange</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -1758,7 +1707,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
             </TablixRowHierarchy>
             <DataSetName>DeviationFromAssortMatrixForKAM</DataSetName>
             <Top>0.14592cm</Top>
-            <Left>0.2693cm</Left>
+            <Left>0.1cm</Left>
             <Height>4.60542cm</Height>
             <Width>31.09416cm</Width>
             <Style>
@@ -1771,7 +1720,7 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
         <Height>1.98552in</Height>
         <Style />
       </Body>
-      <Width>14.75596in</Width>
+      <Width>12.37054in</Width>
       <Page>
         <PageHeader>
           <Height>1.59716cm</Height>
@@ -1787,8 +1736,14 @@ CStr(Sum(Fields!DeviationLost.Value)) + " потерь"</Value>
                     <TextRun>
                       <Label>Название отчета</Label>
                       <Value>=Switch(
-Globals!PageNumber = 1, "Отклонение от ассортиментных матриц за " + 
-CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
+Globals!PageNumber = 1, "Відхилення від асортиментних матриць за " + 
+CStr(Parameters!paramDaysBefore.Value) + " днів від " +
+Cstr(DateSerial(
+		Left(Parameters!paramDate.Value, 4), 
+		Left(Right(Parameters!paramDate.Value, 4), 2),
+		Right(Parameters!paramDate.Value, 2))
+	) + 
+" для ")</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1813,40 +1768,6 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Label>Месяц</Label>
-                      <Value>=UCase(Parameters!paramMonth.Label)</Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Label>Год</Label>
-                      <Value>=Parameters!paramYear.Value</Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
@@ -1855,7 +1776,7 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
               <Top>0.03528cm</Top>
               <Left>1.75882cm</Left>
               <Height>0.95278cm</Height>
-              <Width>32.19826cm</Width>
+              <Width>29.43534cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1888,13 +1809,13 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox18">
+            <Textbox Name="Textbox34">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Сформир.</Value>
+                      <Value>Сформовано</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1902,7 +1823,7 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>:  </Value>
+                      <Value>: </Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <Color>#480c04</Color>
@@ -1917,15 +1838,53 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>за</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Label>Длительность</Label>
+                      <Value>=DateDiff(DateInterval.Minute, Globals!ExecutionTime, Now()) mod 60 &amp; ":" &amp; Right("0" &amp; 
+DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>.</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox12</rd:DefaultName>
               <Top>1.05862cm</Top>
-              <Left>0.25cm</Left>
+              <Left>0.1cm</Left>
               <Height>0.5cm</Height>
-              <Width>5.0193cm</Width>
+              <Width>15.09416cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1947,7 +1906,7 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
                   <Color>#480c04</Color>
                   <Style>Solid</Style>
                 </RightBorder>
-                <BackgroundColor>#feffbf</BackgroundColor>
+                <BackgroundColor>LightYellow</BackgroundColor>
                 <PaddingLeft>1pt</PaddingLeft>
                 <PaddingRight>1pt</PaddingRight>
                 <PaddingTop>1pt</PaddingTop>
@@ -2010,106 +1969,12 @@ CStr(Parameters!paramDaysBefore.Value) + " дней.")</Value>
       </DefaultValue>
       <Prompt>paramUserName</Prompt>
     </ReportParameter>
-    <ReportParameter Name="paramYear">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=YEAR(Now())</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Год</Prompt>
-      <Hidden>true</Hidden>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>=YEAR(NOW()) - 1</Value>
-            <Label>=YEAR(NOW()) - 1</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>=YEAR(NOW())</Value>
-            <Label>=YEAR(NOW())</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
-    </ReportParameter>
-    <ReportParameter Name="paramMonth">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=MONTH(Now())</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Месяц</Prompt>
-      <Hidden>true</Hidden>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>1</Value>
-            <Label>январь</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>2</Value>
-            <Label>февраль</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>3</Value>
-            <Label>март</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>4</Value>
-            <Label>апрель</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>5</Value>
-            <Label>май</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>6</Value>
-            <Label>июнь</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>7</Value>
-            <Label>июль</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>8</Value>
-            <Label>август</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>9</Value>
-            <Label>сентябрь</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>10</Value>
-            <Label>октябрь</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>11</Value>
-            <Label>ноябрь</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>12</Value>
-            <Label>декабрь</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
-    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>paramYear</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>paramMonth</ParameterName>
-        </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
