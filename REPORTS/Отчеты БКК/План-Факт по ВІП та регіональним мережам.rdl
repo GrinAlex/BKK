@@ -16154,9 +16154,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByChainsPTZ</DataSetName>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
             <PageName>ПТЗ</PageName>
             <Top>16.02cm</Top>
             <Left>0.1cm</Left>
@@ -18096,6 +18093,9 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
             <Height>3.89958cm</Height>
             <Width>19.22159cm</Width>
             <ZIndex>6</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -18127,13 +18127,13 @@ Globals!PageNumber = 2, "Виконання плану продажів по Ц�
 Globals!PageNumber = 3, "Виконання плану продажів по Лавашам",
 Globals!PageNumber = 4, "Виконання плану продажів по Східним солодощам",
 Globals!PageNumber = 5, "Виконання плану продажів по Продукції тривалого зберігання",
-Globals!PageNumber = 6, "Виконання плану продажів по Паскам",
 
+Globals!PageNumber = 6,"Діаграми по мережам",
 Globals!PageNumber = 7,"Діаграми по мережам",
 Globals!PageNumber = 8,"Діаграми по мережам",
 Globals!PageNumber = 9,"Діаграми по мережам",
-Globals!PageNumber = 10,"Діаграми по мережам",
-Globals!PageNumber = 11,"Діаграми по мережам")</Value>
+Globals!PageNumber = 10,"Діаграми по мережам")
+'Globals!PageNumber = 6, "Виконання плану продажів по Паскам",</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>

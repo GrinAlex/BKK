@@ -12,6 +12,88 @@
     </DataSource>
   </DataSources>
   <DataSets>
+    <DataSet Name="Days">
+      <Query>
+        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@paramYear">
+            <Value>=Parameters!paramYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@paramMonth">
+            <Value>=Parameters!paramMonth.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>--DECLARE @paramYear int = 2016
+--DECLARE @paramMonth int = 12
+
+SELECT d.WorkDayOfMonth, d.TotalWorkDaysOfMonth, d.Day AS CurrDayOfMonth, d.EndDayOfMonth, d.SK_Date_ID
+FROM dim.[Date] d
+WHERE d.SK_Date_ID = (SELECT CASE
+           --WHEN dbo.ufn_DateToInt(dbo.ufn_DateSerial(@paramYear, @paramMonth,1)) &gt;= dbo.ufn_DateToInt(dbo.ufn_DateSerial(YEAR(GETDATE()), MONTH(GETDATE()),1))
+		 WHEN year(getdate()) = @paramYear AND month(getdate()) = @paramMonth
+
+           THEN(YEAR(DATEADD(DAY, 0, GETDATE())) * 100 + MONTH(DATEADD(DAY, 0, GETDATE()))) * 100 + DAY(DATEADD(DAY, 0, GETDATE()))
+           ELSE
+(
+    SELECT TOP (1) d.SK_EndDayOfMonth_ID
+    FROM dim.[Date] AS d
+    WHERE d.[Year] = @paramYear
+          AND d.MonthOfYear = @paramMonth
+)
+       END)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="WorkDayOfMonth">
+          <DataField>WorkDayOfMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="TotalWorkDaysOfMonth">
+          <DataField>TotalWorkDaysOfMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="CurrDayOfMonth">
+          <DataField>CurrDayOfMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="EndDayOfMonth">
+          <DataField>EndDayOfMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="SK_Date_ID">
+          <DataField>SK_Date_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Updating">
+      <Query>
+        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@paramSK_Month_ID">
+            <Value>=Parameters!paramSK_Month_ID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>--declare @paramSK_Month_ID int = 201512
+
+SELECT max(ud.Updating) AS Updating
+from
+(
+select max(s.LogDate) AS Updating
+from fact.Shipments AS s WITH (NOLOCK) inner join dim.[Date] AS d WITH (NOLOCK) ON s.SK_Date_ID = s.SK_Date_ID
+where d.SK_Month_ID = @paramSK_Month_ID
+union all
+select max(r.LogDate) AS Updating
+from fact.RAR AS r WITH (NOLOCK) inner join dim.[Date] as d WITH (NOLOCK) ON r.SK_Date_ID = d.SK_Date_ID
+where d.SK_Month_ID =  @paramSK_Month_ID
+) as ud</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Updating">
+          <DataField>Updating</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
     <DataSet Name="PlanFactByProducts">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
@@ -75,81 +157,13 @@
           <DataField>PlanAmount</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Next1MonthPlanWeight">
-          <DataField>Next1MonthPlanWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
         <Field Name="ShipmentsWeight">
           <DataField>ShipmentsWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="Next1MonthPlanAmount">
-          <DataField>Next1MonthPlanAmount</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="ShipmentsAmount">
           <DataField>ShipmentsAmount</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="Next2MonthPlanWeight">
-          <DataField>Next2MonthPlanWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="Next2MonthPlanAmount">
-          <DataField>Next2MonthPlanAmount</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ForecastSalesWeight">
-          <DataField>ForecastSalesWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ForecastSalesAmount">
-          <DataField>ForecastSalesAmount</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Next1MonthName">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@Y">
-            <Value>=Parameters!paramYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@M">
-            <Value>=Parameters!paramMonth.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT d.MonthNameUa3
-FROM dim.Date AS d WITH (NOLOCK)
-WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 1, dbo.ufn_IntToDate((@Y-1) * 10000 + @M * 100 + 1)))</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="MonthNameUa3">
-          <DataField>MonthNameUa3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Next2MonthName">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@Y">
-            <Value>=Parameters!paramYear.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@M">
-            <Value>=Parameters!paramMonth.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT d.MonthNameUa3
-FROM dim.Date AS d WITH (NOLOCK)
-WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1) * 10000 + @M * 100 + 1)))</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="MonthNameUa3">
-          <DataField>MonthNameUa3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -162,16 +176,7 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.6cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.6cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.6cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.6cm</Width>
+                  <Width>2.59039cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.6cm</Width>
@@ -402,45 +407,6 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
                     </TablixCell>
                     <TablixCell />
                     <TablixCell />
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Плани на наст.міс., тис.шт.</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <ColSpan>3</ColSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -455,7 +421,7 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Код</Value>
+                                  <Value>Код продукції</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#5f0e06</Color>
@@ -878,114 +844,6 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
                         </Textbox>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox3">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=First(Fields!MonthNameUa3.Value, "Next1MonthName")</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox38">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=First(Fields!MonthNameUa3.Value, "Next2MonthName")</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox38</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox44">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Разом за 3 міс.</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox44</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -1208,7 +1066,11 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)</Value>
+                                  <Value>=IIF(
+SUM(Fields!PlanWeight.Value) = 0, 
+SUM(Fields!ShipmentsWeight.Value),
+SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value
+)</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>#5f0e06</Color>
@@ -1244,7 +1106,10 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsAmount.Value) / 1000 + Sum(Fields!ForecastSalesAmount.Value) / 1000</Value>
+                                  <Value>=IIF(SUM(Fields!PlanAmount.Value) = 0,
+SUM(Fields!ShipmentsAmount.Value),
+SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000
+)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#5f0e06</Color>
@@ -1282,7 +1147,7 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0,
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value)
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / SUM(Fields!PlanWeight.Value)
 )</Value>
                                   <Style>
                                     <Format>0.0%</Format>
@@ -1320,15 +1185,17 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)),
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) - SUM(Fields!PlanWeight.Value))</Value>
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value),
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanWeight.Value))</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1361,15 +1228,17 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanAmount.Value)=0, 
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value)) / 1000,
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
+(SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000),
+((SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1403,15 +1272,18 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1)</Value>
+SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1)</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1421,112 +1293,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Next1MonthPlanAmount">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next1MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Next1MonthPlanAmount</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Next2MonthPlanAmount">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next2MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Next2MonthPlanAmount</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox45">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=(SUM(Fields!PlanAmount.Value) + SUM(Fields!Next1MonthPlanAmount.Value) + SUM(Fields!Next2MonthPlanAmount.Value)) / 1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1768,7 +1534,11 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)</Value>
+                                  <Value>=IIF(
+SUM(Fields!PlanWeight.Value) = 0, 
+SUM(Fields!ShipmentsWeight.Value),
+SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value
+)</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>#5f0e06</Color>
@@ -1804,7 +1574,10 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsAmount.Value) / 1000 + Sum(Fields!ForecastSalesAmount.Value) / 1000</Value>
+                                  <Value>=IIF(SUM(Fields!PlanAmount.Value) = 0,
+SUM(Fields!ShipmentsAmount.Value),
+SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000
+)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#5f0e06</Color>
@@ -1842,8 +1615,15 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0,
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value)
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / SUM(Fields!PlanWeight.Value)
 )</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>и</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>#5f0e06</Color>
@@ -1880,15 +1660,17 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)),
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) - SUM(Fields!PlanWeight.Value))</Value>
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value),
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanWeight.Value))</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1922,15 +1704,17 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanAmount.Value)=0, 
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value)) / 1000,
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
+(SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000),
+((SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1965,15 +1749,18 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1)</Value>
+SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1)</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1983,115 +1770,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox15</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox8">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next1MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox40">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next2MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox40</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox46">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=(SUM(Fields!PlanAmount.Value) + SUM(Fields!Next1MonthPlanAmount.Value) + SUM(Fields!Next2MonthPlanAmount.Value)) / 1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox46</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -2334,7 +2012,11 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)</Value>
+                                  <Value>=IIF(
+SUM(Fields!PlanWeight.Value) = 0, 
+SUM(Fields!ShipmentsWeight.Value),
+SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value
+)</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>#5f0e06</Color>
@@ -2370,7 +2052,10 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsAmount.Value) / 1000 + Sum(Fields!ForecastSalesAmount.Value) / 1000</Value>
+                                  <Value>=IIF(SUM(Fields!PlanAmount.Value) = 0,
+SUM(Fields!ShipmentsAmount.Value),
+SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000
+)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#5f0e06</Color>
@@ -2408,7 +2093,7 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0,
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value)
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / SUM(Fields!PlanWeight.Value)
 )</Value>
                                   <Style>
                                     <Format>0.0%</Format>
@@ -2446,15 +2131,17 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)),
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) - SUM(Fields!PlanWeight.Value))</Value>
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value),
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanWeight.Value))</Value>
                                   <Style>
                                     <Format>#,0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2488,15 +2175,17 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanAmount.Value)=0, 
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value)) / 1000,
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
+(SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000),
+((SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2531,15 +2220,18 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1)</Value>
+SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1)</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2549,115 +2241,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox37</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox10">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next1MonthPlanAmount.Value)/1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox41">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next2MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox41</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox52">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=(SUM(Fields!PlanAmount.Value) + SUM(Fields!Next1MonthPlanAmount.Value) + SUM(Fields!Next2MonthPlanAmount.Value)) / 1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox52</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -2906,7 +2489,11 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)</Value>
+                                  <Value>=IIF(
+SUM(Fields!PlanWeight.Value) = 0, 
+SUM(Fields!ShipmentsWeight.Value),
+SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value
+)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
@@ -2943,7 +2530,10 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ShipmentsAmount.Value) / 1000 + Sum(Fields!ForecastSalesAmount.Value) / 1000</Value>
+                                  <Value>=IIF(SUM(Fields!PlanAmount.Value) = 0,
+SUM(Fields!ShipmentsAmount.Value),
+SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000
+)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.0</Format>
@@ -2982,7 +2572,7 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0,
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value)
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / SUM(Fields!PlanWeight.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -3021,16 +2611,18 @@ SUM(Fields!ShipmentsWeight.Value) / SUM(Fields!PlanWeight.Value))</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)),
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) - SUM(Fields!PlanWeight.Value))</Value>
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value),
+(SUM(Fields!ShipmentsWeight.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanWeight.Value))</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3064,16 +2656,18 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanAmount.Value)=0, 
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value)) / 1000,
-(SUM(Fields!ShipmentsAmount.Value) + SUM(Fields!ForecastSalesAmount.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
+(SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value / 1000),
+((SUM(Fields!ShipmentsAmount.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) - SUM(Fields!PlanAmount.Value)) / 1000)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.0</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3108,16 +2702,19 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanWeight.Value) = 0, 
 " - ",
-(SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1)</Value>
+SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.0%</Format>
                                     <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &gt; 0.3, "Red",
-((SUM(Fields!ShipmentsWeight.Value) + SUM(Fields!ForecastSalesWeight.Value)) / 
-SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &gt; 0.3, "Red",
+(SUM(Fields!ShipmentsWeight.Value) / 
+(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
+-1) &lt; -0.3, "Red")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3141,117 +2738,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next1MonthPlanAmount.Value)/1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox42">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Next2MonthPlanAmount.Value) / 1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox53">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=(SUM(Fields!PlanAmount.Value) + SUM(Fields!Next1MonthPlanAmount.Value) + SUM(Fields!Next2MonthPlanAmount.Value)) / 1000</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.0</Format>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox53</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
@@ -3261,12 +2747,8 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                 <TablixMember>
                   <Visibility>
                     <Hidden>true</Hidden>
-                    <ToggleItem>Textbox54</ToggleItem>
                   </Visibility>
                 </TablixMember>
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -3419,7 +2901,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>Итог</Value>
+                                        <Value>=Fields!GroupName.Value</Value>
                                         <Style>
                                           <Color>#5f0e06</Color>
                                         </Style>
@@ -3461,7 +2943,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Итог</Value>
+                                    <Value>=Fields!GrouppingName.Value</Value>
                                     <Style>
                                       <Color>#5f0e06</Color>
                                     </Style>
@@ -3532,7 +3014,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
             <DataSetName>PlanFactByProducts</DataSetName>
             <Left>0.1cm</Left>
             <Height>3.6cm</Height>
-            <Width>32.58354cm</Width>
+            <Width>28.77393cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3543,7 +3025,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
         <Height>1.51644in</Height>
         <Style />
       </Body>
-      <Width>12.95554in</Width>
+      <Width>11.45611in</Width>
       <Page>
         <PageHeader>
           <Height>1.72945cm</Height>
@@ -3590,14 +3072,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
-                    <TextRun>
-                      <Value> + план на 2 наступні місяці</Value>
-                      <Style>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
@@ -3605,7 +3079,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Left>1.34423cm</Left>
               <Height>0.95278cm</Height>
-              <Width>31.33931cm</Width>
+              <Width>25.9297cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

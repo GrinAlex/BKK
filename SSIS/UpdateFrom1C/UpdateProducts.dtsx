@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{1BB32EA1-7FC7-4A28-8DE0-FBD08DD173FF}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{64B5ED4D-AEBD-4FBE-BFDD-94DE19F164B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -100,10 +100,10 @@ SELECT [Source_ID]
       ,[VendorCode]
       ,[KindProductCode]
       ,[KindProductName]
-      ,[ReportUnitMeasurementName]
-      ,[ReportUnitMeasurementCoef]
-      ,[ResidueUnitMeasurementName]
-      ,[ResidueUnitMeasurementCoef]
+      ,ISNULL([ReportUnitMeasurementName], '') AS ReportUnitMeasurementName
+      ,ISNULL([ReportUnitMeasurementCoef], 0) AS ReportUnitMeasurementCoef
+      ,ISNULL([ResidueUnitMeasurementName], '') AS ResidueUnitMeasurementName
+      ,ISNULL([ResidueUnitMeasurementCoef], 0) AS ResidueUnitMeasurementCoef
       ,ISNULL([SpaceUnitMeasurementName], '') AS SpaceUnitMeasurementName
       ,ISNULL([SpaceUnitMeasurementCoef], 0) AS SpaceUnitMeasurementCoef
       ,ISNULL([MainUnitMeasurementName], '') AS MainUnitMeasurementName

@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateS2RtoProductsResidue"
   DTS:PackageType="5"
-  DTS:VersionBuild="115"
-  DTS:VersionGUID="{438BACBD-7CE1-41C6-858D-85F0BE9D0147}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{FB2806BA-0C17-4F18-B2C1-56A8C971EF30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -743,17 +743,13 @@ where [refTable].[TransportCode] = ?</property>
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        
 	VendorCode
-	,SK_Product_ID
-	
-	FROM            dim.Products AS p
-
+	,SK_Product_ID	
+FROM dim.Products AS p
 WHERE        
-	(VendorCode &lt;&gt; '')
-		
-	AND p.Valid = 1
-		
-	AND p.IsDeleted = 0
-		
+	(VendorCode &lt;&gt; '')	
+	--AND p.Valid = 1
+	AND p.ValidForSpot2R = 1
+	AND p.IsDeleted = 0	
 	AND p.Groupping_ID &lt;&gt; 9</property>
                     <property
                       dataType="System.String"
@@ -762,17 +758,13 @@ WHERE
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT        
 	VendorCode
-	,SK_Product_ID
-	
-	FROM            dim.Products AS p
-
+	,SK_Product_ID	
+FROM dim.Products AS p
 WHERE        
-	(VendorCode &lt;&gt; '')
-		
-	AND p.Valid = 1
-		
-	AND p.IsDeleted = 0
-		
+	(VendorCode &lt;&gt; '')	
+	--AND p.Valid = 1
+	AND p.ValidForSpot2R = 1
+	AND p.IsDeleted = 0	
 	AND p.Groupping_ID &lt;&gt; 9) [refTable]
 where [refTable].[VendorCode] = ?</property>
                     <property
@@ -2879,7 +2871,7 @@ where [refTable].[VendorCode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2889,7 +2881,7 @@ where [refTable].[VendorCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2949,7 +2941,7 @@ where [refTable].[VendorCode] = ?</property>
     design-time-name="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="188,42"
           Id="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue\Производный столбец"
@@ -2981,7 +2973,9 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3003,7 +2997,9 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

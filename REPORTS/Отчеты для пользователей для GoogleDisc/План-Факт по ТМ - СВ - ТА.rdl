@@ -7155,15 +7155,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByTaTBForUsers</DataSetName>
             <PageName>ЦБ</PageName>
-            <Filters>
-              <Filter>
-                <FilterExpression>=Fields!Department_ID.Value</FilterExpression>
-                <Operator>NotEqual</Operator>
-                <FilterValues>
-                  <FilterValue DataType="Integer">-777</FilterValue>
-                </FilterValues>
-              </Filter>
-            </Filters>
             <Top>4.09cm</Top>
             <Left>0.1cm</Left>
             <Height>3.9525cm</Height>
@@ -16511,9 +16502,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByTaForUsersPTZ</DataSetName>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
             <PageName>ПТЗ</PageName>
             <Top>19.22854cm</Top>
             <Left>0.1cm</Left>
@@ -18353,6 +18341,9 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
             <Height>3.9525cm</Height>
             <Width>19.3cm</Width>
             <ZIndex>7</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -18384,8 +18375,8 @@ Globals!PageNumber = 2, "Виконання плану продажів по Ц�
 Globals!PageNumber = 3, "Виконання плану продажів по Лавашам для ",
 Globals!PageNumber = 4, "Виконання плну продажів по Східним солодощам для ",
 Globals!PageNumber = 5, "Виконання плну продажів по Продукції тривалого зберігання для ",
-Globals!PageNumber = 6, "Виконання плану продажів по Паскам для ",
-Globals!PageNumber = 7, "ТТ без прив'зки ")</Value>
+Globals!PageNumber = 6, "ТТ без прив'зки ")
+'Globals!PageNumber = 6, "Виконання плану продажів по Паскам для ",</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
