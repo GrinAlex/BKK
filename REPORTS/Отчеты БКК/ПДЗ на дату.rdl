@@ -169,7 +169,6 @@
                         </Style>
                       </Textbox>
                       <RowSpan>2</RowSpan>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixCornerCell>
                   <TablixCornerCell>
@@ -7010,7 +7009,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>РМ - ТМ - СВ - ТА - Контрагент - Договір</Value>
+                                <Value>ТМ - СВ - Контрагент - Договір</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontSize>8pt</FontSize>
@@ -7582,161 +7581,6 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox157">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox111</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox177">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox62</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox181">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox63</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox182">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=IIF(Sum(Fields!SumDebit.Value) = 0, "", Sum(Fields!SumOverdueDebt.Value) / Sum(Fields!SumDebit.Value))</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>0.0%</Format>
-                                    <Color>=Switch(SUM(Fields!SumDebit.Value) = 0.0, "#480c04",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &lt;= 0.1, "Green",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &lt;= 0.2, "Orange",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox68</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox158">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -8032,161 +7876,6 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="SumDebit40">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>SumDebit10</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightYellow</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="SumDebit41">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>SumDebit9</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightYellow</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="SumDebit42">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SumDebit.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>SumDebit8</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightYellow</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox163">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=IIF(Sum(Fields!SumDebit.Value) = 0, "", Sum(Fields!SumOverdueDebt.Value) / Sum(Fields!SumDebit.Value))</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>0.0%</Format>
-                                    <Color>=Switch(SUM(Fields!SumDebit.Value) = 0.0, "#480c04",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &lt;= 0.1, "Green",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &lt;= 0.2, "Orange",
-SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox38</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightYellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -9240,14 +8929,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                       </TablixMembers>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="RmName2">
+                      <Group Name="TmName2">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!RmName.Value</GroupExpression>
+                          <GroupExpression>=Fields!TmName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!RmName.Value</Value>
+                          <Value>=Fields!TmName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -9255,14 +8944,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                           <TablixHeader>
                             <Size>12.55894cm</Size>
                             <CellContents>
-                              <Textbox Name="RmName2">
+                              <Textbox Name="TmName2">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!RmName.Value</Value>
+                                        <Value>=Fields!TmName.Value</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
                                           <FontSize>8pt</FontSize>
@@ -9273,13 +8962,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>RmName1</rd:DefaultName>
+                                <rd:DefaultName>TmName1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>Gold</BackgroundColor>
+                                  <BackgroundColor>Yellow</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -9293,7 +8982,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                               <TablixHeader>
                                 <Size>0.75375cm</Size>
                                 <CellContents>
-                                  <Textbox Name="Textbox73">
+                                  <Textbox Name="Textbox74">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
@@ -9311,13 +9000,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>Textbox73</rd:DefaultName>
+                                    <rd:DefaultName>Textbox74</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
                                         <Style>Solid</Style>
                                       </Border>
-                                      <BackgroundColor>Gold</BackgroundColor>
+                                      <BackgroundColor>Yellow</BackgroundColor>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -9331,7 +9020,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                   <TablixHeader>
                                     <Size>1.50896cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox112">
+                                      <Textbox Name="Textbox70">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
@@ -9349,13 +9038,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox95</rd:DefaultName>
+                                        <rd:DefaultName>Textbox55</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>Gold</BackgroundColor>
+                                          <BackgroundColor>Yellow</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -9369,7 +9058,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                       <TablixHeader>
                                         <Size>1.8cm</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox113">
+                                          <Textbox Name="Textbox86">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -9387,13 +9076,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox96</rd:DefaultName>
+                                            <rd:DefaultName>Textbox56</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>DarkGoldenrod</Color>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <BackgroundColor>Gold</BackgroundColor>
+                                              <BackgroundColor>Yellow</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -9407,7 +9096,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                           <TablixHeader>
                                             <Size>1.8cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox114">
+                                              <Textbox Name="Textbox87">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
@@ -9425,13 +9114,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                     <Style />
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox97</rd:DefaultName>
+                                                <rd:DefaultName>Textbox57</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>DarkGoldenrod</Color>
                                                     <Style>Solid</Style>
                                                   </Border>
-                                                  <BackgroundColor>Gold</BackgroundColor>
+                                                  <BackgroundColor>Yellow</BackgroundColor>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
@@ -9445,7 +9134,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                               <TablixHeader>
                                                 <Size>1.8cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox115">
+                                                  <Textbox Name="Textbox88">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
@@ -9463,13 +9152,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                         <Style />
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox99</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox58</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Color>DarkGoldenrod</Color>
                                                         <Style>Solid</Style>
                                                       </Border>
-                                                      <BackgroundColor>Gold</BackgroundColor>
+                                                      <BackgroundColor>Yellow</BackgroundColor>
                                                       <PaddingLeft>2pt</PaddingLeft>
                                                       <PaddingRight>2pt</PaddingRight>
                                                       <PaddingTop>2pt</PaddingTop>
@@ -9483,7 +9172,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                   <TablixHeader>
                                                     <Size>1.8cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox116">
+                                                      <Textbox Name="Textbox89">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
@@ -9501,13 +9190,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                             <Style />
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox109</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox59</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Color>DarkGoldenrod</Color>
                                                             <Style>Solid</Style>
                                                           </Border>
-                                                          <BackgroundColor>Gold</BackgroundColor>
+                                                          <BackgroundColor>Yellow</BackgroundColor>
                                                           <PaddingLeft>2pt</PaddingLeft>
                                                           <PaddingRight>2pt</PaddingRight>
                                                           <PaddingTop>2pt</PaddingTop>
@@ -9521,7 +9210,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                       <TablixHeader>
                                                         <Size>2.05021cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox117">
+                                                          <Textbox Name="Textbox90">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
@@ -9539,13 +9228,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                 <Style />
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox110</rd:DefaultName>
+                                                            <rd:DefaultName>Textbox60</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Color>DarkGoldenrod</Color>
                                                                 <Style>Solid</Style>
                                                               </Border>
-                                                              <BackgroundColor>Gold</BackgroundColor>
+                                                              <BackgroundColor>Yellow</BackgroundColor>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -9571,14 +9260,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="TmName2">
+                          <Group Name="SvName2">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!TmName.Value</GroupExpression>
+                              <GroupExpression>=Fields!SvName.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!TmName.Value</Value>
+                              <Value>=Fields!SvName.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
@@ -9586,14 +9275,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                               <TablixHeader>
                                 <Size>12.55894cm</Size>
                                 <CellContents>
-                                  <Textbox Name="TmName2">
+                                  <Textbox Name="SvName2">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!TmName.Value</Value>
+                                            <Value>=Fields!SvName.Value</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
                                               <FontSize>8pt</FontSize>
@@ -9604,13 +9293,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>TmName1</rd:DefaultName>
+                                    <rd:DefaultName>SvName1</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
                                         <Style>Solid</Style>
                                       </Border>
-                                      <BackgroundColor>Yellow</BackgroundColor>
+                                      <BackgroundColor>Khaki</BackgroundColor>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -9624,7 +9313,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                   <TablixHeader>
                                     <Size>0.75375cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox74">
+                                      <Textbox Name="Textbox76">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
@@ -9642,13 +9331,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox74</rd:DefaultName>
+                                        <rd:DefaultName>Textbox76</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>Yellow</BackgroundColor>
+                                          <BackgroundColor>Khaki</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -9662,7 +9351,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                       <TablixHeader>
                                         <Size>1.50896cm</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox70">
+                                          <Textbox Name="Textbox226">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -9680,13 +9369,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox55</rd:DefaultName>
+                                            <rd:DefaultName>Textbox224</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>DarkGoldenrod</Color>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <BackgroundColor>Yellow</BackgroundColor>
+                                              <BackgroundColor>Khaki</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -9700,7 +9389,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                           <TablixHeader>
                                             <Size>1.8cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox86">
+                                              <Textbox Name="Textbox48">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
@@ -9718,13 +9407,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                     <Style />
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox56</rd:DefaultName>
+                                                <rd:DefaultName>Textbox31</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>DarkGoldenrod</Color>
                                                     <Style>Solid</Style>
                                                   </Border>
-                                                  <BackgroundColor>Yellow</BackgroundColor>
+                                                  <BackgroundColor>Khaki</BackgroundColor>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
@@ -9738,7 +9427,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                               <TablixHeader>
                                                 <Size>1.8cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox87">
+                                                  <Textbox Name="Textbox49">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
@@ -9756,13 +9445,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                         <Style />
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox57</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox17</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Color>DarkGoldenrod</Color>
                                                         <Style>Solid</Style>
                                                       </Border>
-                                                      <BackgroundColor>Yellow</BackgroundColor>
+                                                      <BackgroundColor>Khaki</BackgroundColor>
                                                       <PaddingLeft>2pt</PaddingLeft>
                                                       <PaddingRight>2pt</PaddingRight>
                                                       <PaddingTop>2pt</PaddingTop>
@@ -9776,7 +9465,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                   <TablixHeader>
                                                     <Size>1.8cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox88">
+                                                      <Textbox Name="Textbox91">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
@@ -9794,13 +9483,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                             <Style />
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox58</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox81</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Color>DarkGoldenrod</Color>
                                                             <Style>Solid</Style>
                                                           </Border>
-                                                          <BackgroundColor>Yellow</BackgroundColor>
+                                                          <BackgroundColor>Khaki</BackgroundColor>
                                                           <PaddingLeft>2pt</PaddingLeft>
                                                           <PaddingRight>2pt</PaddingRight>
                                                           <PaddingTop>2pt</PaddingTop>
@@ -9814,7 +9503,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                       <TablixHeader>
                                                         <Size>1.8cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox89">
+                                                          <Textbox Name="Textbox92">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
@@ -9832,13 +9521,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                 <Style />
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox59</rd:DefaultName>
+                                                            <rd:DefaultName>Textbox73</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Color>DarkGoldenrod</Color>
                                                                 <Style>Solid</Style>
                                                               </Border>
-                                                              <BackgroundColor>Yellow</BackgroundColor>
+                                                              <BackgroundColor>Khaki</BackgroundColor>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -9852,7 +9541,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                           <TablixHeader>
                                                             <Size>2.05021cm</Size>
                                                             <CellContents>
-                                                              <Textbox Name="Textbox90">
+                                                              <Textbox Name="Textbox227">
                                                                 <CanGrow>true</CanGrow>
                                                                 <KeepTogether>true</KeepTogether>
                                                                 <Paragraphs>
@@ -9870,13 +9559,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                     <Style />
                                                                   </Paragraph>
                                                                 </Paragraphs>
-                                                                <rd:DefaultName>Textbox60</rd:DefaultName>
+                                                                <rd:DefaultName>Textbox225</rd:DefaultName>
                                                                 <Style>
                                                                   <Border>
                                                                     <Color>DarkGoldenrod</Color>
                                                                     <Style>Solid</Style>
                                                                   </Border>
-                                                                  <BackgroundColor>Yellow</BackgroundColor>
+                                                                  <BackgroundColor>Khaki</BackgroundColor>
                                                                   <PaddingLeft>2pt</PaddingLeft>
                                                                   <PaddingRight>2pt</PaddingRight>
                                                                   <PaddingTop>2pt</PaddingTop>
@@ -9902,14 +9591,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                               <KeepWithGroup>After</KeepWithGroup>
                             </TablixMember>
                             <TablixMember>
-                              <Group Name="SvName2">
+                              <Group Name="BuyerName3">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!SvName.Value</GroupExpression>
+                                  <GroupExpression>=Fields!BuyerName.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!SvName.Value</Value>
+                                  <Value>=Fields!BuyerName.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixMembers>
@@ -9917,31 +9606,33 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                   <TablixHeader>
                                     <Size>12.55894cm</Size>
                                     <CellContents>
-                                      <Textbox Name="SvName2">
+                                      <Textbox Name="BuyerName3">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!SvName.Value</Value>
+                                                <Value>=Fields!BuyerName.Value</Value>
                                                 <Style>
                                                   <FontFamily>Arial</FontFamily>
                                                   <FontSize>8pt</FontSize>
-                                                  <Color>#480c04</Color>
+                                                  <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <ListLevel>1</ListLevel>
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>SvName1</rd:DefaultName>
+                                        <rd:DefaultName>BuyerName1</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>DarkGoldenrod</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>Khaki</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -9955,31 +9646,32 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                       <TablixHeader>
                                         <Size>0.75375cm</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox76">
+                                          <Textbox Name="Textbox82">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=IIf(Fields!IsPrepaidWorkOnly.Value = True, "Так","")</Value>
                                                     <Style>
                                                       <FontFamily>Arial</FontFamily>
                                                       <FontSize>8pt</FontSize>
-                                                      <Color>#480c04</Color>
+                                                      <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
-                                                <Style />
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox76</rd:DefaultName>
+                                            <rd:DefaultName>Textbox82</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>DarkGoldenrod</Color>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <BackgroundColor>Khaki</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -9993,7 +9685,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                           <TablixHeader>
                                             <Size>1.50896cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox226">
+                                              <Textbox Name="Textbox141">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
@@ -10004,20 +9696,19 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                         <Style>
                                                           <FontFamily>Arial</FontFamily>
                                                           <FontSize>8pt</FontSize>
-                                                          <Color>#480c04</Color>
+                                                          <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style />
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox224</rd:DefaultName>
+                                                <rd:DefaultName>Textbox135</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>DarkGoldenrod</Color>
                                                     <Style>Solid</Style>
                                                   </Border>
-                                                  <BackgroundColor>Khaki</BackgroundColor>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
@@ -10031,7 +9722,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                               <TablixHeader>
                                                 <Size>1.8cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox48">
+                                                  <Textbox Name="Textbox52">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
@@ -10042,20 +9733,21 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                             <Style>
                                                               <FontFamily>Arial</FontFamily>
                                                               <FontSize>8pt</FontSize>
-                                                              <Color>#480c04</Color>
+                                                              <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                             </Style>
                                                           </TextRun>
                                                         </TextRuns>
-                                                        <Style />
+                                                        <Style>
+                                                          <TextAlign>Left</TextAlign>
+                                                        </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox31</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox33</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Color>DarkGoldenrod</Color>
                                                         <Style>Solid</Style>
                                                       </Border>
-                                                      <BackgroundColor>Khaki</BackgroundColor>
                                                       <PaddingLeft>2pt</PaddingLeft>
                                                       <PaddingRight>2pt</PaddingRight>
                                                       <PaddingTop>2pt</PaddingTop>
@@ -10069,7 +9761,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                   <TablixHeader>
                                                     <Size>1.8cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox49">
+                                                      <Textbox Name="Textbox53">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
@@ -10080,20 +9772,21 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                 <Style>
                                                                   <FontFamily>Arial</FontFamily>
                                                                   <FontSize>8pt</FontSize>
-                                                                  <Color>#480c04</Color>
+                                                                  <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                                 </Style>
                                                               </TextRun>
                                                             </TextRuns>
-                                                            <Style />
+                                                            <Style>
+                                                              <TextAlign>Left</TextAlign>
+                                                            </Style>
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox17</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox21</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Color>DarkGoldenrod</Color>
                                                             <Style>Solid</Style>
                                                           </Border>
-                                                          <BackgroundColor>Khaki</BackgroundColor>
                                                           <PaddingLeft>2pt</PaddingLeft>
                                                           <PaddingRight>2pt</PaddingRight>
                                                           <PaddingTop>2pt</PaddingTop>
@@ -10107,7 +9800,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                       <TablixHeader>
                                                         <Size>1.8cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox91">
+                                                          <Textbox Name="Textbox118">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
@@ -10118,20 +9811,21 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                     <Style>
                                                                       <FontFamily>Arial</FontFamily>
                                                                       <FontSize>8pt</FontSize>
-                                                                      <Color>#480c04</Color>
+                                                                      <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                                     </Style>
                                                                   </TextRun>
                                                                 </TextRuns>
-                                                                <Style />
+                                                                <Style>
+                                                                  <TextAlign>Left</TextAlign>
+                                                                </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox81</rd:DefaultName>
+                                                            <rd:DefaultName>Textbox83</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Color>DarkGoldenrod</Color>
                                                                 <Style>Solid</Style>
                                                               </Border>
-                                                              <BackgroundColor>Khaki</BackgroundColor>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -10145,7 +9839,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                           <TablixHeader>
                                                             <Size>1.8cm</Size>
                                                             <CellContents>
-                                                              <Textbox Name="Textbox92">
+                                                              <Textbox Name="Textbox133">
                                                                 <CanGrow>true</CanGrow>
                                                                 <KeepTogether>true</KeepTogether>
                                                                 <Paragraphs>
@@ -10156,20 +9850,21 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                         <Style>
                                                                           <FontFamily>Arial</FontFamily>
                                                                           <FontSize>8pt</FontSize>
-                                                                          <Color>#480c04</Color>
+                                                                          <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                                         </Style>
                                                                       </TextRun>
                                                                     </TextRuns>
-                                                                    <Style />
+                                                                    <Style>
+                                                                      <TextAlign>Left</TextAlign>
+                                                                    </Style>
                                                                   </Paragraph>
                                                                 </Paragraphs>
-                                                                <rd:DefaultName>Textbox73</rd:DefaultName>
+                                                                <rd:DefaultName>Textbox75</rd:DefaultName>
                                                                 <Style>
                                                                   <Border>
                                                                     <Color>DarkGoldenrod</Color>
                                                                     <Style>Solid</Style>
                                                                   </Border>
-                                                                  <BackgroundColor>Khaki</BackgroundColor>
                                                                   <PaddingLeft>2pt</PaddingLeft>
                                                                   <PaddingRight>2pt</PaddingRight>
                                                                   <PaddingTop>2pt</PaddingTop>
@@ -10183,31 +9878,32 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                               <TablixHeader>
                                                                 <Size>2.05021cm</Size>
                                                                 <CellContents>
-                                                                  <Textbox Name="Textbox227">
+                                                                  <Textbox Name="LockStatus4">
                                                                     <CanGrow>true</CanGrow>
                                                                     <KeepTogether>true</KeepTogether>
                                                                     <Paragraphs>
                                                                       <Paragraph>
                                                                         <TextRuns>
                                                                           <TextRun>
-                                                                            <Value />
+                                                                            <Value>=Fields!LockStatus.Value</Value>
                                                                             <Style>
                                                                               <FontFamily>Arial</FontFamily>
                                                                               <FontSize>8pt</FontSize>
-                                                                              <Color>#480c04</Color>
+                                                                              <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
                                                                             </Style>
                                                                           </TextRun>
                                                                         </TextRuns>
-                                                                        <Style />
+                                                                        <Style>
+                                                                          <TextAlign>Left</TextAlign>
+                                                                        </Style>
                                                                       </Paragraph>
                                                                     </Paragraphs>
-                                                                    <rd:DefaultName>Textbox225</rd:DefaultName>
+                                                                    <rd:DefaultName>LockStatus</rd:DefaultName>
                                                                     <Style>
                                                                       <Border>
                                                                         <Color>DarkGoldenrod</Color>
                                                                         <Style>Solid</Style>
                                                                       </Border>
-                                                                      <BackgroundColor>Khaki</BackgroundColor>
                                                                       <PaddingLeft>2pt</PaddingLeft>
                                                                       <PaddingRight>2pt</PaddingRight>
                                                                       <PaddingTop>2pt</PaddingTop>
@@ -10233,31 +9929,68 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                   <KeepWithGroup>After</KeepWithGroup>
                                 </TablixMember>
                                 <TablixMember>
-                                  <Group Name="TaName2">
+                                  <Group Name="AgreementName3">
                                     <GroupExpressions>
-                                      <GroupExpression>=Fields!TaName.Value</GroupExpression>
+                                      <GroupExpression>=Fields!AgreementName.Value</GroupExpression>
                                     </GroupExpressions>
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
-                                      <Value>=Fields!TaName.Value</Value>
+                                      <Value>=Fields!AgreementName.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
+                                  <TablixHeader>
+                                    <Size>12.55894cm</Size>
+                                    <CellContents>
+                                      <Textbox Name="AgreementName3">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!AgreementName.Value</Value>
+                                                <Style>
+                                                  <FontStyle>Italic</FontStyle>
+                                                  <FontSize>8pt</FontSize>
+                                                  <Color>#480c04</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <ListLevel>2</ListLevel>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>AgreementName</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>DarkGoldenrod</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>=iif(Fields!LastPaymentDate.Value &lt; FormatDateTime(DateAdd("d", -7, Now()), DateFormat.ShortDate), "Tomato","Transparent")</BackgroundColor>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>12.55894cm</Size>
+                                        <Size>0.75375cm</Size>
                                         <CellContents>
-                                          <Textbox Name="TaName2">
+                                          <Textbox Name="Textbox84">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!TaName.Value</Value>
+                                                    <Value />
                                                     <Style>
-                                                      <FontFamily>Arial</FontFamily>
+                                                      <FontStyle>Italic</FontStyle>
                                                       <FontSize>8pt</FontSize>
                                                       <Color>#480c04</Color>
                                                     </Style>
@@ -10266,12 +9999,13 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
+                                            <rd:DefaultName>Textbox84</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>DarkGoldenrod</Color>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <BackgroundColor>LightYellow</BackgroundColor>
+                                              <BackgroundColor>=iif(Fields!LastPaymentDate.Value &lt; FormatDateTime(DateAdd("d", -7, Now()), DateFormat.ShortDate), "Tomato","Transparent")</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -10283,656 +10017,31 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>0.75375cm</Size>
+                                            <Size>1.50896cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox81">
+                                              <Textbox Name="DefermentDays3">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value />
-                                                        <Style>
-                                                          <FontFamily>Arial</FontFamily>
-                                                          <FontSize>8pt</FontSize>
-                                                          <Color>#480c04</Color>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>Textbox81</rd:DefaultName>
-                                                <Style>
-                                                  <Border>
-                                                    <Color>DarkGoldenrod</Color>
-                                                    <Style>Solid</Style>
-                                                  </Border>
-                                                  <BackgroundColor>LightYellow</BackgroundColor>
-                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                  <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                            </CellContents>
-                                          </TablixHeader>
-                                          <TablixMembers>
-                                            <TablixMember>
-                                              <TablixHeader>
-                                                <Size>1.50896cm</Size>
-                                                <CellContents>
-                                                  <Textbox Name="Textbox140">
-                                                    <CanGrow>true</CanGrow>
-                                                    <KeepTogether>true</KeepTogether>
-                                                    <Paragraphs>
-                                                      <Paragraph>
-                                                        <TextRuns>
-                                                          <TextRun>
-                                                            <Value />
-                                                            <Style>
-                                                              <FontFamily>Arial</FontFamily>
-                                                              <FontSize>8pt</FontSize>
-                                                              <Color>#480c04</Color>
-                                                            </Style>
-                                                          </TextRun>
-                                                        </TextRuns>
-                                                        <Style />
-                                                      </Paragraph>
-                                                    </Paragraphs>
-                                                    <rd:DefaultName>Textbox134</rd:DefaultName>
-                                                    <Style>
-                                                      <Border>
-                                                        <Color>DarkGoldenrod</Color>
-                                                        <Style>Solid</Style>
-                                                      </Border>
-                                                      <BackgroundColor>LightYellow</BackgroundColor>
-                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                      <PaddingRight>2pt</PaddingRight>
-                                                      <PaddingTop>2pt</PaddingTop>
-                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                    </Style>
-                                                  </Textbox>
-                                                </CellContents>
-                                              </TablixHeader>
-                                              <TablixMembers>
-                                                <TablixMember>
-                                                  <TablixHeader>
-                                                    <Size>1.8cm</Size>
-                                                    <CellContents>
-                                                      <Textbox Name="Textbox50">
-                                                        <CanGrow>true</CanGrow>
-                                                        <KeepTogether>true</KeepTogether>
-                                                        <Paragraphs>
-                                                          <Paragraph>
-                                                            <TextRuns>
-                                                              <TextRun>
-                                                                <Value />
-                                                                <Style>
-                                                                  <FontFamily>Arial</FontFamily>
-                                                                  <FontSize>8pt</FontSize>
-                                                                  <Color>#480c04</Color>
-                                                                </Style>
-                                                              </TextRun>
-                                                            </TextRuns>
-                                                            <Style />
-                                                          </Paragraph>
-                                                        </Paragraphs>
-                                                        <rd:DefaultName>Textbox32</rd:DefaultName>
-                                                        <Style>
-                                                          <Border>
-                                                            <Color>DarkGoldenrod</Color>
-                                                            <Style>Solid</Style>
-                                                          </Border>
-                                                          <BackgroundColor>LightYellow</BackgroundColor>
-                                                          <PaddingLeft>2pt</PaddingLeft>
-                                                          <PaddingRight>2pt</PaddingRight>
-                                                          <PaddingTop>2pt</PaddingTop>
-                                                          <PaddingBottom>2pt</PaddingBottom>
-                                                        </Style>
-                                                      </Textbox>
-                                                    </CellContents>
-                                                  </TablixHeader>
-                                                  <TablixMembers>
-                                                    <TablixMember>
-                                                      <TablixHeader>
-                                                        <Size>1.8cm</Size>
-                                                        <CellContents>
-                                                          <Textbox Name="Textbox51">
-                                                            <CanGrow>true</CanGrow>
-                                                            <KeepTogether>true</KeepTogether>
-                                                            <Paragraphs>
-                                                              <Paragraph>
-                                                                <TextRuns>
-                                                                  <TextRun>
-                                                                    <Value />
-                                                                    <Style>
-                                                                      <FontFamily>Arial</FontFamily>
-                                                                      <FontSize>8pt</FontSize>
-                                                                      <Color>#480c04</Color>
-                                                                    </Style>
-                                                                  </TextRun>
-                                                                </TextRuns>
-                                                                <Style />
-                                                              </Paragraph>
-                                                            </Paragraphs>
-                                                            <rd:DefaultName>Textbox19</rd:DefaultName>
-                                                            <Style>
-                                                              <Border>
-                                                                <Color>DarkGoldenrod</Color>
-                                                                <Style>Solid</Style>
-                                                              </Border>
-                                                              <BackgroundColor>LightYellow</BackgroundColor>
-                                                              <PaddingLeft>2pt</PaddingLeft>
-                                                              <PaddingRight>2pt</PaddingRight>
-                                                              <PaddingTop>2pt</PaddingTop>
-                                                              <PaddingBottom>2pt</PaddingBottom>
-                                                            </Style>
-                                                          </Textbox>
-                                                        </CellContents>
-                                                      </TablixHeader>
-                                                      <TablixMembers>
-                                                        <TablixMember>
-                                                          <TablixHeader>
-                                                            <Size>1.8cm</Size>
-                                                            <CellContents>
-                                                              <Textbox Name="Textbox93">
-                                                                <CanGrow>true</CanGrow>
-                                                                <KeepTogether>true</KeepTogether>
-                                                                <Paragraphs>
-                                                                  <Paragraph>
-                                                                    <TextRuns>
-                                                                      <TextRun>
-                                                                        <Value />
-                                                                        <Style>
-                                                                          <FontFamily>Arial</FontFamily>
-                                                                          <FontSize>8pt</FontSize>
-                                                                          <Color>#480c04</Color>
-                                                                        </Style>
-                                                                      </TextRun>
-                                                                    </TextRuns>
-                                                                    <Style />
-                                                                  </Paragraph>
-                                                                </Paragraphs>
-                                                                <rd:DefaultName>Textbox82</rd:DefaultName>
-                                                                <Style>
-                                                                  <Border>
-                                                                    <Color>DarkGoldenrod</Color>
-                                                                    <Style>Solid</Style>
-                                                                  </Border>
-                                                                  <BackgroundColor>LightYellow</BackgroundColor>
-                                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                                  <PaddingRight>2pt</PaddingRight>
-                                                                  <PaddingTop>2pt</PaddingTop>
-                                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                                </Style>
-                                                              </Textbox>
-                                                            </CellContents>
-                                                          </TablixHeader>
-                                                          <TablixMembers>
-                                                            <TablixMember>
-                                                              <TablixHeader>
-                                                                <Size>1.8cm</Size>
-                                                                <CellContents>
-                                                                  <Textbox Name="Textbox94">
-                                                                    <CanGrow>true</CanGrow>
-                                                                    <KeepTogether>true</KeepTogether>
-                                                                    <Paragraphs>
-                                                                      <Paragraph>
-                                                                        <TextRuns>
-                                                                          <TextRun>
-                                                                            <Value />
-                                                                            <Style>
-                                                                              <FontFamily>Arial</FontFamily>
-                                                                              <FontSize>8pt</FontSize>
-                                                                              <Color>#480c04</Color>
-                                                                            </Style>
-                                                                          </TextRun>
-                                                                        </TextRuns>
-                                                                        <Style />
-                                                                      </Paragraph>
-                                                                    </Paragraphs>
-                                                                    <rd:DefaultName>Textbox74</rd:DefaultName>
-                                                                    <Style>
-                                                                      <Border>
-                                                                        <Color>DarkGoldenrod</Color>
-                                                                        <Style>Solid</Style>
-                                                                      </Border>
-                                                                      <BackgroundColor>LightYellow</BackgroundColor>
-                                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                                      <PaddingRight>2pt</PaddingRight>
-                                                                      <PaddingTop>2pt</PaddingTop>
-                                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                                    </Style>
-                                                                  </Textbox>
-                                                                </CellContents>
-                                                              </TablixHeader>
-                                                              <TablixMembers>
-                                                                <TablixMember>
-                                                                  <TablixHeader>
-                                                                    <Size>2.05021cm</Size>
-                                                                    <CellContents>
-                                                                      <Textbox Name="Textbox152">
-                                                                        <CanGrow>true</CanGrow>
-                                                                        <KeepTogether>true</KeepTogether>
-                                                                        <Paragraphs>
-                                                                          <Paragraph>
-                                                                            <TextRuns>
-                                                                              <TextRun>
-                                                                                <Value />
-                                                                                <Style>
-                                                                                  <FontFamily>Arial</FontFamily>
-                                                                                  <FontSize>8pt</FontSize>
-                                                                                  <Color>#480c04</Color>
-                                                                                </Style>
-                                                                              </TextRun>
-                                                                            </TextRuns>
-                                                                            <Style />
-                                                                          </Paragraph>
-                                                                        </Paragraphs>
-                                                                        <rd:DefaultName>Textbox150</rd:DefaultName>
-                                                                        <Style>
-                                                                          <Border>
-                                                                            <Color>DarkGoldenrod</Color>
-                                                                            <Style>Solid</Style>
-                                                                          </Border>
-                                                                          <BackgroundColor>LightYellow</BackgroundColor>
-                                                                          <PaddingLeft>2pt</PaddingLeft>
-                                                                          <PaddingRight>2pt</PaddingRight>
-                                                                          <PaddingTop>2pt</PaddingTop>
-                                                                          <PaddingBottom>2pt</PaddingBottom>
-                                                                        </Style>
-                                                                      </Textbox>
-                                                                    </CellContents>
-                                                                  </TablixHeader>
-                                                                </TablixMember>
-                                                              </TablixMembers>
-                                                            </TablixMember>
-                                                          </TablixMembers>
-                                                        </TablixMember>
-                                                      </TablixMembers>
-                                                    </TablixMember>
-                                                  </TablixMembers>
-                                                </TablixMember>
-                                              </TablixMembers>
-                                            </TablixMember>
-                                          </TablixMembers>
-                                        </TablixMember>
-                                      </TablixMembers>
-                                    </TablixMember>
-                                    <TablixMember>
-                                      <Group Name="BuyerName3">
-                                        <GroupExpressions>
-                                          <GroupExpression>=Fields!BuyerName.Value</GroupExpression>
-                                        </GroupExpressions>
-                                      </Group>
-                                      <SortExpressions>
-                                        <SortExpression>
-                                          <Value>=Fields!BuyerName.Value</Value>
-                                        </SortExpression>
-                                      </SortExpressions>
-                                      <TablixMembers>
-                                        <TablixMember>
-                                          <TablixHeader>
-                                            <Size>12.55894cm</Size>
-                                            <CellContents>
-                                              <Textbox Name="BuyerName3">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>=Fields!BuyerName.Value</Value>
-                                                        <Style>
-                                                          <FontFamily>Arial</FontFamily>
-                                                          <FontSize>8pt</FontSize>
-                                                          <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <ListLevel>1</ListLevel>
-                                                    <Style>
-                                                      <TextAlign>Left</TextAlign>
-                                                    </Style>
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>BuyerName1</rd:DefaultName>
-                                                <Style>
-                                                  <Border>
-                                                    <Color>DarkGoldenrod</Color>
-                                                    <Style>Solid</Style>
-                                                  </Border>
-                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                  <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                            </CellContents>
-                                          </TablixHeader>
-                                          <TablixMembers>
-                                            <TablixMember>
-                                              <TablixHeader>
-                                                <Size>0.75375cm</Size>
-                                                <CellContents>
-                                                  <Textbox Name="Textbox82">
-                                                    <CanGrow>true</CanGrow>
-                                                    <KeepTogether>true</KeepTogether>
-                                                    <Paragraphs>
-                                                      <Paragraph>
-                                                        <TextRuns>
-                                                          <TextRun>
-                                                            <Value>=IIf(Fields!IsPrepaidWorkOnly.Value = True, "Так","")</Value>
-                                                            <Style>
-                                                              <FontFamily>Arial</FontFamily>
-                                                              <FontSize>8pt</FontSize>
-                                                              <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                            </Style>
-                                                          </TextRun>
-                                                        </TextRuns>
-                                                        <Style>
-                                                          <TextAlign>Left</TextAlign>
-                                                        </Style>
-                                                      </Paragraph>
-                                                    </Paragraphs>
-                                                    <rd:DefaultName>Textbox82</rd:DefaultName>
-                                                    <Style>
-                                                      <Border>
-                                                        <Color>DarkGoldenrod</Color>
-                                                        <Style>Solid</Style>
-                                                      </Border>
-                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                      <PaddingRight>2pt</PaddingRight>
-                                                      <PaddingTop>2pt</PaddingTop>
-                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                    </Style>
-                                                  </Textbox>
-                                                </CellContents>
-                                              </TablixHeader>
-                                              <TablixMembers>
-                                                <TablixMember>
-                                                  <TablixHeader>
-                                                    <Size>1.50896cm</Size>
-                                                    <CellContents>
-                                                      <Textbox Name="Textbox141">
-                                                        <CanGrow>true</CanGrow>
-                                                        <KeepTogether>true</KeepTogether>
-                                                        <Paragraphs>
-                                                          <Paragraph>
-                                                            <TextRuns>
-                                                              <TextRun>
-                                                                <Value />
-                                                                <Style>
-                                                                  <FontFamily>Arial</FontFamily>
-                                                                  <FontSize>8pt</FontSize>
-                                                                  <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                </Style>
-                                                              </TextRun>
-                                                            </TextRuns>
-                                                            <Style />
-                                                          </Paragraph>
-                                                        </Paragraphs>
-                                                        <rd:DefaultName>Textbox135</rd:DefaultName>
-                                                        <Style>
-                                                          <Border>
-                                                            <Color>DarkGoldenrod</Color>
-                                                            <Style>Solid</Style>
-                                                          </Border>
-                                                          <PaddingLeft>2pt</PaddingLeft>
-                                                          <PaddingRight>2pt</PaddingRight>
-                                                          <PaddingTop>2pt</PaddingTop>
-                                                          <PaddingBottom>2pt</PaddingBottom>
-                                                        </Style>
-                                                      </Textbox>
-                                                    </CellContents>
-                                                  </TablixHeader>
-                                                  <TablixMembers>
-                                                    <TablixMember>
-                                                      <TablixHeader>
-                                                        <Size>1.8cm</Size>
-                                                        <CellContents>
-                                                          <Textbox Name="Textbox52">
-                                                            <CanGrow>true</CanGrow>
-                                                            <KeepTogether>true</KeepTogether>
-                                                            <Paragraphs>
-                                                              <Paragraph>
-                                                                <TextRuns>
-                                                                  <TextRun>
-                                                                    <Value />
-                                                                    <Style>
-                                                                      <FontFamily>Arial</FontFamily>
-                                                                      <FontSize>8pt</FontSize>
-                                                                      <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                    </Style>
-                                                                  </TextRun>
-                                                                </TextRuns>
-                                                                <Style>
-                                                                  <TextAlign>Left</TextAlign>
-                                                                </Style>
-                                                              </Paragraph>
-                                                            </Paragraphs>
-                                                            <rd:DefaultName>Textbox33</rd:DefaultName>
-                                                            <Style>
-                                                              <Border>
-                                                                <Color>DarkGoldenrod</Color>
-                                                                <Style>Solid</Style>
-                                                              </Border>
-                                                              <PaddingLeft>2pt</PaddingLeft>
-                                                              <PaddingRight>2pt</PaddingRight>
-                                                              <PaddingTop>2pt</PaddingTop>
-                                                              <PaddingBottom>2pt</PaddingBottom>
-                                                            </Style>
-                                                          </Textbox>
-                                                        </CellContents>
-                                                      </TablixHeader>
-                                                      <TablixMembers>
-                                                        <TablixMember>
-                                                          <TablixHeader>
-                                                            <Size>1.8cm</Size>
-                                                            <CellContents>
-                                                              <Textbox Name="Textbox53">
-                                                                <CanGrow>true</CanGrow>
-                                                                <KeepTogether>true</KeepTogether>
-                                                                <Paragraphs>
-                                                                  <Paragraph>
-                                                                    <TextRuns>
-                                                                      <TextRun>
-                                                                        <Value />
-                                                                        <Style>
-                                                                          <FontFamily>Arial</FontFamily>
-                                                                          <FontSize>8pt</FontSize>
-                                                                          <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                        </Style>
-                                                                      </TextRun>
-                                                                    </TextRuns>
-                                                                    <Style>
-                                                                      <TextAlign>Left</TextAlign>
-                                                                    </Style>
-                                                                  </Paragraph>
-                                                                </Paragraphs>
-                                                                <rd:DefaultName>Textbox21</rd:DefaultName>
-                                                                <Style>
-                                                                  <Border>
-                                                                    <Color>DarkGoldenrod</Color>
-                                                                    <Style>Solid</Style>
-                                                                  </Border>
-                                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                                  <PaddingRight>2pt</PaddingRight>
-                                                                  <PaddingTop>2pt</PaddingTop>
-                                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                                </Style>
-                                                              </Textbox>
-                                                            </CellContents>
-                                                          </TablixHeader>
-                                                          <TablixMembers>
-                                                            <TablixMember>
-                                                              <TablixHeader>
-                                                                <Size>1.8cm</Size>
-                                                                <CellContents>
-                                                                  <Textbox Name="Textbox118">
-                                                                    <CanGrow>true</CanGrow>
-                                                                    <KeepTogether>true</KeepTogether>
-                                                                    <Paragraphs>
-                                                                      <Paragraph>
-                                                                        <TextRuns>
-                                                                          <TextRun>
-                                                                            <Value />
-                                                                            <Style>
-                                                                              <FontFamily>Arial</FontFamily>
-                                                                              <FontSize>8pt</FontSize>
-                                                                              <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                            </Style>
-                                                                          </TextRun>
-                                                                        </TextRuns>
-                                                                        <Style>
-                                                                          <TextAlign>Left</TextAlign>
-                                                                        </Style>
-                                                                      </Paragraph>
-                                                                    </Paragraphs>
-                                                                    <rd:DefaultName>Textbox83</rd:DefaultName>
-                                                                    <Style>
-                                                                      <Border>
-                                                                        <Color>DarkGoldenrod</Color>
-                                                                        <Style>Solid</Style>
-                                                                      </Border>
-                                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                                      <PaddingRight>2pt</PaddingRight>
-                                                                      <PaddingTop>2pt</PaddingTop>
-                                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                                    </Style>
-                                                                  </Textbox>
-                                                                </CellContents>
-                                                              </TablixHeader>
-                                                              <TablixMembers>
-                                                                <TablixMember>
-                                                                  <TablixHeader>
-                                                                    <Size>1.8cm</Size>
-                                                                    <CellContents>
-                                                                      <Textbox Name="Textbox133">
-                                                                        <CanGrow>true</CanGrow>
-                                                                        <KeepTogether>true</KeepTogether>
-                                                                        <Paragraphs>
-                                                                          <Paragraph>
-                                                                            <TextRuns>
-                                                                              <TextRun>
-                                                                                <Value />
-                                                                                <Style>
-                                                                                  <FontFamily>Arial</FontFamily>
-                                                                                  <FontSize>8pt</FontSize>
-                                                                                  <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                                </Style>
-                                                                              </TextRun>
-                                                                            </TextRuns>
-                                                                            <Style>
-                                                                              <TextAlign>Left</TextAlign>
-                                                                            </Style>
-                                                                          </Paragraph>
-                                                                        </Paragraphs>
-                                                                        <rd:DefaultName>Textbox75</rd:DefaultName>
-                                                                        <Style>
-                                                                          <Border>
-                                                                            <Color>DarkGoldenrod</Color>
-                                                                            <Style>Solid</Style>
-                                                                          </Border>
-                                                                          <PaddingLeft>2pt</PaddingLeft>
-                                                                          <PaddingRight>2pt</PaddingRight>
-                                                                          <PaddingTop>2pt</PaddingTop>
-                                                                          <PaddingBottom>2pt</PaddingBottom>
-                                                                        </Style>
-                                                                      </Textbox>
-                                                                    </CellContents>
-                                                                  </TablixHeader>
-                                                                  <TablixMembers>
-                                                                    <TablixMember>
-                                                                      <TablixHeader>
-                                                                        <Size>2.05021cm</Size>
-                                                                        <CellContents>
-                                                                          <Textbox Name="LockStatus4">
-                                                                            <CanGrow>true</CanGrow>
-                                                                            <KeepTogether>true</KeepTogether>
-                                                                            <Paragraphs>
-                                                                              <Paragraph>
-                                                                                <TextRuns>
-                                                                                  <TextRun>
-                                                                                    <Value>=Fields!LockStatus.Value</Value>
-                                                                                    <Style>
-                                                                                      <FontFamily>Arial</FontFamily>
-                                                                                      <FontSize>8pt</FontSize>
-                                                                                      <Color>=IIF(Fields!LockStatus.Value = "Заблокирован", "Red", "#480c04")</Color>
-                                                                                    </Style>
-                                                                                  </TextRun>
-                                                                                </TextRuns>
-                                                                                <Style>
-                                                                                  <TextAlign>Left</TextAlign>
-                                                                                </Style>
-                                                                              </Paragraph>
-                                                                            </Paragraphs>
-                                                                            <rd:DefaultName>LockStatus</rd:DefaultName>
-                                                                            <Style>
-                                                                              <Border>
-                                                                                <Color>DarkGoldenrod</Color>
-                                                                                <Style>Solid</Style>
-                                                                              </Border>
-                                                                              <PaddingLeft>2pt</PaddingLeft>
-                                                                              <PaddingRight>2pt</PaddingRight>
-                                                                              <PaddingTop>2pt</PaddingTop>
-                                                                              <PaddingBottom>2pt</PaddingBottom>
-                                                                            </Style>
-                                                                          </Textbox>
-                                                                        </CellContents>
-                                                                      </TablixHeader>
-                                                                    </TablixMember>
-                                                                  </TablixMembers>
-                                                                </TablixMember>
-                                                              </TablixMembers>
-                                                            </TablixMember>
-                                                          </TablixMembers>
-                                                        </TablixMember>
-                                                      </TablixMembers>
-                                                    </TablixMember>
-                                                  </TablixMembers>
-                                                </TablixMember>
-                                              </TablixMembers>
-                                            </TablixMember>
-                                          </TablixMembers>
-                                          <KeepWithGroup>After</KeepWithGroup>
-                                        </TablixMember>
-                                        <TablixMember>
-                                          <Group Name="AgreementName3">
-                                            <GroupExpressions>
-                                              <GroupExpression>=Fields!AgreementName.Value</GroupExpression>
-                                            </GroupExpressions>
-                                          </Group>
-                                          <SortExpressions>
-                                            <SortExpression>
-                                              <Value>=Fields!AgreementName.Value</Value>
-                                            </SortExpression>
-                                          </SortExpressions>
-                                          <TablixHeader>
-                                            <Size>12.55894cm</Size>
-                                            <CellContents>
-                                              <Textbox Name="AgreementName3">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>=Fields!AgreementName.Value</Value>
+                                                        <Value>=Avg(Fields!DefermentDays.Value)</Value>
                                                         <Style>
                                                           <FontStyle>Italic</FontStyle>
+                                                          <FontFamily>Arial</FontFamily>
                                                           <FontSize>8pt</FontSize>
+                                                          <Format>0;(0)</Format>
                                                           <Color>#480c04</Color>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
-                                                    <ListLevel>2</ListLevel>
-                                                    <Style />
+                                                    <Style>
+                                                      <TextAlign>Center</TextAlign>
+                                                    </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>AgreementName</rd:DefaultName>
+                                                <rd:DefaultName>DefermentDays1</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>DarkGoldenrod</Color>
@@ -10950,27 +10059,31 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>0.75375cm</Size>
+                                                <Size>1.8cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox84">
+                                                  <Textbox Name="Textbox54">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value />
+                                                            <Value>=Fields!LastRealDate.Value</Value>
                                                             <Style>
                                                               <FontStyle>Italic</FontStyle>
+                                                              <FontFamily>Arial</FontFamily>
                                                               <FontSize>8pt</FontSize>
+                                                              <Format>d</Format>
                                                               <Color>#480c04</Color>
                                                             </Style>
                                                           </TextRun>
                                                         </TextRuns>
-                                                        <Style />
+                                                        <Style>
+                                                          <TextAlign>Center</TextAlign>
+                                                        </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox84</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox35</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Color>DarkGoldenrod</Color>
@@ -10988,31 +10101,31 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                               <TablixMembers>
                                                 <TablixMember>
                                                   <TablixHeader>
-                                                    <Size>1.50896cm</Size>
+                                                    <Size>1.8cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="DefermentDays3">
+                                                      <Textbox Name="Textbox142">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
                                                           <Paragraph>
                                                             <TextRuns>
                                                               <TextRun>
-                                                                <Value>=Avg(Fields!DefermentDays.Value)</Value>
+                                                                <Value>=Avg(Fields!LastRealSum.Value)</Value>
                                                                 <Style>
                                                                   <FontStyle>Italic</FontStyle>
                                                                   <FontFamily>Arial</FontFamily>
                                                                   <FontSize>8pt</FontSize>
-                                                                  <Format>0;(0)</Format>
+                                                                  <Format>#,0</Format>
                                                                   <Color>#480c04</Color>
                                                                 </Style>
                                                               </TextRun>
                                                             </TextRuns>
                                                             <Style>
-                                                              <TextAlign>Center</TextAlign>
+                                                              <TextAlign>Right</TextAlign>
                                                             </Style>
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>DefermentDays1</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox26</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Color>DarkGoldenrod</Color>
@@ -11032,14 +10145,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                       <TablixHeader>
                                                         <Size>1.8cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox54">
+                                                          <Textbox Name="LastPaymentDate2">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!LastRealDate.Value</Value>
+                                                                    <Value>=Fields!LastPaymentDate.Value</Value>
                                                                     <Style>
                                                                       <FontStyle>Italic</FontStyle>
                                                                       <FontFamily>Arial</FontFamily>
@@ -11054,7 +10167,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                 </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox35</rd:DefaultName>
+                                                            <rd:DefaultName>LastPaymentDate1</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Color>DarkGoldenrod</Color>
@@ -11074,14 +10187,14 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                           <TablixHeader>
                                                             <Size>1.8cm</Size>
                                                             <CellContents>
-                                                              <Textbox Name="Textbox142">
+                                                              <Textbox Name="SumLastPayment2">
                                                                 <CanGrow>true</CanGrow>
                                                                 <KeepTogether>true</KeepTogether>
                                                                 <Paragraphs>
                                                                   <Paragraph>
                                                                     <TextRuns>
                                                                       <TextRun>
-                                                                        <Value>=Avg(Fields!LastRealSum.Value)</Value>
+                                                                        <Value>=Avg(Fields!SumLastPayment.Value)</Value>
                                                                         <Style>
                                                                           <FontStyle>Italic</FontStyle>
                                                                           <FontFamily>Arial</FontFamily>
@@ -11096,7 +10209,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                     </Style>
                                                                   </Paragraph>
                                                                 </Paragraphs>
-                                                                <rd:DefaultName>Textbox26</rd:DefaultName>
+                                                                <rd:DefaultName>SumLastPayment1</rd:DefaultName>
                                                                 <Style>
                                                                   <Border>
                                                                     <Color>DarkGoldenrod</Color>
@@ -11114,31 +10227,30 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                           <TablixMembers>
                                                             <TablixMember>
                                                               <TablixHeader>
-                                                                <Size>1.8cm</Size>
+                                                                <Size>2.05021cm</Size>
                                                                 <CellContents>
-                                                                  <Textbox Name="LastPaymentDate2">
+                                                                  <Textbox Name="LockStatus5">
                                                                     <CanGrow>true</CanGrow>
                                                                     <KeepTogether>true</KeepTogether>
                                                                     <Paragraphs>
                                                                       <Paragraph>
                                                                         <TextRuns>
                                                                           <TextRun>
-                                                                            <Value>=Fields!LastPaymentDate.Value</Value>
+                                                                            <Value>=Fields!LockStatus.Value</Value>
                                                                             <Style>
                                                                               <FontStyle>Italic</FontStyle>
                                                                               <FontFamily>Arial</FontFamily>
                                                                               <FontSize>8pt</FontSize>
-                                                                              <Format>d</Format>
                                                                               <Color>#480c04</Color>
                                                                             </Style>
                                                                           </TextRun>
                                                                         </TextRuns>
                                                                         <Style>
-                                                                          <TextAlign>Center</TextAlign>
+                                                                          <TextAlign>Left</TextAlign>
                                                                         </Style>
                                                                       </Paragraph>
                                                                     </Paragraphs>
-                                                                    <rd:DefaultName>LastPaymentDate1</rd:DefaultName>
+                                                                    <rd:DefaultName>LockStatus1</rd:DefaultName>
                                                                     <Style>
                                                                       <Border>
                                                                         <Color>DarkGoldenrod</Color>
@@ -11153,93 +10265,6 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                                                   </Textbox>
                                                                 </CellContents>
                                                               </TablixHeader>
-                                                              <TablixMembers>
-                                                                <TablixMember>
-                                                                  <TablixHeader>
-                                                                    <Size>1.8cm</Size>
-                                                                    <CellContents>
-                                                                      <Textbox Name="SumLastPayment2">
-                                                                        <CanGrow>true</CanGrow>
-                                                                        <KeepTogether>true</KeepTogether>
-                                                                        <Paragraphs>
-                                                                          <Paragraph>
-                                                                            <TextRuns>
-                                                                              <TextRun>
-                                                                                <Value>=Avg(Fields!SumLastPayment.Value)</Value>
-                                                                                <Style>
-                                                                                  <FontStyle>Italic</FontStyle>
-                                                                                  <FontFamily>Arial</FontFamily>
-                                                                                  <FontSize>8pt</FontSize>
-                                                                                  <Format>#,0</Format>
-                                                                                  <Color>#480c04</Color>
-                                                                                </Style>
-                                                                              </TextRun>
-                                                                            </TextRuns>
-                                                                            <Style>
-                                                                              <TextAlign>Right</TextAlign>
-                                                                            </Style>
-                                                                          </Paragraph>
-                                                                        </Paragraphs>
-                                                                        <rd:DefaultName>SumLastPayment1</rd:DefaultName>
-                                                                        <Style>
-                                                                          <Border>
-                                                                            <Color>DarkGoldenrod</Color>
-                                                                            <Style>Solid</Style>
-                                                                          </Border>
-                                                                          <BackgroundColor>=iif(Fields!LastPaymentDate.Value &lt; FormatDateTime(DateAdd("d", -7, Now()), DateFormat.ShortDate), "Tomato","Transparent")</BackgroundColor>
-                                                                          <PaddingLeft>2pt</PaddingLeft>
-                                                                          <PaddingRight>2pt</PaddingRight>
-                                                                          <PaddingTop>2pt</PaddingTop>
-                                                                          <PaddingBottom>2pt</PaddingBottom>
-                                                                        </Style>
-                                                                      </Textbox>
-                                                                    </CellContents>
-                                                                  </TablixHeader>
-                                                                  <TablixMembers>
-                                                                    <TablixMember>
-                                                                      <TablixHeader>
-                                                                        <Size>2.05021cm</Size>
-                                                                        <CellContents>
-                                                                          <Textbox Name="LockStatus5">
-                                                                            <CanGrow>true</CanGrow>
-                                                                            <KeepTogether>true</KeepTogether>
-                                                                            <Paragraphs>
-                                                                              <Paragraph>
-                                                                                <TextRuns>
-                                                                                  <TextRun>
-                                                                                    <Value>=Fields!LockStatus.Value</Value>
-                                                                                    <Style>
-                                                                                      <FontStyle>Italic</FontStyle>
-                                                                                      <FontFamily>Arial</FontFamily>
-                                                                                      <FontSize>8pt</FontSize>
-                                                                                      <Color>#480c04</Color>
-                                                                                    </Style>
-                                                                                  </TextRun>
-                                                                                </TextRuns>
-                                                                                <Style>
-                                                                                  <TextAlign>Left</TextAlign>
-                                                                                </Style>
-                                                                              </Paragraph>
-                                                                            </Paragraphs>
-                                                                            <rd:DefaultName>LockStatus1</rd:DefaultName>
-                                                                            <Style>
-                                                                              <Border>
-                                                                                <Color>DarkGoldenrod</Color>
-                                                                                <Style>Solid</Style>
-                                                                              </Border>
-                                                                              <BackgroundColor>=iif(Fields!LastPaymentDate.Value &lt; FormatDateTime(DateAdd("d", -7, Now()), DateFormat.ShortDate), "Tomato","Transparent")</BackgroundColor>
-                                                                              <PaddingLeft>2pt</PaddingLeft>
-                                                                              <PaddingRight>2pt</PaddingRight>
-                                                                              <PaddingTop>2pt</PaddingTop>
-                                                                              <PaddingBottom>2pt</PaddingBottom>
-                                                                            </Style>
-                                                                          </Textbox>
-                                                                        </CellContents>
-                                                                      </TablixHeader>
-                                                                    </TablixMember>
-                                                                  </TablixMembers>
-                                                                </TablixMember>
-                                                              </TablixMembers>
                                                             </TablixMember>
                                                           </TablixMembers>
                                                         </TablixMember>
@@ -11250,35 +10275,31 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                                               </TablixMembers>
                                             </TablixMember>
                                           </TablixMembers>
-                                          <Visibility>
-                                            <Hidden>true</Hidden>
-                                            <ToggleItem>BuyerName3</ToggleItem>
-                                          </Visibility>
                                         </TablixMember>
                                       </TablixMembers>
-                                      <Visibility>
-                                        <Hidden>true</Hidden>
-                                        <ToggleItem>TaName2</ToggleItem>
-                                      </Visibility>
                                     </TablixMember>
                                   </TablixMembers>
                                   <Visibility>
                                     <Hidden>true</Hidden>
-                                    <ToggleItem>SvName2</ToggleItem>
+                                    <ToggleItem>BuyerName3</ToggleItem>
                                   </Visibility>
                                 </TablixMember>
                               </TablixMembers>
                               <Visibility>
                                 <Hidden>true</Hidden>
-                                <ToggleItem>TmName2</ToggleItem>
+                                <ToggleItem>SvName2</ToggleItem>
                               </Visibility>
                             </TablixMember>
                           </TablixMembers>
                           <Visibility>
-                            <ToggleItem>RmName2</ToggleItem>
+                            <Hidden>true</Hidden>
+                            <ToggleItem>TmName2</ToggleItem>
                           </Visibility>
                         </TablixMember>
                       </TablixMembers>
+                      <Visibility>
+                        <ToggleItem>NOName2</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -11623,7 +10644,7 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
               </Filter>
             </Filters>
             <Top>9.385cm</Top>
-            <Height>6cm</Height>
+            <Height>4.8cm</Height>
             <Width>31.17186cm</Width>
             <ZIndex>2</ZIndex>
             <Style>

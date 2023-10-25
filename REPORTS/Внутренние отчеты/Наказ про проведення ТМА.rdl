@@ -90,6 +90,10 @@
           <DataField>SK_Product_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="IsNeedToVerify">
+          <DataField>IsNeedToVerify</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="ProductName">
           <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -105,6 +109,10 @@
         <Field Name="PromoIsPlan">
           <DataField>PromoIsPlan</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="IsNewProductForBuyer">
+          <DataField>IsNewProductForBuyer</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -791,7 +799,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -829,7 +836,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -855,19 +861,22 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(Fields!PromoValid.Value = 0,
-	"LightGrey",
-	iif(Fields!PromoIsPlan.Value = 1,
-	"Gold",
-	"Transparent")
-	)</BackgroundColor>
+                            <BackgroundColor>=iif(Fields!IsNeedToVerify.Value = 1, "Red",
+	iif(Fields!PromoValid.Value = 0,
+		"LightGrey",
+		iif(Fields!PromoIsPlan.Value = 1,
+			"Gold",
+			iif(Fields!IsNewProductForBuyer.Value = 1,
+				"Lime",
+				"Transparent")
+			)
+		))</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -906,7 +915,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -945,7 +953,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -984,7 +991,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1024,7 +1030,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1064,7 +1069,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

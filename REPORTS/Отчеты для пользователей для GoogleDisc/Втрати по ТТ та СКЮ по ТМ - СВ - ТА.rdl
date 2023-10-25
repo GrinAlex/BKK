@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
-  <Description>Отчет по выполнению плана продаж за месяц</Description>
+  <Description>Набрані замовлення</Description>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <Author>A.Grinenko</Author>
   <AutoRefresh>0</AutoRefresh>
@@ -12,43 +12,66 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="FofecastDetalsByProducts">
+    <DataSet Name="LossesByTtAndSkuForUsers">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@DateFrom">
-            <Value>=Parameters!DateFrom.Value</Value>
+            <Value>=Parameters!OrderDateFrom.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@DateTo">
-            <Value>=Parameters!DateTo.Value</Value>
+            <Value>=Parameters!OrderDateTo.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@KAM_ID">
-            <Value>=Parameters!KAM_ID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Chain_ID">
-            <Value>=Parameters!Chain_ID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Groupping_ID">
-            <Value>=Parameters!Groupping_ID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@SK_Product_ID">
-            <Value>=Parameters!SK_Product_ID.Value</Value>
+          <QueryParameter Name="@paramLoginFull">
+            <Value>=Parameters!paramLoginFull.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.FofecastDetalsByProducts</CommandText>
+        <CommandText>rpt.LossesByTtAndSkuForUsers</CommandText>
       </Query>
       <Fields>
-        <Field Name="SK_Date_ID">
-          <DataField>SK_Date_ID</DataField>
+        <Field Name="SK_Outlet_ID">
+          <DataField>SK_Outlet_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="DeliveryAddress">
+          <DataField>DeliveryAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DayOfWeekShortRu">
-          <DataField>DayOfWeekShortRu</DataField>
+        <Field Name="BuyerName">
+          <DataField>BuyerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ChainName">
+          <DataField>ChainName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="KAMName">
+          <DataField>KAMName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TMName">
+          <DataField>TMName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ManagerName">
+          <DataField>ManagerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TAName">
+          <DataField>TAName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocOrderNumber">
+          <DataField>DocOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocOrderDateTime">
+          <DataField>DocOrderDateTime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesDate">
+          <DataField>SalesDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SK_Product_ID">
@@ -67,189 +90,17 @@
           <DataField>GrouppingName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Chain_ID">
-          <DataField>Chain_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ChainName">
-          <DataField>ChainName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StatusCode">
-          <DataField>StatusCode</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IsLastActualTrend">
-          <DataField>IsLastActualTrend</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CorrTrend">
-          <DataField>CorrTrend</DataField>
+        <Field Name="OrderWeight">
+          <DataField>OrderWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="BasicDemand">
-          <DataField>BasicDemand</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="PromoWeight">
-          <DataField>PromoWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="CorrWeigt">
-          <DataField>CorrWeigt</DataField>
+        <Field Name="ShipWeight">
+          <DataField>ShipWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="LossesWeight">
           <DataField>LossesWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ForecastWeight">
-          <DataField>ForecastWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ForecastAmount">
-          <DataField>ForecastAmount</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="KAM">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <CommandText>SELECT 
-	t.KAM_ID
-	,t.KAMName
-FROM
-(SELECT 
-	0 AS Order_ID
-	,-888 AS KAM_ID
-	,N'Все КАМы' AS KAMName
-
-UNION ALL
-
-SELECT
-	1 AS Order_ID
-	,KAM_ID
-	,KAMName
-FROM            dim.KAMs
-WHERE        (Valid = 1)) AS t
-ORDER BY
-	t.Order_ID
-	,t.KAMName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="KAM_ID">
-          <DataField>KAM_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="KAMName">
-          <DataField>KAMName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Chain">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <CommandText>SELECT 
-	t.Chain_ID
-	,t.ChainName
-FROM
-(SELECT 
-	0 AS Sort_ID
-	,-888 AS Chain_ID
-	,N'Все сети' AS ChainName
-
-UNION ALL
-
-SELECT        
-	1 AS Sort_ID
-	,Chain_ID
-	,ChainName
-FROM            dim.Chains
-WHERE        (Valid = 1)) AS t
-ORDER BY
-	t.Sort_ID
-	,t.ChainName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Chain_ID">
-          <DataField>Chain_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ChainName">
-          <DataField>ChainName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Groupping">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <CommandText>SELECT 
-	t.Groupping_ID
-	,t.GrouppingName
-FROM
-(SELECT 
-	0 AS Sort_ID
-	,-888 AS Groupping_ID
-	,N'Все группировки' AS GrouppingName
-
-UNION ALL
-
-SELECT  
-	1 AS Sort_ID      
-	,Groupping_ID
-	,GrouppingName
-FROM            dim.Groupping
-WHERE        (Groupping_ID IN (1, 4, 5, 6, 7))) AS t
-ORDER BY
-	t.Sort_ID
-	,t.GrouppingName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Groupping_ID">
-          <DataField>Groupping_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="GrouppingName">
-          <DataField>GrouppingName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Product">
-      <Query>
-        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <CommandText>SELECT 
-	t.SK_Product_ID
-	,t.ProductName
-FROM
-(SELECT 
-	0 AS Sort_ID
-	,-888 AS SK_Product_ID
-	,N'Вся продукция' AS ProductName
-
-UNION ALL
-
-SELECT  
-	1 Sort_ID
-	,SK_Product_ID
-	,ProductName
-FROM            dim.Products
-WHERE        (Groupping_ID IN (1, 5, 6)) AND (Valid = 1)) AS t
-ORDER BY
-	t.Sort_ID
-	,t.ProductName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="SK_Product_ID">
-          <DataField>SK_Product_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ProductName">
-          <DataField>ProductName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -258,83 +109,17 @@ ORDER BY
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix1">
-            <TablixCorner>
-              <TablixCornerRows>
-                <TablixCornerRow>
-                  <TablixCornerCell>
-                    <CellContents>
-                      <Textbox Name="Textbox35">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>Группировка / Группа продукции / Номенклатура / Сеть</Value>
-                                <Style>
-                                  <FontFamily>Arial</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Color>#480c04</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Center</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox35</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>DarkGoldenrod</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <BackgroundColor>Orange</BackgroundColor>
-                          <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                      <RowSpan>4</RowSpan>
-                    </CellContents>
-                  </TablixCornerCell>
-                </TablixCornerRow>
-                <TablixCornerRow>
-                  <TablixCornerCell />
-                </TablixCornerRow>
-                <TablixCornerRow>
-                  <TablixCornerCell />
-                </TablixCornerRow>
-                <TablixCornerRow>
-                  <TablixCornerCell />
-                </TablixCornerRow>
-              </TablixCornerRows>
-            </TablixCorner>
+          <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -343,34 +128,32 @@ ORDER BY
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox53">
+                        <Textbox Name="OrderWeight2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
+                                    <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox53</rd:DefaultName>
+                          <rd:DefaultName>OrderWeight2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -381,33 +164,32 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox67">
+                        <Textbox Name="ShipWeight2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.00</Format>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox67</rd:DefaultName>
+                          <rd:DefaultName>ShipWeight2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -418,118 +200,7 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox72">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!BasicDemand.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox72</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox76">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!PromoWeight.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox76</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox79">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!CorrWeigt.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox79</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox84">
+                        <Textbox Name="LossesWeight2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -539,321 +210,16 @@ ORDER BY
                                   <Value>=Sum(Fields!LossesWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox84</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox54">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!ForecastAmount.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
+                                    <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox54</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox45">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox68">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.00</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox68</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox73">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!BasicDemand.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox73</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox77">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!PromoWeight.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox77</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox80">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!CorrWeigt.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox80</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox85">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!LossesWeight.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox85</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox46">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!ForecastAmount.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox46</rd:DefaultName>
+                          <rd:DefaultName>LossesWeight2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -875,34 +241,32 @@ ORDER BY
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox38">
+                        <Textbox Name="OrderWeight4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
+                                    <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <rd:DefaultName>OrderWeight4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -913,27 +277,103 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox69">
+                        <Textbox Name="ShipWeight3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!CorrTrend.Value)</Value>
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.00</Format>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox69</rd:DefaultName>
+                          <rd:DefaultName>ShipWeight3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LossesWeight3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!LossesWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>LossesWeight3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OrderWeight3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>OrderWeight3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -950,14 +390,201 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="BasicDemand1">
+                        <Textbox Name="ShipWeight4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!BasicDemand.Value)</Value>
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ShipWeight4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LossesWeight4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!LossesWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>LossesWeight4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OrderWeight5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>OrderWeight5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ShipWeight5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ShipWeight5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LossesWeight5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!LossesWeight.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>LossesWeight5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OrderWeight1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0.0</Format>
@@ -965,18 +592,15 @@ ORDER BY
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>BasicDemand1</rd:DefaultName>
+                          <rd:DefaultName>OrderWeight1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -987,14 +611,14 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PromoWeight1">
+                        <Textbox Name="ShipWeight1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!PromoWeight.Value)</Value>
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0.0</Format>
@@ -1002,55 +626,15 @@ ORDER BY
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PromoWeight1</rd:DefaultName>
+                          <rd:DefaultName>ShipWeight1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CorrWeigt">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!CorrWeigt.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CorrWeigt</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1076,9 +660,7 @@ ORDER BY
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>LossesWeight1</rd:DefaultName>
@@ -1087,45 +669,6 @@ ORDER BY
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox39">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!ForecastAmount.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox39</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1141,104 +684,32 @@ ORDER BY
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ForecastWeight">
+                        <Textbox Name="Textbox95">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>ForecastWeight</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CorrTrend">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Avg(Fields!CorrTrend.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.00</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CorrTrend</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="BasicDemand">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!BasicDemand.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>BasicDemand</rd:DefaultName>
+                          <rd:DefaultName>Textbox95</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1249,32 +720,32 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PromoWeight">
+                        <Textbox Name="Textbox96">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!PromoWeight.Value)</Value>
+                                  <Value>=Sum(Fields!ShipWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PromoWeight</rd:DefaultName>
+                          <rd:DefaultName>Textbox96</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1285,43 +756,7 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CorrWeigt1">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!CorrWeigt.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>#,0.0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CorrWeigt1</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="LossesWeight">
+                        <Textbox Name="Textbox97">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1331,59 +766,22 @@ ORDER BY
                                   <Value>=Sum(Fields!LossesWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LossesWeight</rd:DefaultName>
+                          <rd:DefaultName>Textbox97</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="ForecastAmount">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!ForecastAmount.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>ForecastAmount</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1399,458 +797,20 @@ ORDER BY
             <TablixColumnHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="Date">
+                  <Group Name="SalesDate">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Date.Value</GroupExpression>
+                      <GroupExpression>=Fields!SalesDate.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Date.Value</Value>
+                      <Value>=Fields!SalesDate.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <TablixHeader>
-                    <Size>0.6cm</Size>
-                    <CellContents>
-                      <Textbox Name="Date">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=FormatDateTime(Fields!Date.Value,DateFormat.ShortDate)</Value>
-                                <Style>
-                                  <FontFamily>Arial</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Color>#480c04</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Center</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Date</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>DarkGoldenrod</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <BackgroundColor>Orange</BackgroundColor>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
                   <TablixMembers>
-                    <TablixMember>
-                      <Group Name="DayOfWeekShortRu">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!DayOfWeekShortRu.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!DayOfWeekShortRu.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
-                      <TablixMembers>
-                        <TablixMember>
-                          <TablixHeader>
-                            <Size>0.6cm</Size>
-                            <CellContents>
-                              <Textbox Name="DayOfWeekShortRu">
-                                <CanGrow>true</CanGrow>
-                                <KeepTogether>true</KeepTogether>
-                                <Paragraphs>
-                                  <Paragraph>
-                                    <TextRuns>
-                                      <TextRun>
-                                        <Value>=Fields!DayOfWeekShortRu.Value</Value>
-                                        <Style>
-                                          <FontFamily>Arial</FontFamily>
-                                          <FontWeight>Bold</FontWeight>
-                                          <Color>#480c04</Color>
-                                        </Style>
-                                      </TextRun>
-                                    </TextRuns>
-                                    <Style>
-                                      <TextAlign>Center</TextAlign>
-                                    </Style>
-                                  </Paragraph>
-                                </Paragraphs>
-                                <rd:DefaultName>DayOfWeekShortRu</rd:DefaultName>
-                                <Style>
-                                  <Border>
-                                    <Color>DarkGoldenrod</Color>
-                                    <Style>Solid</Style>
-                                  </Border>
-                                  <BackgroundColor>Orange</BackgroundColor>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
-                                </Style>
-                              </Textbox>
-                            </CellContents>
-                          </TablixHeader>
-                          <TablixMembers>
-                            <TablixMember>
-                              <TablixHeader>
-                                <Size>0.6cm</Size>
-                                <CellContents>
-                                  <Textbox Name="ВсегоЗаДень">
-                                    <CanGrow>true</CanGrow>
-                                    <KeepTogether>true</KeepTogether>
-                                    <Paragraphs>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value>Всего</Value>
-                                            <Style>
-                                              <FontFamily>Arial</FontFamily>
-                                              <FontWeight>Bold</FontWeight>
-                                              <Color>#480c04</Color>
-                                            </Style>
-                                          </TextRun>
-                                        </TextRuns>
-                                        <Style>
-                                          <TextAlign>Center</TextAlign>
-                                        </Style>
-                                      </Paragraph>
-                                    </Paragraphs>
-                                    <Style>
-                                      <Border>
-                                        <Color>DarkGoldenrod</Color>
-                                        <Style>Solid</Style>
-                                      </Border>
-                                      <BackgroundColor>Orange</BackgroundColor>
-                                      <PaddingLeft>2pt</PaddingLeft>
-                                      <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>
-                                      <PaddingBottom>2pt</PaddingBottom>
-                                    </Style>
-                                  </Textbox>
-                                </CellContents>
-                              </TablixHeader>
-                              <TablixMembers>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="ПрогнозКг">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>кг --&gt;</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <TablixMembers>
-                                    <TablixMember />
-                                  </TablixMembers>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox66">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>К</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox66</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>ПрогнозКг</ToggleItem>
-                                  </Visibility>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox71">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>БС</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox71</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>ПрогнозКг</ToggleItem>
-                                  </Visibility>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox16">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>А</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox16</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>ПрогнозКг</ToggleItem>
-                                  </Visibility>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox78">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>ДС</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox78</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>ПрогнозКг</ToggleItem>
-                                  </Visibility>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox83">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>НП</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox83</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>ПрогнозКг</ToggleItem>
-                                  </Visibility>
-                                </TablixMember>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>0.73229cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox18">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>шт</Value>
-                                                <Style>
-                                                  <FontFamily>Arial</FontFamily>
-                                                  <FontWeight>Bold</FontWeight>
-                                                  <Color>#480c04</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox18</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>DarkGoldenrod</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>Orange</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <TablixMembers>
-                                    <TablixMember />
-                                  </TablixMembers>
-                                </TablixMember>
-                              </TablixMembers>
-                            </TablixMember>
-                          </TablixMembers>
-                        </TablixMember>
-                      </TablixMembers>
-                    </TablixMember>
+                    <TablixMember />
+                    <TablixMember />
+                    <TablixMember />
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -1858,29 +818,29 @@ ORDER BY
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="GrouppingName">
+                  <Group Name="TMName">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!GrouppingName.Value</GroupExpression>
+                      <GroupExpression>=Fields!TMName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!GrouppingName.Value</Value>
+                      <Value>=Fields!TMName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>8.54193cm</Size>
+                        <Size>11.09551cm</Size>
                         <CellContents>
-                          <Textbox Name="GrouppingName1">
+                          <Textbox Name="TMName1">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!GrouppingName.Value</Value>
+                                    <Value>=Fields!TMName.Value</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -1891,13 +851,13 @@ ORDER BY
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>GrouppingName1</rd:DefaultName>
+                            <rd:DefaultName>TMName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>Orange</BackgroundColor>
+                              <BackgroundColor>Gold</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -1906,34 +866,34 @@ ORDER BY
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
-                      <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="GroupName">
+                      <Group Name="ManagerName">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!GroupName.Value</GroupExpression>
+                          <GroupExpression>=Fields!ManagerName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!GroupName.Value</Value>
+                          <Value>=Fields!ManagerName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>8.54193cm</Size>
+                            <Size>11.09551cm</Size>
                             <CellContents>
-                              <Textbox Name="GroupName">
+                              <Textbox Name="ManagerName1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!GroupName.Value</Value>
+                                        <Value>=Fields!ManagerName.Value</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
                                           <Color>#480c04</Color>
                                         </Style>
                                       </TextRun>
@@ -1941,12 +901,13 @@ ORDER BY
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
+                                <rd:DefaultName>ManagerName1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>Gold</BackgroundColor>
+                                  <BackgroundColor>Yellow</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -1955,34 +916,34 @@ ORDER BY
                               </Textbox>
                             </CellContents>
                           </TablixHeader>
-                          <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="ProductName">
+                          <Group Name="TAName">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+                              <GroupExpression>=Fields!TAName.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!ProductName.Value</Value>
+                              <Value>=Fields!TAName.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>8.54193cm</Size>
+                                <Size>11.09551cm</Size>
                                 <CellContents>
-                                  <Textbox Name="ProductName">
+                                  <Textbox Name="TAName1">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!ProductName.Value</Value>
+                                            <Value>=Fields!TAName.Value</Value>
                                             <Style>
                                               <FontFamily>Arial</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
                                               <Color>#480c04</Color>
                                             </Style>
                                           </TextRun>
@@ -1990,6 +951,7 @@ ORDER BY
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
+                                    <rd:DefaultName>TAName1</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
@@ -2007,52 +969,109 @@ ORDER BY
                               <KeepWithGroup>After</KeepWithGroup>
                             </TablixMember>
                             <TablixMember>
-                              <Group Name="ChainName">
+                              <Group Name="Buyer_TT">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!ChainName.Value</GroupExpression>
+                                  <GroupExpression>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!ChainName.Value</Value>
+                                  <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
-                              <TablixHeader>
-                                <Size>8.54193cm</Size>
-                                <CellContents>
-                                  <Textbox Name="ChainName">
-                                    <CanGrow>true</CanGrow>
-                                    <KeepTogether>true</KeepTogether>
-                                    <Paragraphs>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value>=Fields!ChainName.Value</Value>
-                                            <Style>
-                                              <Color>#480c04</Color>
-                                            </Style>
-                                          </TextRun>
-                                        </TextRuns>
-                                        <Style />
-                                      </Paragraph>
-                                    </Paragraphs>
-                                    <rd:DefaultName>ChainName</rd:DefaultName>
-                                    <Style>
-                                      <Border>
-                                        <Color>DarkGoldenrod</Color>
-                                        <Style>Solid</Style>
-                                      </Border>
-                                      <PaddingLeft>2pt</PaddingLeft>
-                                      <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>
-                                      <PaddingBottom>2pt</PaddingBottom>
-                                    </Style>
-                                  </Textbox>
-                                </CellContents>
-                              </TablixHeader>
+                              <TablixMembers>
+                                <TablixMember>
+                                  <TablixHeader>
+                                    <Size>11.09551cm</Size>
+                                    <CellContents>
+                                      <Textbox Name="Textbox46">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
+                                                <Style>
+                                                  <FontFamily>Arial</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#480c04</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox46</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>DarkGoldenrod</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
+                                  <KeepWithGroup>After</KeepWithGroup>
+                                </TablixMember>
+                                <TablixMember>
+                                  <Group Name="ProductName1">
+                                    <GroupExpressions>
+                                      <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+                                    </GroupExpressions>
+                                  </Group>
+                                  <SortExpressions>
+                                    <SortExpression>
+                                      <Value>=Fields!ProductName.Value</Value>
+                                    </SortExpression>
+                                  </SortExpressions>
+                                  <TablixHeader>
+                                    <Size>11.09551cm</Size>
+                                    <CellContents>
+                                      <Textbox Name="ProductName">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!ProductName.Value</Value>
+                                                <Style>
+                                                  <Color>#480c04</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <ListLevel>1</ListLevel>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>ProductName</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>DarkGoldenrod</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
+                                  <Visibility>
+                                    <Hidden>true</Hidden>
+                                    <ToggleItem>Textbox46</ToggleItem>
+                                  </Visibility>
+                                </TablixMember>
+                              </TablixMembers>
                               <Visibility>
                                 <Hidden>true</Hidden>
-                                <ToggleItem>ProductName</ToggleItem>
+                                <ToggleItem>TAName1</ToggleItem>
                               </Visibility>
                             </TablixMember>
                           </TablixMembers>
@@ -2061,14 +1080,51 @@ ORDER BY
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>11.09551cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox94">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Разом</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#480c04</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox94</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>DarkGoldenrod</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Orange</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <KeepTogether>true</KeepTogether>
-            <DataSetName>FofecastDetalsByProducts</DataSetName>
-            <Top>0.20502cm</Top>
-            <Left>0.0762cm</Left>
-            <Height>4.93229cm</Height>
-            <Width>19.04193cm</Width>
+            <DataSetName>LossesByTtAndSkuForUsers</DataSetName>
+            <Left>0.12912cm</Left>
+            <Height>3.6cm</Height>
+            <Width>17.09551cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2076,13 +1132,13 @@ ORDER BY
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.17512in</Height>
+        <Height>1.47162in</Height>
         <Style />
       </Body>
-      <Width>7.64764in</Width>
+      <Width>6.85107in</Width>
       <Page>
         <PageHeader>
-          <Height>1.64389cm</Height>
+          <Height>2.52828cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2093,21 +1149,13 @@ ORDER BY
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value xml:space="preserve">  </Value>
+                      <Label>Название отчета</Label>
+                      <Value>="Загальні втрати в кг по ТТ та СКЮ з датою доставки на сьогодні"</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                         <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Label>Отчет</Label>
-                      <Value>="Прогноз продаж по продукции"</Value>
-                      <Style>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>Underline</TextDecoration>
-                        <Color>#480c04</Color>
+                        <Language>ru-RU</Language>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2117,7 +1165,7 @@ ORDER BY
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Left>1.37951cm</Left>
               <Height>0.95278cm</Height>
-              <Width>17.73862cm</Width>
+              <Width>15.84512cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2135,10 +1183,11 @@ ORDER BY
               <ActionInfo>
                 <Actions>
                   <Action>
-                    <Hyperlink>http://kyivbkk.com/</Hyperlink>
+                    <Hyperlink>http://olapbkk/reportserver</Hyperlink>
                   </Action>
                 </Actions>
               </ActionInfo>
+              <Top>0.03528cm</Top>
               <Left>0.1cm</Left>
               <Height>0.95278cm</Height>
               <Width>1.20896cm</Width>
@@ -2156,7 +1205,7 @@ ORDER BY
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Сформирован</Value>
+                      <Value>Сформовано</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -2210,15 +1259,22 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
+                    <TextRun>
+                      <Value>. </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox12</rd:DefaultName>
-              <Top>1.09389cm</Top>
-              <Left>0.1cm</Left>
-              <Height>0.55cm</Height>
-              <Width>6.02042cm</Width>
+              <Top>1.12917cm</Top>
+              <Left>0.12912cm</Left>
+              <Height>0.5cm</Height>
+              <Width>5.99584cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -2247,6 +1303,154 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                 <PaddingBottom>1pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Замовл.</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.90257cm</Top>
+              <Left>11.22463cm</Left>
+              <Height>0.62571cm</Height>
+              <Width>2cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>Orange</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Відвант.</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.90257cm</Top>
+              <Left>13.22463cm</Left>
+              <Height>0.62571cm</Height>
+              <Width>2cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>Orange</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Втрати</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.90257cm</Top>
+              <Left>15.22463cm</Left>
+              <Height>0.62571cm</Height>
+              <Width>2cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>Orange</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>ТМ - СВ - ТА - ТТ контрагента - Номенклатура</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.90257cm</Top>
+              <Left>0.12912cm</Left>
+              <Height>0.62571cm</Height>
+              <Width>11.09551cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>Orange</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -2266,117 +1470,53 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="DateFrom">
+    <ReportParameter Name="OrderDateFrom">
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=DateValue(FormatDateTime(DateAdd("d", 1, Now()), DateFormat.ShortDate))</Value>
+          <Value>=DateAdd("d", 0, Now())</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Дата с</Prompt>
+      <Prompt>Замовлення з</Prompt>
     </ReportParameter>
-    <ReportParameter Name="DateTo">
+    <ReportParameter Name="OrderDateTo">
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=DateValue(FormatDateTime(DateAdd("d", 7, Now()), DateFormat.ShortDate))</Value>
+          <Value>=DateAdd("d", 0, Now())</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Дата по</Prompt>
+      <Prompt>Замовлення по</Prompt>
     </ReportParameter>
-    <ReportParameter Name="KAM_ID">
+    <ReportParameter Name="paramLoginFull">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>=-888</Value>
+          <Value>="TARGET\y.sofiichenko"</Value>
         </Values>
       </DefaultValue>
-      <Prompt>КАМ</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>KAM</DataSetName>
-          <ValueField>KAM_ID</ValueField>
-          <LabelField>KAMName</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="Chain_ID">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=-888</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Сеть</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>Chain</DataSetName>
-          <ValueField>Chain_ID</ValueField>
-          <LabelField>ChainName</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="Groupping_ID">
-      <DataType>String</DataType>
-      <Prompt>Группировка</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>Groupping</DataSetName>
-          <ValueField>Groupping_ID</ValueField>
-          <LabelField>GrouppingName</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="SK_Product_ID">
-      <DataType>String</DataType>
-      <Prompt>Номенклатура</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>Product</DataSetName>
-          <ValueField>SK_Product_ID</ValueField>
-          <LabelField>ProductName</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
+      <Prompt>param Login Full</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>DateFrom</ParameterName>
+          <ParameterName>OrderDateFrom</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>DateTo</ParameterName>
+          <ParameterName>OrderDateTo</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>KAM_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>Chain_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>Groupping_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>SK_Product_ID</ParameterName>
+          <ParameterName>paramLoginFull</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -2474,7 +1614,6 @@ pcW8c24itGbk8J2NlvT9RLu3hxXZ+Jcrsjcnsqv3OXMDY/8COvkbtnZciJ6Rm81D+MlqDXgEzB6kNKlS
 82U3R0aDD9ThcQxojy3RN0jdMvKVUXzZv33d3SP7dgR03/ARBDl+SSUdvZvQT424FflvU4/SGb15O/p3t6HvMeUdxcYMK/wTM279MahHuvaz+UVbv4pe80+0wjZmAN0QdfAPRD1SP3xkYfmeCl/z836y5UB0W3rlq+LWHwEdomfgflL31wIMnrTabev51T8o9ai3ICJv2677KHwNdphv839k6NEvgPwr8r8bD7+MHm/7A8zJAor6X3+G9WDE162ehJXvHtwc1wF6ijnZfDv7J2G+JzrSvz3ZcCi/kOIniW0uPrwUAOWeffPnYr4/+uVNoDdvVsmK/BmJvx79/876hv4N/Rv6N/Rv6N/Qv6F/Q/+G/g39G/qfa/0/AQYAm5d/FP98f5gAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <Language>ru-RU</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>d586e282-2cd7-47ab-ab66-58f00f26ac12</rd:ReportID>
 </Report>

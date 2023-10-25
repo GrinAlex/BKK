@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/20/2018 9:21:31 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="RecalculationNewPartitionsInSalesTEST"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{B17583AB-FB75-4D9D-96ED-FAE212EE70A4}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{0A818968-D90C-477E-B8F9-9912BC26E283}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,12 @@
       DTS:ObjectName="OLAPBKK2.OLAP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=OLAPBKK2;User ID=TARGET\olapbkk2;Initial Catalog=OLAP_TEST;Provider=MSOLAP.8;Persist Security Info=False;Impersonation Level=Impersonate;" />
+          DTS:ConnectionString="Data Source=OLAPBKK2;User ID=TARGET\o.grynenko;Initial Catalog=OLAP_TEST;Provider=MSOLAP.8;Persist Security Info=False;Impersonation Level=Impersonate;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7RrW/n4EeE+B10slEi6+bgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADI9GnD4a4KsCbYby4Gy/dMAAAAAASAAACgAAAAEAAAAJ6TV3uw+xK+kS8iAHbPiwIgAAAAhufELsyU0r+i3BvzKEDz84QjlttYfEWvjvWuenqCWcIUAAAAcy2weB5bFpI5yfsn225edJ6MGTc</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
