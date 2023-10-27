@@ -1,0 +1,1862 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2023 10:18:38 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OLAPBKK2"
+  DTS:CreatorName="TARGET\o.grynenko"
+  DTS:DTSID="{0A40DAFD-02BE-4300-8F21-0F89C0973AA6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="UpdateReasonForReturns"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{2E19AD2B-F272-4D3F-87B4-DF14107FD328}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F8C43580-631B-4D86-A738-70DE06A934C7}"
+      DTS:ObjectName="OLAPBKK2.CAKE_ST">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=OLAPBKK2;Initial Catalog=CAKE_ST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7D5A558F-D6C2-4C5A-8DC0-5E37384DEA09}"
+      DTS:ObjectName="olapbkk2.CAKE_WH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update CAKE_WH dim ReasonForReturns"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{D9EE1B88-99E5-4EBE-8091-222F8CA7B73B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update CAKE_WH dim ReasonForReturns">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{C901B2C5-6E30-414E-88A2-8A83A30445E7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Добавление данных в CAKE_WH dim ReasonForReturns"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+                  description="Источник &quot;OLE DB&quot;"
+                  name="CAKE_ST dim ReasonForReturns"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dim].[ReasonForReturns]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставления между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;]"
+                      name="Выход источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          dataType="bytes"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          name="IDRRef"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          name="IsDeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          length="7"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          name="SourceDatabase"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          length="128"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Source_ID]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Source_ID]"
+                          name="Source_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          dataType="bytes"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          name="ParentIDRRef"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          name="IsGroup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          length="9"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]"
+                          name="ReasonForReturnsCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturns]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          length="150"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturns]"
+                          name="ReasonForReturns"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="IDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          length="7"
+                          name="SourceDatabase" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          dataType="ui1"
+                          name="Source_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="ParentIDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          dataType="bool"
+                          name="IsGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          dataType="wstr"
+                          length="9"
+                          name="ReasonForReturnsCode" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          dataType="wstr"
+                          length="150"
+                          name="ReasonForReturns" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Source_ID]"
+                          dataType="ui1"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Source_ID]"
+                          name="Source_ID" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          name="IDRRef" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          dataType="bool"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          name="IsDeleted" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          name="ParentIDRRef" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          dataType="bool"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          name="IsGroup" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]"
+                          name="ReasonForReturnsCode" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForReturns]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForReturns]"
+                          name="ReasonForReturns" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          length="7"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          name="SourceDatabase" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogName]"
+                          name="LogName" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LogDate]"
+                          name="LogDate" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="CAKE_WH dim ReasonForReturns"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dim].[ReasonForReturns]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IDRRef]"
+                          cachedDataType="bytes"
+                          cachedLength="16"
+                          cachedName="IDRRef"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          cachedDataType="bool"
+                          cachedName="IsDeleted"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="7"
+                          cachedName="SourceDatabase"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SourceDatabase]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogName]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="LogName"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogName]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogDate]"
+                          cachedDataType="date"
+                          cachedName="LogDate"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogDate]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Source_ID]"
+                          cachedDataType="ui1"
+                          cachedName="Source_ID"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Source_ID]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          cachedDataType="bytes"
+                          cachedLength="16"
+                          cachedName="ParentIDRRef"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IsGroup]"
+                          cachedDataType="bool"
+                          cachedName="IsGroup"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="ReasonForReturnsCode"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturnsCode]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForReturns]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="ReasonForReturns"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForReturns]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="IDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          length="7"
+                          name="SourceDatabase" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          dataType="ui1"
+                          name="Source_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_ReasonForReturns_ID]"
+                          dataType="i2"
+                          name="SK_ReasonForReturns_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="ParentIDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          dataType="bool"
+                          name="IsGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          dataType="wstr"
+                          length="9"
+                          name="ReasonForReturnsCode" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          dataType="wstr"
+                          length="150"
+                          name="ReasonForReturns" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SK_MainReasonFoReturns_ID]"
+                          dataType="i2"
+                          name="SK_MainReasonFoReturns_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Log"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Уточняющий запрос;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;6"
+                  description="Присоединяет дополнительные столбцы к потоку данных путем поиска значений в таблице. Пример: соединение со столбцом &quot;employee id&quot; таблицы employees позволяет получить значения &quot;hire date&quot; и &quot;employee name&quot;. Рекомендуется воспользоваться этим преобразованием, если таблица подстановки не помещается в памяти."
+                  name="Поиск новых записей"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ReasonForReturns]</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ReasonForReturns]) [refTable]
+where [refTable].[IDRRef] = ? and [refTable].[Source_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип соединения, используемого для доступа к эталонному набору данных."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает тип кэша таблицы уточняющих запросов."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает, как преобразование &quot;Уточняющий запрос&quot; обрабатывает строки без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает долю кэша (в процентах), выделенную для строк без совпадающих элементов в эталонном наборе данных."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Максимальный объем памяти для кэша ссылок на 32-разрядной платформе."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Максимальный объем памяти для кэша ссылок на 64-разрядной платформе."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает, следует ли ссылаться на метаданные в формате XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_ReasonForReturns_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source_ID" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IDRRef" dataType="DT_BYTES" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsDeleted" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ParentIDRRef" dataType="DT_BYTES" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsGroup" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReasonForReturnsCode" dataType="DT_WSTR" length="9" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReasonForReturns" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SK_MainReasonFoReturns_ID" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceDatabase" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="LogDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LogName" dataType="DT_WSTR" length="128" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
+                      name="ParameterMap">#{Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника "OLE DB"].Columns[IDRRef]};#{Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника "OLE DB"].Columns[Source_ID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      connectionManagerRefId="Package.ConnectionManagers[olapbkk2.CAKE_WH]"
+                      description="Диспетчер соединений, используемый для доступа к данным уточняющих запросов."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                      name="Ввод преобразования &quot;Уточняющий запрос&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[IDRRef]"
+                          cachedDataType="bytes"
+                          cachedLength="16"
+                          cachedName="IDRRef"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                              name="JoinToReferenceColumn">IDRRef</property>
+                            <property
+                              dataType="System.Null"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[Source_ID]"
+                          cachedDataType="ui1"
+                          cachedName="Source_ID"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Source_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                              name="JoinToReferenceColumn">Source_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                      errorOrTruncationOperation="Уточняющий запрос"
+                      exclusionGroup="1"
+                      name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Выход несовпадающих строк уточняющего запроса]"
+                      description="Вывод преобразования &quot;Уточняющий запрос&quot;, которое обрабатывает строки без совпадающих элементов в эталонном наборе данных. Используйте этот выход, если свойство NoMatchBehavior имеет значение &quot;Отправить строки без совпадающих элементов в выход несовпадающих строк&quot;."
+                      exclusionGroup="1"
+                      name="Выход несовпадающих строк уточняющего запроса"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок преобразования &quot;Уточняющий запрос&quot;"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход источника &quot;OLE DB&quot;]"
+                  endId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;"
+                  startId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns.Outputs[Выход источника &quot;OLE DB&quot;]" />
+                <path
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход несовпадающих строк уточняющего запроса]"
+                  endId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Inputs[Вход производного столбца]"
+                  name="Выход несовпадающих строк уточняющего запроса"
+                  startId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей.Outputs[Выход несовпадающих строк уточняющего запроса]" />
+                <path
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход производного столбца]"
+                  endId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{D5BC40B4-E98A-4774-AD04-4DF25466FE99}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Заливка данных с 1С Сбыт"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+                  description="Источник &quot;OLE DB&quot;"
+                  name="1С Сбыт"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">------ Сбыт ------
+SELECT [ПричиныВозвратаТовара].[_IDRRef] AS IDRRef
+      ,CAST([ПричиныВозвратаТовара].[_Marked] AS bit) AS IsDeleted
+      ,[ПричиныВозвратаТовара].[_ParentIDRRef] AS ParentIDRRef
+	  ,CASE 
+		WHEN CAST([ПричиныВозвратаТовара].[_Folder] AS bit) = 0 THEN 1
+		ELSE 0
+	   END AS IsGroup
+      ,[ПричиныВозвратаТовара].[_Code] AS ReasonForLossesCode
+      ,[ПричиныВозвратаТовара].[_Description] AS ReasonForLosses
+FROM [DB_1C].[EXP_BKK].[dbo].[_Reference2413] AS [ПричиныВозвратаТовара] WITH (NOLOCK)</property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, содержащая команду SQL для выполнения."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Сопоставления между параметрами в команде SQL и переменными."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;]"
+                      name="Выход источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          dataType="bytes"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          name="IDRRef"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          name="IsDeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          dataType="bytes"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          name="ParentIDRRef"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          name="IsGroup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          length="9"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          length="150"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="IDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="ParentIDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          dataType="i4"
+                          name="IsGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          length="9"
+                          name="ReasonForLossesCode" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="150"
+                          name="ReasonForLosses" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;OLE DB&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IDRRef]"
+                          name="IDRRef" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          dataType="bool"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          name="IsDeleted" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          name="ParentIDRRef" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[IsGroup]"
+                          name="IsGroup" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          name="ReasonForLossesCode" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          name="ReasonForLosses" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+                  description="Назначение &quot;OLE DB&quot;"
+                  name="dim ReasonForReturns"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowset">[dim].[ReasonForReturns]</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Команда SQL для выполнения."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает используемый режим доступа к базе данных."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLAPBKK2.CAKE_ST]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                      errorOrTruncationOperation="Вставить"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;OLE DB&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IsDeleted]"
+                          cachedDataType="bool"
+                          cachedName="IsDeleted"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsDeleted]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogDate]"
+                          cachedDataType="date"
+                          cachedName="LogDate"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogDate]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[LogName]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="LogName"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogName]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[SourceDatabase]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="7"
+                          cachedName="SourceDatabase"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[SourceDatabase]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IDRRef]"
+                          cachedDataType="bytes"
+                          cachedLength="16"
+                          cachedName="IDRRef"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IDRRef]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Source_ID]"
+                          cachedDataType="i2"
+                          cachedName="Source_ID"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[Source_ID]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ParentIDRRef]"
+                          cachedDataType="bytes"
+                          cachedLength="16"
+                          cachedName="ParentIDRRef"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ParentIDRRef]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[IsGroup]"
+                          cachedDataType="i4"
+                          cachedName="IsGroup"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[IsGroup]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLossesCode]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="ReasonForLossesCode"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLossesCode]" />
+                        <inputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[ReasonForLosses]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="ReasonForLosses"
+                          externalMetadataColumnId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ReasonForLosses]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Source_ID]"
+                          dataType="ui1"
+                          name="Source_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="IDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          length="7"
+                          name="SourceDatabase" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogName]"
+                          dataType="wstr"
+                          length="128"
+                          name="LogName" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
+                          dataType="dbTimeStamp"
+                          name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ParentIDRRef]"
+                          dataType="bytes"
+                          length="16"
+                          name="ParentIDRRef" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsGroup]"
+                          dataType="bool"
+                          name="IsGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturnsCode]"
+                          dataType="wstr"
+                          length="9"
+                          name="ReasonForReturnsCode" />
+                        <externalMetadataColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[ReasonForReturns]"
+                          dataType="wstr"
+                          length="150"
+                          name="ReasonForReturns" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Log"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Inputs[Вход производного столбца]"
+                      description="Ввод преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogDate]"
+                          name="LogDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[LogName]"
+                          name="LogName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[SourceDatabase]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          length="7"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[SourceDatabase]"
+                          name="SourceDatabase"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_STR,7,1251)"EXP_BKK"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,7,1251)"EXP_BKK"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[Source_ID]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца].Columns[Source_ID]"
+                          name="Source_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_I2)2</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I2)2</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт.Paths[Выход источника &quot;OLE DB&quot;]"
+                  endId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Inputs[Вход производного столбца]"
+                  name="Выход источника &quot;OLE DB&quot;"
+                  startId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт.Outputs[Выход источника &quot;OLE DB&quot;]" />
+                <path
+                  refId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт.Paths[Выход производного столбца]"
+                  endId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  name="Выход производного столбца"
+                  startId="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log.Outputs[Выход производного столбца]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns\Обновление данных в CAKE_WH dim ReasonForReturns"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4D422A3D-B9A5-4B27-8EFC-D00E734886B2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Обновление данных в CAKE_WH dim ReasonForReturns"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7D5A558F-D6C2-4C5A-8DC0-5E37384DEA09}"
+              SQLTask:SqlStatementSource="UPDATE CAKE_WH.dim.ReasonForReturns&#xA; SET&#xA;  IsDeleted = n.IsDeleted&#xA;  ,ParentIDRRef = n.ParentIDRRef&#xA;  ,IsGroup = n.IsGroup&#xA;  ,ReasonForReturnsCode = n.ReasonForReturnsCode&#xA;  ,ReasonForReturns = n.ReasonForReturns&#xA;  ,SourceDatabase = n.SourceDatabase&#xA;FROM CAKE_WH.dim.ReasonForReturns AS s WITH (NOLOCK)&#xA; INNER JOIN CAKE_ST.dim.ReasonForReturns AS n WITH (NOLOCK) &#xA;  ON s.IDRRef = n.IDRRef&#xA;&#x9;AND s.Source_ID = n.Source_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns\Очистка таблицы CAKE_ST dim ReasonForReturns"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0F64C7C8-E136-4B5D-8E99-96D9362EA2C1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Очистка таблицы CAKE_ST dim ReasonForReturns"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F8C43580-631B-4D86-A738-70DE06A934C7}"
+              SQLTask:SqlStatementSource="DELETE&#xA;FROM [dim].[ReasonForReturns]&#xA;WHERE Source_ID = 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{2103F86A-12A6-4104-8CB6-EE8F42CEBC89}"
+          DTS:From="Package\Update CAKE_WH dim ReasonForReturns\Очистка таблицы CAKE_ST dim ReasonForReturns"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{038998A9-9F06-446A-A65E-2E611F464163}"
+          DTS:From="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение 1"
+          DTS:To="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{6CDC9DA7-C716-4432-892B-993D5F5A4F35}"
+          DTS:From="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение 2"
+          DTS:To="Package\Update CAKE_WH dim ReasonForReturns\Обновление данных в CAKE_WH dim ReasonForReturns" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="348,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns"
+          TopLeft="6.00000000000003,209.5" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт"
+          TopLeft="72,107.5" />
+        <NodeLayout
+          Size="348,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Обновление данных в CAKE_WH dim ReasonForReturns"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="321,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Очистка таблицы CAKE_ST dim ReasonForReturns"
+          TopLeft="19.5,5.5" />
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение]"
+          TopLeft="178.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение 1]"
+          TopLeft="178.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns.PrecedenceConstraints[Ограничение 2]"
+          TopLeft="179.75,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="354,409"
+          Size="354,452"
+          Id="Package\Update CAKE_WH dim ReasonForReturns"
+          TopLeft="5.50000000000006,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns"
+          TopLeft="5.50000000000003,311.5" />
+        <NodeLayout
+          Size="96,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Log"
+          TopLeft="73,209.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей"
+          TopLeft="29,107.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns"
+          TopLeft="7.5,5.5" />
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход производного столбца]"
+          TopLeft="122.25,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход несовпадающих строк уточняющего запроса]"
+          TopLeft="121,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.598359375,20.60888671875,239.19671875,11.2822265625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="122.25,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_WH dim ReasonForReturns">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\Поиск новых записей">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[ReasonForReturns]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Добавление данных в CAKE_WH dim ReasonForReturns\CAKE_ST dim ReasonForReturns">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="96,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\Log"
+          TopLeft="47.5,107.5" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт"
+          TopLeft="36,5.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns"
+          TopLeft="5.50000000000003,209.5" />
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="95.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт.Paths[Выход производного столбца]"
+          TopLeft="96.75,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\1С Сбыт">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update CAKE_WH dim ReasonForReturns\Заливка данных с 1С Сбыт\dim ReasonForReturns">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
