@@ -1,0 +1,687 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="df796cf6-5457-4d98-a6c7-fc9f44ff6aa1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SALES</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Qry Returns</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d90a40fb-d693-444e-85b9-6f81bca0fc12">
+          <ID>Qry Returns</ID>
+          <Name>Qry Returns 2023</Name>
+          <CreatedTimestamp>2019-08-22T11:06:06.803333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2023-09-19T06:08:58.973333Z</LastSchemaUpdate>
+          <LastProcessed>2023-11-15T06:46:30.706667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="345b6912-3778-4ee4-aa4d-cae5d2461cff">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, LogisticCode, TransportCode, SK_Product_ID, [Date], Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, Manager_Tab_Num, TA_Tab_Num, Manager_Tab_Num_Curr, 
+                         TA_Tab_Num_Curr, SK_Category_ID, SK_Category_ID_Curr, TM_Tab_Num, RM_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, ReturnWeight, ReturnAmount, ReturnSum, 
+                         ReturnWeightNew, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, ReturnSumWithoutVAT, SK_Promo_ID_Purch
+FROM            qry_Returns
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="ac5e3b3c-262e-4045-bead-603f982e298d">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4edfba83-5a29-4c55-b677-fc13d5c31c22" />
+          </ProactiveCaching>
+          <EstimatedSize>883177</EstimatedSize>
+        </Partition>
+        <Partition dwd:design-time-name="9ca47513-931d-49de-921a-9d5fc1425f93">
+          <ID>Qry Returns Old</ID>
+          <Name>Qry Returns 2020</Name>
+          <CreatedTimestamp>2019-08-22T11:06:06.87Z</CreatedTimestamp>
+          <LastSchemaUpdate>2023-09-19T06:08:59.08Z</LastSchemaUpdate>
+          <LastProcessed>2023-11-15T06:46:45.376667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="64f65dac-a434-42bb-85d6-c27c9d5a0ce8">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, LogisticCode, TransportCode, SK_Product_ID, [Date], Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, Manager_Tab_Num, TA_Tab_Num, Manager_Tab_Num_Curr, 
+                         TA_Tab_Num_Curr, SK_Category_ID, SK_Category_ID_Curr, TM_Tab_Num, RM_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, ReturnWeight, ReturnAmount, ReturnSum, 
+                         ReturnWeightNew, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, ReturnSumWithoutVAT, SK_Promo_ID_Purch
+FROM            qry_Returns
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="8988f3cb-dffe-4094-bb8f-efcc0365fe79">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8dd29896-f772-4fac-a583-64ce59561dc8" />
+          </ProactiveCaching>
+          <EstimatedSize>16744057</EstimatedSize>
+        </Partition>
+        <Partition dwd:design-time-name="71443087-02e4-4a62-91f8-a0471fe1e0a1">
+          <ID>Qry Returns Middle</ID>
+          <Name>Qry Returns 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="0faca0df-a7a8-42c8-bd3c-326f03913615">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, LogisticCode, TransportCode, SK_Product_ID, [Date], Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, Manager_Tab_Num, TA_Tab_Num, Manager_Tab_Num_Curr, 
+                         TA_Tab_Num_Curr, SK_Category_ID, SK_Category_ID_Curr, TM_Tab_Num, RM_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, ReturnWeight, ReturnAmount, ReturnSum, 
+                         ReturnWeightNew, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, ReturnSumWithoutVAT, SK_Promo_ID_Purch
+FROM            qry_Returns
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="9dddf971-a6a6-4a99-94c5-8391c37a0201">
+          <ID>Qry Returns 2022</ID>
+          <Name>Qry Returns 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b7e139b7-7d9d-43ee-9ce1-b663270e7d89">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, LogisticCode, TransportCode, SK_Product_ID, [Date], Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, Manager_Tab_Num, TA_Tab_Num, Manager_Tab_Num_Curr, 
+                         TA_Tab_Num_Curr, SK_Category_ID, SK_Category_ID_Curr, TM_Tab_Num, RM_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, ReturnWeight, ReturnAmount, ReturnSum, 
+                         ReturnWeightNew, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, ReturnSumWithoutVAT, SK_Promo_ID_Purch
+FROM            qry_Returns
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="607e6c00-16f2-4e3b-a336-2a7e261dc422">
+          <ID>Qry Returns 2024</ID>
+          <Name>Qry Returns 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f9114611-9b85-408b-b1d9-8aa93914bc41">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, LogisticCode, TransportCode, SK_Product_ID, [Date], Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, Manager_Tab_Num, TA_Tab_Num, Manager_Tab_Num_Curr, 
+                         TA_Tab_Num_Curr, SK_Category_ID, SK_Category_ID_Curr, TM_Tab_Num, RM_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, ReturnWeight, ReturnAmount, ReturnSum, 
+                         ReturnWeightNew, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, ReturnSumWithoutVAT, SK_Promo_ID_Purch
+FROM            qry_Returns
+WHERE SK_Date_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Reimbursements</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e758504e-cc55-47d6-b54e-3cadcfabe9ec">
+          <ID>Qry Reimbursements</ID>
+          <Name>Qry Reimbursements 2023</Name>
+          <CreatedTimestamp>2019-08-22T11:06:09.366667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2023-09-19T06:09:02.653333Z</LastSchemaUpdate>
+          <LastProcessed>2023-11-15T06:45:15.583333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8ab88d5b-1a67-4169-93b5-3c7523a9d8ca">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, SK_Product_ID, Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, SV_Hist_Tab_Num, TA_Hist_Tab_Num, SV_Curr_Tab_Num, TA_Curr_Tab_Num, 
+                         TM_Hist_Tab_Num, RM_Hist_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, CompensAmount, CompensWeight, CompensSumWithVAT, CompensSumWithoutVAT, RasprodAmount, 
+                         RasprodWeight, RasprodSumWithVAT, RasprodSumWithoutVAT, UtilAmount, UtilWeight, UtilSumWithVAT, UtilSumWithoutVAT, SK_Promo_ID_Purch
+FROM            fact.qry_Reimbursements
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="0eb2d0ab-e780-4e46-8f45-cf39e7a3cb0e">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="baae1489-9dc8-410f-87e9-c0e8fc76e83c" />
+          </ProactiveCaching>
+          <EstimatedSize>2240682</EstimatedSize>
+        </Partition>
+        <Partition dwd:design-time-name="07fab5ab-5292-46ed-9e65-6bfa73c2ae1a">
+          <ID>Qry Reimbursements Old</ID>
+          <Name>Qry Reimbursements 2020</Name>
+          <CreatedTimestamp>2019-08-22T11:06:09.423333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2023-09-19T06:09:02.843333Z</LastSchemaUpdate>
+          <LastProcessed>2023-11-15T06:46:42.42Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="78e07c3e-c1a0-4bf0-a142-17d09843ead3">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, SK_Product_ID, Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, SV_Hist_Tab_Num, TA_Hist_Tab_Num, SV_Curr_Tab_Num, TA_Curr_Tab_Num, 
+                         TM_Hist_Tab_Num, RM_Hist_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, CompensAmount, CompensWeight, CompensSumWithVAT, CompensSumWithoutVAT, RasprodAmount, 
+                         RasprodWeight, RasprodSumWithVAT, RasprodSumWithoutVAT, UtilAmount, UtilWeight, UtilSumWithVAT, UtilSumWithoutVAT, SK_Promo_ID_Purch
+FROM            fact.qry_Reimbursements
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="b4f3a810-e99b-45a1-9bec-41169e6efd39">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4bd00e20-107f-48e4-bb33-913f6ca23887" />
+          </ProactiveCaching>
+          <EstimatedSize>90333315</EstimatedSize>
+        </Partition>
+        <Partition dwd:design-time-name="127a26fb-b282-4629-ad29-8dbf1cdf0769">
+          <ID>Qry Reimbursements 2021</ID>
+          <Name>Qry Reimbursements 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d65f30c0-e1ae-4678-a8fb-4fb97b777679">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, SK_Product_ID, Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, SV_Hist_Tab_Num, TA_Hist_Tab_Num, SV_Curr_Tab_Num, TA_Curr_Tab_Num, 
+                         TM_Hist_Tab_Num, RM_Hist_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, CompensAmount, CompensWeight, CompensSumWithVAT, CompensSumWithoutVAT, RasprodAmount, 
+                         RasprodWeight, RasprodSumWithVAT, RasprodSumWithoutVAT, UtilAmount, UtilWeight, UtilSumWithVAT, UtilSumWithoutVAT, SK_Promo_ID_Purch
+FROM            fact.qry_Reimbursements
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="fbdb8a17-d435-4439-9fc7-6f90e06f22f1">
+          <ID>Qry Reimbursements 2022</ID>
+          <Name>Qry Reimbursements 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="057c8ad6-808a-4caf-85ef-0f2f1711a90c">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, SK_Product_ID, Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, SV_Hist_Tab_Num, TA_Hist_Tab_Num, SV_Curr_Tab_Num, TA_Curr_Tab_Num, 
+                         TM_Hist_Tab_Num, RM_Hist_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, CompensAmount, CompensWeight, CompensSumWithVAT, CompensSumWithoutVAT, RasprodAmount, 
+                         RasprodWeight, RasprodSumWithVAT, RasprodSumWithoutVAT, UtilAmount, UtilWeight, UtilSumWithVAT, UtilSumWithoutVAT, SK_Promo_ID_Purch
+FROM            fact.qry_Reimbursements
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="53506838-3b59-4fca-8ca6-386bdc2c6355">
+          <ID>Qry Reimbursements 2024</ID>
+          <Name>Qry Reimbursements 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="db10e9e6-ab35-4479-9245-baa7789a621a">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT        SK_Outlet_ID, SK_Product_ID, Source_ID, SK_Date_ID, KAM_Hist_ID, KAM_Curr_ID, NKAM_Hist_Tab_Num, NKAM_Curr_Tab_Num, SV_Hist_Tab_Num, TA_Hist_Tab_Num, SV_Curr_Tab_Num, TA_Curr_Tab_Num, 
+                         TM_Hist_Tab_Num, RM_Hist_Tab_Num, TM_Tab_Num_Curr, RM_Tab_Num_Curr, IsTargetBonus, CompensAmount, CompensWeight, CompensSumWithVAT, CompensSumWithoutVAT, RasprodAmount, 
+                         RasprodWeight, RasprodSumWithVAT, RasprodSumWithoutVAT, UtilAmount, UtilWeight, UtilSumWithVAT, UtilSumWithoutVAT, SK_Promo_ID_Purch
+FROM            fact.qry_Reimbursements
+WHERE SK_Date_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Ship Real</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1480caa8-41aa-4181-896e-15b88d1e3b7d">
+          <ID>Qry Ship Real 2020</ID>
+          <Name>Qry Ship Real 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1228285e-40a7-46a6-9910-e06f17715a17">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="286844f8-1afb-47e5-8de1-b7140d7708f6">
+          <ID>Qry Ship Real 2021</ID>
+          <Name>Qry Ship Real 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="98bd68cc-fbb8-4789-a531-5aa19ed58e0d">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="3aa0136a-4c19-483a-aea6-ee21fbb372dc">
+          <ID>Qry Ship Real 2022</ID>
+          <Name>Qry Ship Real 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="18a68066-79cc-4d2c-99f4-db46acc6a065">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="72566473-ff55-4d22-89ae-5a2a4c943684">
+          <ID>Qry Ship Real 2023</ID>
+          <Name>Qry Ship Real 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2590f9f7-4d77-4168-b083-f906fa9778c3">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="2a6ad08f-8b27-4571-94a1-b302edd23ac9">
+          <ID>Qry Ship Real 2024</ID>
+          <Name>Qry Ship Real 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1f0e736e-55d6-4c6d-a83d-1a841c255191">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1b14a621-4bc0-4537-b376-7957c31d074e">
+          <ID>Qry Ship Real 2020</ID>
+          <Name>Qry Ship Real 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e0522bec-7e93-4aee-99ab-39eb80add46b">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="6aea23d2-2e93-4a84-a888-6358853117c6">
+          <ID>Qry Ship Real 2021</ID>
+          <Name>Qry Ship Real 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2b290510-4a93-42e9-a864-db2469915ea5">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f784513d-aacf-4772-8b19-172a3b80d85a">
+          <ID>Qry Ship Real 2022</ID>
+          <Name>Qry Ship Real 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="447360a4-3c02-4973-ad50-1c88ea836a23">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="e52a6ccd-ab1e-43ce-84b2-32514c6643d7">
+          <ID>Qry Ship Real 2023</ID>
+          <Name>Qry Ship Real 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="753574ef-4def-4a3d-b09a-5a5941ac0e41">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="dd61061b-6f44-4f01-90d6-53375f282d02">
+          <ID>Qry Ship Real 2024</ID>
+          <Name>Qry Ship Real 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="967981d0-66fa-43f0-8aba-5c4db1241fc9">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b2ad1ff7-45a0-4f98-b82c-bb2109d95896">
+          <ID>Qry Ship Real 2020</ID>
+          <Name>Qry Ship Real 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ab96a0cd-bbd8-471e-87f0-73f686720b2e">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="204a4ead-04a6-4320-b518-fffa2bb5d59c">
+          <ID>Qry Ship Real 2021</ID>
+          <Name>Qry Ship Real 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c92b533e-aa4a-487d-880f-138c19178a6d">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="68cd648c-a550-48e2-9992-672fddaafab7">
+          <ID>Qry Ship Real 2022</ID>
+          <Name>Qry Ship Real 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="70049bab-e716-4e81-80ce-02e0317da7de">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="fc195feb-a9b6-4124-9832-2912827c0f0b">
+          <ID>Qry Ship Real 2023</ID>
+          <Name>Qry Ship Real 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c240ba5b-38c4-4bfe-90d6-c250f7a984a1">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="d93b8aac-2855-4409-bba2-87367fe4ec43">
+          <ID>Qry Ship Real 2024</ID>
+          <Name>Qry Ship Real 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fec4fffd-2ca5-4ab7-97b5-c447e7538459">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 2</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="90ff708d-0a04-4119-bb90-f31644e634f3">
+          <ID>Qry Ship Real 2022</ID>
+          <Name>Qry Ship Real 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f7591a71-8cba-4206-89f7-82e1544a8d7f">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="25af98c9-fac3-45e1-bf6c-4e7d5912698d">
+          <ID>Qry Ship Real 2021</ID>
+          <Name>Qry Ship Real 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8a57d39e-b0f4-4cc6-a03c-4580b4f3b734">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="2bd8d1c9-4af9-49a4-bdc1-b6c4140e1561">
+          <ID>Qry Ship Real 2022 1</ID>
+          <Name>Qry Ship Real 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="76035922-fc5c-4eaf-a416-4ff682e38867">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="3b3f5bd0-0512-4dbd-babf-6dc10e50654f">
+          <ID>Qry Ship Real 2023</ID>
+          <Name>Qry Ship Real 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c8033b68-f447-45c6-954a-f72ec93da323">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="53afed7a-ddd9-47a5-b3a8-485603727e5e">
+          <ID>Qry Ship Real 2024</ID>
+          <Name>Qry Ship Real 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6c609713-239d-4cc1-9197-ff8d6f0cb9ac">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 3</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e45c3721-d5b7-4bf5-86a5-f7eabc986dcb">
+          <ID>Qry Ship Real 2020</ID>
+          <Name>Qry Ship Real 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3d4ff22c-6646-49e5-8dfd-c08b16c8fc86">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="65850784-ee7b-4ec4-8a18-94a9b2791fad">
+          <ID>Qry Ship Real 2021</ID>
+          <Name>Qry Ship Real 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ba487447-d6a3-4c9c-b80f-dac841da7b0d">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f91a1ba2-1bca-456c-ad6f-efa395553f41">
+          <ID>Qry Ship Real 2022</ID>
+          <Name>Qry Ship Real 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="886b8e26-092e-4819-a703-42b44edd3037">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="47255890-4804-4a41-ae42-f5bf0a48194c">
+          <ID>Qry Ship Real 2023</ID>
+          <Name>Qry Ship Real 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="47a28602-5d30-45ad-953f-947cb97b7af3">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="a59bed99-99b4-4fbd-8121-914aecf16a22">
+          <ID>Qry Ship Real 2024</ID>
+          <Name>Qry Ship Real 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="afbb87b8-ff4a-4f06-838d-2df618811a85">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT  [SK_Date_ID], [IsSelected], [Sk_Outlet_ID], [SK_Buyer_ID], [SK_Product_ID], [SK_PromoPurch_ID], [KAM_Hist_ID], [KAM_Curr_ID], [SV_Tab_Num_Hist], [SV_Tab_Num_Curr], [TA_Tab_Num_Hist], [TA_Tab_Num_Curr], [RM_Tab_Num_Hist], [RM_Tab_Num_Curr], [TM_Tab_Num_Hist], [TM_Tab_Num_Curr], [IsTargetBonus], [ShipWeight], [ShipAmount], [ShipSum], [ShipSumWithoutVAT], [RealizationWeight], [RealizationAmount], [RealizationSum], [RealizationSumWithoutVAT], [ShipToRealWeight], [ShipToRealAmount], [ShipToRealSumWithoutVAT], [ShipToRealSum]
+FROM [dbo].[qry_ShipReal]
+WHERE [SK_Date_ID] BETWEEN 20240101 AND 20241231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,444 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="18a93e6c-5c95-496b-819f-d2c710f2a5f2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Адреса доставки</ID>
+  <Name>Адреса доставки</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2535" scrolltop="-3168" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8361" y="17886" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Buyers" left="73" top="-1958" logicalid="5" controlid="1" masterid="0" hint1="0" hint2="0" width="4630" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00001612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Buyers" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Outlets" left="760" top="5654" logicalid="6" controlid="2" masterid="0" hint1="0" hint2="0" width="3572" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000f40d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Outlets" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1227" top="-3258" logicalid="7" controlid="3" masterid="0" hint1="0" hint2="0" width="2265" height="2550" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Buyers_Buyers]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="1" sourceattachpoint="20" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="73" y="-1108" />
+              <point x="-927" y="-1108" />
+              <point x="-927" y="-2958" />
+              <point x="738" y="-2958" />
+              <point x="738" y="-1958" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="339" top="2543" logicalid="8" controlid="4" masterid="0" hint1="0" hint2="0" width="857" height="3411" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Outlets_Buyers]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="3" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="738" y="3042" />
+              <point x="738" y="5400" />
+              <point x="790" y="5400" />
+              <point x="790" y="5254" />
+              <point x="896" y="5254" />
+              <point x="896" y="5654" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2535</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3168</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>73</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1958</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="148">
+            <Shape Id="SK Outlet ID" Expanded="false">
+              <Attributes>
+                <Attribute Id="SK Outlet ID" />
+                <Attribute Id="SK Buyer ID" />
+                <Attribute Id="Locality" />
+                <Attribute Id="Transport Code" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Delivery Address" Expanded="false">
+              <Attributes>
+                <Attribute Id="Delivery Address" />
+              </Attributes>
+              <Position x="210" y="20" />
+            </Shape>
+            <Shape Id="Delivery Area Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Delivery Area Name" />
+              </Attributes>
+              <Position x="400" y="20" />
+            </Shape>
+            <Shape Id="Region Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Region Name" />
+              </Attributes>
+              <Position x="590" y="20" />
+            </Shape>
+            <Shape Id="Territory Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Territory Name" />
+              </Attributes>
+              <Position x="780" y="20" />
+            </Shape>
+            <Shape Id="Territory Main Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Territory Main Name" />
+              </Attributes>
+              <Position x="970" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="aa8a3c1e-2172-40b3-8e35-6e5d46226e56">
+    <DataSourceViewID>CAKE WH</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="b69a53e4-36e3-4017-b39a-f2e0a8f7f310">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="68ce67f3-f95e-45e2-b7e4-dd88c192e8c5">
+      <ID>SK Outlet ID</ID>
+      <Name>SK Outlet ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7747dfd3-7ffe-4a53-a451-a49ef99f3d20">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eba9941d-6bf0-4020-a2d9-2cbde7307446">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>SK_Outlet_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="380e9dff-9684-4569-96dd-0a72c6ae4624">
+          <AttributeID>Transport Code</AttributeID>
+          <Name>Транспортний код</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d711ba21-9cb3-476c-a189-37bce219972e">
+          <AttributeID>Delivery Address</AttributeID>
+          <Name>Адреса доставки</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a951d30f-b2e2-4583-a89b-2912b7c80ab9">
+          <AttributeID>SK Buyer ID</AttributeID>
+          <Name>SK Buyer ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="01ad793e-d93e-499a-8d39-73f9fe58f0b8">
+          <AttributeID>Locality</AttributeID>
+          <Name>Населений пункт</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f594bc10-550d-4fc6-9807-ed9c72b4218b">
+      <ID>Transport Code</ID>
+      <Name>Транспортний код</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="53f82dde-7e7d-4419-b4e3-5c9f06fd5c3f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8fa89ff8-71b2-449e-aefb-cdd7eead27b6">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>TransportCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="da6ef3e8-7fe2-499c-9902-0224e3b632f1">
+      <ID>Delivery Address</ID>
+      <Name>Адреса доставки</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="20f38291-575f-4f81-9f80-a93e5083c0a5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ca8733c9-e436-4c6d-9b3f-872c5319a4e2">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>SK_Outlet_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="70755f12-bfcc-4c90-ad9e-744534491645">
+        <DataType>WChar</DataType>
+        <DataSize>150</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="817cf207-86b8-4306-97d5-6ac3e30e7bc0">
+          <TableID>dim_Outlets</TableID>
+          <ColumnID>DeliveryAddress</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0a276ab4-9d38-4c6c-a06b-9eb917e41483">
+          <AttributeID>Delivery Area Name</AttributeID>
+          <Name>Район доставки</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="09df72e3-73ef-4221-a03d-e54ff3ad3acf">
+      <ID>SK Buyer ID</ID>
+      <Name>SK Buyer ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3233ade4-f193-45b1-a9f3-dd0824bd426f">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18680da3-63a7-44f5-85cc-9218a57c2e49">
+            <TableID>dim_Buyers</TableID>
+            <ColumnID>SK_Buyer_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c73680e7-29a9-4075-9dc5-a8af9cd9fe06">
+      <ID>Locality</ID>
+      <Name>Населений пункт</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c9e65075-ffe4-4520-835a-220730c3aba7">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="076fab24-b72a-4151-a79f-9de53d975b0a">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>Locality</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d136ae1d-f879-410b-94bf-df5714625171">
+      <ID>Territory Name</ID>
+      <Name>Територія</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="80adce1a-741c-488c-b2cc-1f79487d0682">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="78f56bc7-f379-44f7-8ee5-729cc30c689b">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>TerritoryName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="514c089a-d148-4d0f-9bc9-eeacfd236490">
+          <AttributeID>Territory Main Name</AttributeID>
+          <Name>Осн територія</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e34d7871-9121-4965-bec5-0c6e1f5a1b8b">
+      <ID>Territory Main Name</ID>
+      <Name>Осн територія</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41d31f1b-933c-4b88-bf22-ec708545f56e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18f9b118-be4d-4e51-9152-75127b40141c">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>TerritoryMainName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2a234c0e-83ba-4252-9e9a-9887816858e0">
+      <ID>Delivery Area Name</ID>
+      <Name>Район доставки</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="49a4c4b1-484d-42cb-bbe9-d319a4ad371e">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0508c5c-45b4-4982-977a-2e277df228bc">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>DeliveryAreaName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0913adb2-af17-4e95-bbe4-fd42c19e1898">
+          <AttributeID>Region Name</AttributeID>
+          <Name>Область</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cadf791e-ec56-47fc-b792-5b53ce775227">
+      <ID>Region Name</ID>
+      <Name>Область</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5002e2b3-1571-4251-b7ca-a5de0cde2582">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0e804269-9619-4826-9282-83b66471752b">
+            <TableID>dim_Outlets</TableID>
+            <ColumnID>RegionName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ec144b78-0eaa-4abe-8c7a-15f04439b64c">
+          <AttributeID>Territory Name</AttributeID>
+          <Name>Територія</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="98da8633-6bad-491d-9eb1-6ca2b7208159">
+      <ID>Hierarchy</ID>
+      <Name>По територіям</Name>
+      <Levels>
+        <Level dwd:design-time-name="0e6cb0ee-c387-46c5-8a47-6f84e197ae56">
+          <ID>Осн територія</ID>
+          <Name>Осн територія</Name>
+          <SourceAttributeID>Territory Main Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="21ba807a-9be8-44eb-b990-00ec4f42827c">
+          <ID>Територія</ID>
+          <Name>Територія</Name>
+          <SourceAttributeID>Territory Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="12703527-1d29-4663-8573-3b47fcaedd7f">
+          <ID>Адреса доставки</ID>
+          <Name>Адреса доставки</Name>
+          <SourceAttributeID>Delivery Address</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="14976fff-48f9-4426-b832-927d3bcff386">
+      <ID>Hierarchy 1</ID>
+      <Name>Територія-Область-Район доставки-ТТ</Name>
+      <Levels>
+        <Level dwd:design-time-name="bef6df77-7247-4106-8e2b-76ca23a52d11">
+          <ID>Осн територія</ID>
+          <Name>Осн територія</Name>
+          <SourceAttributeID>Territory Main Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="d94bf8f3-a906-4e34-9d2f-f55acf4522a3">
+          <ID>Територія</ID>
+          <Name>Територія</Name>
+          <SourceAttributeID>Territory Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="9db9653b-76db-4195-89b0-9ca4d9d39c44">
+          <ID>Область</ID>
+          <Name>Область</Name>
+          <SourceAttributeID>Region Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="44ad1bfc-5ddb-41f3-b501-1ea9d1507e42">
+          <ID>Район доставки</ID>
+          <Name>Район доставки</Name>
+          <SourceAttributeID>Delivery Area Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="91b77aa5-8423-4d27-882f-1d7461c7aac7">
+          <ID>Адреса доставки</ID>
+          <Name>Адреса доставки</Name>
+          <SourceAttributeID>Delivery Address</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
