@@ -7,12 +7,12 @@
   DTS:CreatorName="KHLEB\AGrinenko"
   DTS:DTSID="{FD5CA11A-86E7-403F-A8EA-44D0F1073D78}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateTotalDateFromBKK"
   DTS:PackageType="5"
-  DTS:VersionBuild="245"
-  DTS:VersionGUID="{1C1062FC-5DC0-41D9-B625-F5955E1345F1}">
+  DTS:VersionBuild="248"
+  DTS:VersionGUID="{FEC334E4-F4EC-46A5-813F-74E60C191BAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,6 +23,8 @@
       DTS:ObjectName="OLE_DB_CAKE_WH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -153,7 +155,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT tt.Source_ID, tt.Agr_Id, NEWID() NEWGUID
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT tt.Source_ID, tt.Agr_Id, NEWID() NEWGUID
 FROM
 (
 SELECT DISTINCT t.Source_ID, t.[Agr_Id]
@@ -416,14 +418,14 @@ UNION ALL
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
 FROM [dim].[Agreements] AS a WITH (NOLOCK)</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
 FROM [dim].[Agreements] AS a WITH (NOLOCK)) [refTable]
 where [refTable].[AgreementCode] = ? and [refTable].[Source_ID] = ?</property>
                     <property
@@ -576,7 +578,7 @@ where [refTable].[AgreementCode] = ? and [refTable].[Source_ID] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [UID]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [UID]
 	 , CAST(2 AS tinyint) AS Source_ID
       ,[Code]
       ,[Name]
@@ -587,7 +589,7 @@ where [refTable].[AgreementCode] = ? and [refTable].[Source_ID] = ?</property>
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [UID]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [UID]
 	 , CAST(2 AS tinyint) AS Source_ID
       ,[Code]
       ,[Name]
@@ -801,7 +803,7 @@ where [refTable].[Code] = ? and [refTable].[Source_ID] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1087,7 +1089,7 @@ where [refTable].[Code] = ? and [refTable].[Source_ID] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	CAST(2 as tinyint) AS Source_ID
 	,ta.Code AS Agr_ID
 	,ta.UID AS NEWGUID
@@ -1266,14 +1268,14 @@ FROM dbo.tmp_AgreementsBKK AS ta</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
 FROM [dim].[Agreements] AS a WITH (NOLOCK)</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT a.Source_ID Source_ID, a.[AgreementCode] [AgreementCode]
 FROM [dim].[Agreements] AS a WITH (NOLOCK)) [refTable]
 where [refTable].[Source_ID] = ? and [refTable].[AgreementCode] = ?</property>
                     <property
@@ -1437,7 +1439,7 @@ where [refTable].[Source_ID] = ? and [refTable].[AgreementCode] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1667,7 +1669,7 @@ where [refTable].[Source_ID] = ? and [refTable].[AgreementCode] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SalesChannel_ID],
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SalesChannel_ID],
        CASE
            WHEN [SalesChannelName] = 'Не определен'
            THEN ''
@@ -1679,7 +1681,7 @@ FROM [CAKE_WH].[dim].[SalesChannel] WITH (NOLOCK);</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [SalesChannel_ID],
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [SalesChannel_ID],
        CASE
            WHEN [SalesChannelName] = 'Не определен'
            THEN ''
@@ -1838,7 +1840,7 @@ where [refTable].[SalesChannelName] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SK_SalesChannelMkiPdh_ID]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SK_SalesChannelMkiPdh_ID]
       ,CASE
            WHEN [SalesChannelMkiPdhName] = 'Не определен'
            THEN ''
@@ -1850,7 +1852,7 @@ FROM [CAKE_WH].[dim].[SalesChannelMkiPdh] WITH (NOLOCK)</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [SK_SalesChannelMkiPdh_ID]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [SK_SalesChannelMkiPdh_ID]
       ,CASE
            WHEN [SalesChannelMkiPdhName] = 'Не определен'
            THEN ''
@@ -2020,7 +2022,7 @@ where [refTable].[SalesChannelMkiPdhName] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT t.Source_ID, t.BuyerCode
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT t.Source_ID, t.BuyerCode
 FROM
 dbo.tmp_BuyersBKK AS t</property>
                     <property
@@ -2152,7 +2154,7 @@ dbo.tmp_BuyersBKK AS t</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -2545,13 +2547,13 @@ dbo.tmp_BuyersBKK AS t</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_BuyersBKK]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_BuyersBKK]</property>
                     <property
                       dataType="System.String"
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_BuyersBKK]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_BuyersBKK]) [refTable]
 where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -2980,13 +2982,13 @@ where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Buyers]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Buyers]</property>
                     <property
                       dataType="System.String"
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Buyers]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Buyers]) [refTable]
 where [refTable].[BuyerCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -3429,7 +3431,7 @@ where [refTable].[BuyerCode] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT t.Dep_Id
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT t.Dep_Id
 FROM
 (
 SELECT DISTINCT [Dep_Id] AS Dep_Id
@@ -3610,14 +3612,14 @@ UNION ALL
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT pd.[ProductionDepatmentCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT pd.[ProductionDepatmentCode]
 FROM dim.ProductionDepartments AS pd WITH (NOLOCK)</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT pd.[ProductionDepatmentCode]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT pd.[ProductionDepatmentCode]
 FROM dim.ProductionDepartments AS pd WITH (NOLOCK)) [refTable]
 where [refTable].[ProductionDepatmentCode] = ?</property>
                     <property
@@ -3754,13 +3756,13 @@ where [refTable].[ProductionDepatmentCode] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_DepartmentsBKK]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_DepartmentsBKK]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_DepartmentsBKK]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_DepartmentsBKK]) [refTable]
 where [refTable].[Code] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -3939,7 +3941,7 @@ where [refTable].[Code] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4231,7 +4233,7 @@ where [refTable].[Code] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -4615,7 +4617,7 @@ where [refTable].[Code] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT  cast(p.ProductCode AS Char(11)) AS ProductCode
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT  cast(p.ProductCode AS Char(11)) AS ProductCode
 FROM dbo.tmp_ProductsBKK AS p
 WHERE ProductCode NOT IN (SELECT GroupId FROM dbo.tmp_ProductsBKK)</property>
                     <property
@@ -4718,13 +4720,13 @@ WHERE ProductCode NOT IN (SELECT GroupId FROM dbo.tmp_ProductsBKK)</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_ProductsBKK]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[tmp_ProductsBKK]</property>
                     <property
                       dataType="System.String"
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_ProductsBKK]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[tmp_ProductsBKK]) [refTable]
 where [refTable].[ProductCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -5042,13 +5044,13 @@ where [refTable].[ProductCode] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Products]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Products]</property>
                     <property
                       dataType="System.String"
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Products]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Products]) [refTable]
 where [refTable].[ProductCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -5339,7 +5341,7 @@ where [refTable].[ProductCode] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT
 	t.Source_ID,
 	t.BuyerCode,
 	t.AddressCode,
@@ -5539,7 +5541,7 @@ FROM dbo.tmp_OutletsBKK AS o WITH (NOLOCK)
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -5820,13 +5822,13 @@ FROM dbo.tmp_OutletsBKK AS o WITH (NOLOCK)
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Outlets]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[Outlets]</property>
                     <property
                       dataType="System.String"
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Outlets]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[Outlets]) [refTable]
 where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ? and [refTable].[AddressCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -6270,7 +6272,7 @@ where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ? and [refTable].[
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Fill Additional data"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -6287,7 +6289,7 @@ where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ? and [refTable].[
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 0"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -6318,7 +6320,7 @@ where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ? and [refTable].[
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 1"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -6367,7 +6369,7 @@ where [refTable].[Source_ID] = ? and [refTable].[BuyerCode] = ? and [refTable].[
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -6378,7 +6380,7 @@ FROM CAKE_WH.dim.Agreements AS a WITH (NOLOCK)</property>
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -6570,7 +6572,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -6584,7 +6586,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -6792,13 +6794,13 @@ where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTab
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
                         <property
                           dataType="System.String"
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
 where [refTable].[ProductionDepatmentCode] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -6951,7 +6953,7 @@ where [refTable].[ProductionDepatmentCode] = ?</property>
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -6963,7 +6965,7 @@ WHERE p.Source_ID = 2
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -7164,7 +7166,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7521,7 +7523,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="Команда SQL для выполнения."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	   tr.[Source_ID],
 	   tr.BuyerGroupCode,
        tr.BuyerCode,
@@ -8069,7 +8071,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Удаление старых данных"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -8144,7 +8146,7 @@ GROUP BY
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Fill Additional data"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -8161,7 +8163,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 0"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -8192,7 +8194,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 1"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -8241,7 +8243,7 @@ GROUP BY
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -8252,7 +8254,7 @@ FROM CAKE_WH.dim.Agreements AS a WITH (NOLOCK)</property>
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -8444,7 +8446,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -8459,7 +8461,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -8668,13 +8670,13 @@ where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTab
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
                         <property
                           dataType="System.String"
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
 where [refTable].[ProductionDepatmentCode] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -8827,7 +8829,7 @@ where [refTable].[ProductionDepatmentCode] = ?</property>
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -8839,7 +8841,7 @@ WHERE p.Source_ID = 2
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -9040,7 +9042,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9397,7 +9399,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="Команда SQL для выполнения."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	   tr.[Source_ID],
 	   tr.BuyerGroupCode,
        tr.BuyerCode,
@@ -9951,7 +9953,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Удаление старых данных"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -10017,7 +10019,7 @@ GROUP BY
           DTS:LocaleID="-1"
           DTS:ObjectName="Период обновления"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10081,7 +10083,7 @@ GROUP BY
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Fill Additional data"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -10098,7 +10100,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 0"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -10129,7 +10131,7 @@ GROUP BY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set IsSelected 1"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -10178,7 +10180,7 @@ GROUP BY
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -10189,7 +10191,7 @@ FROM CAKE_WH.dim.Agreements AS a WITH (NOLOCK)</property>
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT 
 	a.SK_Agreement_ID
 	,a.Source_ID
 	,a.AgreementCode
@@ -10381,7 +10383,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -10395,7 +10397,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.Source_ID
 	   ,o.SK_Outlet_ID
 	   ,o.SK_Buyer_ID
       ,CAST(o.BuyerCode AS char(9)) AS BuyerCodeC
@@ -10603,13 +10605,13 @@ where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTab
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dim].[ProductionDepartments]</property>
                         <property
                           dataType="System.String"
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dim].[ProductionDepartments]) [refTable]
 where [refTable].[ProductionDepatmentCode] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -10762,7 +10764,7 @@ where [refTable].[ProductionDepatmentCode] = ?</property>
                           description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -10774,7 +10776,7 @@ WHERE p.Source_ID = 2
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.SK_Product_ID
 	,p.Source_ID
 	,CONVERT(char(11), p.ProductCode) AS ProductCode
 	,p.Weight
@@ -10975,7 +10977,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="Команда SQL для выполнения."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                         <property
                           dataType="System.Int32"
                           description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -11332,7 +11334,7 @@ where [refTable].[ProductCode] = ? and [refTable].[Source_ID] = ?</property>
                           dataType="System.String"
                           description="Команда SQL для выполнения."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	   tr.[Source_ID],
 	   tr.BuyerGroupCode,
        tr.BuyerCode,
@@ -11861,7 +11863,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Удаление старых данных"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11927,7 +11929,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Период обновления"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -11975,12 +11977,12 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       DTS:To="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
-<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
-<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -12350,14 +12352,14 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
         <NodeLayout
           Size="203,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных"
-          TopLeft="5.50000000000001,107.5" />
+          TopLeft="4.5,107.5" />
         <NodeLayout
           Size="203,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Удаление старых данных"
           TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax.PrecedenceConstraints[Constraint]"
-          TopLeft="107,47.5">
+          TopLeft="106.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12379,7 +12381,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax.PrecedenceConstraints[Constraint 1]"
-          TopLeft="107,149.5">
+          TopLeft="106.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12641,7 +12643,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="340,1342"
-          Size="340,1384"
+          Size="340,1385"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR"
           TopLeft="378.5,1531.5" />
         <NodeLayout
@@ -12844,9 +12846,9 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.3333333333334,54"
+              EndConnector="88.8333333333334,54"
               Start="0,0"
-              End="77.3333333333334,46.5">
+              End="88.8333333333334,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -12857,13 +12859,13 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
                     Point2="0,21.7508731082654"
                     Point3="4,21.7508731082654" />
                   <mssgle:LineSegment
-                    End="73.3333333333334,21.7508731082654" />
+                    End="84.8333333333334,21.7508731082654" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.3333333333334,21.7508731082654"
-                    Point2="77.3333333333334,21.7508731082654"
-                    Point3="77.3333333333334,25.7508731082654" />
+                    Point1="84.8333333333334,21.7508731082654"
+                    Point2="88.8333333333334,21.7508731082654"
+                    Point3="88.8333333333334,25.7508731082654" />
                   <mssgle:LineSegment
-                    End="77.3333333333334,46.5" />
+                    End="88.8333333333334,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12900,52 +12902,6 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Size="111,42"
           Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора\Agr_Id"
           TopLeft="287.7,33" />
-        <EdgeLayout
-          Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора.Paths[OLE DB Source Output]"
-          TopLeft="343.2,75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора.Paths[Lookup No Match Output]"
-          TopLeft="343.7,149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,8.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора.Paths[Lookup Match Output]"
           TopLeft="343.7,227">
@@ -12989,7 +12945,57 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора.Paths[OLE DB Source Output]"
+          TopLeft="343.2,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление справочников и таблицы Shipments\Добавление нового договора.Paths[Lookup No Match Output]"
+          TopLeft="343.7,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,8.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14099,10 +14105,6 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="173,42"
-          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\FactRealisationsMax"
-          TopLeft="23.0000000000001,617.5" />
-        <NodeLayout
           Size="131,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\DimOutlets"
           TopLeft="44,209.5" />
@@ -14110,6 +14112,10 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Size="208,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\DimProductionDepartments"
           TopLeft="5.50000000000004,311.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\DimAgreements"
+          TopLeft="32.5000000000001,413.5" />
         <NodeLayout
           Size="192,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\Пересчет веса для яиц"
@@ -14119,13 +14125,13 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\DimProducts"
           TopLeft="40.5,107.5" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\DimAgreements"
-          TopLeft="32.5000000000001,413.5" />
-        <NodeLayout
           Size="142,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\tmp_RARMax"
           TopLeft="38.5,5.5" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных\FactRealisationsMax"
+          TopLeft="23.0000000000001,617.5" />
         <EdgeLayout
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы fact RealisationsMax\Заливка новых данных.Paths[Выход производного столбца]"
           TopLeft="109.5,557.5">
@@ -14365,10 +14371,6 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\FactReturnsMax"
-          TopLeft="32.5000000000001,617.5" />
-        <NodeLayout
           Size="131,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\DimOutlets"
           TopLeft="44,209.5" />
@@ -14376,6 +14378,10 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Size="208,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\DimProductionDepartments"
           TopLeft="5.50000000000004,311.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\DimAgreements"
+          TopLeft="32.5000000000001,413.5" />
         <NodeLayout
           Size="192,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\Пересчет веса для яиц"
@@ -14385,13 +14391,13 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\DimProducts"
           TopLeft="40.5,107.5" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\DimAgreements"
-          TopLeft="32.5000000000001,413.5" />
-        <NodeLayout
           Size="142,42"
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\tmp_RARMax"
           TopLeft="38.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных\FactReturnsMax"
+          TopLeft="32.5000000000001,617.5" />
         <EdgeLayout
           Id="Package\Обновление таблиц fact RealisationsMax и fact Returns и fact RAR\Обновление таблицы factReturnsMax\Заливка новых данных.Paths[Выход производного столбца]"
           TopLeft="109.5,557.5">
@@ -14631,10 +14637,6 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="165,42"
-          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\factShipmentsMax"
-          TopLeft="25.0000000000001,594.5" />
-        <NodeLayout
           Size="131,42"
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\DimOutlets"
           TopLeft="42,209.5" />
@@ -14642,6 +14644,10 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Size="208,42"
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\DimProductionDepartments"
           TopLeft="5.50000000000004,311.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\DimAgreements"
+          TopLeft="32.5000000000001,413.5" />
         <NodeLayout
           Size="192,42"
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\Пересчет веса для яиц"
@@ -14651,13 +14657,13 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\DimProducts"
           TopLeft="40.5,107.5" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\DimAgreements"
-          TopLeft="32.5000000000001,413.5" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\tmp_ShipmentsMax"
           TopLeft="24,5.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных\factShipmentsMax"
+          TopLeft="25.0000000000001,594.5" />
         <EdgeLayout
           Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных.Paths[Выход производного столбца]"
           TopLeft="203,540">
@@ -14684,6 +14690,28 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
                     Point3="-95.4999999999999,31.25" />
                   <mssgle:LineSegment
                     End="-95.4999999999999,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="109.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14798,28 +14826,6 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Обновление таблиц fact ShipmentsMax и fact Shipments\fact ShipmentsMax\Заливка новых данных.Paths[Выход источника &quot;OLE DB&quot;]"
-          TopLeft="109.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

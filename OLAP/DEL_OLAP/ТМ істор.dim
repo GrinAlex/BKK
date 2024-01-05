@@ -1,8 +1,8 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1ea48ad5-82ac-43a9-97ad-adad4be26823" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>ТМы истор</ID>
   <Name>ТМ істор</Name>
-  <CreatedTimestamp>2019-08-22T11:06:05.796667Z</CreatedTimestamp>
-  <LastSchemaUpdate>2022-01-18T11:54:42.536667Z</LastSchemaUpdate>
+  <CreatedTimestamp>2023-12-06T13:54:14.183333Z</CreatedTimestamp>
+  <LastSchemaUpdate>2023-12-06T13:54:14.183333Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
@@ -66,13 +66,13 @@
       <Value>100</Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>2023-11-15T06:36:54.703333Z</LastProcessed>
+  <LastProcessed>2023-12-13T08:30:18.09Z</LastProcessed>
   <State>Processed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="d382fdb7-47e2-49d3-82b0-4719c7a097da">
+  <Source xsi:type="DataSourceViewBinding">
     <DataSourceViewID>KHLEB WH</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="b3f18604-182b-48af-bf16-5480ae5f9102">
+  <ErrorConfiguration>
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
@@ -82,32 +82,32 @@
   <Collation>Cyrillic_General_CI_AS</Collation>
   <UnknownMemberName>Unknown</UnknownMemberName>
   <Attributes>
-    <Attribute dwd:design-time-name="fdf2994d-c112-415d-8e6f-4ad899417018">
+    <Attribute>
       <ID>TM Tab Num</ID>
       <Name>ТМ історичний таб ном</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ffa0a54a-a947-4bcf-bd79-5692a3a6df1e">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0e2f2c6f-8902-4a89-9e61-94afec1f27b6">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_TMs</TableID>
             <ColumnID>TM_Tab_Num</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="6fd04cde-240d-42b1-98f6-1067ebfe7869">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>9</DataSize>
         <NullProcessing>ZeroOrBlank</NullProcessing>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="9d614eb5-2268-4d4d-9f03-67663d09221a">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_TMs</TableID>
           <ColumnID>TM_Tab_Num</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="5d55f32f-34ed-4808-9568-6115f5e7a7a6">
+        <AttributeRelationship>
           <AttributeID>TM Name</AttributeID>
           <Name>Имя истор ТМ</Name>
         </AttributeRelationship>
@@ -117,23 +117,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="b9bf0a03-f26a-4ad8-90c5-9469fad5797d">
+    <Attribute>
       <ID>TM Name</ID>
       <Name>ТМ історичний</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c3559cea-8e97-4982-a7f6-82ca66293aa7">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9a6ccf0-debe-492e-90e5-3159375e8886">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_TMs</TableID>
             <ColumnID>TMName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ab3c2d7f-1063-4633-b12e-e2d75dea4a02">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="cc7395cd-ab23-4cb8-90e5-f3bbf93986e5">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_TMs</TableID>
           <ColumnID>TMName</ColumnID>
         </Source>
@@ -143,12 +143,12 @@
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
   </Attributes>
-  <ProactiveCaching dwd:design-time-name="d47060fc-d608-45cc-b0e8-bc14ffa23790">
+  <ProactiveCaching>
     <SilenceInterval>-PT1S</SilenceInterval>
     <Latency>-PT1S</Latency>
     <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
     <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b4a24cf2-5d95-4d68-8b81-00597e4d6803" />
+    <Source xsi:type="ProactiveCachingInheritedBinding" />
   </ProactiveCaching>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

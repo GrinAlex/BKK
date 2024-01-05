@@ -1,8 +1,8 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c91e99fd-0abf-43b4-9c7d-5f6710cf44f9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Дата</ID>
   <Name>Дата</Name>
-  <CreatedTimestamp>2019-08-22T11:06:02.403333Z</CreatedTimestamp>
-  <LastSchemaUpdate>2022-01-18T11:54:37.466667Z</LastSchemaUpdate>
+  <CreatedTimestamp>2023-12-06T13:54:14.25Z</CreatedTimestamp>
+  <LastSchemaUpdate>2023-12-06T13:54:14.25Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
@@ -118,12 +118,12 @@
       </Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>2023-11-15T06:37:21.563333Z</LastProcessed>
+  <LastProcessed>2023-12-13T08:30:19.853333Z</LastProcessed>
   <State>Processed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a27bb330-f59c-4628-9b70-f0f39a85c1ff">
+  <Source xsi:type="DataSourceViewBinding">
     <DataSourceViewID>KHLEB WH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="78369982-85b4-4d3f-8c62-a53987662fac">
+  <ErrorConfiguration>
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
@@ -133,85 +133,85 @@
   <Collation>Cyrillic_General_CI_AS</Collation>
   <UnknownMemberName>Unknown</UnknownMemberName>
   <Attributes>
-    <Attribute dwd:design-time-name="ca4d745c-09da-492c-a42e-cc9581490d9a">
+    <Attribute>
       <ID>SK Date ID</ID>
       <Name>Дата</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2b4b3207-2150-43df-9fcc-96819560b2d7">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b122feae-657b-4947-9a38-3508aa13c69e">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Date_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="3233a4a2-526b-49c9-b04e-56d96802f725">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>8</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="987bec92-1db1-4333-8605-254920f7dec5">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>ShortDateUa</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="4dc97957-d6ab-4c6e-9c81-04cc9dd242c7">
+        <AttributeRelationship>
           <AttributeID>SK Month ID</AttributeID>
           <Name>SK Month ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="bc179430-e360-4fe2-b350-df14f67dc819">
+        <AttributeRelationship>
           <AttributeID>Is Equal Number Days Of Month To Today Name</AttributeID>
           <Name>Рівна кількість днів місяця</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="75ef4879-aaee-4a1a-9d58-e80d78a53e19">
+        <AttributeRelationship>
           <AttributeID>Is Equal Number Days Of Year To Today</AttributeID>
           <Name>Рівна кількість днів року</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="f547b648-9dff-4a2e-844c-43b82fdaf28e">
+        <AttributeRelationship>
           <AttributeID>Day Characteristic Name</AttributeID>
           <Name>Характеристика дня</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="399a0050-b711-4e38-b7d7-40608eabd3ea">
+        <AttributeRelationship>
           <AttributeID>Week Characteristic Name</AttributeID>
           <Name>Характеристика тижня</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="f3929d2d-343f-4512-950b-5eb9fa14224d">
+        <AttributeRelationship>
           <AttributeID>Month Characteristic Name</AttributeID>
           <Name>Характеристика місяця</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="31d48e1c-ff5c-4a0b-b367-1c978fbbd87b">
+        <AttributeRelationship>
           <AttributeID>Year Characteristic Name</AttributeID>
           <Name>Характеристика року</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ace50845-990f-4468-945c-a9c3c008ff8c">
+        <AttributeRelationship>
           <AttributeID>Month Name Ru6</AttributeID>
           <Name>Місяць</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="a7844102-bb96-4e43-8d44-0b087044ce2a">
+        <AttributeRelationship>
           <AttributeID>SK Date ID 1</AttributeID>
           <Name>SK Date ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="554f2548-b106-4591-a287-2ec4b97dfcf1">
+        <AttributeRelationship>
           <AttributeID>SK Week ID</AttributeID>
           <Name>Тиждень</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="8ec23b29-e57b-4a08-9518-9b9225ecb7dc">
+        <AttributeRelationship>
           <AttributeID>Day</AttributeID>
           <Name>День</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ff0508d7-c958-4333-806e-2aafc8bf1d12">
+        <AttributeRelationship>
           <AttributeID>Month Of Year</AttributeID>
           <Name>Міс</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="cf5525ec-1cb4-419c-a748-5ec5c1ab5983">
+        <AttributeRelationship>
           <AttributeID>Quarter</AttributeID>
           <Name>Квартал</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="423598b5-be34-4ec1-b263-3db014effafe">
+        <AttributeRelationship>
           <AttributeID>Day Of Week</AttributeID>
           <Name>День тиж</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="9db57e0d-756d-4736-92c0-2a87f4538786">
+        <AttributeRelationship>
           <AttributeID>Week Of Year</AttributeID>
           <Name>Номер тижня</Name>
         </AttributeRelationship>
@@ -221,28 +221,28 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="8d368ae0-3ad5-47f3-8a52-63d0e77211b4">
+    <Attribute>
       <ID>Quarter Name Ru</ID>
       <Name>Квартал року</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="5af1ad6a-b5f5-440e-8ca0-4fb8967c36b7">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f86de6ae-3f2b-4a6d-9acf-305b27570821">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Quarter_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="8d04e569-2b17-405b-8932-6f28209412be">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>12</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="56509306-9137-4470-8dae-a05d8ba44366">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>QuarterNameRu</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="d5141ba8-017b-463f-9659-c4840ff82b7d">
+        <AttributeRelationship>
           <AttributeID>Year</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Рік</Name>
@@ -253,45 +253,52 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="870aa9ab-5f56-4b90-ada8-4c52d8aa76f4">
+    <Attribute>
       <ID>Year</ID>
       <Name>Рік</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9b13db87-de5b-4b1f-bb07-5d6d922f9d6e">
+        <KeyColumn>
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e31e2d89-6b12-47a0-8801-47f1b4534b7c">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>Year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_Date</TableID>
+          <ColumnID>Year</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f155d7dd-f344-43a2-9686-0546a3522ffc">
+    <Attribute>
       <ID>Month Name Ru6</ID>
       <Name>Місяць року</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="58d60446-3ec7-40f8-8995-2bca92e094b6">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5983325e-cae7-4a08-92fc-8b6e77e8ae37">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Month_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bdda4fd9-6949-4892-8a04-e5e57094af92">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>6</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="a9214c7b-0356-4dbc-bc33-b7264c93c2c4">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>MonthNameUa6</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="ec0778f8-ce4c-43c7-b9f1-a83016d6baca">
+        <AttributeRelationship>
           <AttributeID>Quarter Name Ru</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Квартал</Name>
@@ -302,21 +309,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e87d9043-d75b-48af-a363-9cdedcf24384">
+    <Attribute>
       <ID>SK Month ID</ID>
       <Name>SK Month ID</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="78724361-db42-40bd-b7d4-12c07fad246a">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="aa893f1f-15c2-4d7b-a72e-50b563894628">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Month_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="4a62acfc-4bd3-43c4-bde8-e1367b69daee">
+      <NameColumn>
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="a6674e79-56f7-4dde-8d7f-a9114b0d164e">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>SK_Month_ID</ColumnID>
         </Source>
@@ -325,23 +332,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="7c13cc29-6090-48c7-b9c1-23aee85c422c">
+    <Attribute>
       <ID>Is Equal Number Days Of Month To Today Name</ID>
       <Name>Рівна кількість днів місяця</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ecd74594-34c0-41ef-a3ee-57045726a394">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>28</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a83fd2b9-2ab9-4936-8d9a-54d9e927f4ba">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>IsEqualNumberDaysOfMonthToTodayName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="17f06836-750b-4777-b40c-1f5af0131394">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>28</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e8356ef6-cd5c-496c-8c97-1e9df3cc24dd">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>IsEqualNumberDaysOfMonthToTodayName</ColumnID>
         </Source>
@@ -350,23 +357,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="67e1de02-1348-4da2-afa6-01179cd44abd">
+    <Attribute>
       <ID>Is Equal Number Days Of Year To Today</ID>
       <Name>Рівна кількість днів року</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ae519c47-ae91-431e-b97b-0ea7209b4411">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>26</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="292d9ba6-fd2a-46b7-bbd3-24b78ca42600">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>IsEqualNumberDaysOfYearToToday</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="e2d419ca-ee01-4a70-bf3f-80d3e294fc84">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>26</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="fbae8c37-0554-4832-95ab-effb58097fcd">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>IsEqualNumberDaysOfYearToToday</ColumnID>
         </Source>
@@ -375,23 +382,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3625d12c-f132-4baa-989e-382ad054db38">
+    <Attribute>
       <ID>Day Characteristic Name</ID>
       <Name>Характеристика дня</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="96c0a485-f674-49a9-8871-3522220b55dc">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e03b936e-9623-4494-84cc-11076f40d312">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>DayCharacteristicName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="24804bb7-7204-4ce1-8b68-56613af8d889">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="83d60852-7862-42c9-b677-403fa7629661">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>DayCharacteristicName</ColumnID>
         </Source>
@@ -400,23 +407,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="439b4bee-5a08-4672-bb1a-b0acbf0bf66f">
+    <Attribute>
       <ID>Week Characteristic Name</ID>
       <Name>Характеристика тижня</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c745936d-48f8-4942-b355-388e524a6ccc">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>18</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="04d7429f-af3d-4829-95f6-02634fa7d5f6">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>WeekCharacteristicName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="3c4232b9-d465-4805-9f7e-a8cbc27d08db">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>18</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="5ec21a4d-41ea-458b-bfda-c9678599dea1">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>WeekCharacteristicName</ColumnID>
         </Source>
@@ -425,23 +432,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f3249ea5-d33e-4bed-bbe5-1cfc72d92422">
+    <Attribute>
       <ID>Month Characteristic Name</ID>
       <Name>Характеристика місяця</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="5990f9ee-efe1-42ad-b997-bb93aa1a4e68">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>24</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="900dc3fe-4269-466b-91d1-a177e7d566d3">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>MonthCharacteristicName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="d042cee8-c7d2-4dfe-8723-80874372a1ea">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>24</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="ebbe3adf-e8ab-4664-825e-55cee33966be">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>MonthCharacteristicName</ColumnID>
         </Source>
@@ -450,23 +457,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e00f33cb-28e0-4462-a93b-75559730c528">
+    <Attribute>
       <ID>Year Characteristic Name</ID>
       <Name>Характеристика року</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a0ff0515-95da-4a93-8b21-4f64dd452bb0">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>14</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a487976e-a027-48eb-ace0-25fad51696f0">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>YearCharacteristicName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="670debee-3c33-4094-bed0-27b5d31f2157">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>14</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="345dba5d-109b-4e13-8893-05f3eca5a4d9">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>YearCharacteristicName</ColumnID>
         </Source>
@@ -475,44 +482,51 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f7630df4-6414-4098-af01-3e8cc767e4d7">
+    <Attribute>
       <ID>SK Date ID 1</ID>
       <Name>SK Date ID</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0e6e1efa-f979-4215-9e65-e2988622a9c6">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="72f8210e-3671-44c9-9c65-e731147def91">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Date_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_Date</TableID>
+          <ColumnID>SK_Date_ID</ColumnID>
+        </Source>
+      </NameColumn>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="6df20804-44a8-46d1-88b4-a6fdc64e6575">
+    <Attribute>
       <ID>SK Week ID</ID>
       <Name>Тиждень року</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="aef1f957-7d3d-4cd6-9803-8454b5533f07">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a83eb067-d032-41f9-9053-74c60aa20e5d">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>SK_Week_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="c218544c-db11-4efa-860a-a9522a0a9fd5">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>12</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="fae0f30a-1bb1-4cad-bc24-e3d1ff84a898">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>WeekName</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="a1c745f2-9293-4182-8368-377070633dd3">
+        <AttributeRelationship>
           <AttributeID>Year</AttributeID>
           <Name>Рік</Name>
         </AttributeRelationship>
@@ -522,39 +536,46 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="581c28eb-f1ab-4f4d-9919-ad4f98e2212e">
+    <Attribute>
       <ID>Day</ID>
       <Name>День</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f4734f17-4e14-4678-9865-7f24e31af501">
+        <KeyColumn>
           <DataType>UnsignedTinyInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d18c3cc-f995-497c-9111-f0a6191372d3">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>Day</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_Date</TableID>
+          <ColumnID>Day</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="79d0793f-4843-444e-b189-db90abce8149">
+    <Attribute>
       <ID>Month Of Year</ID>
       <Name>Міс</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d96b6b72-11f7-4224-9e09-e580b489e77f">
+        <KeyColumn>
           <DataType>UnsignedTinyInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="336f077a-18c1-40c6-bd03-9af87c6c9c6c">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>MonthOfYear</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="7fce7247-6b3e-400a-b5fe-1426ac0c82d6">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>3</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="56d079ae-b119-4694-8a62-0b15a097f11a">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>MonthNameUa3</ColumnID>
         </Source>
@@ -564,39 +585,46 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="bc22f7e6-465c-4442-a1b2-6f6948ccf676">
+    <Attribute>
       <ID>Quarter</ID>
       <Name>Квартал</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="063f5230-7391-4f4d-bac0-8e8a226bec54">
+        <KeyColumn>
           <DataType>UnsignedTinyInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0dc7dd04-b7ee-43af-8892-5a854c57c6c7">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>Quarter</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_Date</TableID>
+          <ColumnID>Quarter</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="cd2ad858-2c43-4735-b7f3-d65bd9e32104">
+    <Attribute>
       <ID>Day Of Week</ID>
       <Name>День тиж</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a1b5dff2-47b9-432f-9a87-9db9cfafd399">
+        <KeyColumn>
           <DataType>UnsignedTinyInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="602de22d-5063-465e-b1e8-d273fd6b7c0b">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>DayOfWeek</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ce31d50e-2fa1-4c6f-b1e7-78de336a80ac">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>2</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="963118ac-4751-4637-aac8-635e4dc12685">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_Date</TableID>
           <ColumnID>DayOfWeekShortUa</ColumnID>
         </Source>
@@ -606,18 +634,25 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="585b62da-14e9-4168-bdc8-0e56149e9ae7">
+    <Attribute>
       <ID>Week Of Year</ID>
       <Name>Номер тижня</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="e9bf36e2-9780-4ea0-bab4-39ead271e582">
+        <KeyColumn>
           <DataType>UnsignedTinyInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1fc926dc-c2a0-424e-b876-7bf5cc40794b">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_Date</TableID>
             <ColumnID>WeekOfYear</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_Date</TableID>
+          <ColumnID>WeekOfYear</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
@@ -625,68 +660,68 @@
     </Attribute>
   </Attributes>
   <Hierarchies>
-    <Hierarchy dwd:design-time-name="c1bc6a73-6b42-46d2-902f-2bc383b40723">
+    <Hierarchy>
       <ID>Hierarchy</ID>
       <Name>Рік-Квартал-Місяць-День</Name>
       <Levels>
-        <Level dwd:design-time-name="aee59d5e-eacb-4064-8281-354cb326fbed">
+        <Level>
           <ID>Рік</ID>
           <Name>Рік</Name>
           <SourceAttributeID>Year</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="b76af0db-8192-42e7-8990-109b416fd793">
+        <Level>
           <ID>Квартал</ID>
           <Name>Квартал року</Name>
           <SourceAttributeID>Quarter Name Ru</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="888b6e35-5b52-4b26-906a-dbc8020090cc">
+        <Level>
           <ID>Місяць</ID>
           <Name>Місяць року</Name>
           <SourceAttributeID>Month Name Ru6</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="8574c236-8df6-442b-b9da-69d638a57121">
+        <Level>
           <ID>День</ID>
           <Name>Дата</Name>
           <SourceAttributeID>SK Date ID</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy dwd:design-time-name="228e99b7-cb29-4131-97a8-66df7f6ab02b">
+    <Hierarchy>
       <ID>Hierarchy 1</ID>
       <Name>Рік-Тиждень-День</Name>
       <Levels>
-        <Level dwd:design-time-name="83bcf9cb-47f1-44ec-a95d-b4f85ddf0295">
+        <Level>
           <ID>Рік</ID>
           <Name>Рік</Name>
           <SourceAttributeID>Year</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="ca6bcb87-3e17-4bfc-a84c-8c4d2b7ad663">
+        <Level>
           <ID>Тиждень</ID>
           <Name>Тиждень року</Name>
           <SourceAttributeID>SK Week ID</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="f5536fac-eff7-44b6-9cae-0bebc09f1458">
+        <Level>
           <ID>День</ID>
           <Name>Дата</Name>
           <SourceAttributeID>SK Date ID</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy dwd:design-time-name="f77ea16e-eac4-4f9e-bace-89662fd530fe">
+    <Hierarchy>
       <ID>Hierarchy 2</ID>
       <Name>Рік-Місяць-День</Name>
       <Levels>
-        <Level dwd:design-time-name="386900b4-87fa-4613-a461-5e7b86884607">
+        <Level>
           <ID>Рік</ID>
           <Name>Рік</Name>
           <SourceAttributeID>Year</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="97f30d1f-b183-4041-b2de-61c3ef7c651d">
+        <Level>
           <ID>Місяць</ID>
           <Name>Місяць року</Name>
           <SourceAttributeID>Month Name Ru6</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="710a935b-aeb3-42aa-911a-7d30d71c93d6">
+        <Level>
           <ID>День</ID>
           <Name>Дата</Name>
           <SourceAttributeID>SK Date ID</SourceAttributeID>
@@ -694,12 +729,12 @@
       </Levels>
     </Hierarchy>
   </Hierarchies>
-  <ProactiveCaching dwd:design-time-name="35fec759-f994-4fa0-9749-780071f3d432">
+  <ProactiveCaching>
     <SilenceInterval>-PT1S</SilenceInterval>
     <Latency>-PT1S</Latency>
     <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
     <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3e509bbc-9e4f-4fe8-a0e9-20fea9a93391" />
+    <Source xsi:type="ProactiveCachingInheritedBinding" />
   </ProactiveCaching>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

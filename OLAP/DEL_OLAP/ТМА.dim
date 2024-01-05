@@ -1,8 +1,8 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="89bb6200-6b9c-4113-8dea-e4c80bd5c4f6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Промо закупка</ID>
   <Name>ТМА</Name>
-  <CreatedTimestamp>2019-08-22T11:06:05.6Z</CreatedTimestamp>
-  <LastSchemaUpdate>2022-01-18T11:54:41.7Z</LastSchemaUpdate>
+  <CreatedTimestamp>2023-12-06T13:54:14.13Z</CreatedTimestamp>
+  <LastSchemaUpdate>2023-12-06T13:54:14.13Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
@@ -66,12 +66,12 @@
       <Value>100</Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>2023-11-15T06:37:51.693333Z</LastProcessed>
+  <LastProcessed>2023-12-13T08:30:19.166667Z</LastProcessed>
   <State>Processed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="6c00f4d0-fce5-4125-93e0-780efdfb79dc">
+  <Source xsi:type="DataSourceViewBinding">
     <DataSourceViewID>KHLEB WH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="b3790d60-685c-464d-9383-8ff801ed72c1">
+  <ErrorConfiguration>
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
@@ -81,56 +81,56 @@
   <Collation>Cyrillic_General_CI_AS</Collation>
   <UnknownMemberName>Unknown</UnknownMemberName>
   <Attributes>
-    <Attribute dwd:design-time-name="79e75858-4d5c-4226-a794-4733a08e1d53">
+    <Attribute>
       <ID>SK Promo ID</ID>
       <Name>SK Promo ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8913ec96-a5b8-46d9-9655-da0450cb4aeb">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="75f6d491-4e1d-4f14-a25b-571677ff64b8">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>SK_Promo_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bb419577-f0c2-43f4-a262-c32fd926e9f2">
+      <NameColumn>
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="1b0d7a01-025c-4172-b637-69560db684c3">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>SK_Promo_ID</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="0a292a82-1c79-403f-ae45-db2700a63fe2">
+        <AttributeRelationship>
           <AttributeID>Promo Name</AttributeID>
           <Name>Promo Name</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="d1d990d6-4284-45cc-8ea9-a0307fa60cfb">
+        <AttributeRelationship>
           <AttributeID>Discount</AttributeID>
           <Name>Discount</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="1e232264-3e34-4f18-bfde-40188248eea4">
+        <AttributeRelationship>
           <AttributeID>SK Date Purchase From</AttributeID>
           <Name>SK Date Purchase From</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="1c87f027-627c-42b0-8564-8bd099fe45fa">
+        <AttributeRelationship>
           <AttributeID>SK Date Purchase To</AttributeID>
           <Name>SK Date Purchase To</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="8616dc82-abfa-433b-ba00-a648d26e5254">
+        <AttributeRelationship>
           <AttributeID>Type Discont Name</AttributeID>
           <Name>Тип акции</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ce5a3aa7-98f2-41c3-9e52-5ed2430ddd55">
+        <AttributeRelationship>
           <AttributeID>Date Purch From</AttributeID>
           <Name>Дата закупівлі з</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ff8ac23d-5d47-4226-8b3a-99a4fd69ee66">
+        <AttributeRelationship>
           <AttributeID>Date Purch To</AttributeID>
           <Name>Дата закупівлі по</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="414fe751-ae8a-4f78-8c09-6144e2b4191c">
+        <AttributeRelationship>
           <AttributeID>Sales Name</AttributeID>
           <Name>Тип продажів</Name>
         </AttributeRelationship>
@@ -140,22 +140,22 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3935406e-a6e7-416d-9888-98926306df78">
+    <Attribute>
       <ID>Promo Name</ID>
       <Name>Назва ТМА</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="250b97a8-59eb-48db-8383-94d6a3ca3696">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e114d8fe-a9fc-431f-9cd5-c7cdbcc50a3a">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>SK_Promo_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="34bfdc9c-dd3c-423e-bbbe-361ebe1ae4b7">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>150</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="d3874763-182f-4863-b9df-36404df4ad29">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>PromoName</ColumnID>
         </Source>
@@ -164,21 +164,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="8ab47f11-2c3e-47eb-beb0-f54dfd6a13f0">
+    <Attribute>
       <ID>Discount</ID>
       <Name>Дисконт</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ef25a0b4-da73-4cb3-9f74-7ce5fda676b1">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c217329a-2288-4501-ba61-55535fcfb2ef">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>Discount</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="048142bf-c1de-4411-aa42-6f295c35119f">
+      <NameColumn>
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e6f84161-b1ee-4a02-80fb-f93e2d277ca8">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>Discount</ColumnID>
         </Source>
@@ -188,21 +188,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="932c4f3d-fb17-4f15-9e89-525dab84b6b3">
+    <Attribute>
       <ID>SK Date Purchase From</ID>
       <Name>SK Date Purchase From</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="12828c4d-02c4-4b4b-b596-bc288eb98019">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b8355b44-c864-4b29-b5b6-2894678215ea">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>SK_Date_Purchase_From</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="57a50cf1-a1d0-43fe-9bdd-22eb9ed7a945">
+      <NameColumn>
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e20cad2b-83d5-42ae-91e9-94e2b097bba0">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>SK_Date_Purchase_From</ColumnID>
         </Source>
@@ -212,21 +212,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="10c3501c-deac-42c6-9682-dbf86564ed61">
+    <Attribute>
       <ID>SK Date Purchase To</ID>
       <Name>SK Date Purchase To</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="cab92ae8-2543-430b-bb7e-b4f3836fe9da">
+        <KeyColumn>
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a3830f8-3ce0-4780-ac91-9a0e9f73db51">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>SK_Date_Purchase_To</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="44767328-6c7c-4aef-84a8-3548e7614d18">
+      <NameColumn>
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="cf42c5fa-3267-4867-9b31-4626c2e55ab0">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>SK_Date_Purchase_To</ColumnID>
         </Source>
@@ -236,23 +236,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="2bd6a0b2-161c-4054-bd11-8ec30258f6f1">
+    <Attribute>
       <ID>Type Discont Name</ID>
       <Name>Спосіб проведення ТМА</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="eade8497-0893-46ba-bcfc-84da26e979d1">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="18f160b8-1914-4064-8c16-19644618693f">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>TypeDiscontName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="9f4d8909-86b8-416a-8751-547070739954">
+      <NameColumn>
         <DataType>WChar</DataType>
         <DataSize>20</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="ec8ebc78-4460-4e5a-bbb9-2298031abb1a">
+        <Source xsi:type="ColumnBinding">
           <TableID>dim_qry_Promo_Purch</TableID>
           <ColumnID>TypeDiscontName</ColumnID>
         </Source>
@@ -261,63 +261,87 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="b3b47d21-ab59-4c69-a6a2-09493adfc062">
+    <Attribute>
       <ID>Date Purch From</ID>
       <Name>Дата закупівлі з</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="3538eedc-0395-41f6-8e5f-18aebabea178">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f59f90dc-ce19-4ca3-b933-99ae449c9df2">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>DatePurchFrom</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_qry_Promo_Purch</TableID>
+          <ColumnID>DatePurchFrom</ColumnID>
+        </Source>
+      </NameColumn>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="bce18e9c-93fd-4542-bae0-4ba658e19b49">
+    <Attribute>
       <ID>Date Purch To</ID>
       <Name>Дата закупівлі по</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="37fae8a9-f3b2-4fdb-90d6-cc790ebf7fbf">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f78c03c7-2e39-4bff-b39e-e5c2df9a8c16">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>DatePurchTo</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_qry_Promo_Purch</TableID>
+          <ColumnID>DatePurchTo</ColumnID>
+        </Source>
+      </NameColumn>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3130eaeb-89c1-4bce-85bf-38b5241b221d">
+    <Attribute>
       <ID>Sales Name</ID>
       <Name>Тип продажів</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6c33d261-890e-4133-a72c-7702da8d67aa">
+        <KeyColumn>
           <DataType>WChar</DataType>
           <DataSize>16</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="64a06b29-ff75-4053-b9ec-a503501f3b10">
+          <Source xsi:type="ColumnBinding">
             <TableID>dim_qry_Promo_Purch</TableID>
             <ColumnID>SalesName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <DataSize>16</DataSize>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dim_qry_Promo_Purch</TableID>
+          <ColumnID>SalesName</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
   </Attributes>
-  <ProactiveCaching dwd:design-time-name="8c2c46e4-eab9-479f-8be5-9588dc8358ac">
+  <ProactiveCaching>
     <SilenceInterval>-PT1S</SilenceInterval>
     <Latency>-PT1S</Latency>
     <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
     <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="af62417a-fba0-49aa-8456-fa848f777a64" />
+    <Source xsi:type="ProactiveCachingInheritedBinding" />
   </ProactiveCaching>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>
