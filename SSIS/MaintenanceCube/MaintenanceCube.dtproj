@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">OLAPBKK2</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtXhE447EUqcLIv6VzhzRQAAAAACAAAAAAADZgAAwAAAABAAAADqoRs9v4p0M3reNyZppBYkAAAAAASAAACgAAAAEAAAAE/rS242sZ2CBsUD3jqZerWIAAAAUJtE27DKCYP8oY0a7Zc1XwoT/Ey5Az02Von4H1HnIB9GLFi1tE/cC07J/Oua6IYAM6Y6kSJlP5H7bU9B3/otu14eIhqX3JUJSVnKZVTGNaEQwCMOHn/g/VUa+QH9C8QeXundhn6khNhljIpb0fr224ZvuKGHf1pnoDiMrT6j+hSdTEiZ86CBHBQAAABY4g/swALbGZTDEwpv7iBO6b3+GA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtXhE447EUqcLIv6VzhzRQAAAAACAAAAAAADZgAAwAAAABAAAADHL1QBAzmxM37k0tY+j8EiAAAAAASAAACgAAAAEAAAAMwH+W48ahmG+dWyV7/Kea6IAAAACPzqFSYeWuOTljNriKdFxUYuqwxPFNRUF9pflEVbei8ZlItGxrqfh2VRpVuNe9fYLIqQph+58CDBgNV1u39pzgYhRT1pR+/GbKvJj3b0yyGyyF4TWEiwefxv+6ZH+hgJPLVdae9yJ35aHIp3jEOPif4aBNfXI+O0DbGrsEQVOp+ry8cOMlbLbhQAAAAJGXwgjnGmGUbtiJ7NuAqlbGz/8A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -46,16 +46,31 @@
                 <SSIS:Property SSIS:Name="Name">RecalculationNewPartitionsInSalesTEST</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">35</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0A818968-D90C-477E-B8F9-9912BC26E283}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E033FA84-A890-4666-8CFF-B306879BA4E8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.OLAPBKK2.OLAP.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.OLAPBKK2.OLAP.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -67,7 +82,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=OLAPBKK2;User ID=TARGET\o.grynenko;Initial Catalog=OLAP_TEST;Provider=MSOLAP.8;Persist Security Info=False;Impersonation Level=Impersonate;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=OLAPBKK2;User ID=TARGET\olapbkk2;Initial Catalog=OLAP_TEST;Provider=MSOLAP.8;Persist Security Info=False;Impersonation Level=Impersonate;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -141,7 +156,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">TARGET\o.grynenko</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">TARGET\olapbkk2</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

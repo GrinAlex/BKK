@@ -1467,6 +1467,214 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="PlanFactByChainsIKV">
+      <Query>
+        <DataSourceName>OLTP_CAKE_WH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Y">
+            <Value>=Parameters!paramYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@M">
+            <Value>=Parameters!paramMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SK_Groupping_ID">
+            <Value>=12</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpt.PlanFactByChains</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SK_Month_ID">
+          <DataField>SK_Month_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CurrDay">
+          <DataField>CurrDay</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalDays">
+          <DataField>TotalDays</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CurrWorkDay">
+          <DataField>CurrWorkDay</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalWorkDays">
+          <DataField>TotalWorkDays</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SK_KAM_ID">
+          <DataField>SK_KAM_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="KAMName">
+          <DataField>KAMName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="KAM_Tab_Num">
+          <DataField>KAM_Tab_Num</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SK_Chain_ID">
+          <DataField>SK_Chain_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ChainName">
+          <DataField>ChainName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SK_SalesChannelMkiPdh_ID">
+          <DataField>SK_SalesChannelMkiPdh_ID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SalesChannelMkiPdhName">
+          <DataField>SalesChannelMkiPdhName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PlanWeight">
+          <DataField>PlanWeight</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PlanReturnsWeight">
+          <DataField>PlanReturnsWeight</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeightCM">
+          <DataField>FactShipWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeightCM">
+          <DataField>FactRealWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeightCM">
+          <DataField>FactRetWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeightCM">
+          <DataField>FactNetShipWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeightCM">
+          <DataField>FactNetRealWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipToRealWeightCM">
+          <DataField>FactNetShipToRealWeightCM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeightBM">
+          <DataField>FactShipWeightBM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeightBM">
+          <DataField>FactRealWeightBM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeightBM">
+          <DataField>FactRetWeightBM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeightBM">
+          <DataField>FactNetShipWeightBM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeightBM">
+          <DataField>FactNetRealWeightBM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeightBY">
+          <DataField>FactShipWeightBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeightBY">
+          <DataField>FactRealWeightBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeightBY">
+          <DataField>FactRetWeightBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeightBY">
+          <DataField>FactNetShipWeightBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeightBY">
+          <DataField>FactNetRealWeightBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeight2021">
+          <DataField>FactShipWeight2021</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeight2021">
+          <DataField>FactRealWeight2021</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeight2021">
+          <DataField>FactRetWeight2021</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeight2021">
+          <DataField>FactNetShipWeight2021</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeight2021">
+          <DataField>FactNetRealWeight2021</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeightCCY">
+          <DataField>FactShipWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeightCCY">
+          <DataField>FactRealWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeightCCY">
+          <DataField>FactRetWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeightCCY">
+          <DataField>FactNetShipWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeightCCY">
+          <DataField>FactNetRealWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactShipWeightCBY">
+          <DataField>FactShipWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRealWeightCBY">
+          <DataField>FactRealWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactRetWeightCBY">
+          <DataField>FactRetWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetShipWeightCBY">
+          <DataField>FactNetShipWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetRealWeightCBY">
+          <DataField>FactNetRealWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetSalesWeightCCY">
+          <DataField>FactNetSalesWeightCCY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FactNetSalesWeightCBY">
+          <DataField>FactNetSalesWeightCBY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -5005,7 +5213,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
             </PageBreak>
-            <Top>28.1cm</Top>
+            <Top>32cm</Top>
             <Left>0.1cm</Left>
             <Height>10.61387cm</Height>
             <Width>24.02159cm</Width>
@@ -13517,7 +13725,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <PageName>ВСЛ</PageName>
+            <PageName>ССЛ</PageName>
             <Top>12.05cm</Top>
             <Left>0.1cm</Left>
             <Height>3.89958cm</Height>
@@ -18315,7 +18523,7 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByChainsKKC</DataSetName>
             <PageName>ККС</PageName>
-            <Top>24.05cm</Top>
+            <Top>27.99229cm</Top>
             <Left>0.1cm</Left>
             <Height>3.89958cm</Height>
             <Width>19.22159cm</Width>
@@ -21170,6 +21378,9 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByChainsMML</DataSetName>
+            <PageBreak>
+              <BreakLocation>End</BreakLocation>
+            </PageBreak>
             <PageName>ММЛ</PageName>
             <Top>20.02cm</Top>
             <Left>0.1cm</Left>
@@ -21182,11 +21393,2864 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
               </Border>
             </Style>
           </Tablix>
+          <Tablix Name="Tablix11">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>1.49958cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ПланПродаж6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>План, кг</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox312">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Факт, кг</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ВыполнениеПоОтгрузке6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Вик., %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ПрогнозПроцентПоОтгрузке6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Прогн., %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ПрогнозПоОтгрузке6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Прогн., кг</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox313">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>До 2021 року, %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox252</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox314">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>До поп.року, %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox315">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>До поп.міс., %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox316">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Накоп.,%</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox317">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>План поверн., %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox173</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox318">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Факт поверн., %</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox179</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox319">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Факт поверн., кг</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox185</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanWeightTotal28">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!PlanWeight.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanWeightTotal</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox320">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox54</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox321">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!PlanWeight.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox84</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox322">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIf(Sum(Fields!PlanWeight.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox114</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox323">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox144</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox324">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeight2021.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeight2021.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox253</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox325">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBY.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>LightYellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox326">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBM.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBM.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>LightYellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox327">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetSalesWeightCBY.Value) = 0, " - ", Sum(Fields!FactNetSalesWeightCCY.Value) / Sum(Fields!FactNetSalesWeightCBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>LightYellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox328">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value) = 0, " - ", Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox174</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox329">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!paramYear.Value = YEAR(NOW) And Parameters!paramMonth.Value = MONTH(NOW), IIF(Sum(Fields!FactShipWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value)), IIF(Sum(Fields!FactRealWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!FactShipWeightCM.Value) = 0, "#480c04",
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &lt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "DarkGreen",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &gt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "Red"
+)</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox180</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox330">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactRetWeightCM.Value)</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox186</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanWeightTotal29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!PlanWeight.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanWeightTotal2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox331">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox55</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox332">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!PlanWeight.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox85</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox333">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIf(Sum(Fields!PlanWeight.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox115</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox334">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox145</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox335">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeight2021.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeight2021.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox254</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox336">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBY.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox337">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBM.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBM.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox22</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox338">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetSalesWeightCBY.Value) = 0, " - ", Sum(Fields!FactNetSalesWeightCCY.Value) / Sum(Fields!FactNetSalesWeightCBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox339">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value) = 0, " - ", Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox175</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox340">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!paramYear.Value = YEAR(NOW) And Parameters!paramMonth.Value = MONTH(NOW), IIF(Sum(Fields!FactShipWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value)), IIF(Sum(Fields!FactRealWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!FactShipWeightCM.Value) = 0, "#480c04",
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &lt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "DarkGreen",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &gt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "Red"
+)</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox181</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox341">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactRetWeightCM.Value)</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox187</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanWeightTotal30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!PlanWeight.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanWeightTotal3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox342">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox56</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox343">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!PlanWeight.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox86</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox344">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIf(Sum(Fields!PlanWeight.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox116</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox345">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox146</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox346">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeight2021.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeight2021.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox255</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox347">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBY.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox348">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBM.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBM.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox349">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetSalesWeightCBY.Value) = 0, " - ", Sum(Fields!FactNetSalesWeightCCY.Value) / Sum(Fields!FactNetSalesWeightCBY.Value) - 1)</Value>
+                                  <Style>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "#480c04",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox350">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value) = 0, " - ", Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox176</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox351">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!paramYear.Value = YEAR(NOW) And Parameters!paramMonth.Value = MONTH(NOW), IIF(Sum(Fields!FactShipWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value)), IIF(Sum(Fields!FactRealWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!FactShipWeightCM.Value) = 0, "#480c04",
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &lt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "DarkGreen",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &gt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "Red"
+)</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox182</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox352">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactRetWeightCM.Value)</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox188</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanWeightTotal31">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!PlanWeight.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanWeightTotal1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox353">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox57</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox354">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!PlanWeight.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "White",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+Sum(Fields!FactNetShipToRealWeightCM.Value)/ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox87</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox355">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIf(Sum(Fields!PlanWeight.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value) / Sum(Fields!PlanWeight.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &gt;= 1, "DarkGreen",
+(Sum(Fields!FactNetShipToRealWeightCM.Value)/ Fields!CurrDay.Value * Fields!TotalDays.Value) / 
+Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox117</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox356">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactNetShipToRealWeightCM.Value) / Fields!CurrDay.Value * Fields!TotalDays.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox147</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox357">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeight2021.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeight2021.Value) - 1)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) = 0, "#480c04",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeight2021.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox256</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox358">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBY.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBY.Value) - 1)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBY.Value) = 0, "White",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) = 0, "White",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipWeightCM.Value) / SUM(Fields!FactNetRealWeightBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox359">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetRealWeightBM.Value) = 0, " - ", Sum(Fields!FactNetShipToRealWeightCM.Value) / Sum(Fields!FactNetRealWeightBM.Value) - 1)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetRealWeightBM.Value) = 0, "White",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) = 0, "White",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetShipToRealWeightCM.Value) / SUM(Fields!FactNetRealWeightBM.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox360">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Sum(Fields!FactNetSalesWeightCBY.Value) = 0, " - ", Sum(Fields!FactNetSalesWeightCCY.Value) / Sum(Fields!FactNetSalesWeightCBY.Value) - 1)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "White",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) = 0, "White",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &gt;= 1, "DarkGreen",
+SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value) &lt; 1, "Red")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanReturnPercentOnDirection6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value) = 0, " - ", Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanReturnPercentOnDirection</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox361">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!paramYear.Value = YEAR(NOW) And Parameters!paramMonth.Value = MONTH(NOW), IIF(Sum(Fields!FactShipWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value)), IIF(Sum(Fields!FactRealWeightCM.Value) = 0, " - ", Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.0%</Format>
+                                    <Color>=Switch(
+Sum(Fields!FactShipWeightCM.Value) = 0, "#480c04",
+Sum(Fields!PlanWeight.Value) = 0, "#480c04",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &lt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "DarkGreen",
+IIF(
+	Parameters!paramYear.Value = YEAR(NOW()) AND Parameters!paramMonth.Value = MONTH(NOW()),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactShipWeightCM.Value),
+	Sum(Fields!FactRetWeightCM.Value) / Sum(Fields!FactRealWeightCM.Value)
+    ) &gt; 
+Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields!PlanReturnsWeight.Value)), "Red"
+)</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox183</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox362">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!FactRetWeightCM.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox189</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>6.42159cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox310">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Канал продажів / Менеджер / Мережа</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#480c04</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox35</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>DarkGoldenrod</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Orange</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <FixedData>true</FixedData>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="SalesChannelMkiPdhName9">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!SalesChannelMkiPdhName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!SalesChannelMkiPdhName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="KAMName9">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!KAMName.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!KAMName.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="ChainName9">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!ChainName.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!ChainName.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixHeader>
+                            <Size>6.42159cm</Size>
+                            <CellContents>
+                              <Textbox Name="ChainName8">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value xml:space="preserve">         </Value>
+                                        <Style>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                      <TextRun>
+                                        <Value>=Fields!ChainName.Value</Value>
+                                        <Style>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Left</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                </Paragraphs>
+                                <Style>
+                                  <Border>
+                                    <Color>DarkGoldenrod</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>White</BackgroundColor>
+                                  <VerticalAlign>Middle</VerticalAlign>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!PlanWeight.Value = 0 And Fields!FactNetShipToRealWeightCM.Value = 0, True, False)</Hidden>
+                          </Visibility>
+                        </TablixMember>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>6.42159cm</Size>
+                            <CellContents>
+                              <Textbox Name="KAMName8">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value xml:space="preserve">      </Value>
+                                        <Style>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                      <TextRun>
+                                        <Value>=Fields!KAMName.Value</Value>
+                                        <Style>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Left</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>KAMName</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>DarkGoldenrod</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Khaki</BackgroundColor>
+                                  <VerticalAlign>Middle</VerticalAlign>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <KeepWithGroup>Before</KeepWithGroup>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>6.42159cm</Size>
+                        <CellContents>
+                          <Textbox Name="SalesChannelMkiPdhName8">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value xml:space="preserve">   </Value>
+                                    <Style>
+                                      <Color>#480c04</Color>
+                                    </Style>
+                                  </TextRun>
+                                  <TextRun>
+                                    <Value>=Fields!SalesChannelMkiPdhName.Value</Value>
+                                    <Style>
+                                      <Color>#480c04</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>DarkGoldenrod</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>Gold</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>6.42159cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox311">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>РАЗОМ</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#480c04</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox25</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>DarkGoldenrod</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Orange</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>PlanFactByChainsIKV</DataSetName>
+            <PageName>ІКВ</PageName>
+            <Top>23.99527cm</Top>
+            <Left>0.1cm</Left>
+            <Height>3.89958cm</Height>
+            <Width>25.62159cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
-        <Height>15.27334in</Height>
+        <Height>16.86668in</Height>
         <Style />
       </Body>
-      <Width>10.68513in</Width>
+      <Width>10.17471in</Width>
       <Page>
         <PageHeader>
           <Height>1.67548cm</Height>
@@ -21208,13 +24272,14 @@ Globals!PageNumber = 3, "Виконання плану продажів по Л�
 Globals!PageNumber = 4, "Виконання плану продажів по Східним солодощам",
 Globals!PageNumber = 5, "Виконання плану продажів по Продукції тривалого зберігання",
 Globals!PageNumber = 6, "Виконання плану продажів по Маршмеллоу",
+Globals!PageNumber = 7, "Виконання плану продажів по Пирогам",
 
-Globals!PageNumber = 7,"Діаграми по мережам",
 Globals!PageNumber = 8,"Діаграми по мережам",
 Globals!PageNumber = 9,"Діаграми по мережам",
 Globals!PageNumber = 10,"Діаграми по мережам",
-Globals!PageNumber = 11,"Діаграми по мережам")
-'Globals!PageNumber = 6, "Виконання плану продажів по Паскам",</Value>
+Globals!PageNumber = 11,"Діаграми по мережам",
+Globals!PageNumber = 12,"Діаграми по мережам")
+'Globals!PageNumber = 8, "Виконання плану продажів по Паскам",</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
