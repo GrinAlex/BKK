@@ -27,7 +27,7 @@
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.LossesByProductsTest</CommandText>
+        <CommandText>rpt.LossesByProducts</CommandText>
       </Query>
       <Fields>
         <Field Name="Ua_Exp_ID">
@@ -292,7 +292,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ForecastShipWeight.Value)</Value>
+                                  <Value>=Sum(Fields!OrderWeight.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1774,6 +1774,9 @@ Sum(Fields!ResidueWeight.Value))</Value>
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
@@ -4274,7 +4277,7 @@ Fields!ReasonForLosses.Value)</Value>
         <Height>6.10015in</Height>
         <Style />
       </Body>
-      <Width>7.76352in</Width>
+      <Width>7.73983in</Width>
       <Page>
         <PageHeader>
           <Height>1.73688cm</Height>
