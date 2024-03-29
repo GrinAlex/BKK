@@ -1534,6 +1534,10 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                       <TablixMembers>
                         <TablixMember />
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!DebitType.Value = "ВДЗ", True, False)</Hidden>
+                        <ToggleItem>DebitType</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -4861,6 +4865,10 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                       <TablixMembers>
                         <TablixMember />
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!DebitType.Value = "ВДЗ", True, False)</Hidden>
+                        <ToggleItem>DebitType2</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -8547,6 +8555,10 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                       <TablixMembers>
                         <TablixMember />
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!DebitType.Value = "ВДЗ", True, False)</Hidden>
+                        <ToggleItem>DebitType3</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -12052,6 +12064,10 @@ SUM(Fields!SumOverdueDebt.Value) / SUM(Fields!SumDebit.Value) &gt; 0.2, "Red")</
                       <TablixMembers>
                         <TablixMember />
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!DebitType.Value = "ВДЗ", True, False)</Hidden>
+                        <ToggleItem>DebitType4</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
