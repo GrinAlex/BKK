@@ -907,9 +907,9 @@ ORDER BY
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=IIF(Fields!ForecastPart.Value = "Акционные продажи",
-"Номер акции " + CStr(Fields!DocNumber.Value),
-"Номер док.доп.спроса " + CStr(Fields!DocNumber.Value)) + ": " + Fields!Comments.Value</Value>
+                                                <Value>=IIF(Fields!ForecastPart.Value = "Акційні продажі",
+"Номер акції " + CStr(Fields!DocNumber.Value),
+"Номер док.дод.попиту " + CStr(Fields!DocNumber.Value)) + ": " + Fields!Comments.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -2486,7 +2486,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
     </ReportParameter>
     <ReportParameter Name="Chain_ID">
       <DataType>Integer</DataType>
-      <Prompt>Сеть</Prompt>
+      <Prompt>Мережа</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ChainList</DataSetName>

@@ -6,10 +6,30 @@
     <Name>ForecastFactSales.database</Name>
     <FullPath>ForecastFactSales.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>ForecastFactSales.cube</Name>
+      <FullPath>ForecastFactSales.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>ForecastFactSales.partitions</Name>
+          <FullPath>ForecastFactSales.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Дата.dim</Name>
       <FullPath>Дата.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Номенклатура.dim</Name>
+      <FullPath>Номенклатура.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Контрагенти та відповідальні.dim</Name>
+      <FullPath>Контрагенти та відповідальні.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -24,6 +44,12 @@
       <FullPath>CAKE WH.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
+  <Roles>
+    <ProjectItem>
+      <Name>Analysts.role</Name>
+      <FullPath>Analysts.role</FullPath>
+    </ProjectItem>
+  </Roles>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

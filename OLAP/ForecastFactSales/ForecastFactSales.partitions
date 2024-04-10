@@ -1,0 +1,65 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ef88e081-b0ef-4026-83aa-0db111dfb854" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>ForecastFactSales</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Qry Forecast Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="9af30e0f-568c-463e-8a28-42dd1447b69d">
+          <ID>Qry Forecast Sales</ID>
+          <Name>Qry Forecast Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="99ca1517-5a16-478d-9d6d-be7b09c3e15b">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ForecastSales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Shipments By Buyers</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a62cc404-f1c3-4930-b9f3-966658b5fb99">
+          <ID>Qry Shipments By Buyers</ID>
+          <Name>Qry Shipments By Buyers</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d2aa79dc-1e77-41ae-aaf8-bc4078922e41">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ShipmentsByBuyers</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Orders By Buyers</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="c6db7650-5dcf-4a18-953a-30a9f3d98e68">
+          <ID>Qry Orders By Buyers</ID>
+          <Name>Qry Orders By Buyers</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b8bd378b-6e0e-44f8-9052-d843ba1a8e2a">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_OrdersByBuyers</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
