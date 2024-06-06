@@ -52,6 +52,14 @@
           <DataField>ChainName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="SK_Buyer_ID">
+          <DataField>SK_Buyer_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BuyerName">
+          <DataField>BuyerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="SK_Product_ID">
           <DataField>SK_Product_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -139,7 +147,7 @@ ORDER BY
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Номенклатура / Частина прогнозу / Мережа / Документ</Value>
+                                <Value>Номенклатура / Мережа / Контрагент /Документ</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -792,14 +800,14 @@ ORDER BY
                       </TablixHeader>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="ForecastPart">
+                      <Group Name="Chain">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!ForecastPart.Value</GroupExpression>
+                          <GroupExpression>=Fields!ChainName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!ForecastPart.Value</Value>
+                          <Value>=Fields!ChainName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -807,21 +815,21 @@ ORDER BY
                           <TablixHeader>
                             <Size>11.39312cm</Size>
                             <CellContents>
-                              <Textbox Name="ForecastPart">
+                              <Textbox Name="ChainName1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!ForecastPart.Value</Value>
+                                        <Value>=Fields!ChainName.Value</Value>
                                         <Style />
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>ForecastPart</rd:DefaultName>
+                                <rd:DefaultName>ChainName1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -839,14 +847,14 @@ ORDER BY
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="ChainName">
+                          <Group Name="BuyerName">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!ChainName.Value</GroupExpression>
+                              <GroupExpression>=Fields!BuyerName.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!ChainName.Value</Value>
+                              <Value>=Fields!BuyerName.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
@@ -854,21 +862,21 @@ ORDER BY
                               <TablixHeader>
                                 <Size>11.39312cm</Size>
                                 <CellContents>
-                                  <Textbox Name="ChainName1">
+                                  <Textbox Name="BuyerName1">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!ChainName.Value</Value>
+                                            <Value>=Fields!BuyerName.Value</Value>
                                             <Style />
                                           </TextRun>
                                         </TextRuns>
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>ChainName1</rd:DefaultName>
+                                    <rd:DefaultName>BuyerName1</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>DarkGoldenrod</Color>
@@ -942,7 +950,7 @@ ORDER BY
                           </TablixMembers>
                           <Visibility>
                             <Hidden>true</Hidden>
-                            <ToggleItem>ForecastPart</ToggleItem>
+                            <ToggleItem>ChainName1</ToggleItem>
                           </Visibility>
                         </TablixMember>
                       </TablixMembers>
@@ -993,7 +1001,7 @@ ORDER BY
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>FofecastDetalsKKS</DataSetName>
-            <PageName>Детальный прогноз</PageName>
+            <PageName>Детальний прогноз</PageName>
             <Top>0.06391cm</Top>
             <Height>4.8cm</Height>
             <Width>14.99312cm</Width>
@@ -1011,6 +1019,12 @@ ORDER BY
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.61521cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -1087,6 +1101,72 @@ ORDER BY
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox68</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Мережа</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Контрагент</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1366,6 +1446,66 @@ ORDER BY
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="ChainName2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ChainName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ChainName2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BuyerName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!BuyerName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BuyerName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="ForecastPart1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1565,6 +1705,8 @@ ORDER BY
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1582,7 +1724,7 @@ ORDER BY
             <PageBreak>
               <BreakLocation>StartAndEnd</BreakLocation>
             </PageBreak>
-            <PageName>Прогноз массив</PageName>
+            <PageName>Прогноз масив</PageName>
             <SortExpressions>
               <SortExpression>
                 <Value>=Fields!ProductName.Value</Value>
@@ -1602,7 +1744,7 @@ ORDER BY
             </SortExpressions>
             <Top>5cm</Top>
             <Height>1.2cm</Height>
-            <Width>28.30854cm</Width>
+            <Width>34.42375cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1791,7 +1933,7 @@ ORDER BY
                               <TextRuns>
                                 <TextRun>
                                   <Value>=iif(Fields!Chain_ID.Value = -777 or Fields!Chain_ID.Value = 1,
-"Не сеть",
+"Не мережа",
 Fields!ChainName.Value)</Value>
                                   <Style />
                                 </TextRun>
@@ -2246,10 +2388,10 @@ True)</Hidden>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.89764in</Height>
+        <Height>3.94972in</Height>
         <Style />
       </Body>
-      <Width>11.29093in</Width>
+      <Width>13.55266in</Width>
       <Page>
         <PageHeader>
           <Height>1.785cm</Height>

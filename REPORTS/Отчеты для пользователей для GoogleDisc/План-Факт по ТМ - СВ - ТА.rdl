@@ -11928,7 +11928,6 @@ IIF(
                 <TablixMember>
                   <Visibility>
                     <Hidden>true</Hidden>
-                    <ToggleItem>Адрес</ToggleItem>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
@@ -11968,6 +11967,9 @@ IIF(
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>TT_NoLinkedToTA</DataSetName>
+            <PageBreak>
+              <BreakLocation>Start</BreakLocation>
+            </PageBreak>
             <PageName>ТТ без ТА</PageName>
             <SortExpressions>
               <SortExpression>
@@ -19801,6 +19803,9 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
             <Height>3.9525cm</Height>
             <Width>19.3cm</Width>
             <ZIndex>7</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -22637,9 +22642,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactByTaFoUsersMML</DataSetName>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
             <PageName>ММЛ</PageName>
             <Top>23.28042cm</Top>
             <Left>0.1cm</Left>
@@ -22678,9 +22680,8 @@ Globals!PageNumber = 3, "Виконання плану продажів по Л�
 Globals!PageNumber = 4, "Виконання плну продажів по Східним солодощам для ",
 Globals!PageNumber = 5, "Виконання плну продажів по Продукції тривалого зберігання для ",
 Globals!PageNumber = 6, "Виконання плну продажів по Маршмеллоу для ",
-Globals!PageNumber = 7, "Виконання плану продажів по Паскам для ",
-Globals!PageNumber = 8, "ТТ без прив'зки ")
-'</Value>
+Globals!PageNumber = 7, "ТТ без прив'зки ")
+'Globals!PageNumber = 7, "Виконання плану продажів по Паскам для ",</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
