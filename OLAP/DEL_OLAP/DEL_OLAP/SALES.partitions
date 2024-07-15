@@ -1,1747 +1,1763 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9755f398-d141-4846-934b-fb59aed6220f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5d940848-cfda-4eaa-8388-aed95643ad88" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>SALES</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Qry Reimbursements Max</ID>
       <Partitions>
-        <Partition dwd:design-time-name="3a97a4c9-d359-4754-957e-1ac79ef41009">
+        <Partition dwd:design-time-name="92fe8849-37ea-4870-a01f-40ea04911f5e">
           <ID>Reimbursements 2020</ID>
           <Name>Reimbursements 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.333333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:20.413333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:21.526667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:00.62Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:28.426667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:17.756667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f1e73552-76fb-40da-8402-434b8d42fb98">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="68a1e9cb-bde1-4210-ba48-9c9dfe7aab9f">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d18492c9-37cd-4294-96b6-bba04f39a5e5">
+          <ProactiveCaching dwd:design-time-name="33973e66-9116-41d3-badf-6efb6dd854ec">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f829f554-dbe7-45ea-9268-c375ed7c0d76" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="15e8fdb6-b359-4f3e-8d7b-804bd04d60c7" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>16870314</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ee2002a7-156d-40e2-afe3-4178ad697c6a">
+        <Partition dwd:design-time-name="56a552f2-9a38-43cb-812d-fb2905fd2319">
           <ID>Reimbursements 2021</ID>
           <Name>Reimbursements 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.41Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:20.68Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:46.213333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:00.693333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:28.673333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:26.363333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ed058648-648e-4a9b-b919-770757fdf37d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e96368eb-10f0-4014-9144-4a8432d7a456">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="56b79003-d032-41cb-ac6f-aedc7764ac39">
+          <ProactiveCaching dwd:design-time-name="6d3bdaab-5ab9-48da-94c9-4ed7855230ba">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4e56e091-c3a5-4425-96a4-6a8245989a0d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a162a659-dbd3-4177-acca-434306da9ee4" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>19853101</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a1a4b221-b55e-4030-831e-5b295f210c3a">
+        <Partition dwd:design-time-name="b6ea43b9-5ddf-4b98-bab8-abeef7fe0cc1">
           <ID>Reimbursements 2022</ID>
           <Name>Reimbursements 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.476667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:20.836667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:49.153333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:00.726667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:28.796667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:29.743333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e7a05801-40de-4ce6-aace-2aa3f475907a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="475c4ac6-6837-4122-9baf-652e22bf33b7">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="8ec1b6fa-289e-4d9b-ac9a-04e3bb070ce7">
+          <ProactiveCaching dwd:design-time-name="a3d38c7c-90fd-4a48-8376-ccf4795ec17e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e867a7b3-1748-4c19-b769-5a4004de1f56" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b33f4024-b342-4f5e-8ece-a5eda002f8b5" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>9468314</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="2471146c-6cb1-483c-a5a0-1a188014e652">
+        <Partition dwd:design-time-name="3da5d8bb-60a7-4468-879e-4ae422b488b2">
           <ID>Reimbursements 2023</ID>
           <Name>Reimbursements 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.566667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:20.96Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.136667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:00.806667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.01Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:15.3Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="2d6b5553-9bba-4040-93d8-36a8717a274e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f3e5bdc5-7109-4b6d-8b9b-da5f29841d53">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2e057d90-8cbf-4f6e-a51f-eae3d84e6116">
+          <ProactiveCaching dwd:design-time-name="df8343bb-2896-482e-b122-ff54f527b6f0">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e5565837-f22f-4e1c-964d-46f18997709a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f121b8d0-a3fc-4f04-bcb0-bed7071db6f7" />
+          </ProactiveCaching>
+          <EstimatedSize>11919257</EstimatedSize>
+        </Partition>
+        <Partition dwd:design-time-name="bfade211-de4d-4f1d-80bb-0f8080be52b4">
+          <ID>Reimbursements New</ID>
+          <Name>Reimbursements New</Name>
+          <CreatedTimestamp>2024-03-28T09:11:00.86Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.213333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T08:21:14.56Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3f6b710d-01c6-48a2-ae26-85c84cd5222e">
+            <DataSourceID>KHLEB WH</DataSourceID>
+            <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
+FROM [fact].[qry_ReimbursementsMaxNew]
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="a537a3b7-f83d-4f16-8414-52323b2a4a25">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c1fa5b34-0e74-42d9-a49c-3a94a43ceed7" />
           </ProactiveCaching>
           <EstimatedSize>156</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a5173a12-d30b-4d0b-8e7b-cc8e4bae2020">
-          <ID>Reimbursements New</ID>
-          <Name>Reimbursements New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.633333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:21.103333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:17.963333Z</LastProcessed>
-          <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e3686d91-38d8-4825-a5af-e199eff909f3">
-            <DataSourceID>KHLEB WH</DataSourceID>
-            <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
-FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
-          </Source>
-          <StorageMode>Molap</StorageMode>
-          <CurrentStorageMode>Molap</CurrentStorageMode>
-          <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c35cec61-0e86-4b22-9d26-49a2d9e814ba">
-            <SilenceInterval>-PT1S</SilenceInterval>
-            <Latency>-PT1S</Latency>
-            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
-            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="12a03ec0-57a4-4dc7-b8b6-9c1720ff5b56" />
-          </ProactiveCaching>
-          <EstimatedSize>76414</EstimatedSize>
-        </Partition>
-        <Partition dwd:design-time-name="6836d22d-0901-4ca1-a444-0cd00f7258c3">
+        <Partition dwd:design-time-name="e511f3ea-d67e-43f8-8c66-2bbbe3aeb5bd">
           <ID>Reimbursements 2024</ID>
           <Name>Reimbursements 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:53.526667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:21.226667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:46:18.7Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:00.9Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.346667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T08:21:13.87Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="33d36194-00b5-40ba-aa9c-726bf9d77981">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="0fc4ce7d-6f2a-4a22-9b5c-357f82ff8563">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReimbursementsMaxNew].[SK_Outlet_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Product_ID],[fact].[qry_ReimbursementsMaxNew].[Source_ID],[fact].[qry_ReimbursementsMaxNew].[SK_Date_ID],[fact].[qry_ReimbursementsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReimbursementsMaxNew].[SK_Promo_ID_Purch],[fact].[qry_ReimbursementsMaxNew].[IsTargetBonus],[fact].[qry_ReimbursementsMaxNew].[CompensAmount],[fact].[qry_ReimbursementsMaxNew].[CompensWeight],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[CompensSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodAmount],[fact].[qry_ReimbursementsMaxNew].[RasprodWeight],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[RasprodSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[UtilAmount],[fact].[qry_ReimbursementsMaxNew].[UtilWeight],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithVAT],[fact].[qry_ReimbursementsMaxNew].[UtilSumWithoutVAT],[fact].[qry_ReimbursementsMaxNew].[IsSelected],[fact].[qry_ReimbursementsMaxNew].[SK_Arg_ID],[fact].[qry_ReimbursementsMaxNew].[KAM_ID_Hist],[fact].[qry_ReimbursementsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReimbursementsMaxNew]
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="805e3fab-7af5-403c-8f3a-c61dc7f3f03c">
+          <ProactiveCaching dwd:design-time-name="a07dc1ac-76eb-413c-b99a-f723a57c93dc">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="413677a7-eb02-4cb3-8686-acaaf998bcec" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8a7dfaff-3145-4778-b26e-0353647a1af1" />
           </ProactiveCaching>
-          <EstimatedSize>1937010</EstimatedSize>
+          <EstimatedSize>5788236</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Qry Returns Max</ID>
       <Partitions>
-        <Partition dwd:design-time-name="012054c5-c8a5-4ecd-930b-72c9bd0fd309">
+        <Partition dwd:design-time-name="b731f5c4-5940-4be5-9377-896eee513031">
           <ID>Returns 2020</ID>
           <Name>Returns 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.83Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:21.523333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:21.15Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.046667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.573333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:20.893333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="dccd4ee0-b4d0-468c-8984-be36b2d63988">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="05335ad6-1298-477c-b1c8-daafe4e9bd0c">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="230bfb11-47f9-45df-a830-6e40b2c5a665">
+          <ProactiveCaching dwd:design-time-name="7c74b49a-36e4-48ea-851f-3cfc8ac19540">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d4253e95-ae12-44a1-9313-ef5a1bfa95c1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ee0934cc-0ff6-40b3-bfe8-10eb78cdd2bb" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>3347733</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="93419f5e-ad4d-43f1-a5ed-0ab6e08b315b">
+        <Partition dwd:design-time-name="52f9ccd3-9cf3-4653-8cc7-f75a3248ca31">
           <ID>Returns 2021</ID>
           <Name>Returns 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:06.973333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:21.68Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:38.183333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.146667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.753333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:14.586667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f390a08c-950b-4e90-9707-7ab12b351c71">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f252a032-4ce5-4ca0-8c44-3c4ec4de9d8b">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="21500c50-675c-4f84-bbbc-92044144de3b">
+          <ProactiveCaching dwd:design-time-name="f2b9974e-1bb2-4aa4-badc-cdb2304bb2ab">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fa7588d9-3463-43d5-a4c6-8e42c56c8932" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e5ea00e8-e71c-4cea-8a38-66356f367d68" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>3435117</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="cf4ffe51-b929-4000-9d10-fec96360ea70">
+        <Partition dwd:design-time-name="d63a19c5-c74c-470e-801d-01455065f616">
           <ID>Returns 2022</ID>
           <Name>Returns 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.03Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:21.963333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:36.386667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.223333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.853333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:10.706667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8ffb0ce0-b895-4821-8237-0f02dda193f6">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="7b056d58-d376-4815-be5a-6a720e08e29b">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4d983c46-0e75-458b-8f3b-7b1baae2950e">
+          <ProactiveCaching dwd:design-time-name="f448d4d1-ad37-439b-90b4-221629898dc1">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="62e905f6-5ca2-4c2b-b4d0-4701edd00960" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d4f5febf-d388-4778-b041-79d1d2462a52" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>2178549</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ad4766ae-eef5-4829-89d7-69daa34d3fc6">
+        <Partition dwd:design-time-name="cf4d0785-e4f9-425a-86b7-3c23ef1e66af">
           <ID>Returns 2023</ID>
           <Name>Returns 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.096667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:22.243333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:22.543333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.29Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:29.99Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:27.953333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="98aed0da-84fe-44bf-b504-0b64ce300075">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="a10cfc6b-3b73-4549-a587-c24a1942390a">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9440a086-f28f-4bfa-b0c4-0566d0e07a2e">
+          <ProactiveCaching dwd:design-time-name="18980fe1-339e-47a8-b8b2-55aa2bfe6931">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c5b683e9-c40b-47e5-9003-69479d569176" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="118d884e-71cb-4f89-8e24-d38e71ef36c7" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>3902435</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="389727aa-c9d5-4608-8aa7-181d806939c6">
+        <Partition dwd:design-time-name="f7292d2e-bcf3-40fc-8bb2-390f55c5cfe8">
           <ID>Returns New</ID>
           <Name>Returns New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.163333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:22.336667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:17.416667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.333333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.106667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:24.856667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="3cc8b0cb-98e9-4a75-bf17-7c6ec60790ca">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="428215a8-9d45-4750-9d2c-52ea95c9ed22">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a0bfc2af-58c6-483c-8624-bf85e071ffca">
+          <ProactiveCaching dwd:design-time-name="932a205c-28d2-42f5-afa0-8f5d86714293">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="10c6cd85-5b67-4c54-b68f-7be66fd2f906" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="77df1083-7cda-4502-9b63-4cde281fa869" />
           </ProactiveCaching>
-          <EstimatedSize>275176</EstimatedSize>
+          <EstimatedSize>29810</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="68861845-2607-41ff-b297-69d4b12eadb5">
+        <Partition dwd:design-time-name="77715b92-d655-438c-bfcb-1b570017ed5c">
           <ID>Returns 2024</ID>
           <Name>Returns 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:54.753333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:22.553333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:44.59Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.41Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.23Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:17.1Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ba8cc9cc-45de-4c8d-b8bc-76b09cf780bc">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="dbabfe99-b255-4521-9de5-0fe26db59f7a">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsMaxNew].[SK_Date_ID],[fact].[qry_ReturnsMaxNew].[Sk_Outlet_ID],[fact].[qry_ReturnsMaxNew].[SK_Buyer_ID],[fact].[qry_ReturnsMaxNew].[SK_Product_ID],[fact].[qry_ReturnsMaxNew].[ReturnAmount],[fact].[qry_ReturnsMaxNew].[ReturnWeight],[fact].[qry_ReturnsMaxNew].[ReturnSumWithoutVAT],[fact].[qry_ReturnsMaxNew].[ReturnSum],[fact].[qry_ReturnsMaxNew].[SK_Arg_ID],[fact].[qry_ReturnsMaxNew].[IsSelected],[fact].[qry_ReturnsMaxNew].[DocNumber],[fact].[qry_ReturnsMaxNew].[SK_ShipDate_ID],[fact].[qry_ReturnsMaxNew].[SK_DocDate_ID],[fact].[qry_ReturnsMaxNew].[IsTargetBonus],[fact].[qry_ReturnsMaxNew].[SV_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TA_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[RM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[TM_Tab_Num_Hist],[fact].[qry_ReturnsMaxNew].[SK_PromoPurch_ID],[fact].[qry_ReturnsMaxNew].[KAM_Hist_ID],[fact].[qry_ReturnsMaxNew].[SK_UnicTtSku],[fact].[qry_ReturnsMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_ReturnsMaxNew]
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="20798d8c-d673-4a7e-b33f-f409b63d9c84">
+          <ProactiveCaching dwd:design-time-name="002f3754-d44c-4610-8cbf-42e8bb19c020">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e4ea4210-c159-4efe-9afd-6ddb024eec98" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="450db90d-1f74-4390-a2d6-176942abd59f" />
           </ProactiveCaching>
-          <EstimatedSize>596927</EstimatedSize>
+          <EstimatedSize>1145743</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Qry Plans Max</ID>
       <Partitions>
-        <Partition dwd:design-time-name="44b0e853-aa06-4a85-9f5d-1aed388e7356">
+        <Partition dwd:design-time-name="500f36fe-d08c-4df0-8a69-c23b5e0e8693">
           <ID>Plans 2020</ID>
           <Name>Plans 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.32Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:22.836667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.62Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.606667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.606667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:30.366667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="a69a34c9-9b6a-4b06-8438-e51abcad867c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ef912903-62bc-4251-a15f-ddeac970d636">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="bfc3dd79-7992-476b-b9af-669f21dd4ade">
+          <ProactiveCaching dwd:design-time-name="86310d4f-53e9-47e0-be78-dd34a686aef3">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3248be6e-b844-434c-82dd-416216865efe" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="059c13af-1930-4e6f-b66a-c89052482340" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>39405924</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="efb94a51-3ab8-4ffb-aec8-9d8b390c0e67">
+        <Partition dwd:design-time-name="fabe757d-008d-4a64-9a44-de902d6fecc3">
           <ID>Plans 2021</ID>
           <Name>Plans 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.403333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:22.993333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:22.4Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.76Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.726667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:15.636667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="fa3d2eda-6d10-4f86-8e1b-f164f0cafda3">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="dbead4de-ee19-41be-8cec-df377afb123d">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="f847d755-fc7f-491e-918f-3edf64f3f177">
+          <ProactiveCaching dwd:design-time-name="9e242a4f-22eb-4307-b23a-dfc1e6d4de46">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7de0127e-7e76-4c65-bfcd-be5ef6266f3c" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7b02bd8a-b489-4559-bb7b-1ddd3176bc73" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>57019283</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d0ff9716-547f-4b10-937e-f973572c2356">
+        <Partition dwd:design-time-name="028060a1-8568-49d4-9bcc-db6e60b5a58a">
           <ID>Plans 2022</ID>
           <Name>Plans 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.493333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:23.21Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:43.823333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.83Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.826667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:12.53Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="4638c8c5-4f5d-427c-92d3-4658903f1811">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d5162357-b0cb-44b8-8339-8bbdcce71915">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="3e0e35e3-9859-439a-80ec-0b7e82a8e37c">
+          <ProactiveCaching dwd:design-time-name="0cf0aa01-3d5b-4e74-b82c-dff41e11c46a">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="aa824f24-3e6b-4170-9c50-76c62b68d56f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2bb80b4b-4bf4-4502-8a2c-983fa7c6d44a" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>169956560</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="177225ec-9bf8-4761-b1ed-9129ba742ab4">
+        <Partition dwd:design-time-name="1c68616c-b941-431e-b33e-663647b2fefb">
           <ID>Plans 2023</ID>
           <Name>Plans 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.57Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:23.353333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:22.776667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:01.986667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:30.98Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:27.623333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="06eed40d-7201-4208-af16-ecc585ecc5bb">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="890e00b3-667c-4d3a-8a4f-649dddc8a7d7">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2adcd8f3-d7bd-4b49-8f10-354436e8d965">
+          <ProactiveCaching dwd:design-time-name="16801923-1180-4bf2-ba49-21128db06037">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6adcb0a6-bbfa-466b-b880-bee01ecedb47" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cb1d83ef-a34b-4f61-8bda-7870e3d17de5" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>89922533</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="c5a15e50-fb4e-49d3-977f-2cd8212f4e7c">
+        <Partition dwd:design-time-name="94917d76-421b-4bc7-8177-85b91dbc84f9">
           <ID>Plans New</ID>
           <Name>Plans New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.7Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:23.553333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:17.526667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.076667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.123333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:41.103333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c77ae3e3-261f-4e8b-936b-69c064cef85a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1d590554-2f5e-4c00-b6dc-236461f045d6">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="7def0c64-d9bf-41fc-9383-b6c35fc97732">
+          <ProactiveCaching dwd:design-time-name="c2037c7f-233d-4201-a282-16fee5159bef">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8d88d2ca-54fa-4fe4-aef5-3f60a666b57d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7926558c-5d25-4022-ac71-6bfde512f9de" />
           </ProactiveCaching>
-          <EstimatedSize>8537425</EstimatedSize>
+          <EstimatedSize>5846996</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="0d7f3510-6327-45a1-ac1a-24ec738dddae">
+        <Partition dwd:design-time-name="b56011c7-cd6f-414e-a90b-74b8ec02cd59">
           <ID>Plans 2024</ID>
           <Name>Plans 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:55.906667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:23.743333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.853333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.206667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.27Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:18.34Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="b8be59fc-8e06-4d85-bd78-6d735b8fd8ca">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e1fd0bcb-c673-49d5-a49a-2052385a6e6a">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_PlansMaxNew].[SK_Outlet_ID],[fact].[qry_PlansMaxNew].[SK_Product_ID],[fact].[qry_PlansMaxNew].[Source_ID],[fact].[qry_PlansMaxNew].[SK_Date_ID],[fact].[qry_PlansMaxNew].[SV_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TA_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[TM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[RM_Tab_Num_Hist],[fact].[qry_PlansMaxNew].[IsSelected],[fact].[qry_PlansMaxNew].[IsTargetBonus],[fact].[qry_PlansMaxNew].[SK_Arg_ID],[fact].[qry_PlansMaxNew].[SK_Month_ID],[fact].[qry_PlansMaxNew].[PlanWeight],[fact].[qry_PlansMaxNew].[PlanRetWeight],[fact].[qry_PlansMaxNew].[PlanAtt],[fact].[qry_PlansMaxNew].[SK_TypePlan],[fact].[qry_PlansMaxNew].[KAM_ID_Hist],[fact].[qry_PlansMaxNew].[Dm_Hist_ID]
 FROM [fact].[qry_PlansMaxNew]
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="0c8172d2-4df3-44fb-a509-0d50b290d3d0">
+          <ProactiveCaching dwd:design-time-name="c708d775-3869-4def-8f6d-97f8e4949c42">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="742f2ddd-20db-4a02-9c4b-49bb9195c1dc" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5a208bf1-59c0-4047-9bc1-7c285a6bb3f6" />
           </ProactiveCaching>
-          <EstimatedSize>8223109</EstimatedSize>
+          <EstimatedSize>31189976</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Qry Ship Real Max</ID>
       <Partitions>
-        <Partition dwd:design-time-name="3b3620d8-e69c-4bbc-8e8e-80660b7131b6">
+        <Partition dwd:design-time-name="94903400-02f6-4485-b715-bad56839ac06">
           <ID>Qry Ship Real Max 2020</ID>
           <Name>Qry Ship Real Max 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:07.97Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.133333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.886667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.446667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.536667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:20.246667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="782d5c5c-1a40-41e4-940b-3ea776d3f831">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5e8e3264-c757-4206-bcb2-cd07ba9b3d1d">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="744b22de-ff69-4b77-9da8-1e0b1756db2f">
+          <ProactiveCaching dwd:design-time-name="415fe916-7458-41db-9776-a6620dfa910f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="47e3e7bb-235d-4165-9a94-9730338ee6dd" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="14dbfbc9-8b6e-4b12-b733-ecf52aefd641" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>146012769</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="4cd403f8-dcdf-49c4-a068-88a22432158e">
+        <Partition dwd:design-time-name="de39224c-4dfa-4f13-8feb-fd1203953ff6">
           <ID>Qry Ship Real Max 2021</ID>
           <Name>Qry Ship Real Max 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.023333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.29Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:41:20.88Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.583333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.653333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:11.19Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ef4c0b16-2ace-4db2-b206-cae6428fb493">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4c78fac8-45c6-4acb-8a97-69e137789398">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="8c8c2c20-a204-41e0-8de3-cba5cece667d">
+          <ProactiveCaching dwd:design-time-name="2a1c88d3-9d6f-4475-a315-96c40c4a8ad1">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0279636a-372b-4ffa-9730-dbb11c716400" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5ff7122b-2fae-4dad-ac30-7a1c5d577ae0" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>149563648</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8f744917-2544-4627-bd48-0bfbde437404">
+        <Partition dwd:design-time-name="fbf46c34-4c4c-4ab9-bb79-c1b0f315631f">
           <ID>Qry Ship Real Max 2022</ID>
           <Name>Qry Ship Real Max 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.086667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.413333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:22.696667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.666667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.783333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:22.15Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="76731bf3-f778-4a56-b353-e1bff7beaac7">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bf6d7f50-aee2-4d91-974b-ec2298bb7c5a">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1 = 0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6308b17a-6245-4624-96bc-f7c737befad9">
+          <ProactiveCaching dwd:design-time-name="cfcf7726-7132-4f6f-9688-fc61a27ca319">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="76f6e5a4-8dbd-492b-8f36-a9eadfe6631f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e8a8f523-8695-4c2c-8dc1-0a1a053b8104" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>103302509</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="be15afc5-bc7c-4a13-9eb3-a5619befa0b3">
+        <Partition dwd:design-time-name="64e08893-8bcd-4114-b137-1d6a0b285654">
           <ID>Qry Ship Real Max 2023</ID>
           <Name>Qry Ship Real Max 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.146667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.54Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:42.01Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.76Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:31.926667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:16.713333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="32876402-bbff-4969-a1fb-89b525669bd6">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="16a512a5-b505-4e00-9346-e6e0431e43a3">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="37b41f96-3298-4a90-bbc8-7060362a5add">
+          <ProactiveCaching dwd:design-time-name="c9697103-e2a7-448f-a064-aa2916a19a10">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a63c75cd-a621-4b9a-8518-687edfef43b1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9cc549ac-9825-478b-8c6e-959ec14f45a1" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>126677904</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="391d6e2d-dccd-4243-b1d5-072a539cd208">
+        <Partition dwd:design-time-name="e2f23dae-17ca-4bd6-a164-eb3d78f2e053">
           <ID>Qry Ship Real Max New</ID>
           <Name>Qry Ship Real Max New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.186667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.756667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:01.276667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.813333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:32.113333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:53.703333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5c4bc561-94bc-41b2-88ca-7a55c2e870a9">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="39844c62-551d-46ec-99d9-5ee96ca0d581">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="92822384-4042-49f4-92fe-e3a4717de2fc">
+          <ProactiveCaching dwd:design-time-name="dd508d36-9454-4998-8f9c-97334451c399">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="474e0ff3-c9e5-48fe-bbb4-912691fddc17" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f58ddfca-4faa-461e-b2b7-4224cd8b7e39" />
           </ProactiveCaching>
-          <EstimatedSize>12156210</EstimatedSize>
+          <EstimatedSize>1731552</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="52248c28-1e8c-4c66-adf4-a75e54722953">
+        <Partition dwd:design-time-name="7aead8f5-eb5b-4a6d-9225-83acaa441fef">
           <ID>Qry Ship Real Max 2024</ID>
           <Name>Qry Ship Real Max 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:57.376667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:24.883333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:22.043333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:02.876667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:32.266667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:21.616667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="fe8bc1b1-a4c3-4915-a482-57105846e1e1">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="38827144-c2b7-4bbd-8cdb-dd072989359c">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="cadbd92e-70b2-41f3-a71d-7e5fe0d3d0fb">
+          <ProactiveCaching dwd:design-time-name="96de14b1-e972-4ee6-aaed-1195c6559dff">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6dcb3004-c4ac-4476-b0bb-081b4b1feaa4" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="05a8da8e-7842-4ee7-b8af-1e26e07c6fe8" />
           </ProactiveCaching>
-          <EstimatedSize>27645930</EstimatedSize>
+          <EstimatedSize>61865702</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі</ID>
       <Partitions>
-        <Partition dwd:design-time-name="54e912d9-7312-4e4d-8965-15b08194563b">
+        <Partition dwd:design-time-name="a1a31e82-d4a1-4b3d-8260-1836fa0a880f">
           <ID>TMA 2020</ID>
           <Name>TMA 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.34Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:25.21Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:18.573333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.086667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:32.573333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:13.943333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ce31372b-b553-4bb3-995e-35c5540b8e33">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fb038e3c-9f90-4dc3-bbdb-c53ddbadff5e">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="56dc0469-6b17-4677-97b9-a6baa7a59121">
+          <ProactiveCaching dwd:design-time-name="e7f586df-e6f7-414e-82d5-e1304825cb14">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="bb443b5a-3549-449c-879a-9794e18a1d93" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="30dba6ce-89f1-4d1e-ac3a-cb01891945d5" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>101415945</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7c0b8744-6094-4829-8e7b-af035b639970">
+        <Partition dwd:design-time-name="d1d9909e-0e7f-4020-9d1b-9ffae324c54f">
           <ID>TMA 2021</ID>
           <Name>TMA 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.386667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:25.336667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:11.386667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.133333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:32.693333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:13.313333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="cacd8d10-c820-4a9d-a5ff-26dac088d618">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="788e0433-9892-498a-91b9-960620492284">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2c9dd165-2803-4d52-bb37-c4e9bde8ef51">
+          <ProactiveCaching dwd:design-time-name="ded8a90d-2542-42dd-ae82-6eaf1a39fafc">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="30710d31-06b4-4ec9-a1ba-aeabd6adb8fe" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4a71bd01-c0b9-42c0-8cf3-f244ecca1f33" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>109189030</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="1756788a-7bac-48a1-bc38-32e127eb6f69">
+        <Partition dwd:design-time-name="dc47435d-4965-41fa-8629-305a4392b84b">
           <ID>TMA 2022</ID>
           <Name>TMA 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.426667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:25.506667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:22.776667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.2Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:32.906667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:12.14Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="31b8f811-1fc4-4c30-ab60-a3977abf064e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f44bf76a-9e90-462e-b612-d22b82c0116e">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c403143f-7af9-4a3b-93f5-b33456dc435f">
+          <ProactiveCaching dwd:design-time-name="a7e0b1c9-ac07-4fc2-8103-802e87d7ae2f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="41777331-8436-4908-9643-53d9b610c391" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c5bf96df-7637-493d-8208-880f46a16b9b" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>42854344</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="3117dee3-055e-43b2-b5b0-d7046bff2a84">
+        <Partition dwd:design-time-name="c5884953-1587-4cba-883d-0b239c1092da">
           <ID>TMA 2023</ID>
           <Name>TMA 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.486667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:25.616667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:42.903333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.346667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:33.033333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:28.43Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e9fc51a9-6461-4e49-9ffe-f3f3becd6ef0">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3c4da1fc-4913-4972-bb30-f756934dc110">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="52f68537-6e25-4017-bda9-6015cf4462e0">
+          <ProactiveCaching dwd:design-time-name="bf1a41db-ba6f-435d-8a6f-a322105d24be">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ffa756e5-dc66-457f-b0bc-e6091b23fdba" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a22ae3c6-2ac5-4866-8b7d-2f709bbebfc7" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>55853318</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="e7073333-6b15-4581-8a07-884ddbe64241">
+        <Partition dwd:design-time-name="60009c16-9c10-43c0-98e3-6b212c3c0e2e">
           <ID>TMA New</ID>
           <Name>TMA New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.526667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:25.79Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.636667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.48Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:33.173333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:06.306667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f7bc5777-5be1-425a-a802-1fd2e82efc93">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4746e0b6-8c55-4b86-ba4c-6381c7aa42f7">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2c4676c2-8956-4660-bf68-cf71a341ab7e">
+          <ProactiveCaching dwd:design-time-name="55a15ea2-4867-4dff-ab17-f68e863e4170">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c2bafe5d-df65-4194-a7ec-4477b819c899" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f4169c8d-b866-4063-acc6-4ac00c415ddf" />
           </ProactiveCaching>
-          <EstimatedSize>4760567</EstimatedSize>
+          <EstimatedSize>833578</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="410f7ef6-8e06-4d01-a245-22c1ceaacb5b">
+        <Partition dwd:design-time-name="6795b64c-58de-44b1-a11f-de7ff67f4b9a">
           <ID>TMA 2024</ID>
           <Name>TMA 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:58.473333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.07Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.603333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.543333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:33.353333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:09.02Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="d72a61d1-d8da-439f-baff-a51bdc09c625">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cdfd6e47-d169-4839-a119-ac73ac164afc">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6e5bd031-0c15-4deb-98ff-929bf8976bee">
+          <ProactiveCaching dwd:design-time-name="179346eb-b486-4efc-beda-4fdcbb31359e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cef2b411-7910-40fc-8872-1e0546f4492f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ba3eb079-7137-4aaf-9a5f-da88690944c2" />
           </ProactiveCaching>
-          <EstimatedSize>11187722</EstimatedSize>
+          <EstimatedSize>26706891</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="6294ca92-3a67-42a4-83f1-e8f3286e1352">
+        <Partition dwd:design-time-name="0fbb40e0-8981-44de-a50c-03e801613ee8">
           <ID>Distrib 2020</ID>
           <Name>Distrib 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.636667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.413333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:21.213333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.67Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:33.676667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:12.933333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="66c22f43-5c2a-4129-a969-25e2acdea414">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="63837c80-3d71-407a-82e3-6e4f74a20cae">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="8a4cd29d-0f5a-43ff-a5c7-f23c21ebfdb7">
+          <ProactiveCaching dwd:design-time-name="9196b34b-8a9c-4e55-a13b-baff85532372">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5ad5f46e-2f36-4df6-bf3f-0a5e60589cdd" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="dfbddbda-bec8-4989-8cc2-91b6f27aafa4" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>68684830</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="f7f2a76e-d511-4805-836f-7bdc7207fcda">
+        <Partition dwd:design-time-name="508fc00b-78fe-48b9-ba30-ae1f022f543b">
           <ID>Distrib 2021</ID>
           <Name>Distrib 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.686667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.523333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.62Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.773333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:33.876667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:14.233333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7b08db93-3d65-4cd6-ba82-0a36fdeef65e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="81e1bbd6-52f3-4bda-add3-d4b32e2af334">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="93f07d8e-15f7-4db0-8c98-0264d9248bc1">
+          <ProactiveCaching dwd:design-time-name="aadfea2d-2928-4e28-9fcd-b78b25345998">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b146ee92-23a4-41f8-8c4a-0c4ff2552e43" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="773c6222-4630-4b2e-b9c8-8b7633df70a5" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>72361139</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="96f1a10a-13e9-4a2a-8a6f-1892869c5be8">
+        <Partition dwd:design-time-name="4179b59a-a721-4ecb-8092-179bf7b0e6df">
           <ID>Distrib 2022</ID>
           <Name>Distrib 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.723333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.666667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:00.763333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.86Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:34.076667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:24.863333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="2645ae90-da67-4ee2-9142-770f66f4c45b">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c1e81807-ba62-4d48-8f4d-895d75bd4249">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="8c417fb2-5253-4887-8b73-44b5ddc031b0">
+          <ProactiveCaching dwd:design-time-name="b982f5ed-0dfa-45b7-8ef3-fd8e967d649d">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="16a6d4d8-8262-4cf1-b88d-328169070aef" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="408eaef5-8781-40e6-a567-ceadd94a9a3c" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>47979723</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="de031521-9e70-4d1e-9740-19ae0601e6c2">
+        <Partition dwd:design-time-name="2f806e1c-34e2-43a0-ada6-bcea95663e89">
           <ID>Distrib 2023</ID>
           <Name>Distrib 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.776667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.82Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:00.573333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.92Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:34.256667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:13.63Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="20735a84-48de-42a7-a596-a4a28d89cfff">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9c58899e-e5c6-439e-9141-858b955cb213">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="fc4992d2-68fc-4bf8-83bd-0f258fa54e7c">
+          <ProactiveCaching dwd:design-time-name="54fa59e2-3038-4c16-bdc9-65d6a6f4505f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7014752b-d77d-4700-be21-15426ebe2549" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b5fe9ddb-ac9d-458f-a65d-be33b4f92ae3" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>61688495</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7594a7b2-97d3-4b30-86a9-bd9eb2305337">
+        <Partition dwd:design-time-name="758d0b10-c54f-4e34-b68b-16dad7a3dea4">
           <ID>Distrib New</ID>
           <Name>Distrib New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:08.863333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:26.976667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:16.603333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:03.966667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:34.413333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:45.983333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ab928d8a-5c63-4243-97dc-6a4035f7f270">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ca60bacb-afb9-4917-ad5d-9b9a7bc19f78">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="5750ef89-97c1-48a7-920b-57f6cee95fa6">
+          <ProactiveCaching dwd:design-time-name="91599f43-1f8d-46dd-a42a-49263ce612dc">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7b1195ef-b146-4e6a-916e-10844fca4e0b" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="66c49d75-f62a-49c9-8ea8-c0397e5ba755" />
           </ProactiveCaching>
-          <EstimatedSize>4223098</EstimatedSize>
+          <EstimatedSize>729619</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="154cfbde-4732-4222-83a1-987d87feb3c2">
+        <Partition dwd:design-time-name="39b5004c-d26b-4378-a0c7-9c6f7fee3871">
           <ID>Distrib 2024</ID>
           <Name>Distrib 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:48:59.583333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:27.32Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:58.293333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.01Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:34.55Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:08.316667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ce01e2a0-f256-44a5-a2fc-3325e449417d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="35de4458-9ebf-4a71-b944-7c7b6ea0c846">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="f59338d7-7d78-45b9-9be3-e82379a52915">
+          <ProactiveCaching dwd:design-time-name="632a31a3-0be4-4056-acaa-937687c618ce">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="da9f2b11-7cb2-452c-820c-2485dc6fea4c" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="621b8e84-0ea2-4264-950f-4c84ae69a86d" />
           </ProactiveCaching>
-          <EstimatedSize>9298975</EstimatedSize>
+          <EstimatedSize>27721345</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 2</ID>
       <Partitions>
-        <Partition dwd:design-time-name="081bbf0e-2cae-4a3d-ab5d-bed6dd032b70">
+        <Partition dwd:design-time-name="1bcc9b7d-ec08-403d-b57c-3cf6169730e8">
           <ID>SKU 2020</ID>
           <Name>SKU 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.076667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:27.616667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.166667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.136667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:34.9Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:28.716667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="963ad6e7-3fd6-4e0a-8f27-29e600bab6eb">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6fbf54c9-4bf4-49d5-acac-953b4989304b">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="b8dd8e54-5785-46d8-9564-c01ea7110e36">
+          <ProactiveCaching dwd:design-time-name="6ff2a8c9-4907-4e41-becc-ee795cf009f9">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b8e5dd04-0e8e-4109-a10b-175da4a3a9a6" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b014f3a1-9d97-44e6-878c-a290051c60b9" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>107823225</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="43ceb63d-d5b5-4612-8fd0-d71db9f6afdf">
+        <Partition dwd:design-time-name="f5232cac-9959-4f9b-9224-10b41c61094d">
           <ID>SKU 2021</ID>
           <Name>SKU 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.18Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:27.773333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:37.403333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.17Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:35.036667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:17.473333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e4e40cab-6613-47ae-a12e-46cf39ee5ff0">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8b7dabf2-7233-40ac-9f51-7b8ad43303c6">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a2efb474-7dba-41fc-ae00-e7f30b71840d">
+          <ProactiveCaching dwd:design-time-name="649f49af-b393-45e9-ac54-ee1439fd1745">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a83fc4e1-99fa-46cf-83c8-ad588c1c31a7" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9bd58636-664f-454d-b4e5-d44c6590e0a0" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>111148847</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="44d82e2c-9dce-4b57-822a-698fad4cc41e">
+        <Partition dwd:design-time-name="1985226e-eab8-41b2-9f86-5cfd7789d3e5">
           <ID>SKU 2022</ID>
           <Name>SKU 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.236667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:27.963333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:36.653333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.21Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:35.17Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:26.72Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="2dc8af36-0f0c-498d-a183-259780b38127">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="710ffedf-bf71-42a9-b9ca-b6391c716103">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="e630948a-de77-4447-ba0e-00d7e85c85f9">
+          <ProactiveCaching dwd:design-time-name="8db721ea-ac93-46d5-98ec-9a402750bcaa">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="117be8f8-aed9-4020-aa0a-89736e3e7f7e" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b259deb2-2a41-479e-a632-865fdebf6479" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>70266742</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ecdcbe2f-69ae-4c93-a560-32cd5f1009d5">
+        <Partition dwd:design-time-name="1a4948ff-c77f-4fb6-9d6b-251e04e23533">
           <ID>SKU 2023</ID>
           <Name>SKU 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.306667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.07Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:47.856667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.28Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:35.406667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:09.833333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7f9b7ce2-fc68-4377-ad07-24365046abd1">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fe113fb3-a3a3-43ba-9134-4d28a1b5fd04">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c3988bde-5d92-4445-8c12-70349069e6e9">
+          <ProactiveCaching dwd:design-time-name="a6b5cd96-6a89-462e-bcec-ccaf14857d50">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1eec2541-fe54-471d-a6ef-7c7473d5031e" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="47ac2c03-d5cd-4cfa-98cc-41d2c4026205" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>85635853</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="87c9aaba-8830-41bb-8234-5ee336c3b590">
+        <Partition dwd:design-time-name="610cf74c-3551-4e31-acd9-70b88a943c98">
           <ID>SKU New</ID>
           <Name>SKU New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.396667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.213333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:21.933333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.333333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:35.596667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:03.206667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="da1b28c8-a971-477d-afb3-3f90fab69835">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2f5cd5ca-89a1-4fc5-8475-afe957763eed">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="75202c5b-f07a-4e2a-af66-bd4ccf0d3bf7">
+          <ProactiveCaching dwd:design-time-name="8843e8b9-6fa4-41fb-9fcd-6b3df204e5df">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="73038bb4-d95d-4615-b150-2fe4c1888f38" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2ea3dde2-9120-4ab3-8789-0708d4684856" />
           </ProactiveCaching>
-          <EstimatedSize>5421117</EstimatedSize>
+          <EstimatedSize>837166</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="fdb744ba-0c0e-4732-9438-586c3d4b23d5">
+        <Partition dwd:design-time-name="bf603e1d-56c2-4067-ab6f-84a04f35f8c3">
           <ID>SKU 2024</ID>
           <Name>SKU 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:49:01.243333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.413333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:47.7Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.393333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:35.763333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:16.016667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="cbb7f105-cc96-4a6d-a53c-ce2570a37595">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2ae29ce8-cb81-4cbd-bd24-b1939571a2ad">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="1187db17-7137-4c88-b6e4-fc25556ddcce">
+          <ProactiveCaching dwd:design-time-name="b4857712-d6a5-476e-a8fc-ea4e192aed09">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3840cedd-8440-4a88-bc58-5a6de64e0d64" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2b417e6b-c163-4da1-8d2d-3b6f42a38401" />
           </ProactiveCaching>
-          <EstimatedSize>12729167</EstimatedSize>
+          <EstimatedSize>39315538</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 3</ID>
       <Partitions>
-        <Partition dwd:design-time-name="fca38c9e-ff97-4833-bf60-fba4da9b3f81">
+        <Partition dwd:design-time-name="6be78010-d347-4eb1-8c4f-4d3e66376bc1">
           <ID>Frequency 2020</ID>
           <Name>Frequency 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.536667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.726667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:59.713333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.613333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:36.176667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:18.71Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e293ee90-8fc9-47d4-b0e6-5ac5fa9d89d8">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bd69e351-e4aa-4931-ad15-49f9ee3425c3">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="b850b540-2448-437b-b5ab-7a5fa2600488">
+          <ProactiveCaching dwd:design-time-name="e010b548-6312-4500-8ef2-67f444b2a49d">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7966b231-2eb3-4edd-9864-00d569d5f175" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1932a65a-a3d3-4c1c-8b6d-0ccbc143e090" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>68661710</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d781e1fa-02f5-4aed-822c-7a42223b0eda">
+        <Partition dwd:design-time-name="040059fe-e3c6-43a3-a54b-d093e125277c">
           <ID>Frequency 2021</ID>
           <Name>Frequency 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.57Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.836667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:17.853333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.653333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:36.443333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:16.32Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="fef960bb-da88-410b-80d0-d71db9fce192">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9bdb40b8-d6f6-4b93-9d59-9de508fdf868">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9192ff2a-34f7-4464-9d61-713e6f01592b">
+          <ProactiveCaching dwd:design-time-name="23810232-bf94-48ea-b2c5-e73669b2404d">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1c70f980-0d24-464b-8ae8-857a2e7bbc1a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="74b8f6e6-c704-4ec7-8994-5939f207a76f" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>72638260</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="c3375916-c7bf-4909-97d9-c849397d8803">
+        <Partition dwd:design-time-name="6fd08bb3-64ed-43b2-b92c-1c1f7fc5b2b2">
           <ID>Frequency 2022</ID>
           <Name>Frequency 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.696667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:28.93Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.213333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.693333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:36.61Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:23.373333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0430dcf7-e665-46de-97ed-a9dceff52dcd">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="99148f9f-42e1-41f2-b71a-b21eb239c519">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="96f715d8-f7c4-4445-992b-8c48dc283bfa">
+          <ProactiveCaching dwd:design-time-name="01379fef-8406-4e42-8a4b-e69d756cb5ff">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="983a8112-f560-444f-9d3c-d09dc136b1f6" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="24b9b73d-8244-4f98-b7c2-334f0f7030d3" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>43064007</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="1f5024eb-a2cb-472a-9e94-fc495542d835">
+        <Partition dwd:design-time-name="bd37a34d-9c0f-45c2-b06c-7c9b286d3908">
           <ID>Frequency 2023</ID>
           <Name>Frequency 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.743333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.116667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:23.246667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.73Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:36.773333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:25.87Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="4df41978-54e1-4930-ae5e-7af70331115d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3d742039-261c-4163-b8bf-edb237bd0023">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="8b7139e8-45c3-4b96-8db6-0f7536650505">
+          <ProactiveCaching dwd:design-time-name="657f6308-07a1-4dee-9250-338e39f83e6b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b0a05135-4848-443a-92af-1e62ca765bbf" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="51030b60-1dec-4e11-8584-17e7f576a14c" />
           </ProactiveCaching>
-          <EstimatedSize>156</EstimatedSize>
+          <EstimatedSize>54381454</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="159a71d6-085f-4b46-b181-a60fe587cad7">
+        <Partition dwd:design-time-name="29e545bb-208d-442b-ba22-68334acd13d4">
           <ID>Frequency New</ID>
           <Name>Frequency New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.786667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.32Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:40.683333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.783333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:36.956667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:56.393333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="06a7a2f2-d1bd-435f-bdb5-911010dfd296">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3e769ec7-db39-4dc1-8472-71357e13b76b">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="58ac5444-74d4-4607-b648-fd12327f1a33">
+          <ProactiveCaching dwd:design-time-name="208fd66e-709c-4da8-b681-6a2c322197e7">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c5287e0a-9beb-4ace-9560-7a03a2631813" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="09e4da6f-13e4-4fe7-87b2-732311f0e498" />
           </ProactiveCaching>
-          <EstimatedSize>4610002</EstimatedSize>
+          <EstimatedSize>763119</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="46681a35-b647-4267-8c59-09895fe4992f">
+        <Partition dwd:design-time-name="82999fab-4741-4dea-a325-38b105c7c607">
           <ID>Frequency 2024</ID>
           <Name>Frequency 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:49:02.36Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.476667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:17.2Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.823333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:37.106667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:25.196667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7b724dc1-5b06-42e1-b6f4-7520031d7a80">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2bdeca14-bb7c-4f79-b561-acfa72e68668">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="b174097e-d48a-49cc-bd49-183077a727a1">
+          <ProactiveCaching dwd:design-time-name="e827fe90-335e-4b06-aa5e-00df5bacf691">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8c47fa54-a410-48b4-9ec1-c5062f9fc54d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8be90e9d-420f-4d06-8516-f046cb5cafcc" />
           </ProactiveCaching>
-          <EstimatedSize>9964581</EstimatedSize>
+          <EstimatedSize>26130465</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 4</ID>
       <Partitions>
-        <Partition dwd:design-time-name="f67f2ac3-67d9-4692-9861-1972e196e7d6">
+        <Partition dwd:design-time-name="b6c4ee32-10e5-49a2-9c55-8d88bf1c0246">
           <ID>Intensity 2020</ID>
           <Name>Intensity 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.896667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.743333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:58.603333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:04.973333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:37.416667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:27.23Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="67da9a32-ce10-4688-8154-3930a9ac677f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="65e9a60f-8414-42a4-8bae-9f0a345f74a9">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="0396d1b2-a0d3-474d-b14b-9a51cff30098">
+          <ProactiveCaching dwd:design-time-name="a5b5f3d7-e646-4b92-ba9c-0aa671a60b51">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="35782968-0c77-4c8c-975a-382609e73dcf" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4ecce612-6eda-4b5b-b948-199ae4d180bb" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>75695859</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="89912228-9868-4247-afd8-466dbbffad69">
+        <Partition dwd:design-time-name="614616f0-c0fd-4f1b-8f3f-351314c4323c">
           <ID>Intensity 2021</ID>
           <Name>Intensity 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.946667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.866667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:59.293333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.036667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:37.643333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:20.543333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="6237549d-e2ca-47ed-bde8-a357462d6b2a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="054c7ce8-dbd3-448b-8e04-74d0c3e03b7b">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2b72eb75-c382-4e4e-83a1-404f8111b85c">
+          <ProactiveCaching dwd:design-time-name="3230c71a-ff0a-4fb3-80dd-2538fb1119c2">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3f889272-4b3b-4fe0-87f3-1c192f9d4fff" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0a9ff4be-bc8b-4f73-9ac5-4cf85161d42b" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>79739728</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="0f08ae24-7564-4f5a-b84e-8df7b1c4ae70">
+        <Partition dwd:design-time-name="018a2338-ab72-44a9-984f-f70cd1a576fc">
           <ID>Intensity 2022</ID>
           <Name>Intensity 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:09.99Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:29.993333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:17.65Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.093333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:37.763333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:22.996667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="26631dd9-092d-4f15-9e49-30b9e6531323">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="85800fe1-bfe2-4192-b69c-dfef201f441a">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="65e73ee7-5be9-4226-bfe5-c91524c2d3f8">
+          <ProactiveCaching dwd:design-time-name="8e406b0f-cb31-4fbe-b9c3-d1f949ddd108">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fa94ba9e-aff0-4b32-84cd-6794e2ef63d4" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a3dff6ac-822e-4a24-83c6-a52128883f43" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>54351827</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a8f847e1-6364-491e-a6be-3d1fc5b29277">
+        <Partition dwd:design-time-name="666a6ab0-1e65-4736-ab66-1afa4ead8a56">
           <ID>Intensity 2023</ID>
           <Name>Intensity 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.02Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.086667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:39.153333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.196667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:37.913333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:29.39Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="d2a89bbf-ae00-4bcc-aeda-85ce440167b4">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cb3d32a2-dbd4-4bd2-ae9f-2a2bc9367622">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4faf2534-99d1-40f2-99af-c45cb2a3d581">
+          <ProactiveCaching dwd:design-time-name="bf0f5934-d4b1-4552-93cd-1dc14eaaa100">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e870c6b8-0712-432b-9b7e-dafc2b29e712" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9056ba0e-b808-4bc2-b686-355500364222" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>67339612</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="46fb3091-60ca-4a5b-bf5e-a258476f35f3">
+        <Partition dwd:design-time-name="239d4a0d-c892-42d4-8ee1-ee85015d2568">
           <ID>Intensity New</ID>
           <Name>Intensity New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.07Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.15Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.62Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.303333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:38.09Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:49.15Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="69973665-6266-4fe9-ba10-03d82a42963a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9de05ba7-c141-4921-9b38-6ddf89fee842">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="79e981c0-856d-4982-aed9-b252d995526e">
+          <ProactiveCaching dwd:design-time-name="07ed64c9-2e6e-477a-ae5c-c60f7281cd44">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="647304e7-a03b-4414-a9b3-df806c305c99" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0d8fd259-44e0-4a2c-a0a8-38eaa1440bf9" />
           </ProactiveCaching>
-          <EstimatedSize>5667613</EstimatedSize>
+          <EstimatedSize>1477783</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="218fa1d9-af87-469d-a083-26c6f68ed876">
+        <Partition dwd:design-time-name="ff5271eb-1501-41ee-9f74-c02e86540a28">
           <ID>Intensity 2024</ID>
           <Name>Intensity 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:49:03.673333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.336667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:53.683333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.356667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:38.25Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:23.793333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="67ffa5a3-90fe-488b-8de0-3b927be0cd77">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8ce490d9-01a5-4717-8dd4-84ae35f60e65">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="146e9535-f82f-4883-979c-2641961a99f9">
+          <ProactiveCaching dwd:design-time-name="f660582c-023a-4f36-8c6d-0ce5ab38603e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="673d8b1a-80c2-4992-9be2-f0796da6ed77" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="46b633a8-87a0-4ee9-9591-927accb9959e" />
           </ProactiveCaching>
-          <EstimatedSize>11140731</EstimatedSize>
+          <EstimatedSize>31109083</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 5</ID>
       <Partitions>
-        <Partition dwd:design-time-name="0083b167-e2f1-4a28-9420-3d3db977ee3e">
+        <Partition dwd:design-time-name="23cc86ba-09dc-4d38-a688-20979bfd389a">
           <ID>Qry Ship Real Max 2020</ID>
           <Name>Qry Ship Real Max 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.21Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.65Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:16.76Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.49Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:38.493333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:24.493333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="6e463de0-1ed4-4095-8840-20ee8efb7c59">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="32f45f02-2edb-4410-827f-8b9a1c8fd2bc">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="1cfd877c-d2c7-4dca-826c-633c9cbafbb3">
+          <ProactiveCaching dwd:design-time-name="824e633c-793e-4c00-af7b-5252ae040fc0">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="55279da0-261d-4c62-bbb0-861de3f7843a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f2df04a5-4827-4808-b623-b8d9ce86e29c" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>239685922</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="b03ebde1-e8b7-46a8-8e9e-8c0735064f45">
+        <Partition dwd:design-time-name="2dba3d47-6189-4c15-bff7-324c0ae10b3e">
           <ID>Qry Ship Real Max 2021</ID>
           <Name>Qry Ship Real Max 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.286667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.76Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:20.103333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.533333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:38.626667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:30.653333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="14d853be-6b36-461a-9bb0-81ff25a6e8f5">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5162a726-5adc-4c00-9909-da296e7ddffb">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4da2b9d8-6403-4024-a536-bc8c9021056a">
+          <ProactiveCaching dwd:design-time-name="23d68441-da61-4395-8f5c-4b10ff4f16c4">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4d9277db-7ac0-4108-97e6-08acfb8c1d3f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="91cebe7f-8dfe-4974-b9b4-48d91c8455e1" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>250803438</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="faf363dd-2da0-44a7-82b0-2bb319e0da1a">
+        <Partition dwd:design-time-name="7026ea4c-05c3-4af3-bbfa-444fc68b0a10">
           <ID>Qry Ship Real Max 2022</ID>
           <Name>Qry Ship Real Max 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.37Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.866667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:58.98Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.573333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:38.81Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:19.536667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c0a39dbf-5064-42b7-adcf-638045ed8b45">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e1a2147d-44b6-491d-b3ac-b48248e7a1c9">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="51cd1adb-c329-43e5-abc5-d08f6224ff04">
+          <ProactiveCaching dwd:design-time-name="e4d2a25f-f003-4059-894c-24f808cfee5e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fd156b7a-29a7-435c-b75e-0338f7bf5d05" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5f671572-366c-49ee-8821-9231b0e10bb1" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>167738824</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a4503ae0-62ee-49ce-b8f2-c021e537b6b3">
+        <Partition dwd:design-time-name="35251a1d-58e4-4196-af84-4eee701af6ea">
           <ID>Qry Ship Real Max 2023</ID>
           <Name>Qry Ship Real Max 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.523333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:30.946667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:43.653333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.706667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.06Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:30.086667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7453ff0c-04f8-4fb1-bc18-7e98c3b6cc2a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6d917f8c-221c-4243-86c5-83369a441d69">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="f93e75c9-7602-4165-9df1-d5fa70276bac">
+          <ProactiveCaching dwd:design-time-name="11d2de2f-7204-4094-b4c8-73379b463dc9">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b7306ab4-3052-42ce-9814-fe692c53dcce" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2166c224-6764-4c48-8b81-0d72695e3c57" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>203601162</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="5a008491-4f99-41b9-9403-53ab8af28c69">
+        <Partition dwd:design-time-name="115ce929-9ebb-4cac-b9e4-d0252b07b054">
           <ID>Qry Ship Real Max New</ID>
           <Name>Qry Ship Real Max New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.553333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.07Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.65Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.756667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.173333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:59.406667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f36a9462-4dda-430a-a393-ac6dc15e7e97">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5c7b7e60-7e26-45d6-b5bc-c8af4dd2573e">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4f486f48-7c5e-4d21-a70b-214ead0d7525">
+          <ProactiveCaching dwd:design-time-name="47fe9920-1a84-47f3-b060-f09bd3868c0c">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d763e800-b877-411b-81eb-60d6dd9eb896" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="355d86c9-9667-4502-9402-1bdafc582a9d" />
           </ProactiveCaching>
-          <EstimatedSize>15526436</EstimatedSize>
+          <EstimatedSize>2549817</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="5453796b-b255-445d-8e55-6d56328dfa46">
+        <Partition dwd:design-time-name="862a9fcd-c05e-479c-a3ab-a8c1a7e1a945">
           <ID>Qry Ship Real Max 2024</ID>
           <Name>Qry Ship Real Max 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:49:04.946667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.32Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:48.53Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.813333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.35Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:22.57Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="76d8ca7d-a689-4bfc-a8ef-7a9447f95f0e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6d282e3c-a3a8-4ff5-b3eb-be681013f929">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="27bb7275-e70f-45c1-83fe-888b7db0e292">
+          <ProactiveCaching dwd:design-time-name="da688acd-dde7-4bdd-b00f-ee9a46405597">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a8a1985e-9575-4d22-b2a5-76c0d959c5ad" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="63aa9068-85ba-497f-97ce-28c6584f3c3f" />
           </ProactiveCaching>
-          <EstimatedSize>34457283</EstimatedSize>
+          <EstimatedSize>97526881</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Продажі 6</ID>
       <Partitions>
-        <Partition dwd:design-time-name="79c6b9ea-4335-4a6b-b8b9-8fbf7f8bbf23">
+        <Partition dwd:design-time-name="53336ac9-5301-46d5-a652-3a35fe3c0572">
           <ID>Qry Ship Real Max 2020</ID>
           <Name>Qry Ship Real Max 2020</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.736667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.633333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:41:20.896667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:05.96Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.623333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:18.996667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="670d6ebd-041a-4aab-81d9-dd7c7819c468">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b483d4b9-1e80-4f3e-80d7-d44f2617ebb4">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20201231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9ee6f85f-0a62-4e7f-82ec-c24e5a9d092e">
+          <ProactiveCaching dwd:design-time-name="f5fcb765-65b8-4f0d-8a5f-5a977f609be4">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fbd04f97-7e95-4d42-8948-520051577399" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="192f079a-479b-42bc-b705-cc4c7235648a" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>81441401</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="60a2ff8e-4f80-4eee-a3cc-ad82f3255dec">
+        <Partition dwd:design-time-name="36585440-27f7-4322-b62b-cda95e34aa88">
           <ID>Qry Ship Real Max 2021</ID>
           <Name>Qry Ship Real Max 2021</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.776667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.726667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:21.026667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:06.006667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.716667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:29.066667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7ccee1ef-6411-4079-8e9b-cd6a2bcce3e7">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6b0799bc-bb54-4717-8aea-6c28b04e931d">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20210101 AND 20211231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="1e548714-2c40-4f17-b365-2a8293b4374b">
+          <ProactiveCaching dwd:design-time-name="cf28cbc3-56ed-4204-871e-96dc2fdf134a">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e3148428-ffd4-4030-b263-1953ed51c312" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="13fbc643-9eae-474b-bb13-8dd486f63604" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>86806742</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="5d528c9f-bc39-490d-a516-57f968128bc1">
+        <Partition dwd:design-time-name="e339a8c6-63dd-4a66-b3e6-6e00a026d65a">
           <ID>Qry Ship Real Max 2022</ID>
           <Name>Qry Ship Real Max 2022</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.866667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.836667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:45:00.87Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:06.083333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:39.956667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:11.723333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ccb6c9b2-943c-44e7-b423-677d2429ac64">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="363927b1-326c-4cd8-a53c-0bfca675e615">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum ,Dm_Hist_ID 
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20220101 AND 20221231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="0194acfa-bb4c-4999-90d4-f39e23957e9b">
+          <ProactiveCaching dwd:design-time-name="1ed73eae-a12e-4933-a15a-58aece69600b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="995d3b8e-f9c0-4786-9707-afa0bf020086" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="60fdb6f6-ae02-4deb-9504-dc0d4c490314" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>57182096</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="06531be8-d86f-412c-9f26-882e6979cefd">
+        <Partition dwd:design-time-name="49d230a3-e422-4ca2-8eae-317584536c27">
           <ID>Qry Ship Real Max 2023</ID>
           <Name>Qry Ship Real Max 2023</Name>
-          <CreatedTimestamp>2024-02-05T14:44:10.946667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:31.946667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:37.416667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:06.123333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:40.156667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:19.893333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8fd68558-bdb7-4bfc-988b-e6476935b268">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f8d91140-3cb7-481e-a4e0-2cc40927ffb7">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20230101 AND 20231231 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="629497b1-c011-4a3d-8a01-5054e8f8150e">
+          <ProactiveCaching dwd:design-time-name="676c366d-8b4f-414c-af56-51d8b8537678">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9cd56889-f471-491f-876c-a6dff778a17e" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a04f426a-1afa-400c-b924-2dd24256f7e2" />
           </ProactiveCaching>
-          <EstimatedSize>234</EstimatedSize>
+          <EstimatedSize>72004416</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d517f549-d90c-4f1b-b584-df8e08831311">
+        <Partition dwd:design-time-name="ded6efe7-fc73-4e43-9e90-e04a6dd3fa70">
           <ID>Qry Ship Real Max New</ID>
           <Name>Qry Ship Real Max New</Name>
-          <CreatedTimestamp>2024-02-05T14:44:11.02Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:32.086667Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:16.603333Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:06.176667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:40.353333Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:28.76Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="718d08e9-1ac7-481b-8898-7e635454e212">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f0013e12-5862-4cf3-882d-398fe2c1914c">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9dd85075-055d-4a1c-80bc-83be2399b240">
+          <ProactiveCaching dwd:design-time-name="994c228b-1261-4236-b20d-5b62f94c6c34">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c343f3a7-65a3-4dca-be39-c27449232597" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="55c559ae-c787-4a6e-8718-973ec0b7fbba" />
           </ProactiveCaching>
-          <EstimatedSize>5489527</EstimatedSize>
+          <EstimatedSize>965159</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="6db32688-b11d-4978-951d-c33ab336a7bd">
+        <Partition dwd:design-time-name="604a01d9-f58b-4f43-aff8-02eecce51a80">
           <ID>Qry Ship Real Max 2024</ID>
           <Name>Qry Ship Real Max 2024</Name>
-          <CreatedTimestamp>2024-02-08T13:49:06.146667Z</CreatedTimestamp>
-          <LastSchemaUpdate>2024-03-28T08:01:32.243333Z</LastSchemaUpdate>
-          <LastProcessed>2024-03-28T08:44:19.806667Z</LastProcessed>
+          <CreatedTimestamp>2024-03-28T09:11:06.246667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:40.586667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:25.573333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5a98afee-cb59-4193-b88c-2a1229317610">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5fb04dd0-8c2f-4264-846d-135be6467c13">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT SK_Date_ID ,IsSelected ,Sk_Outlet_ID ,SK_Buyer_ID ,SK_Product_ID ,SK_PromoPurch_ID ,SK_Arg_ID ,SK_ShipDate_ID ,SK_DocDate_ID ,DocNumber ,KAM_Hist_ID ,SV_Tab_Num_Hist ,TA_Tab_Num_Hist ,RM_Tab_Num_Hist ,TM_Tab_Num_Hist ,IsTargetBonus ,SK_UnicTtSku ,SK_UnicDateTt ,SK_UnicDateTtSku ,ShipWeight ,ShipAmount ,ShipSum ,ShipSumWithoutVAT ,RealWeight ,RealAmount  ,RealSum , RealSumWithoutVAT ,ShipToRealWeight ,ShipToRealAmount ,ShipToRealSumWithoutVAT ,ShipToRealSum  ,Dm_Hist_ID
 FROM  fact.qry_ShipRealMax 
-WHERE SK_Date_ID BETWEEN 20240101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20240101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9b8bb371-08a2-422b-bc10-cf20c6100a54">
+          <ProactiveCaching dwd:design-time-name="c92dbd78-4fff-4a58-9c41-a0a180612180">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="502d9ab5-d7af-4f3b-9a21-95e290709e3d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="11732fdf-e943-4df8-b7d3-a620dfdba23e" />
           </ProactiveCaching>
-          <EstimatedSize>11980861</EstimatedSize>
+          <EstimatedSize>34226650</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Qry Returns Quality Products</ID>
       <Partitions>
-        <Partition dwd:design-time-name="4106397b-573f-43aa-b903-1a71f50bfaae">
+        <Partition dwd:design-time-name="ad2444da-5b36-48de-8df0-511f07d68e2b">
           <ID>Qry Returns Quality Products</ID>
           <Name>Qry Returns Quality Products</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-          <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="a392dd3f-c313-4296-a1a0-c8dda0df432e">
+          <CreatedTimestamp>2024-03-28T09:11:06.363333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:40.816667Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:48:14.973333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4a48484e-ab5c-42e2-a8e0-a6904c2eb550">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsQualityProducts].[SK_Date_ID],[fact].[qry_ReturnsQualityProducts].[IsSelected],[fact].[qry_ReturnsQualityProducts].[SK_Outlet_ID],[fact].[qry_ReturnsQualityProducts].[SK_Buyer_ID],[fact].[qry_ReturnsQualityProducts].[SK_Product_ID],[fact].[qry_ReturnsQualityProducts].[SK_PromoPurch_ID],[fact].[qry_ReturnsQualityProducts].[SK_Arg_ID],[fact].[qry_ReturnsQualityProducts].[SK_ShipDate_ID],[fact].[qry_ReturnsQualityProducts].[SK_DocDate_ID],[fact].[qry_ReturnsQualityProducts].[DocNumber],[fact].[qry_ReturnsQualityProducts].[KAM_Hist_ID],[fact].[qry_ReturnsQualityProducts].[SV_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[TA_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[RM_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[TM_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[Dm_Hist_ID],[fact].[qry_ReturnsQualityProducts].[IsTargetBonus],[fact].[qry_ReturnsQualityProducts].[SK_UnicTtSku],[fact].[qry_ReturnsQualityProducts].[ReturnQPWeight],[fact].[qry_ReturnsQualityProducts].[ReturnQPAmount],[fact].[qry_ReturnsQualityProducts].[ReturnQPSum],[fact].[qry_ReturnsQualityProducts].[ReturnQPSumWithoutVAT]
 FROM [fact].[qry_ReturnsQualityProducts]
-WHERE SK_Date_ID BETWEEN 20200101 AND 20240229</QueryDefinition>
+WHERE SK_Date_ID BETWEEN 20200101 AND 20240630 AND 1=0</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="0641c0bd-1e3d-4573-9d38-825720d4c7ae">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3919ad8a-3b25-4236-8cac-6d46e6e32c97" />
+          </ProactiveCaching>
+          <EstimatedSize>464998</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="e611274e-377f-4120-82b8-7271a8547987">
+        <Partition dwd:design-time-name="e09f5a83-f432-4ee2-adc7-b28c94ac47f1">
           <ID>Qry Returns Quality Products New</ID>
           <Name>Qry Returns Quality Products New</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-          <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f6e782c8-2bc5-4d5f-876e-4a59cfdf8d42">
+          <CreatedTimestamp>2024-03-28T09:11:06.413333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-07-01T12:10:40.96Z</LastSchemaUpdate>
+          <LastProcessed>2024-07-05T05:47:59.846667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="585239c6-646f-49ab-94d3-89a77b0d9fe2">
             <DataSourceID>KHLEB WH</DataSourceID>
             <QueryDefinition>SELECT [fact].[qry_ReturnsQualityProducts].[SK_Date_ID],[fact].[qry_ReturnsQualityProducts].[IsSelected],[fact].[qry_ReturnsQualityProducts].[SK_Outlet_ID],[fact].[qry_ReturnsQualityProducts].[SK_Buyer_ID],[fact].[qry_ReturnsQualityProducts].[SK_Product_ID],[fact].[qry_ReturnsQualityProducts].[SK_PromoPurch_ID],[fact].[qry_ReturnsQualityProducts].[SK_Arg_ID],[fact].[qry_ReturnsQualityProducts].[SK_ShipDate_ID],[fact].[qry_ReturnsQualityProducts].[SK_DocDate_ID],[fact].[qry_ReturnsQualityProducts].[DocNumber],[fact].[qry_ReturnsQualityProducts].[KAM_Hist_ID],[fact].[qry_ReturnsQualityProducts].[SV_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[TA_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[RM_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[TM_Tab_Num_Hist],[fact].[qry_ReturnsQualityProducts].[Dm_Hist_ID],[fact].[qry_ReturnsQualityProducts].[IsTargetBonus],[fact].[qry_ReturnsQualityProducts].[SK_UnicTtSku],[fact].[qry_ReturnsQualityProducts].[ReturnQPWeight],[fact].[qry_ReturnsQualityProducts].[ReturnQPAmount],[fact].[qry_ReturnsQualityProducts].[ReturnQPSum],[fact].[qry_ReturnsQualityProducts].[ReturnQPSumWithoutVAT]
 FROM [fact].[qry_ReturnsQualityProducts]
-WHERE SK_Date_ID &gt; 20240229</QueryDefinition>
+WHERE SK_Date_ID &gt; 20240630</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="1e6309f0-1515-47b0-a6c5-3bfeeb1e0602">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6eecaf02-93aa-4389-907a-a2150901ee08" />
+          </ProactiveCaching>
+          <EstimatedSize>156</EstimatedSize>
         </Partition>
       </Partitions>
     </MeasureGroup>
