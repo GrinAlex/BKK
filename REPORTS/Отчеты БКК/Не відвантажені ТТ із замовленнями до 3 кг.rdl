@@ -67,6 +67,10 @@
           <DataField>KAMName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="RMName">
+          <DataField>RMName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="TMName">
           <DataField>TMName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -937,7 +941,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Дата / ТМ / СВ / ТА / Контрагент - Адреса доставки</Value>
+                                  <Value>Дата / РМ / СВ / ТА / Контрагент - Адреса доставки</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1228,14 +1232,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="TMName">
+                        <Textbox Name="RMName">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!TMName.Value</Value>
+                                  <Value>=Fields!RMName.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1245,7 +1249,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>TMName</rd:DefaultName>
+                          <rd:DefaultName>RMName</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1815,14 +1819,14 @@
                   <TablixMembers>
                     <TablixMember />
                     <TablixMember>
-                      <Group Name="TMName">
+                      <Group Name="РMName">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!TMName.Value</GroupExpression>
+                          <GroupExpression>=Fields!RMName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!TMName.Value</Value>
+                          <Value>=Fields!RMName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -1878,7 +1882,7 @@
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>OrdersNoShipLess3kg</DataSetName>
-            <PageName>ТМ-СВ-ТА</PageName>
+            <PageName>РМ-СВ-ТА</PageName>
             <Top>3.73701cm</Top>
             <Left>0.1cm</Left>
             <Height>4.10271cm</Height>
