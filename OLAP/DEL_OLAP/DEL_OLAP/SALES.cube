@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="104" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4157" scrolltop="-2972" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="30" x="22913" y="22463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="104" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4157" scrolltop="-2972" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="30" x="21193" y="22463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
             </font>
@@ -14159,7 +14159,7 @@
               <ColumnID>SK_UnicTtSku</ColumnID>
             </Source>
           </Source>
-          <DisplayFolder>SKU по продажам</DisplayFolder>
+          <DisplayFolder>Відвантаження</DisplayFolder>
           <FormatString>###,#</FormatString>
         </Measure>
       </Measures>
@@ -21035,107 +21035,107 @@ The CALCULATE command controls the aggregation of leaf cells in the cube.
 If the CALCULATE command is deleted or modified, the data within the cube is affected.
 You should edit this command only if you manually specify how the cube is aggregated.
 */
-CALCULATE;  
+CALCULATE;   
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставні повернення кг]
  AS [Measures].[Повернення черствої продукції кг] + [Measures].[Компенсація кг], 
 FORMAT_STRING = "#,0.0", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції'  ;                                
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                                 
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставні повернення шт]
  AS [Measures].[Повернення черствої продукції шт] + [Measures].[Компенсація шт], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції'  ;                         
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                          
        
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставні повернення грн з ПДВ]
  AS [Measures].[Повернення черствої продукції грн з ПДВ] + [Measures].[Компенсація грн з ПДВ] + [Measures].[Утилізація грн з ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції'  ;                          
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                           
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставні повернення грн без ПДВ]
  AS [Measures].[Повернення черствої продукції грн без ПДВ] + [Measures].[Компенсація грн без ПДВ] + [Measures].[Утилізація грн без ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції'  ;                                                                      
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                                                                       
 CREATE MEMBER CURRENTCUBE.[Measures].[Чиста оперативна реалізація кг]
  AS [Measures].[Оперативна реалізація кг] - [Measures].[Повернення черствої продукції кг] - [Measures].[Повернення якісної продукції кг], 
 FORMAT_STRING = "#,0.0", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                                            
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                                             
 CREATE MEMBER CURRENTCUBE.[Measures].[Чиста оперативна реалізація шт]
  AS [Measures].[Оперативна реалізація шт] - [Measures].[Повернення черствої продукції шт] - [Measures].[Повернення якісної продукції шт], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                                                                      
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                                                                       
 CREATE MEMBER CURRENTCUBE.[Measures].[Чиста оперативна реалізація грн з ПДВ]
  AS [Measures].[Оперативна реалізація грн з ПДВ] - [Measures].[Повернення черствої продукції грн з ПДВ] - [Measures].[Повернення якісної продукції грн з ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                          
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                           
 CREATE MEMBER CURRENTCUBE.[Measures].[Чиста оперативна реалізація грн без ПДВ]
  AS [Measures].[Оперативна реалізація грн без ПДВ] - [Measures].[Повернення черствої продукції грн без ПДВ] - [Measures].[Повернення якісної продукції грн без ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                           
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                            
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставна оперативна реалізація кг]
  AS [Measures].[Оперативна реалізація кг] - [Measures].[Повернення черствої продукції кг] - [Measures].[Повернення якісної продукції кг] - [Measures].[Компенсація кг], 
 FORMAT_STRING = "#,0.0", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                            
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                             
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставна оперативна реалізація шт]
  AS [Measures].[Оперативна реалізація шт] - [Measures].[Повернення черствої продукції шт] - [Measures].[Повернення якісної продукції шт] - [Measures].[Компенсація шт], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                                 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                                  
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставна оперативна реалізація грн з ПДВ]
  AS [Measures].[Оперативна реалізація грн з ПДВ] - [Measures].[Повернення черствої продукції грн з ПВД] - [Measures].[Повернення якісної продукції грн з ПДВ] - [Measures].[Компенсація грн з ПДВ] - [Measures].[Утилізація грн з ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                                 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                                  
 CREATE MEMBER CURRENTCUBE.[Measures].[Співставна оперативна реалізація грн без ПДВ]
  AS [Measures].[Оперативна реалізація грн без ПДВ] - [Measures].[Повернення черствої продукції грн без ПДВ] - [Measures].[Повернення якісної продукції грн без ПДВ] - [Measures].[Компенсація грн без ПДВ] - [Measures].[Утилізація грн без ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'  ;                        
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                         
 
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка співставних повернень від кг]
  AS IIF (  ISEMPTY([Measures].[Оперативна реалізація кг]), 0, [Measures].[Співставні повернення кг] / [Measures].[Оперативна реалізація кг]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Реалізація кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                         
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                          
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка співставних повернень від грн]
  AS IIF (  ISEMPTY([Measures].[Оперативна реалізація грн з ПДВ]), 0, [Measures].[Співставні повернення грн з ПДВ] / [Measures].[Оперативна реалізація грн з ПДВ]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація грн з ПДВ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                      
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні повернення' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення черствої продукції';                       
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня співставна оперативна реалізація на 1 ТТ кг]
  AS IIF( ISEMPTY( [Measures].[Відвантажено ТТ] ), 0, [Measures].[Співставна оперативна реалізація кг] / [Measures].[Відвантажено ТТ] ), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Відвантажено ТТ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня оперативна реалізація на 1 ТТ кг]
  AS IIF( ISEMPTY( [Measures].[Відвантажено ТТ] ), 0, [Measures].[Оперативна реалізація кг] / [Measures].[Відвантажено ТТ] ), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг], [Відвантажено ТТ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середнє відвантаження на 1 ТТ кг]
  AS IIF( ISEMPTY( [Measures].[Відвантажено ТТ] ), 0, [Measures].[Відвантаження кг] / [Measures].[Відвантажено ТТ] ), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                    
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                     
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня кількість відвантажених SKU в 1 ТТ]
  AS IIF(ISEMPTY([Measures].[Відвантажено ТТ]), 0, [Measures].[Сума унікальних відвантажених SKU в ТТ] / [Measures].[Відвантажено ТТ]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Відвантажено ТТ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'SKU по продажам' ,  ASSOCIATED_MEASURE_GROUP = 'Інтенсивність продажів';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'SKU по продажам' ,  ASSOCIATED_MEASURE_GROUP = 'Інтенсивність продажів';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня співставна оперативна реалізація в день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість днів продажів]), 0, [Measures].[Співставна оперативна реалізація кг] / [Measures].[Кількість днів продажів]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг], [Кількість днів продажів] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                   
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                    
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня оперативна реалізація в день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість днів продажів]), 0, [Measures].[Оперативна реалізація кг] / [Measures].[Кількість днів продажів]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг], [Кількість днів продажів] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середнє відвантаження в день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість днів продажів]), 0, [Measures].[Відвантаження кг] / [Measures].[Кількість днів продажів]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';               
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка акційної оперативної реалізації від кr]
  AS IIF(ISEMPTY([Measures].[Оперативна реалізація кг]) , 0, ([Measures].[Оперативна реалізація кг], [ТМА].[Тип продажів].&amp;[Акційні продажі]) / [Measures].[Оперативна реалізація кг] ), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';               
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';                
 CREATE MEMBER CURRENTCUBE.[Measures].[Кількість календарних днів]
  AS DateDiff(       
             "d",
@@ -21144,62 +21144,62 @@ CREATE MEMBER CURRENTCUBE.[Measures].[Кількість календарних 
         ) + 1, 
 FORMAT_STRING = "Standard", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Частота продажів' ,  ASSOCIATED_MEASURE_GROUP = 'Частота продажів';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Частота продажів' ,  ASSOCIATED_MEASURE_GROUP = 'Частота продажів';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня співставна оперативна реалізація на календарний день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість календарних днів]), 0, [Measures].[Співставна оперативна реалізація кг] / [Measures].[Кількість календарних днів]), 
 FORMAT_STRING = "#,0.0", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';              
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Співставні продажі' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';               
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня оперативна реалізація на календарний день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість календарних днів]), 0, [Measures].[Оперативна реалізація кг] / [Measures].[Кількість календарних днів]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';             
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';              
 CREATE MEMBER CURRENTCUBE.[Measures].[Середнє відвантаження на календарний день кг]
  AS IIF ( ISEMPTY([Measures].[Кількість календарних днів]), 0, [Measures].[Відвантаження кг] / [Measures].[Кількість календарних днів]), 
 FORMAT_STRING = "#,0.0", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';          
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Відвантаження' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';           
 CREATE MEMBER CURRENTCUBE.[Measures].[Середня ціна оперативної реалізації за кг грн з ПДВ]
  AS IIF( [Measures].[Оперативна реалізація кг] = 0, 0,  [Measures].[Оперативна реалізація грн з ПДВ] / [Measures].[Оперативна реалізація кг] ), 
 FORMAT_STRING = "###,#", 
 NON_EMPTY_BEHAVIOR = { [Оперативна реалізація кг], [Оперативна реалізація грн з ПДВ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі'; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Оперативна реалізація' ,  ASSOCIATED_MEASURE_GROUP = 'Продажі';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Неприйнята продукція кг]
  AS [Measures].[Відвантаження кг] - [Measures].[Реалізація кг], 
 FORMAT_STRING = "#,0.0", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Неприйнята продукція шт]
  AS [Measures].[Відвантаження шт] - [Measures].[Реалізація шт], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Неприйнята продукція грн з ПДВ]
  AS [Measures].[Відвантаження грн з ПДВ] - [Measures].[Реалізація грн з ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Неприйнята продукція грн без ПДВ]
  AS [Measures].[Відвантаження грн без ПДВ] - [Measures].[Реалізація грн без ПДВ], 
 FORMAT_STRING = "###,#", 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка неприйнятої продукції від кг]
  AS IIF (  ISEMPTY([Measures].[Відвантаження кг]), 0, [Measures].[Неприйнята продукція кг] / [Measures].[Відвантаження кг]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка повернень якісної продукції від кг]
  AS IIF (  ISEMPTY([Measures].[Відвантаження кг]), 0, [Measures].[Повернення якісної продукції кг] / [Measures].[Відвантаження кг]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження кг] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Повернення якісної продукції' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Повернення якісної продукції' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка повернень якісної продукції від грн]
  AS IIF (  ISEMPTY([Measures].[Відвантаження грн з ПДВ]), 0, [Measures].[Повернення якісної продукції грн з ПДВ] / [Measures].[Відвантаження грн з ПДВ]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження грн з ПДВ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Повернення якісної продукції' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; 
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Повернення якісної продукції' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Частка неприйнятої продукції від грн]
  AS IIF (  ISEMPTY([Measures].[Відвантаження грн з ПДВ]), 0, [Measures].[Неприйнята продукція грн з ПДВ] / [Measures].[Відвантаження грн з ПДВ]), 
 FORMAT_STRING = "0.0%", 
 NON_EMPTY_BEHAVIOR = { [Відвантаження грн з ПДВ] }, 
-VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'  ; </Text>
+VISIBLE = 1 ,  DISPLAY_FOLDER = 'Неприйнята продукція' ,  ASSOCIATED_MEASURE_GROUP = 'Повернення якісної продукції'; </Text>
         </Command>
       </Commands>
     </MdxScript>
