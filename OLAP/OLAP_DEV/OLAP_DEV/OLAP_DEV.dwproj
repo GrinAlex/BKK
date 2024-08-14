@@ -6,6 +6,18 @@
     <Name>OLAP_DEV.database</Name>
     <FullPath>OLAP_DEV.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>SALES.cube</Name>
+      <FullPath>SALES.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>SALES.partitions</Name>
+          <FullPath>SALES.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Дата.dim</Name>
@@ -42,6 +54,26 @@
     <ProjectItem>
       <Name>ТМ істор.dim</Name>
       <FullPath>ТМ істор.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ТМА.dim</Name>
+      <FullPath>ТМА.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Цільовий бонус.dim</Name>
+      <FullPath>Цільовий бонус.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Причини повернень якісної продукції.dim</Name>
+      <FullPath>Причини повернень якісної продукції.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Причини втрат.dim</Name>
+      <FullPath>Причини втрат.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Зведене замовлення.dim</Name>
+      <FullPath>Зведене замовлення.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

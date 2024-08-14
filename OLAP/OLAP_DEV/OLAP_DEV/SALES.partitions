@@ -1,0 +1,1630 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="91bb9949-e829-4217-a4d6-11f664ed5c0e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SALES</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="598ad49d-a2fb-4f03-b613-5c728e0a0157">
+          <ID>Sales 2020</ID>
+          <Name>Sales 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bac8b622-2cf6-4ad0-8fd3-b9f3a32d2478">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="67ceda10-7795-42d4-bd2f-f00c246ad228">
+          <ID>Sales 2021</ID>
+          <Name>Sales 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8aea5482-ef8f-40a2-8d45-8022e0fff64e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="80a1600a-3ac5-4f3d-beef-29bb750fabbf">
+          <ID>Sales 2022</ID>
+          <Name>Sales 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="119a2ec0-a018-4b62-b1ac-2832d456c3e5">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="660e9c76-b591-47ad-82ff-5a8ec7f8d221">
+          <ID>Sales 2023</ID>
+          <Name>Sales 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="75e31e43-1a07-487c-81b7-5a8e449c1bfb">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="24e1550b-8c07-47f3-a53e-bb574bdc842f">
+          <ID>Sales 2024</ID>
+          <Name>Sales 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5799debd-978f-4eff-b707-fba09f96cb64">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="913ef899-6b8e-42a6-b402-146b5d1bac14">
+          <ID>Sales New</ID>
+          <Name>Sales New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="34286e99-e2e2-487f-8ee0-4f1f2b6fc0d6">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Plans</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b616196e-2853-4245-9bd7-338bb7cec7e9">
+          <ID>Plans 2020</ID>
+          <Name>Plans 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4d9e0329-995d-48bf-9d58-822d00798d69">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="46ab97f8-1413-4d7d-9825-a06fd79f52f4">
+          <ID>Plans 2021</ID>
+          <Name>Plans 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1a70be8d-bfc5-4d05-8916-7c5716f61b7a">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="5b9100b8-f2fa-4941-8ee7-7c59b767b9b2">
+          <ID>Plans 2022</ID>
+          <Name>Plans 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="32447536-8233-4a0a-a247-95a767912339">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="c2ada41a-95ab-4a99-aff0-d5fa3665eed1">
+          <ID>Plans 2023</ID>
+          <Name>Plans 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5b6febf8-dd83-4026-bdea-41f152958310">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="aab3d28a-8340-42d4-899b-0eb178de5f9d">
+          <ID>Plans 2024</ID>
+          <Name>Plans 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="00c818df-8e2e-4fb4-98c1-f2f1a0a5ecfc">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="e909d7c7-a47d-4b0a-808b-b36054ef4d6a">
+          <ID>Plans New</ID>
+          <Name>Plans New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2583059e-4204-477c-9ce5-b724e40bf229">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  p.SK_Outlet_ID, p.SK_Product_ID, p.Source_ID, p.SK_Arg_ID, p.SK_Date_ID, p.SK_Month_ID, p.SK_KamEmployee_ID_Hist, p.SK_SvEmplouee_ID_Hist, p.SK_TaEmployee_ID_Hist, p.SK_RmEmployee_ID_Hist, p.SK_TmEmployee_ID_Hist, p.PlanWeight, p.PlanRetWeight, p.PlanAtt, p.IsTargetBonus, p.SK_TypePlan, p.SK_SalesDate_ID, p.SK_ShipDate_ID
+FROM fact.qry_Plans AS p WITH (NOLOCK)
+WHERE p.SK_ShipDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Orders</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="611f8505-096b-43f5-a546-12daf675f8a7">
+          <ID>O 2020</ID>
+          <Name>O 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="13b1b73f-646b-4881-88eb-13a905583f76">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="95dc9391-1a23-477a-a903-22ec244e28b9">
+          <ID>O 2021</ID>
+          <Name>O 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2854bf14-cc64-4e03-81e1-92533c70b1d2">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="9f257501-0f55-4fdb-aeab-21d21a0c7a10">
+          <ID>O 2022</ID>
+          <Name>O 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c42f6735-1c97-4122-bd8d-e5596d85068e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="d51ed8c2-14ac-4ec2-bf84-826324f1ea95">
+          <ID>O 2023</ID>
+          <Name>O 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c6b19130-ff71-4ef0-a843-c823f8ea283e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="adad9b7c-8533-4d94-9b0e-5cafbd5cc392">
+          <ID>O 2024</ID>
+          <Name>O 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="a9e40cf0-43f8-4667-97f0-395153854aea">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="d3fdabb0-54e5-45b3-b159-e4fffc877d97">
+          <ID>O New</ID>
+          <Name>O New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2e57101e-e4fc-44f8-9e5d-4941e60498a5">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT o.SK_DocDate_ID ,o.SK_SalesDate_ID ,o.SK_TimeDelivery_ID ,o.SK_ShipDate_ID ,o.DocNumber ,o.SK_Buyer_ID ,o.SK_Agreement_ID ,o.SK_Outlet_ID ,o.SK_Product_ID ,o.SK_PromoPurch_ID ,o.SK_ReasonForLosses_ID ,o.IsTargetBonus ,o.SK_UnionOrder_ID ,o.IsCrossDocking ,o.SK_KamEmployee_ID_Hist ,o.SK_SvEmplouee_ID_Hist ,o.SK_TaEmployee_ID_Hist ,o.SK_RmEmployee_ID_Hist ,o.SK_TmEmployee_ID_Hist ,o.PlanOrderAmount ,o.PlanOrderWeight ,o.PlanOrderSumNoVAT ,o.PlanOrderTotalSum ,o.FactOrderAmount ,o.FactOrderWeight ,o.FactOrderSumNoVAT ,o.FactOrderTotalSum 
+FROM fact.qry_Orders AS o WITH (NOLOCK)
+WHERE o.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Current Assort Matrix</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1efed67b-068c-4021-9188-3fd5c415f02f">
+          <ID>Current Assort Matrix</ID>
+          <Name>Current Assort Matrix</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="42e8e9c6-2393-47ad-b2f3-8ca7f80c5c9c">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_CurrentAssortMatrix</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Primary Orders</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fda104b5-c34b-49e1-a9c0-36df74a03d9d">
+          <ID>PO 2020</ID>
+          <Name>PO 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="df3c3af7-1c34-47d7-860f-426d1642f734">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="a25b2d27-45cf-4bcd-9c24-fd4befc4e975">
+          <ID>PO 2021</ID>
+          <Name>PO 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c31abcae-f5d1-4a18-a991-9efacc5ed52e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="143c554f-eadf-41f2-89a7-46da699d0347">
+          <ID>PO 2022</ID>
+          <Name>PO 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="525bc56c-164c-43b9-875c-b97ac6391b62">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="94731145-1cae-4d8c-8f6a-fe3a3dd44ba4">
+          <ID>PO 2023</ID>
+          <Name>PO 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6ee4ab3a-c905-4a41-8754-11976735bd17">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="38245368-e0ce-4e79-8ac4-2a0cafaf4cf6">
+          <ID>PO 2024</ID>
+          <Name>PO 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d1d04794-ad5f-497c-97ad-db0f8c6f8369">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="b10b6235-504c-4291-b577-4d011de29fae">
+          <ID>PO New</ID>
+          <Name>PO New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="13447b38-5167-4937-98ec-01459b76cb9b">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_DocDate_ID ,s.SK_SalesDate_ID ,s.SK_TimeDelivery_ID ,s.SK_ShipDate_ID ,s.DocNumber ,s.SK_Buyer_ID ,s.SK_Agreement_ID ,s.SK_Outlet_ID ,s.SK_Product_ID ,s.SK_PromoPurch_ID ,s.IsTargetBonus ,s.SK_UnionOrder_ID ,s.IsCrossDocking ,s.SK_KamEmployee_ID_Hist ,s.SK_SvEmplouee_ID_Hist ,s.SK_TaEmployee_ID_Hist ,s.SK_RmEmployee_ID_Hist ,s.SK_TmEmployee_ID_Hist ,s.PrimaryOrderAmount ,s.PrimaryOrderWeight 
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Returns</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e0d16711-b378-472c-afff-ba6985c79b58">
+          <ID>Returns 2020</ID>
+          <Name>Returns 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="dbc43438-6a0c-42b6-93ab-ed7bfe01aaed">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="b45e56ed-41c1-42cf-b114-3dff6047405a">
+          <ID>Returns 2021</ID>
+          <Name>Returns 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="64120b81-9e3a-4319-93f0-6ce547194d6c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="29e5593d-7501-4845-a0e8-d6bc208a37be">
+          <ID>Returns 2022</ID>
+          <Name>Returns 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fe9d8b77-fcc8-4625-ba06-898399bdac2d">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="756f52ab-93a7-406d-9dd0-79d170b97fb5">
+          <ID>Returns 2023</ID>
+          <Name>Returns 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e21f6cac-5b89-4681-8525-6127c94a35ca">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="acb451bc-eaff-4ca5-b0ed-598486f45240">
+          <ID>Returns 2024</ID>
+          <Name>Returns 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="87e4ed3b-4b7a-48ac-8c36-8d9c30b4dfbf">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="486a953f-7ef3-4051-b902-e4a65998b821">
+          <ID>Returns New</ID>
+          <Name>Returns New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="af32238d-888e-4ed0-a048-b5fade0094f7">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT  r.SK_DocDate_ID, r.SK_SalesDate_ID, r.DocNumber, r.SK_Buyer_ID, r.SK_Agreement_ID, r.SK_Outlet_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.IsTargetBonus, r.SK_UnionOrder_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.ReturnAmount, r.ReturnWeight, r.ReturnSumWithoutVAT, r.ReturnSum, r.SK_ShipDate_ID
+FROM fact.qry_Returns AS r WITH (NOLOCK)
+WHERE r.SK_ShipDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Returns Quality Products</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4255d840-6240-41d7-8390-373a4b3103d9">
+          <ID>Returns QP 2020</ID>
+          <Name>Returns QP 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3e38a122-85f1-4fc2-9bef-c1fee3aa2557">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="23e3a225-a94a-4b23-b4c5-45f3533b7a8f">
+          <ID>Returns QP 2021</ID>
+          <Name>Returns QP 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="a948758e-d829-4541-85e6-d3ff9d67c81e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="b871e2dd-3bf7-4dfd-809e-beccad41ddc1">
+          <ID>Returns QP 2022</ID>
+          <Name>Returns QP 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="24a8727c-d096-4c7a-98d9-7eb8f3e76626">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="7d1912e7-f07d-4a3d-8511-0cb490537cae">
+          <ID>Returns QP 2023</ID>
+          <Name>Returns QP 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="71d66e3a-b267-4659-8541-dc2bc00f58d2">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="29202e2f-83f4-42a2-9933-919fc0b427a5">
+          <ID>Returns QP 2024</ID>
+          <Name>Returns QP 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="801fcc96-d387-4207-879c-4099c61d5b7d">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="9e1706a2-2a30-499f-b0d0-0e63fe84629f">
+          <ID>Returns QP New</ID>
+          <Name>Returns QP New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3090b372-411b-4464-8213-25b7d49d3eea">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT r.SK_Date_ID, r.IsSelected, r.SK_Outlet_ID, r.SK_Buyer_ID, r.SK_Product_ID, r.SK_PromoPurch_ID, r.SK_Arg_ID, r.SK_ShipDate_ID, r.SK_DocDate_ID, r.DocNumber, r.KAM_Hist_ID, r.SV_Tab_Num_Hist, r.TA_Tab_Num_Hist, r.RM_Tab_Num_Hist, r.TM_Tab_Num_Hist, r.Dm_Hist_ID, r.SK_KamEmployee_ID_Hist, r.SK_SvEmplouee_ID_Hist, r.SK_TaEmployee_ID_Hist, r.SK_RmEmployee_ID_Hist, r.SK_TmEmployee_ID_Hist, r.IsTargetBonus, r.SK_UnicTtSku, r.ReturnQPWeight, r.ReturnQPAmount, r.ReturnQPSum, r.ReturnQPSumWithoutVAT, r.SK_SalesDate_ID
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Reimbursements</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0e435700-a6e7-412b-ba86-f22378dfc812">
+          <ID>Reimbursements 2020</ID>
+          <Name>Reimbursements 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ff7324ee-3fe4-45fb-9449-b099de1d933f">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="0bde2897-d757-4bc7-8504-9caea695309a">
+          <ID>Reimbursements 2021</ID>
+          <Name>Reimbursements 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="992e4df2-db29-4daf-af16-b1833864ba51">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="74944808-654e-4aac-bfb0-1d5874b8cf27">
+          <ID>Reimbursements 2022</ID>
+          <Name>Reimbursements 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="35de9bb7-e9b9-47f6-afb3-544a78e753e7">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f55542cc-5c2d-4c82-9103-5a2da21cdd60">
+          <ID>Reimbursements 2023</ID>
+          <Name>Reimbursements 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="55a1d801-6aad-472e-aec8-33b2274f956c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="04f2d8f2-cf63-4044-b517-6438e0cd5a22">
+          <ID>Reimbursements 2024</ID>
+          <Name>Reimbursements 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8ca53610-edfc-4d8d-9607-93399521dbfe">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="68295474-9334-4cb3-b09f-bb3d5bdb8dec">
+          <ID>Reimbursements New</ID>
+          <Name>Reimbursements New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2febd1c2-7f6f-4187-a0fc-50940e48d637">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT SK_Outlet_ID ,SK_Product_ID ,SK_Date_ID ,SK_Arg_ID ,SK_KamEmployee_ID_Hist ,SK_SvEmplouee_ID_Hist ,SK_TaEmployee_ID_Hist ,SK_RmEmployee_ID_Hist ,SK_TmEmployee_ID_Hist ,SK_Promo_ID_Purch ,IsTargetBonus ,CompensAmount ,CompensWeight ,CompensSumWithVAT ,CompensSumWithoutVAT ,RasprodAmount ,RasprodWeight ,RasprodSumWithVAT ,RasprodSumWithoutVAT ,UtilAmount ,UtilWeight ,UtilSumWithVAT ,UtilSumWithoutVAT ,SK_SalesDate_ID ,SK_ShipDate_ID
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
+WHERE r.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Losses</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="98033958-518b-4f59-a21e-4942946d8db0">
+          <ID>Losses 2020</ID>
+          <Name>Losses 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ecab6dc6-d0fe-4dcb-bcb3-2e57ec56c427">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f2854540-1458-45c1-aa50-ec79ceabe988">
+          <ID>Losses 2021</ID>
+          <Name>Losses 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6359b4ba-9c7e-4ee7-88be-953fdbbcc013">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="d63555b4-5726-4cfe-9382-9ecc1e539349">
+          <ID>Losses 2022</ID>
+          <Name>Losses 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d2f97891-6599-42eb-8fcc-51c2e0f40c09">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="c37ba52d-6d53-4597-bc10-73df083f4fcc">
+          <ID>Losses 2023</ID>
+          <Name>Losses 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b8cf9aec-2478-4412-8349-4ac37012894b">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="2dc1d5d3-db56-447d-ba06-8689e2ec7aed">
+          <ID>Losses 2024</ID>
+          <Name>Losses 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5c7c3dc6-04ae-4f07-afc3-fecf8409bfcd">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="5e6422ae-6df0-472e-958d-5c2110033476">
+          <ID>Losses New</ID>
+          <Name>Losses New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="390efa6e-a415-4183-a5e4-a78361a2d8d3">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT l.SK_DocOrderDate_ID ,l.SK_DocTTNDate_ID ,l.SK_SalesDate_ID ,l.SK_Buyer_ID ,l.SK_Outlet_ID ,l.SK_Product_ID ,l.SK_PromoPurch_ID ,l.SK_ReasonForLosses_ID ,l.IsTargetBonus ,l.SK_KamEmployee_ID_Hist ,l.SK_SvEmplouee_ID_Hist ,l.SK_TaEmployee_ID_Hist ,l.SK_RmEmployee_ID_Hist ,l.SK_TmEmployee_ID_Hist ,l.LossesAmount ,l.LossesWeight ,l.SK_ShipDate_ID 
+FROM fact.qry_Losses AS l WITH (NOLOCK)
+WHERE l.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4dc8266b-ab38-45da-989f-ccab49dcac6d">
+          <ID>TMA 2020</ID>
+          <Name>TMA 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="62ac74ac-9394-476b-bbf9-4d80a6e25b21">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="66229fdc-134e-4ad7-91bc-c4eda7db2fa2">
+          <ID>TMA 2021</ID>
+          <Name>TMA 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9ffac96a-c860-4653-a776-c71eaa083d3c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="5a2c8c45-0166-4667-bf8f-69ae3cbfaaec">
+          <ID>TMA 2022</ID>
+          <Name>TMA 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="002a7dad-40c9-49ca-987f-98b55952d988">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="538e8390-0f4d-4f8e-add5-8a4c915b5621">
+          <ID>TMA 2023</ID>
+          <Name>TMA 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f6984730-cb1d-4b55-bde5-9241d62a3469">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="873adf1d-1055-4ea4-89f0-4f16d843d0eb">
+          <ID>TMA 2024</ID>
+          <Name>TMA 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="10af9159-d2a4-47a9-888b-d0ef3b7d137c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="3418a450-82ed-49c4-88d9-e309b37ade6a">
+          <ID>TMA New</ID>
+          <Name>TMA New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="54d3cb12-ec68-41ad-8fcf-d7afe521f2b0">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1e65ee7b-3c4d-4420-9f90-378d02e528a7">
+          <ID>Distr 2020</ID>
+          <Name>Distr 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="eed49461-cd4c-4674-8252-25621277b035">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="34afa4a4-4b1a-4acd-81c3-2e098563bc3b">
+          <ID>Distr 2021</ID>
+          <Name>Distr 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3d5538f9-03e1-482c-a1e3-152d8d9b25e1">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="16f7d1f4-af44-4132-b4c2-41c815951bd3">
+          <ID>Distr 2022</ID>
+          <Name>Distr 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="79849ce2-70ae-4c80-a7f0-e9a8046c8f97">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="b4ca7fc3-2361-4047-9d63-c33b7a12292a">
+          <ID>Distr 2023</ID>
+          <Name>Distr 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="97cbf079-a892-42e9-bd20-760124530a3e">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="b2968788-17be-40f4-a163-dcf223889d4e">
+          <ID>Distr 2024</ID>
+          <Name>Distr 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fe20bf85-9f1b-4e92-90e5-bbb091d1bc43">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f752e73a-b7be-4a8e-af2f-7b3979f93b45">
+          <ID>Distr New</ID>
+          <Name>Distr New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e7a76856-cf2b-4aea-9b94-f4b238adb57f">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 2</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fa6e37ee-028e-46d3-9d1e-b1760c8fa21d">
+          <ID>Freq 2020</ID>
+          <Name>Freq 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ec475b2e-77b7-48f4-9d41-d0b208f897b8">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="0f1cdd74-b301-4992-99f2-369732aa2abc">
+          <ID>Freq 2021</ID>
+          <Name>Freq 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="393a7e99-4f3f-44ab-a832-df091b4b14b8">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="42a8b26f-a1e4-460f-b719-d56e915196dc">
+          <ID>Freq 2022</ID>
+          <Name>Freq 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="dc7756da-0e1b-4677-9165-8cc746af37b3">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="aaddf361-e53d-460f-bf82-1db7dbeef021">
+          <ID>Freq 2023</ID>
+          <Name>Freq 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ec7714c4-d150-4117-934d-c471e66b4959">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="e0b15dc5-aad6-4cae-8d01-8365d72213d2">
+          <ID>Freq 2024</ID>
+          <Name>Freq 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="713b7251-147a-4901-b33b-66c58b7f298a">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f1f5a31a-7d21-405f-a9d5-4172b6250c05">
+          <ID>Freq New</ID>
+          <Name>Freq New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8ddce1b1-09f0-4f1e-8cf7-b63bf6379ac9">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 3</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8201675b-6f0e-4d25-b663-07228505d26b">
+          <ID>SKU 2020</ID>
+          <Name>SKU 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="efa161a9-73d9-4483-ad86-9329ec6f3eed">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="1e2d5005-936f-437f-a614-0492d4d321e2">
+          <ID>SKU 2021</ID>
+          <Name>SKU 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="50a5551f-d030-43e8-9da0-34d29fd7e924">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="db6081aa-7e6c-4983-a1fd-8afa7a36d8ce">
+          <ID>SKU 2022</ID>
+          <Name>SKU 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="19ace0f9-70cc-4a5a-9cdc-db48b2d3ff7c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="aca1bfb6-3540-4959-8b77-de9e4a018680">
+          <ID>SKU 2023</ID>
+          <Name>SKU 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="18f554fe-fabb-48e7-bd0f-1f9b373620b7">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="6ad5ce35-5228-4749-bb33-a6d20ba3bf71">
+          <ID>SKU 2024</ID>
+          <Name>SKU 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3cfa194c-f0da-4378-9c69-d8c71ec2a79c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="023d9337-32bc-4f51-8030-c31299f4f95b">
+          <ID>SKU New</ID>
+          <Name>SKU New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c547b04b-5cf4-4462-838d-84b8e93395e8">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 4</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="c76c9776-ddc6-43cb-911f-920ef3dee9b0">
+          <ID>Intens 2020</ID>
+          <Name>Intens 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="418d2766-b989-4799-8c44-3dca11f2ba4b">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="8a3ab4a8-0393-4921-934f-e450409a0daf">
+          <ID>Intens 2021</ID>
+          <Name>Intens 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="af07289e-8056-41b8-b6e6-b61ccbbb432a">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="78f3e908-6dbf-4436-8c6e-46397a5d3cb9">
+          <ID>Intens 2022</ID>
+          <Name>Intens 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ea70b575-3c10-49c6-83e7-adde3bf8ff46">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="87522e29-72cc-41e7-8f2c-87177c983ea7">
+          <ID>Intens 2023</ID>
+          <Name>Intens 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1d403c6d-0e82-4942-b763-b7be8766de41">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="51ca89d1-d585-4c14-9e41-d879e3e56bdc">
+          <ID>Intens 2024</ID>
+          <Name>Intens 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c5ed16e2-a6c1-4950-8b2f-e3fde254b4ea">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="cea4f8df-441d-49ea-bbcf-6206a3444a73">
+          <ID>Intens New</ID>
+          <Name>Intens New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="49e37333-4f8a-4cb8-ba8c-0f6b6c911faf">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 5</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2402e0d5-0477-4333-ad16-028d322c4c7d">
+          <ID>TT SKU 2020</ID>
+          <Name>TT SKU 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="0a2bae3c-7a9e-4224-b198-0847215ec8e5">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="303ba671-08ad-4585-8397-05716cd66ffb">
+          <ID>TT SKU 2021</ID>
+          <Name>TT SKU 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="259e035e-7503-49a8-804a-fc31f7c302d8">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="6aded44a-3b7e-4c86-8cbd-6607eebb3fdc">
+          <ID>TT SKU 2022</ID>
+          <Name>TT SKU 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="47575140-aa1a-4fb4-97ea-d63608baf671">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="f507e9dc-793e-4093-94bb-eac7fda14cc8">
+          <ID>TT SKU 2023</ID>
+          <Name>TT SKU 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9c661485-be32-431c-b43a-b74f7d32489f">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="71dbdd8f-bac1-469e-b0e5-9e4ebfaa8f46">
+          <ID>TT SKU 2024</ID>
+          <Name>TT SKU 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="faa8e953-5799-45e9-b267-2ec080b3530c">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="e2220b46-998a-4485-8ec4-f2f5015da7a0">
+          <ID>TT SKU New</ID>
+          <Name>TT SKU New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f041a65d-cb24-4f5b-9c7c-da4e2868fb97">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Продажі 6</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="460aa61f-15ba-44b5-bc06-714316eb73e6">
+          <ID>Sales be Days TT 2020</ID>
+          <Name>Sales by Days TT 2020</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4666ce71-08d6-47cd-b6e5-266ac9336af5">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="6b383215-146d-4940-8ed3-5104b82ac5ad">
+          <ID>Sales by Days TT 2021</ID>
+          <Name>Sales by Days TT 2021</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bda054d3-a58b-4296-8cab-6e0ee396650a">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="1eb66556-8116-421a-b2a4-45ebf8ba4720">
+          <ID>Sales by Days TT 2022</ID>
+          <Name>Sales by Days TT 2022</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="fbca2964-4241-4839-96d5-1c86f1b52a83">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="00a89592-749b-4c22-b152-cdf9a36e236b">
+          <ID>Sales by Days TT 2023</ID>
+          <Name>Sales by Days TT 2023</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5bd597de-41bf-4f0b-b23c-d7f464a9748f">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="ec7d9426-f691-4271-9f71-b4ea1dfa259f">
+          <ID>Sales by Days TT 2024</ID>
+          <Name>Sales by Days TT 2024</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="79642a9f-9920-431e-8ca4-4115c58000b0">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="60212a1d-ae09-4238-92ad-c0341678d0e2">
+          <ID>Sales by Days TT New</ID>
+          <Name>Sales by Days TT New</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9fd6f224-91c6-4904-96de-855a12ad5a29">
+            <DataSourceID>CAKE WH</DataSourceID>
+            <QueryDefinition>SELECT s.SK_SalesDate_ID, s.SK_TimeDelivery_ID, s.SK_UnionOrder_ID, s.SK_Outlet_ID, s.SK_Buyer_ID, s.SK_Product_ID, s.SK_PromoPurch_ID, s.SK_Agreement_ID, s.SK_ShipDate_ID, s.SK_DocDate_ID, s.DocNumber, s.SK_ReasonForReturn_ID, s.SK_KamEmployee_ID_Hist, s.SK_SvEmplouee_ID_Hist, s.SK_TaEmployee_ID_Hist, s.SK_RmEmployee_ID_Hist, s.SK_TmEmployee_ID_Hist, s.IsTargetBonus, s.SK_UnicTtSku, s.SK_UnicDateTtSku, s.SK_UnicDateTt, s.ShipAmount, s.ShipWeight, s.ShipSumWithoutVAT, s.ShipSum, s.RealAmount, s.RealWeight, s.RealSumWithoutVAT, s.RealSum, s.ShipToRealAmount, s.ShipToRealWeight, s.ShipToRealSumWithoutVAT, s.ShipToRealSum
+FROM fact.qry_Sales AS s WITH (NOLOCK)
+WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20240630</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

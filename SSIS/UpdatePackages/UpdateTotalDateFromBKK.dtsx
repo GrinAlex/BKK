@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateTotalDateFromBKK"
   DTS:PackageType="5"
-  DTS:VersionBuild="248"
-  DTS:VersionGUID="{FEC334E4-F4EC-46A5-813F-74E60C191BAF}">
+  DTS:VersionBuild="251"
+  DTS:VersionGUID="{EFDFF8A1-EBE6-44B8-A5F0-105887FC993D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6580,7 +6580,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2</property>
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK'</property>
                         <property
                           dataType="System.String"
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
@@ -6594,7 +6594,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2) [refTable]
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK') [refTable]
 where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTable].[Source_ID] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -8454,8 +8454,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2
-	AND o.TransportCode &lt;&gt; 561</property>
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK' AND o.TransportCode &lt;&gt; 561</property>
                         <property
                           dataType="System.String"
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
@@ -8469,8 +8468,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2
-	AND o.TransportCode &lt;&gt; 561) [refTable]
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK' AND o.TransportCode &lt;&gt; 561) [refTable]
 where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTable].[Source_ID] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -10391,7 +10389,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2</property>
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK'</property>
                         <property
                           dataType="System.String"
                           description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
@@ -10405,7 +10403,7 @@ where [refTable].[BuyerCode] = ? and [refTable].[Source_ID] = ? and [refTable].[
       ,o.TransportCode
   FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
   WHERE 
-	o.Source_ID = 2) [refTable]
+	o.Source_ID = 2 AND o.SourceDatabase &lt;&gt; 'ORD_BKK') [refTable]
 where [refTable].[BuyerCodeC] = ? and [refTable].[TransportCode] = ? and [refTable].[Source_ID] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -14281,7 +14279,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14291,7 +14289,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14547,7 +14545,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14557,7 +14555,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14837,7 +14835,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14847,7 +14845,7 @@ FROM [dbo].[tmp_ShipmentsMaxBKK] tr WITH (NOLOCK)</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
