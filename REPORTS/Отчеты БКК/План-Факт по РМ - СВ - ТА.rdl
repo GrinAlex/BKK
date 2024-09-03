@@ -6167,6 +6167,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -8702,6 +8703,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName1</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -11511,6 +11513,7 @@ IIF(
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName2</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -14182,6 +14185,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName3</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -17131,6 +17135,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName4</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -18976,12 +18981,14 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName5</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -21645,6 +21652,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
+                        <Hidden>=Iif(Left(Fields!RM_Tab_Num.Value, 1) = "-", True, False)</Hidden>
                         <ToggleItem>RMName6</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -21685,7 +21693,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
-                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <KeepWithGroup>Before</KeepWithGroup>
