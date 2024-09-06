@@ -67,6 +67,10 @@
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="IsTB0">
+          <DataField>IsTB0</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="PlanWeight">
           <DataField>PlanWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
@@ -75,9 +79,17 @@
           <DataField>PlanAmount</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="IsTB1">
+          <DataField>IsTB1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Next1MonthPlanWeight">
           <DataField>Next1MonthPlanWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="IsTB2">
+          <DataField>IsTB2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="ShipmentsWeight">
           <DataField>ShipmentsWeight</DataField>
@@ -1050,6 +1062,7 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!IsTB0.Value = 1, "LightGreen", "Transparent")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1085,6 +1098,7 @@ WHERE d.SK_Date_ID = dbo.ufn_DateToInt(DATEADD(MONTH, 2, dbo.ufn_IntToDate((@Y-1
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!IsTB0.Value = 1, "LightGreen", "Transparent")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1461,6 +1475,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!IsTB1.Value = 1, "LightGreen", "Transparent")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1496,6 +1511,7 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=iif(Fields!IsTB2.Value = 1, "LightGreen", "Transparent")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3375,12 +3391,8 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                                         <Value>=Fields!ProductName.Value</Value>
                                         <Style>
                                           <Color>=Switch(SUM(Fields!PlanWeight.Value) = 0, "#5f0e06",
-(SUM(Fields!ShipmentsWeight.Value) / 
-(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
--1) &gt; 0.3, "Red",
-(SUM(Fields!ShipmentsWeight.Value) / 
-(SUM(Fields!PlanWeight.Value) / Fields!TotalDays.Value * Fields!CurrDay.Value)
--1) &lt; -0.3, "Red")</Color>
+((Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value) - 1) &gt; 0.3, "Red",
+((Sum(Fields!ShipmentsWeight.Value) + Sum(Fields!ForecastSalesWeight.Value)) / SUM(Fields!PlanWeight.Value) - 1) &lt; -0.3, "Red")</Color>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -3483,7 +3495,6 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
-                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <KeepWithGroup>Before</KeepWithGroup>
@@ -3541,13 +3552,13 @@ SUM(Fields!PlanWeight.Value)-1) &lt; -0.3, "Red")</Color>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.51644in</Height>
+        <Height>1.46436in</Height>
         <Style />
       </Body>
       <Width>12.95554in</Width>
       <Page>
         <PageHeader>
-          <Height>1.72945cm</Height>
+          <Height>1.76099cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -3706,7 +3717,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
               <rd:DefaultName>Textbox12</rd:DefaultName>
               <Top>1.05cm</Top>
               <Left>0.1cm</Left>
-              <Height>0.55cm</Height>
+              <Height>0.6cm</Height>
               <Width>6.42159cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -3728,6 +3739,104 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                 </RightBorder>
                 <BackgroundColor>LightYellow</BackgroundColor>
                 <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Відхилення прогнозу +/- 30% від плану</Value>
+                      <Style>
+                        <Color>Red</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>1.05cm</Top>
+              <Left>13.48354cm</Left>
+              <Height>0.6cm</Height>
+              <Width>8cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox39">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Позначення:</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox39</rd:DefaultName>
+              <Top>1.05cm</Top>
+              <Left>10.28354cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.2cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Цільовий бонус</Value>
+                      <Style>
+                        <Color>Red</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>1.05cm</Top>
+              <Left>21.48354cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.2cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Color>DarkGoldenrod</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>LightGreen</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
