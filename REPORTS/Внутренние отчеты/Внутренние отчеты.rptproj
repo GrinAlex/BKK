@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <FullPath>Debug</FullPath>
     <OutputPath>bin\Debug</OutputPath>
@@ -53,12 +53,15 @@
     <DataSource Include="OLTP_QUASAR.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Активні ТМА без прогнозів продажів по дням.rdl" />
     <Report Include="Доступы к отчетам для пользователей.rdl" />
     <Report Include="Замовлення з некоректною кратністю.rdl" />
     <Report Include="Замовлення-дублікати.rdl" />
     <Report Include="Наказ про проведення ТМА.rdl" />
+    <Report Include="Нові та звільнені працівники.rdl" />
     <Report Include="Ответственные за ТТ.rdl" />
     <Report Include="Пересекающиеся акции.rdl" />
+    <Report Include="Працівники з фото.rdl" />
     <Report Include="Различие в привязках ответственных по Контрагентам.rdl" />
     <Report Include="ТМА для уточнення статусу.rdl" />
   </ItemGroup>
