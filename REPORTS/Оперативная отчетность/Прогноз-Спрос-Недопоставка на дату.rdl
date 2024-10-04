@@ -117,6 +117,10 @@
           <DataField>StatusName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ForecastWeight">
+          <DataField>ForecastWeight</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="paramProducts">
@@ -488,7 +492,6 @@ ORDER BY
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1545,10 +1548,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!BasicDemandWeight.Value) * (1 + Avg(Fields!CorrTrend.Value))
-+ Sum(Fields!PromoForecastWeight.Value)
-+ Sum(Fields!CorrWeight.Value) 
-+ Sum(Fields!LossesWeight.Value))</Value>
+                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1716,6 +1716,7 @@ ORDER BY
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1944,10 +1945,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!BasicDemandWeight.Value) * (1 + Avg(Fields!CorrTrend.Value))
-+ Sum(Fields!PromoForecastWeight.Value)
-+ Sum(Fields!CorrWeight.Value) 
-+ Sum(Fields!LossesWeight.Value))</Value>
+                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
@@ -2337,10 +2335,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!BasicDemandWeight.Value) * (1 + Avg(Fields!CorrTrend.Value))
-+ Sum(Fields!PromoForecastWeight.Value)
-+ Sum(Fields!CorrWeight.Value) 
-+ Sum(Fields!LossesWeight.Value))</Value>
+                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
@@ -2730,10 +2725,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!BasicDemandWeight.Value) * (1 + Avg(Fields!CorrTrend.Value))
-+ Sum(Fields!PromoForecastWeight.Value)
-+ Sum(Fields!CorrWeight.Value) 
-+ Sum(Fields!LossesWeight.Value))</Value>
+                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
@@ -3119,10 +3111,7 @@ ORDER BY
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!BasicDemandWeight.Value) * (1 + Avg(Fields!CorrTrend.Value))
-+ Sum(Fields!PromoForecastWeight.Value)
-+ Sum(Fields!CorrWeight.Value) 
-+ Sum(Fields!LossesWeight.Value))</Value>
+                                  <Value>=Sum(Fields!ForecastWeight.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>#,0</Format>
