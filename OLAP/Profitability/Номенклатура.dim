@@ -1,0 +1,732 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e29c35b4-db1c-4564-a00e-1e53d4240f03" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Номенклатура</ID>
+  <Name>Номенклатура</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1342" scrolltop="-8731" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8043" y="22463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Products" left="20" top="-5662" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5318" height="10662" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000c6140000a6290000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="cd_qry_Products" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1342</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8731</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-5662</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="175">
+            <Shape Id="SK Product ID" Expanded="true">
+              <Attributes>
+                <Attribute Id="SK Product ID" />
+                <Attribute Id="Groupping ID" />
+                <Attribute Id="SK Product ID 1" />
+                <Attribute Id="Vendor Code" />
+                <Attribute Id="Base Line" />
+                <Attribute Id="Packing Weighting" />
+                <Attribute Id="Weight" />
+                <Attribute Id="Valid" />
+                <Attribute Id="Valid For Planning" />
+                <Attribute Id="Own Brand" />
+                <Attribute Id="SK Main Product In Expedition ID" />
+                <Attribute Id="Product Code" />
+                <Attribute Id="Subgroup" />
+                <Attribute Id="Size Сharacteristic" />
+                <Attribute Id="Shelf Life" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Main Product Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Main Product Name" />
+              </Attributes>
+              <Position x="243" y="20" />
+            </Shape>
+            <Shape Id="Group ID" Expanded="false">
+              <Attributes>
+                <Attribute Id="Group ID" />
+              </Attributes>
+              <Position x="243" y="68" />
+            </Shape>
+            <Shape Id="Groupping Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Groupping Name" />
+              </Attributes>
+              <Position x="467" y="68" />
+            </Shape>
+            <Shape Id="Nodal Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Nodal Name" />
+              </Attributes>
+              <Position x="243" y="116" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="ad216091-180b-449e-bf58-5d7f823e6215">
+    <DataSourceViewID>CAKE WH</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="6787ef90-f96b-4283-8146-2575faacdd16">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="a932d945-98dc-4cc0-a529-79080ef600df">
+      <ID>SK Product ID</ID>
+      <Name>Найменування</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="baeae2cc-ce81-44df-9c29-f1a859fee435">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="81ff2668-2bf0-42ed-b923-42847ecc4671">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>SK_Product_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e1f75e5e-8500-4a6b-9d95-1d3c94ef2066">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="71db517a-4670-4796-8076-d6ba6bbdb313">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>ProductName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="adf7ba75-b75a-446a-88b5-bc2774f1b7a7">
+          <AttributeID>Groupping ID</AttributeID>
+          <Name>Groupping ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0642a8d7-62f5-4550-b289-9a363b25d9bf">
+          <AttributeID>SK Product ID 1</AttributeID>
+          <Name>SK Product ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2bf9e5ca-649a-4e04-9cb3-60eac0f0b21d">
+          <AttributeID>Vendor Code</AttributeID>
+          <Name>Артикул</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c2687f78-1b40-4e80-8af8-ce35269cb36a">
+          <AttributeID>Base Line</AttributeID>
+          <Name>Базова лінія</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ad70e20c-58e1-4752-b439-3444b0b0dd49">
+          <AttributeID>Packing Weighting</AttributeID>
+          <Name>Ваг Фас</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="39837cd1-cfa7-4781-b924-3d9646ac086b">
+          <AttributeID>Weight</AttributeID>
+          <Name>Вага кг</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="84870e82-8741-44e9-b3e2-c43339cadbf1">
+          <AttributeID>Nodal Name</AttributeID>
+          <Name>Вузлове найменування</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="819e73b7-2458-4868-bd83-6968ba1274d2">
+          <AttributeID>Group ID</AttributeID>
+          <Name>Група</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="13fb08a0-d77c-47d5-8525-4b8d55b9d1b8">
+          <AttributeID>Valid</AttributeID>
+          <Name>Діюча</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f542dba9-5226-4853-8a19-b8ca8f0e1180">
+          <AttributeID>Valid For Planning</AttributeID>
+          <Name>Діюча для планування</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="538afdd4-12f5-4ed2-b874-cdc434a9e205">
+          <AttributeID>Own Brand</AttributeID>
+          <Name>За походженням</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fb8269aa-a564-43af-b23a-87cc4e712efc">
+          <AttributeID>SK Main Product In Expedition ID</AttributeID>
+          <Name>Ієрархія в 1С</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fa8a0fdd-61ae-4d68-a654-d7e6b54a327e">
+          <AttributeID>Product Code</AttributeID>
+          <Name>Код номенклатури в 1С</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="778cd2d8-5e20-4430-bb36-23132b9dec69">
+          <AttributeID>Main Product Name</AttributeID>
+          <Name>Основне найменування</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ec584a8d-fb70-457d-9fb3-fbe135bc4c17">
+          <AttributeID>Subgroup</AttributeID>
+          <Name>Підгрупа</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c9d6558b-e370-422a-ad21-0cf8836143ba">
+          <AttributeID>Size Сharacteristic</AttributeID>
+          <Name>Розмір</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="19d39403-f881-4f61-8e0d-9b2688b6edeb">
+          <AttributeID>Shelf Life</AttributeID>
+          <Name>Строк придатності</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2b53e71e-5e9e-4ffe-a1c3-32fbd5b11b71">
+      <ID>Groupping ID</ID>
+      <Name>Groupping ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a43be2c1-eeb4-4367-b633-930ec27ca230">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ad3628a-dbf5-4ae5-90b7-7296143e6fbd">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>Groupping_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f4eebafd-bf71-40e3-9a81-c85c9b29773c">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="930b84d0-f20d-4865-80da-3074cb291d97">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>Groupping_ID</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="216cb06a-2667-4efb-8392-39ee868f208a">
+      <ID>SK Product ID 1</ID>
+      <Name>SK Product ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6adbf377-457e-4ecd-a357-7716cfc5dd1a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b2a6484-bb3e-42fc-82fc-5116eaba9215">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>SK_Product_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5a134f92-41c9-4277-8912-56017ac9e5c4">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="df634773-691b-4fae-b492-071fdf3428da">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>SK_Product_ID</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf9c1949-a0ce-4ee7-bef6-e32d6fd00d53">
+      <ID>Vendor Code</ID>
+      <Name>Артикул</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0e26e5ad-9143-47ca-9220-1ab8024875b1">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2e44dffd-1e4f-4360-9498-a1a6c647774f">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>VendorCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="40ad7296-e4ef-4d0f-a2c6-ec1509c52dc9">
+        <DataType>WChar</DataType>
+        <DataSize>25</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="06c91d41-c47b-46d1-99b6-4012ea8a24fb">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>VendorCode</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b5fbba13-b68a-44f5-8ba0-a4193b620e53">
+      <ID>Base Line</ID>
+      <Name>Базова лінія</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="880b2bf9-c51a-4d08-9520-4c7a88951fc6">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02fad1a3-f799-4b77-810a-cea982cf4246">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>BaseLine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="87e65c2f-506d-4eed-882b-bc1ab03dc772">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="572db302-662e-41f4-9e95-c6f61d54ac56">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>BaseLine</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dd19939f-e70b-470a-8f4d-cb73d0009b1f">
+      <ID>Packing Weighting</ID>
+      <Name>Ваг Фас</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f046647-073a-47d4-b09c-f889f0e99557">
+          <DataType>WChar</DataType>
+          <DataSize>13</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b02b6b8f-decb-408b-9a13-184f65b70cb8">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>PackingWeighting</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3fd3dabd-78d8-4479-a717-72e2996773d0">
+        <DataType>WChar</DataType>
+        <DataSize>13</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1de0dedc-0171-4bbd-8505-2007d5730270">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>PackingWeighting</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3bce2b0d-2970-4d04-9b35-d85db227cf7f">
+      <ID>Weight</ID>
+      <Name>Вага кг</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2e62380b-0b18-4580-a2bb-bbf41fb04c75">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2656fb2b-6def-445c-9554-d89b7de4387c">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>Weight</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="51fc5e21-fd83-4877-8225-093d723f29e3">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8d251d55-32b0-4fe6-a509-5516fc4be09b">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>Weight</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0bb7be0e-3f48-4808-8327-ab6262dcf7c3">
+      <ID>Nodal Name</ID>
+      <Name>Вузлове найменування</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8a15da17-1f81-4600-86b1-0f3cc08768d4">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bbca781d-1ff2-4778-ac07-0504dec620cb">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>NodalName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="aaea5d9a-e3ea-4b90-988c-05b4b446c3ba">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e054954f-826f-407b-af37-ee2ce9142a63">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>NodalName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26275abf-c6bd-4d3f-a824-42dba30eb5da">
+      <ID>Group ID</ID>
+      <Name>Група</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2efd075f-aa78-4cfc-8174-e3b5a014c2cc">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="37380ccb-9b36-45c9-bf3b-e7731d7c45ca">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>Group_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="998dd521-ee83-4fc0-96c1-ef83e61c846f">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bb04a815-492c-4af0-aba6-766ca4c3fede">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>GroupName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="2c28276d-fdff-48ea-a362-e66cdcf30be5">
+          <AttributeID>Groupping Name</AttributeID>
+          <Name>Категорія</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c2a33faf-3289-469b-9980-af651fea8890">
+      <ID>Valid</ID>
+      <Name>Діюча</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7a3dc18a-6b70-4dd0-8df5-f23852540ebe">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="665e809a-0bff-441a-9d05-12099dc56d17">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>Valid</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="26536df5-d619-489c-bf3d-312eb40908c1">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6ed80590-32ba-4c4a-b3ef-4d5bf6d0fffc">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>Valid</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="feff8b10-448d-41cc-bc05-737a5ad729a6">
+      <ID>Valid For Planning</ID>
+      <Name>Діюча для планування</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4e7abd70-e7d7-47a0-a07c-f207aa1cff55">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bbad7c5f-5b12-4d9a-b5fc-9564aef58a39">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>ValidForPlanning</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b949c295-d4a1-424b-88d2-9f1adb091f08">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="84becc08-adb2-4b71-8b75-d0d963a2d6da">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>ValidForPlanning</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5ff2dbbb-7ac1-4517-84ba-32d567fe86b2">
+      <ID>Own Brand</ID>
+      <Name>За походженням</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d014e3c3-ed37-44b5-8b31-8b015264c2e9">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dec00c3b-3c6e-43c4-8b1a-71fda42f1438">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>OwnBrand</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="839b8bf8-d40b-4e84-a5d3-40ef6a7ca249">
+        <DataType>WChar</DataType>
+        <DataSize>12</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2894fbb5-66e7-49f0-90bc-9e866ea28fed">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>OwnBrand</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3b4d90b6-5103-4289-90d6-fd96eccf21d9">
+      <ID>SK Main Product In Expedition ID</ID>
+      <Name>Ієрархія в 1С</Name>
+      <Usage>Parent</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d24545e4-0690-4b70-a7e6-1eb6a78386a9">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b12ef0fc-54ce-4dbd-ab88-dc543a2b3663">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>SK_MainProductInExpedition_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ada6d39f-c65b-4716-8c70-cbbf9790fcc7">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fbd7e236-33e5-4712-b41f-e59c2c2851ad">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>ProductName</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d9d5be43-fa07-43d9-9c55-6cc511a65b9e">
+      <ID>Groupping Name</ID>
+      <Name>Категорія</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a314eecc-ad27-47f5-a050-1345ad791ff1">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bed478a7-ef80-402a-b818-150f77c71645">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>GrouppingName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="cb7eb33a-1fe1-4dfe-8553-0ec6a1e2fdcf">
+        <DataType>WChar</DataType>
+        <DataSize>3</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6957a467-1bf5-4636-b89e-da16ddfe8a6a">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>GrouppingName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="71268856-d41f-49d4-af1a-8e783debdc86">
+      <ID>Product Code</ID>
+      <Name>Код номенклатури в 1С</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="96a069ab-0c7a-4f19-8a68-8d4f730cbc75">
+          <DataType>WChar</DataType>
+          <DataSize>11</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd321aa3-9e86-4d06-84c9-498e1a7a132d">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>ProductCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="748f5345-596d-488e-b730-5a6007ce2442">
+        <DataType>WChar</DataType>
+        <DataSize>11</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="244a8980-5340-4f9c-b56c-3ff71aa4689f">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>ProductCode</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f0f77db5-f745-42d4-99c7-1c3c603bd11e">
+      <ID>Main Product Name</ID>
+      <Name>Основне найменування</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3d629f70-d487-453b-80e3-909599301d76">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="25274bd0-b3dd-4cad-89a3-0f5e6e27357c">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>MainProductName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="32ae4201-465c-4d6c-aa0e-e3a568a76b2c">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4e78c1a4-8215-4458-a734-8ab69861e2c1">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>MainProductName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="933e5447-809c-4a9f-87ed-c458aebbddf0">
+      <ID>Subgroup</ID>
+      <Name>Підгрупа</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="075f29f9-3233-4c81-b990-2ea40512624e">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2fac55f1-1216-486d-883a-328225031893">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>Subgroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6faa2d1f-9681-4fc7-9162-4cc01acf514c">
+        <DataType>WChar</DataType>
+        <DataSize>25</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0748eb15-2932-45d0-b5ac-c12811a15cae">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>Subgroup</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="59999916-c331-4b82-b9a9-98cb3df3b900">
+      <ID>Size Сharacteristic</ID>
+      <Name>Розмір</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3323eb12-aba1-4b5d-bae7-bd61fd657885">
+          <DataType>WChar</DataType>
+          <DataSize>13</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a9c49b5f-1f9c-4ce3-8b4f-d261644b24a2">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>SizeСharacteristic</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9869ca6f-aabd-465e-a397-462711f90256">
+        <DataType>WChar</DataType>
+        <DataSize>13</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6b8ead48-cc3d-47a1-8052-323f7e28bb51">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>SizeСharacteristic</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e388768-f9ca-4000-a349-f9cf45fd35be">
+      <ID>Shelf Life</ID>
+      <Name>Строк придатності</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f03d65ca-1c00-48be-8d87-41f592d26a20">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ccd9e849-b554-4590-b1b1-d1ccb24266f5">
+            <TableID>cd_qry_Products</TableID>
+            <ColumnID>ShelfLife</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1464a559-5b52-4d53-9b10-fcee36d88930">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="345f7910-14f2-4ab9-8409-9e88eaecd418">
+          <TableID>cd_qry_Products</TableID>
+          <ColumnID>ShelfLife</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="0c58a238-be14-4e23-8446-238657408407">
+      <ID>Hierarchy</ID>
+      <Name>Категорія-Група-Найменування</Name>
+      <Levels>
+        <Level dwd:design-time-name="b994d881-f0a5-463b-b0a2-0e2f0be6b4f4">
+          <ID>Категорія</ID>
+          <Name>Категорія</Name>
+          <SourceAttributeID>Groupping Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="444e15dd-9a3b-4b4a-95c5-12d9589cce53">
+          <ID>Група</ID>
+          <Name>Група</Name>
+          <SourceAttributeID>Group ID</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="1b345639-0bfe-4300-aca3-0b8e1a34ace9">
+          <ID>Найменування</ID>
+          <Name>Найменування</Name>
+          <SourceAttributeID>SK Product ID</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="8e4c1745-0d99-4f6a-8f93-72209359c685">
+      <ID>Hierarchy 1</ID>
+      <Name>Осн найменування-Найменування</Name>
+      <Levels>
+        <Level dwd:design-time-name="e178bb91-a6f3-4df5-a6d9-457193871196">
+          <ID>Основне найменування</ID>
+          <Name>Основне найменування</Name>
+          <SourceAttributeID>Main Product Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="702f8524-bc76-4d36-a6f4-3b2f064e6038">
+          <ID>Найменування</ID>
+          <Name>Найменування</Name>
+          <SourceAttributeID>SK Product ID</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="d30e733f-d32c-47a5-8bdc-d402c28d2632">
+      <ID>Hierarchy 2</ID>
+      <Name>Вузлове найменування-Найменування</Name>
+      <Levels>
+        <Level dwd:design-time-name="2758b54d-5a44-4e1c-b85f-6b227631e088">
+          <ID>Вузлове найменування</ID>
+          <Name>Вузлове найменування</Name>
+          <SourceAttributeID>Nodal Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="20052ae1-093c-4ca3-9126-74fa1e2c444c">
+          <ID>Найменування</ID>
+          <Name>Найменування</Name>
+          <SourceAttributeID>SK Product ID</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

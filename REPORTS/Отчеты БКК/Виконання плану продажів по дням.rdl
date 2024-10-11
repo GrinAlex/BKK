@@ -436,7 +436,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByDays_VSL">
+    <DataSet Name="PlanFactByDays_PHV">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -1033,7 +1033,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByDays_IKV">
+    <DataSet Name="PlanFactByDays_BPS">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -1044,10 +1044,10 @@ WHERE SK_Date_ID =
             <Value>=Parameters!paramMonth.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@SK_TypePlan">
-            <Value>=12</Value>
+            <Value>13</Value>
           </QueryParameter>
           <QueryParameter Name="@SK_Groupping_ID">
-            <Value>=12</Value>
+            <Value>13</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -9618,7 +9618,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_VSL") / 1000, "0.0")</Value>
+                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_PHV") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -9865,7 +9865,7 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByDays_VSL</DataSetName>
+            <DataSetName>PlanFactByDays_PHV</DataSetName>
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
             </PageBreak>
@@ -13307,8 +13307,8 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByDays_VSL</DataSetName>
-            <PageName>ССЛ</PageName>
+            <DataSetName>PlanFactByDays_PHV</DataSetName>
+            <PageName>ПХВ</PageName>
             <Top>11.1cm</Top>
             <Left>0.1cm</Left>
             <Height>3.6453cm</Height>
@@ -21661,7 +21661,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_IKV") / 1000, "0.0")</Value>
+                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_BPS") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -21885,7 +21885,6 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -21909,7 +21908,7 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByDays_IKV</DataSetName>
+            <DataSetName>PlanFactByDays_BPS</DataSetName>
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
             </PageBreak>
@@ -25352,8 +25351,8 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByDays_IKV</DataSetName>
-            <PageName>ІКВ</PageName>
+            <DataSetName>PlanFactByDays_BPS</DataSetName>
+            <PageName>БПС</PageName>
             <Top>25.93cm</Top>
             <Left>0.1cm</Left>
             <Height>3.6453cm</Height>
@@ -25415,10 +25414,10 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
                       <Label>Группировка</Label>
                       <Value>=Switch(Globals!PageNumber = 1, "МКВ",
 Globals!PageNumber = 2, "ЛВШ",
-Globals!PageNumber = 3, "ССЛ",
+Globals!PageNumber = 3, "ПХВ",
 Globals!PageNumber = 4, "ПТЗ",
 Globals!PageNumber = 5, "ММЛ",
-Globals!PageNumber = 6, "ІКВ")</Value>
+Globals!PageNumber = 6, "БПС")</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
