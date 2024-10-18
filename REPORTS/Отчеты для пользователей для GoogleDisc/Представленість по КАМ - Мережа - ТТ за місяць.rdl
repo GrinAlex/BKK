@@ -10,7 +10,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="RepresentationByOutletsAndAssortmentFromSpot2R">
+    <DataSet Name="RepresentationByOutletsAndAMFromSpot2RForUsers">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -25,28 +25,16 @@
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.RepresentationByOutletsAndAssortmentFromSpot2R</CommandText>
+        <CommandText>rpt.RepresentationByOutletsAndAMFromSpot2RForUsers</CommandText>
       </Query>
       <Fields>
-        <Field Name="OrderID">
-          <DataField>OrderID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="SK_Outlet_ID">
           <DataField>SK_Outlet_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SK_OrderOwnerEmployee_ID">
-          <DataField>SK_OrderOwnerEmployee_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="SK_Date_ID">
           <DataField>SK_Date_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="OrderOwnerEmployeeName">
-          <DataField>OrderOwnerEmployeeName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Year">
           <DataField>Year</DataField>
@@ -124,6 +112,10 @@
           <DataField>SK_Product_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="GrouppingName">
+          <DataField>GrouppingName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="ProductName">
           <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -132,16 +124,8 @@
           <DataField>GroupName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PriorityWeight">
-          <DataField>PriorityWeight</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
         <Field Name="PlanAvailability">
           <DataField>PlanAvailability</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="PlanAvailabilityWIthPriority">
-          <DataField>PlanAvailabilityWithPriority</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="FactAvailability">
@@ -151,14 +135,6 @@
         <Field Name="FactAvailabilityNorm">
           <DataField>FactAvailabilityNorm</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FactAvailabilityWithPriority">
-          <DataField>FactAvailabilityWithPriority</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="FactAvailabilityNormWithPriority">
-          <DataField>FactAvailabilityNormWithPriority</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -373,9 +349,9 @@ WHERE(Domain + Login = @paramLoginFull)
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -479,9 +455,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -592,9 +568,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -698,9 +674,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -811,9 +787,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -917,9 +893,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -1028,9 +1004,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -1131,9 +1107,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -1243,9 +1219,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -1349,9 +1325,9 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailabilityWIthPriority.Value) = 0,
+                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
 " - ",
-SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailabilityWIthPriority.Value)
+SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
 )</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -1976,13 +1952,13 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                                           <TextRun>
                                             <Value xml:space="preserve">        </Value>
                                             <Style>
-                                              <Color>=IIF(Fields!PriorityWeight.Value &gt; 1.0, "DarkGreen", "#480c04")</Color>
+                                              <Color>#480c04</Color>
                                             </Style>
                                           </TextRun>
                                           <TextRun>
                                             <Value>=Fields!ProductName.Value</Value>
                                             <Style>
-                                              <Color>=IIF(Fields!PriorityWeight.Value &gt; 1.0, "DarkGreen", "#480c04")</Color>
+                                              <Color>#480c04</Color>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -2001,6 +1977,7 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                               <Visibility>
@@ -2059,7 +2036,7 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>RepresentationByOutletsAndAssortmentFromSpot2R</DataSetName>
+            <DataSetName>RepresentationByOutletsAndAMFromSpot2RForUsers</DataSetName>
             <PageName>По СВ и ТА</PageName>
             <Top>0.08847cm</Top>
             <Left>0.1cm</Left>
@@ -2072,7 +2049,7 @@ SUM(Fields!FactAvailabilityNormWithPriority.Value) / SUM(Fields!PlanAvailability
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.42607in</Height>
+        <Height>2.22815in</Height>
         <Style />
       </Body>
       <Width>8.06512in</Width>
