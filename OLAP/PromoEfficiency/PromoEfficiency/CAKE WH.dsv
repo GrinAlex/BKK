@@ -1,4 +1,4 @@
-﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4dc443cc-13a4-44b9-87ff-efda2dc38a69" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2d712dc4-9c41-4ab6-9907-450a449678ae" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>CAKE WH</ID>
   <Name>CAKE WH</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -27,7 +27,7 @@
             <Name>_ALL_TABLES_</Name>
             <DiagramLayout>
               <dds>
-                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="-6692" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="81" x="26855" y="23786" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="-6692" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="81" x="22754" y="23786" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                   <font>
                     <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
                   </font>
@@ -227,7 +227,7 @@
             <xs:element name="dim_Products" msprop:design-time-name="027d4ec4-a4de-440b-b307-97f4728fe915" msprop:IsLogical="True" msprop:FriendlyName="Products" msprop:DbTableName="Products" msprop:TableType="View" msprop:QueryDefinition="SELECT        SK_Product_ID, ProductCode, VendorCode, ProductName, GrouppingName, CAST(Weight AS numeric(10, 3)) AS Weight, CASE WHEN OwnBrand = 1 THEN N'Покупна' ELSE N'Власна' END AS OwnBrand, &#xD;&#xA;                         SK_MainProductInExpedition_ID, MainProductName, NodalName, PackingWeighting, Group_ID, GroupName, Groupping_ID, ShelfLife, Valid, ValidForPlanning, Subgroup, SizeСharacteristic, BaseLine&#xD;&#xA;FROM            dim.Products AS p WITH (NOLOCK)&#xD;&#xA;WHERE        (SK_Product_ID &gt; 0) AND (IsUseInExpeditions = 1) AND (Source_ID = 2) AND (IsGroup = 0) AND (Groupping_ID NOT IN (2, 3, 4, 9))&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        SK_Product_ID, ProductCode, VendorCode, ProductName, GrouppingName, CAST(Weight AS numeric(10, 3)) AS Weight, N'Не визначено' AS OwnBrand, SK_MainProductInExpedition_ID, MainProductName, &#xD;&#xA;                         NodalName, PackingWeighting, Group_ID, GroupName, Groupping_ID, ShelfLife, Valid, ValidForPlanning, Subgroup, SizeСharacteristic, BaseLine&#xD;&#xA;FROM            dim.Products AS p WITH (NOLOCK)&#xD;&#xA;WHERE        (SK_Product_ID &lt; 0)&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        SK_Product_ID, ProductCode, VendorCode, ProductName, GrouppingName, CAST(Weight AS numeric(10, 3)) AS Weight, CASE WHEN OwnBrand = 1 THEN N'Покупна' ELSE N'Власна' END AS OwnBrand, &#xD;&#xA;                         SK_MainProductInExpedition_ID, MainProductName, NodalName, PackingWeighting, Group_ID, GroupName, Groupping_ID, ShelfLife, Valid, ValidForPlanning, Subgroup, SizeСharacteristic, BaseLine&#xD;&#xA;FROM            dim.Products AS p WITH (NOLOCK)&#xD;&#xA;WHERE        (SK_Product_ID &gt; 0) AND (IsUseInExpeditions = 1) AND (Source_ID = 2) AND (IsGroup = 1)" msprop:QueryBuilder="SpecificQueryBuilder">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="SK_Product_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="e74859d0-1b05-46dc-8ffd-c9b0cfaf4411" msprop:DbColumnName="SK_Product_ID" msprop:FriendlyName="SK_Product_ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="SK_Product_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="e74859d0-1b05-46dc-8ffd-c9b0cfaf4411" msprop:DbColumnName="SK_Product_ID" msprop:FriendlyName="SK_Product_ID" type="xs:int" />
                   <xs:element name="ProductCode" msprop:design-time-name="05d162cf-ac65-4f32-951c-ce3d37290f45" msprop:DbColumnName="ProductCode" msprop:FriendlyName="ProductCode" minOccurs="0">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
@@ -318,7 +318,7 @@
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
-                  <xs:element name="Group_ID" msprop:DbColumnName="Group_ID" msprop:design-time-name="cf0b57d6-799b-46f2-9da9-20b242f9c08d" minOccurs="0">
+                  <xs:element name="Group_ID" msprop:design-time-name="cf0b57d6-799b-46f2-9da9-20b242f9c08d" msprop:DbColumnName="Group_ID" minOccurs="0">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="12" />
@@ -422,7 +422,7 @@
                   <xs:element name="DayCharacteristicName" msprop:design-time-name="99a9fcd6-d696-49b9-a1cc-fad68b4d0ab3" msprop:DbColumnName="DayCharacteristicName" msprop:FriendlyName="DayCharacteristicName" minOccurs="0">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
-                        <xs:maxLength value="10" />
+                        <xs:maxLength value="11" />
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
@@ -701,6 +701,14 @@
                   <xs:element name="AmountShipmentsInConstantTtSameAfter" msprop:design-time-name="d33a5d2d-d7a4-4909-9e2e-b2fb7ca327e2" msprop:DbColumnName="AmountShipmentsInConstantTtSameAfter" type="xs:int" minOccurs="0" />
                   <xs:element name="ShipToRealInConstTtSameAfterAmount" msprop:design-time-name="dfbfed5b-853a-425f-91b9-9c0c3d249a07" msprop:DbColumnName="ShipToRealInConstTtSameAfterAmount" type="xs:int" minOccurs="0" />
                   <xs:element name="SalesBeforePromoWeight" msprop:design-time-name="093e94b5-6cb1-44ad-b008-67f5253886b6" msprop:DbColumnName="SalesBeforePromoWeight" type="xs:double" minOccurs="0" />
+                  <xs:element name="PromoPlanningStatus" msprop:design-time-name="e360118a-93ad-4d8b-9b30-5e5a320bbf66" msprop:DbColumnName="PromoPlanningStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PrimaryPromoPlanWeight" msprop:design-time-name="f86890d8-8413-4795-9575-51afd0a64a1e" msprop:DbColumnName="PrimaryPromoPlanWeight" type="xs:double" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -718,10 +726,10 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="TMA" msprop:design-time-name="f0cf0e53-9e87-417e-a647-e754da95aef5" msprop:IsLogical="True" msprop:FriendlyName="TMA" msprop:DbTableName="TMA" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        SK_Promo_ID, SK_DatePurchaseFrom, SK_DatePurchaseTo, DatePurchaseFrom, DatePurchaseTo, Discount, [ChainName/FirstBuyerName], PromoName, IsTmaOver, IsProfit, IsEnoughtTimeAfterTma, &#xD;&#xA;                         AveragePriceAfterPromo, AveragePriceAfterPromoWithVAT, AveragePriceBeforePromo, AveragePriceBeforePromoWithVAT, AveragePricePromo, AveragePricePromoWithVAT, AveragePriceSameAfterPromo, &#xD;&#xA;                         AveragePriceSameAfterPromoWithVAT, AveragePriceSameBeforePromo, AveragePriceSameBeforePromoWithVAT, TypeDiscontName, AmountDays, PriceBeforePromo, PriceBeforePromoWithVAT, PricePromo, &#xD;&#xA;                         PricePromoWithVAT, IsPromoAfter, IsPromoBefore, IsPromoSameAfter, IsPromoSameBefore&#xD;&#xA;FROM            fact.qry_PromoEfficiency AS pe WITH (NOLOCK)" msprop:QueryBuilder="SpecificQueryBuilder">
+            <xs:element name="TMA" msprop:design-time-name="f0cf0e53-9e87-417e-a647-e754da95aef5" msprop:IsLogical="True" msprop:FriendlyName="TMA" msprop:DbTableName="TMA" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        SK_Promo_ID, PromoPlanningStatus, SK_DatePurchaseFrom, SK_DatePurchaseTo, DatePurchaseFrom, DatePurchaseTo, Discount, [ChainName/FirstBuyerName], PromoName, IsTmaOver, IsProfit, &#xD;&#xA;                         IsEnoughtTimeAfterTma, AveragePriceAfterPromo, AveragePriceAfterPromoWithVAT, AveragePriceBeforePromo, AveragePriceBeforePromoWithVAT, AveragePricePromo, AveragePricePromoWithVAT, &#xD;&#xA;                         AveragePriceSameAfterPromo, AveragePriceSameAfterPromoWithVAT, AveragePriceSameBeforePromo, AveragePriceSameBeforePromoWithVAT, TypeDiscontName, AmountDays, PriceBeforePromo, &#xD;&#xA;                         PriceBeforePromoWithVAT, PricePromo, PricePromoWithVAT, IsPromoAfter, IsPromoBefore, IsPromoSameAfter, IsPromoSameBefore&#xD;&#xA;FROM            fact.qry_PromoEfficiency AS pe WITH (NOLOCK)" msprop:QueryBuilder="SpecificQueryBuilder">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="SK_Promo_ID" msprop:design-time-name="b01abeaf-ef85-4110-8845-522befb2914b" msprop:DbColumnName="SK_Promo_ID" msprop:FriendlyName="SK_Promo_ID" type="xs:int" />
+                  <xs:element name="SK_Promo_ID" msprop:design-time-name="b01abeaf-ef85-4110-8845-522befb2914b" msprop:DbColumnName="SK_Promo_ID" msprop:FriendlyName="SK_Promo_ID" type="xs:int" minOccurs="0" />
                   <xs:element name="SK_DatePurchaseFrom" msprop:design-time-name="c47f2c10-64d9-4db2-8bd2-46dd13684715" msprop:DbColumnName="SK_DatePurchaseFrom" msprop:FriendlyName="SK_DatePurchaseFrom" type="xs:int" minOccurs="0" />
                   <xs:element name="SK_DatePurchaseTo" msprop:design-time-name="bbd928a1-1d88-45d3-82ac-06c5ce9fa007" msprop:DbColumnName="SK_DatePurchaseTo" msprop:FriendlyName="SK_DatePurchaseTo" type="xs:int" minOccurs="0" />
                   <xs:element name="DatePurchaseFrom" msprop:design-time-name="38338f89-3fe9-490b-98a5-2fff5c204687" msprop:DbColumnName="DatePurchaseFrom" msprop:FriendlyName="DatePurchaseFrom" minOccurs="0">
@@ -821,6 +829,13 @@
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PromoPlanningStatus" msprop:DbColumnName="PromoPlanningStatus" msprop:design-time-name="11f016d1-f108-4312-96e7-f703f1cbc423" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
