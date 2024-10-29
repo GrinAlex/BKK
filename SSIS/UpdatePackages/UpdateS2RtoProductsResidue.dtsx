@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateS2RtoProductsResidue"
   DTS:PackageType="5"
-  DTS:VersionBuild="125"
-  DTS:VersionGUID="{3469C23F-B399-4C81-9C3A-4B185A50D780}">
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{171F5D52-A4B9-4F42-BD71-8BF14E66BB62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2428,13 +2428,13 @@ where [refTable].[VendorCode] = ?</property>
                               containsID="true"
                               dataType="System.String"
                               description="Выражение производного столбца"
-                              name="Expression">@[System::CreationDate]</property>
+                              name="Expression">@[System::StartTime]</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Понятное выражение производного столбца"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[System::CreationDate]</property>
+                              name="FriendlyExpression">@[System::StartTime]</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2551,7 +2551,7 @@ where [refTable].[VendorCode] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{6BAF52EB-4066-45EB-A920-375B9C0A26DF}"
-              SQLTask:SqlStatementSource="DELETE&#xA;FROM [dbo].[tmp_S2R_ProductsResidue]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE &#xA;[CAKE_WH].[dbo].[tmp_S2R_ProductsResidue]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -2943,7 +2943,7 @@ where [refTable].[VendorCode] = ?</property>
     design-time-name="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,42"
           Id="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue\Производный столбец"
@@ -2975,9 +2975,7 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2999,9 +2997,7 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
