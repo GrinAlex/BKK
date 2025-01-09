@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
-  <Description>Пересекающиеся акции</Description>
+  <Description>Звіт по відхиленням відвантажень від АМ</Description>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
-  <Author>A.Grinenko</Author>
+  <Author>O. Hrynenko</Author>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="OLTP_CAKE_WH">
@@ -12,69 +12,136 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ActivePromoWithoutForecastByDays">
+    <DataSet Name="DeviationFromAssortMatrixForUsers">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@SK_PurchaseFrom">
-            <Value>=Parameters!SK_PurchaseFrom.Value</Value>
+          <QueryParameter Name="@paramDate">
+            <Value>=Parameters!paramDate.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@SK_PurchaseTo">
-            <Value>=Parameters!SK_PurchaseTo.Value</Value>
+          <QueryParameter Name="@paramDaysBefore">
+            <Value>=Parameters!paramDaysBefore.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@paramLoginFull">
+            <Value>=Parameters!paramLoginFull.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.ActivePromoWithoutForecastByDays</CommandText>
+        <CommandText>rpt.DeviationFromAssortMatrixForUsers</CommandText>
       </Query>
       <Fields>
-        <Field Name="ProblemName">
-          <DataField>ProblemName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SK_Promo_ID">
-          <DataField>SK_Promo_ID</DataField>
+        <Field Name="SK_Date_ID">
+          <DataField>SK_Date_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="PromoName">
-          <DataField>PromoName</DataField>
+        <Field Name="SK_Outlet_ID">
+          <DataField>SK_Outlet_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="KAMName">
+          <DataField>KAMName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Date_Purchase_From">
-          <DataField>Date_Purchase_From</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="ManagerName">
+          <DataField>ManagerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Date_Purchase_To">
-          <DataField>Date_Purchase_To</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Manager_Tab_Num">
+          <DataField>Manager_Tab_Num</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Date_PurchaseByDate_From">
-          <DataField>Date_PurchaseByDate_From</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="TAName">
+          <DataField>TAName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Date_PurchaseByDate_To">
-          <DataField>Date_PurchaseByDate_To</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="TA_Tab_Num">
+          <DataField>TA_Tab_Num</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LogDate">
-          <DataField>LogDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Chain_ID_ON_BuyerMain">
+          <DataField>Chain_ID_ON_BuyerMain</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ChainName_ON_BuyerMain">
+          <DataField>ChainName_ON_BuyerMain</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerNameMainOnDeliveryAddressMain">
+          <DataField>BuyerNameMainOnDeliveryAddressMain</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TerritoryMainName_ON_DeliveryAddressMain">
+          <DataField>TerritoryMainName_ON_DeliveryAddressMain</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeliveryAddressMain">
+          <DataField>DeliveryAddressMain</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SK_Product_ID">
+          <DataField>SK_Product_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="GrouppingName">
+          <DataField>GrouppingName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GroupName">
+          <DataField>GroupName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductName">
+          <DataField>ProductName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Groupping_ID">
+          <DataField>Groupping_ID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="PlanAvailability">
+          <DataField>PlanAvailability</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ShipWeight">
+          <DataField>ShipWeight</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DeviationLost">
+          <DataField>DeviationLost</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FactAvailabilityByShip">
+          <DataField>FactAvailabilityByShip</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DeviationNew">
+          <DataField>DeviationNew</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="forParameters">
+    <DataSet Name="UserName">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
-        <CommandText>SELECT 
-	dbo.ufn_DateToInt(GETDATE()) AS SK_DateFrom
-	,dbo.ufn_DateToInt(DATEADD(DAY, 1, GETDATE())) AS SK_DateTo</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@paramLoginFull">
+            <Value>=Parameters!paramLoginFull.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT ShortName,
+       e.SK_Position_ID
+FROM adm.Peoples AS p WITH (NOLOCK)
+     INNER JOIN adm.Employee AS e WITH (NOLOCK) ON p.SK_Personal_ID = e.SK_Personal_ID
+WHERE(Domain +Login = @paramLoginFull)
+     AND dbo.ufn_DateToInt(GETDATE()) BETWEEN e.SK_DateFrom AND e.SK_DateTo</CommandText>
       </Query>
       <Fields>
-        <Field Name="SK_DateFrom">
-          <DataField>SK_DateFrom</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="ShortName">
+          <DataField>ShortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SK_DateTo">
-          <DataField>SK_DateTo</DataField>
+        <Field Name="SK_Position_ID">
+          <DataField>SK_Position_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -84,62 +151,55 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix2">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.96537cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>9.99188cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>4cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.02333cm</Height>
+                  <Height>1.60542cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
+                        <Textbox Name="Textbox144">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>SK Promo ID</Value>
+                                  <Value>SK Outlet ID</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <rd:DefaultName>Textbox144</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -150,31 +210,33 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox6">
+                        <Textbox Name="Textbox138">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Назва ТМА</Value>
+                                  <Value>SK Product ID</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <rd:DefaultName>Textbox138</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -185,31 +247,33 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Закупка з</Value>
+                                  <Value>План  по асорт.матриці</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -220,136 +284,33 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Закупка по</Value>
+                                  <Value>Факт по відвантаженням</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox34">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>План по дням з</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox34</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox32">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>План по дням по</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox32</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox17">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Час введення в адмінку</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#5f0e06</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox17</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -365,29 +326,30 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SK_Promo_ID">
+                        <Textbox Name="Textbox36">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SK_Promo_ID.Value</Value>
+                                  <Value />
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Color>#5f0e06</Color>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SK_Promo_ID</rd:DefaultName>
+                          <rd:DefaultName>Textbox36</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -398,29 +360,30 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PromoName">
+                        <Textbox Name="Textbox37">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PromoName.Value</Value>
+                                  <Value />
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Color>#5f0e06</Color>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PromoName</rd:DefaultName>
+                          <rd:DefaultName>Textbox37</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -431,30 +394,75 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Date_Purchase_From">
+                        <Textbox Name="Textbox38">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Date_Purchase_From.Value</Value>
+                                  <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
+" в т.ч. " + 
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
-                                    <Color>#5f0e06</Color>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox48">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Date_Purchase_From</rd:DefaultName>
+                          <rd:DefaultName>Textbox48</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -465,30 +473,30 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Date_Purchase_To">
+                        <Textbox Name="Textbox49">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Date_Purchase_To.Value</Value>
+                                  <Value />
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
-                                    <Color>#5f0e06</Color>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Date_Purchase_To</rd:DefaultName>
+                          <rd:DefaultName>Textbox49</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -499,30 +507,75 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Date_PurchaseByDate_From">
+                        <Textbox Name="Textbox50">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Date_PurchaseByDate_From.Value</Value>
+                                  <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
+" в т.ч. " + 
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
-                                    <Color>#5f0e06</Color>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox50</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox66">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Date_PurchaseByDate_From</rd:DefaultName>
+                          <rd:DefaultName>Textbox66</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -533,65 +586,210 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Date_PurchaseByDate_To">
+                        <Textbox Name="Textbox62">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Date_PurchaseByDate_To.Value</Value>
+                                  <Value />
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
-                                    <Color>#5f0e06</Color>
+                                    <FontStyle>Italic</FontStyle>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Date_PurchaseByDate_To</rd:DefaultName>
+                          <rd:DefaultName>Textbox62</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="LogDate">
+                        <Textbox Name="Textbox63">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LogDate.Value</Value>
+                                  <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
+" в т.ч. " + 
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>dd.mm.yyyy hh:mm:ss</Format>
-                                    <Color>#5f0e06</Color>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox63</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SK_Outlet_ID1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SK_Outlet_ID.Value</Value>
+                                  <Style>
+                                    <Color>#480c04</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LogDate</rd:DefaultName>
+                          <rd:DefaultName>SK_Outlet_ID1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
+Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "Orange")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SK_Product_ID1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SK_Product_ID.Value</Value>
+                                  <Style>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SK_Product_ID1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
+Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "Orange")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PlanAvailability">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(Fields!PlanAvailability.Value)</Value>
+                                  <Style>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PlanAvailability</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
+Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "Orange")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FactAvailability">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(Fields!FactAvailabilityByShip.Value)</Value>
+                                  <Style>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>FactAvailability</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Fields!PlanAvailability.Value = 1 And Fields!FactAvailabilityByShip.Value = 0, "Red",
+Fields!PlanAvailability.Value = 0 And Fields!FactAvailabilityByShip.Value = 1, "Orange")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -602,15 +800,135 @@
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox78">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox78</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox79">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox79</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox80">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=CStr(Sum(Fields!DeviationLost.Value) + Sum(Fields!DeviationNew.Value)) +
+" в т.ч. " + 
+CStr(Sum(Fields!DeviationLost.Value)) + " втрат"</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox80</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                    <ToggleItem>Textbox72</ToggleItem>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                    <ToggleItem>Textbox72</ToggleItem>
+                  </Visibility>
+                </TablixMember>
                 <TablixMember />
                 <TablixMember />
               </TablixMembers>
@@ -619,27 +937,299 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.82292cm</Size>
+                    <Size>12.31604cm</Size>
                     <CellContents>
-                      <Textbox Name="Textbox28">
+                      <Textbox Name="Textbox72">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Проблема</Value>
+                                <Value>ТП / Мережа / Адреса доставки / Найменування</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#5f0e06</Color>
+                                  <Color>#480c04</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox72</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>DarkGoldenrod</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Orange</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="TAName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!TAName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!TAName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>12.31604cm</Size>
+                        <CellContents>
+                          <Textbox Name="TAName">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!TAName.Value</Value>
+                                    <Style>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>#480c04</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <Style>
+                              <Border>
+                                <Color>DarkGoldenrod</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>Gold</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="ChainName">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!ChainName_ON_BuyerMain.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!ChainName_ON_BuyerMain.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>12.31604cm</Size>
+                            <CellContents>
+                              <Textbox Name="ChainName">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value xml:space="preserve">    </Value>
+                                        <Style>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                      <TextRun>
+                                        <Value>=Fields!ChainName_ON_BuyerMain.Value</Value>
+                                        <Style>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <Style>
+                                  <Border>
+                                    <Color>DarkGoldenrod</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Yellow</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                        <TablixMember>
+                          <Group Name="DeliveryAddressMain">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!DeliveryAddressMain.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!DeliveryAddressMain.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixMembers>
+                            <TablixMember>
+                              <TablixHeader>
+                                <Size>12.31604cm</Size>
+                                <CellContents>
+                                  <Textbox Name="DeliveryAddressMain">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value xml:space="preserve">        </Value>
+                                            <Style>
+                                              <Color>#480c04</Color>
+                                            </Style>
+                                          </TextRun>
+                                          <TextRun>
+                                            <Value>=Fields!DeliveryAddressMain.Value</Value>
+                                            <Style>
+                                              <Color>#480c04</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>DeliveryAddressMain</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DarkGoldenrod</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>Khaki</BackgroundColor>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <KeepWithGroup>After</KeepWithGroup>
+                            </TablixMember>
+                            <TablixMember>
+                              <Group Name="ProductName">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!ProductName.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                              <TablixHeader>
+                                <Size>12.31604cm</Size>
+                                <CellContents>
+                                  <Textbox Name="ProductName">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value xml:space="preserve">                 </Value>
+                                            <Style>
+                                              <Color>#480c04</Color>
+                                            </Style>
+                                          </TextRun>
+                                          <TextRun>
+                                            <Value>=Fields!ProductName.Value</Value>
+                                            <Style>
+                                              <Color>#480c04</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>ProductName</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DarkGoldenrod</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <TablixMembers>
+                                <TablixMember>
+                                  <Group Name="Details" />
+                                </TablixMember>
+                              </TablixMembers>
+                              <Visibility>
+                                <Hidden>true</Hidden>
+                                <ToggleItem>DeliveryAddressMain</ToggleItem>
+                              </Visibility>
+                            </TablixMember>
+                          </TablixMembers>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                            <ToggleItem>ChainName</ToggleItem>
+                          </Visibility>
+                        </TablixMember>
+                      </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>TAName</ToggleItem>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>12.31604cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox75">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Разом</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#480c04</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox28</rd:DefaultName>
+                        <rd:DefaultName>Textbox75</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>DarkGoldenrod</Color>
@@ -654,83 +1244,32 @@
                       </Textbox>
                     </CellContents>
                   </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember />
-                  </TablixMembers>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="ProblemName">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!ProblemName.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!ProblemName.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixHeader>
-                    <Size>3.82292cm</Size>
-                    <CellContents>
-                      <Textbox Name="ProblemName">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=Fields!ProblemName.Value</Value>
-                                <Style>
-                                  <FontFamily>Arial</FontFamily>
-                                  <Color>#5f0e06</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>ProblemName</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>DarkGoldenrod</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember>
-                      <Group Name="Details" />
-                    </TablixMember>
-                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>ActivePromoWithoutForecastByDays</DataSetName>
-            <Top>0.1cm</Top>
+            <DataSetName>DeviationFromAssortMatrixForUsers</DataSetName>
+            <PageName>Відхилення від АМ</PageName>
             <Left>0.1cm</Left>
-            <Height>1.62333cm</Height>
-            <Width>29.78017cm</Width>
+            <Height>4.60542cm</Height>
+            <Width>21.31604cm</Width>
             <Style>
               <Border>
+                <Color>DarkGoldenrod</Color>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <Color>#480c04</Color>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.70973in</Height>
+        <Height>1.97174in</Height>
         <Style />
       </Body>
-      <Width>11.83676in</Width>
+      <Width>8.50063in</Width>
       <Page>
         <PageHeader>
-          <Height>1.72945cm</Height>
+          <Height>1.75591cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -741,11 +1280,32 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Активні ТМА без прогнозів продажів по дням</Value>
+                      <Label>Название отчета</Label>
+                      <Value>=Switch(
+Globals!PageNumber = 1, "Відхилення відвантажень від АМ для")</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                         <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Label>UserName</Label>
+                      <Value>=Parameters!paramUserName.Value</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                        <Language>ru-RU</Language>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -753,9 +1313,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Left>1.34423cm</Left>
+              <Top>0.03528cm</Top>
+              <Left>1.72354cm</Left>
               <Height>0.95278cm</Height>
-              <Width>28.53593cm</Width>
+              <Width>19.6925cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -779,7 +1340,7 @@
               </ActionInfo>
               <Left>0.1cm</Left>
               <Height>0.95278cm</Height>
-              <Width>1.20896cm</Width>
+              <Width>1.47354cm</Width>
               <ZIndex>1</ZIndex>
               <ToolTip>На главную страницу отчетов</ToolTip>
               <Style>
@@ -788,13 +1349,13 @@
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox23">
+            <Textbox Name="Textbox18">
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Сформирован</Value>
+                      <Value>Сформовано</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -848,15 +1409,22 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
+                    <TextRun>
+                      <Value>. </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox12</rd:DefaultName>
-              <Top>1.05cm</Top>
+              <Top>1.08244cm</Top>
               <Left>0.1cm</Left>
               <Height>0.55cm</Height>
-              <Width>6.42159cm</Width>
+              <Width>9.39743cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -902,41 +1470,68 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="SK_PurchaseFrom">
+    <ReportParameter Name="paramDate">
       <DataType>Integer</DataType>
       <DefaultValue>
-        <DataSetReference>
-          <DataSetName>forParameters</DataSetName>
-          <ValueField>SK_DateFrom</ValueField>
-        </DataSetReference>
+        <Values>
+          <Value>=Year(Now()) * 10000 + Month(Now()) * 100 + Day(Now())</Value>
+        </Values>
       </DefaultValue>
-      <Prompt>SK Purchase From</Prompt>
+      <Prompt>Дата звіту</Prompt>
     </ReportParameter>
-    <ReportParameter Name="SK_PurchaseTo">
+    <ReportParameter Name="paramDaysBefore">
       <DataType>Integer</DataType>
       <DefaultValue>
+        <Values>
+          <Value>=14</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Днів відвантажень</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paramLoginFull">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="TARGET\y.sofiichenko"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>param Login Full</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paramUserName">
+      <DataType>String</DataType>
+      <DefaultValue>
         <DataSetReference>
-          <DataSetName>forParameters</DataSetName>
-          <ValueField>SK_DateTo</ValueField>
+          <DataSetName>UserName</DataSetName>
+          <ValueField>ShortName</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>SK Purchase To</Prompt>
+      <Prompt>paramUserName</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>SK_PurchaseFrom</ParameterName>
+          <ParameterName>paramDate</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>SK_PurchaseTo</ParameterName>
+          <ParameterName>paramDaysBefore</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>paramLoginFull</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>paramUserName</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1034,7 +1629,6 @@ pcW8c24itGbk8J2NlvT9RLu3hxXZ+Jcrsjcnsqv3OXMDY/8COvkbtnZciJ6Rm81D+MlqDXgEzB6kNKlS
 82U3R0aDD9ThcQxojy3RN0jdMvKVUXzZv33d3SP7dgR03/ARBDl+SSUdvZvQT424FflvU4/SGb15O/p3t6HvMeUdxcYMK/wTM279MahHuvaz+UVbv4pe80+0wjZmAN0QdfAPRD1SP3xkYfmeCl/z836y5UB0W3rlq+LWHwEdomfgflL31wIMnrTabev51T8o9ai3ICJv2677KHwNdphv839k6NEvgPwr8r8bD7+MHm/7A8zJAor6X3+G9WDE162ehJXvHtwc1wF6ijnZfDv7J2G+JzrSvz3ZcCi/kOIniW0uPrwUAOWeffPnYr4/+uVNoDdvVsmK/BmJvx79/876hv4N/Rv6N/Rv6N/Qv6F/Q/+G/g39G/qfa/0/AQYAm5d/FP98f5gAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <Language>ru-RU</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>d586e282-2cd7-47ab-ab66-58f00f26ac12</rd:ReportID>
 </Report>
