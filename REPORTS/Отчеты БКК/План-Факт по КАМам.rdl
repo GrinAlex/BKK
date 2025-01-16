@@ -4017,11 +4017,17 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
@@ -6695,12 +6701,17 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName2</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName2">
+                              <Textbox Name="SalesChannelMkiPdhName2">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -6724,7 +6735,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -6748,7 +6758,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName2">
+                          <Textbox Name="KamNameForReport2">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -6766,7 +6776,6 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -9417,12 +9426,17 @@ IIF(
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName3</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName3">
+                              <Textbox Name="SalesChannelMkiPdhName3">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -9446,7 +9460,6 @@ IIF(
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -9470,7 +9483,7 @@ IIF(
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName3">
+                          <Textbox Name="KamNameForReport3">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -9488,7 +9501,6 @@ IIF(
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -12046,12 +12058,17 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName4</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName4">
+                              <Textbox Name="SalesChannelMkiPdhName4">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -12075,7 +12092,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -12099,7 +12115,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName4">
+                          <Textbox Name="KamNameForReport4">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -12117,7 +12133,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -14675,12 +14690,17 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName5</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName5">
+                              <Textbox Name="SalesChannelMkiPdhName5">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -14704,7 +14724,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -14728,7 +14747,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName5">
+                          <Textbox Name="KamNameForReport5">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -14746,7 +14765,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -16568,7 +16586,7 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="ChainName6">
+                              <Textbox Name="ChainName8">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -16610,12 +16628,17 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName8</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName6">
+                              <Textbox Name="SalesChannelMkiPdhName8">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -16639,7 +16662,6 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -16663,7 +16685,7 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName6">
+                          <Textbox Name="KamNameForReport8">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -16681,7 +16703,6 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -19197,7 +19218,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="ChainName7">
+                              <Textbox Name="ChainName6">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -19239,12 +19260,17 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName6</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName7">
+                              <Textbox Name="SalesChannelMkiPdhName6">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -19268,7 +19294,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -19292,7 +19317,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName7">
+                          <Textbox Name="KamNameForReport6">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -19310,7 +19335,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
@@ -21826,7 +21850,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="ChainName8">
+                              <Textbox Name="ChainName7">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -21868,12 +21892,17 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                          <Visibility>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
+'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <ToggleItem>SalesChannelMkiPdhName7</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
                             <Size>6.42159cm</Size>
                             <CellContents>
-                              <Textbox Name="KAMName8">
+                              <Textbox Name="SalesChannelMkiPdhName7">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
@@ -21897,7 +21926,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>KAMName</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DarkGoldenrod</Color>
@@ -21921,7 +21949,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                       <TablixHeader>
                         <Size>6.42159cm</Size>
                         <CellContents>
-                          <Textbox Name="SalesChannelMkiPdhName8">
+                          <Textbox Name="KamNameForReport7">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -21939,7 +21967,6 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>SalesChannelMkiPdhName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
