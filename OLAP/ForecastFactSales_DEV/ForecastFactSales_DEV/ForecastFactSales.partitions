@@ -1,0 +1,117 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="29ac3dc5-621d-4df0-9657-4ba2efe3df30" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>ForecastFactSales</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Qry Forecast Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a724e82e-9253-40cf-89c3-5a4f309ece0b">
+          <ID>Qry Forecast Sales</ID>
+          <Name>Qry Forecast Sales</Name>
+          <CreatedTimestamp>2024-04-10T07:55:57.936667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-20T09:43:50.216667Z</LastSchemaUpdate>
+          <LastProcessed>2025-01-21T06:46:16.066667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="96655517-6cd8-408e-bfff-ee80d7f557e2">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ForecastSales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="27eef8aa-8545-42f3-aaa0-23720b2306f6">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="334528fb-beff-4348-9bb7-455f2914404b" />
+          </ProactiveCaching>
+          <EstimatedSize>58365966</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Residue Products</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="9b846cbf-4791-4330-975e-d015ef45446f">
+          <ID>Qry Residue Products</ID>
+          <Name>Qry Residue Products</Name>
+          <CreatedTimestamp>2024-04-11T12:26:59.676667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-20T09:43:50.466667Z</LastSchemaUpdate>
+          <LastProcessed>2025-01-21T06:45:49.52Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="0974ad78-5554-402a-bcb6-53b205ba05c3">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ResidueProducts</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="73584869-ee68-4186-9210-4f8f861b9daa">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cc9def6a-2d02-4a24-accc-180b71e9d9ec" />
+          </ProactiveCaching>
+          <EstimatedSize>881022</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Planing Order To Factory</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e9e0dab1-dcd6-4617-9746-84dcaee00692">
+          <ID>Qry Planing Order To Factory</ID>
+          <Name>Qry Planing Order To Factory</Name>
+          <CreatedTimestamp>2024-04-24T08:04:51.716667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-20T09:43:50.7Z</LastSchemaUpdate>
+          <LastProcessed>2025-01-21T06:45:49.893333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9cc50fc0-fcc6-4e4f-ac3c-005ab65b6329">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_PlaningOrderToFactory</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="b149b573-36e3-476d-9195-232948695c55">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="112fafd3-d88c-4439-84d6-88ffbad266be" />
+          </ProactiveCaching>
+          <EstimatedSize>3535579</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Losses By Buyers</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4e72c5ce-82dd-4c83-856d-41cdd23051a0">
+          <ID>Qry Losses By Buyers</ID>
+          <Name>Qry Losses By Buyers</Name>
+          <CreatedTimestamp>2024-04-24T11:29:12.196667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-20T09:43:50.873333Z</LastSchemaUpdate>
+          <LastProcessed>2025-01-21T06:47:10.293333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6fb0c207-a3a0-4294-b757-3706e585d679">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_LossesByBuyers</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="f2a4dad5-130a-485d-b268-2b3ec73a8b52">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="89f870dd-bed9-40ca-aba0-086bedb8de62" />
+          </ProactiveCaching>
+          <EstimatedSize>33132761</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

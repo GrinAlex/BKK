@@ -61,7 +61,7 @@ WHERE        (SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirections">
+    <DataSet Name="PlanFactBySalesChannels">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -79,7 +79,7 @@ WHERE        (SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -101,38 +101,6 @@ WHERE        (SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -318,7 +286,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsTB">
+    <DataSet Name="PlanFactBySalesChannelsTB">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -330,7 +298,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirectionsTB</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannelsTB</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -352,38 +320,6 @@ WHERE SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -403,87 +339,87 @@ WHERE SK_Date_ID =
         </Field>
         <Field Name="FactShipWeightCM">
           <DataField>FactShipWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightCM">
           <DataField>FactRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightCM">
           <DataField>FactRetWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetShipWeightCM">
           <DataField>FactNetShipWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightCM">
           <DataField>FactNetRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetShipToRealWeightCM">
           <DataField>FactNetShipToRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightBM">
           <DataField>FactRealWeightBM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightBM">
           <DataField>FactRetWeightBM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightBM">
           <DataField>FactNetRealWeightBM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightBY">
           <DataField>FactRealWeightBY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightBY">
           <DataField>FactRetWeightBY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightBY">
           <DataField>FactNetRealWeightBY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightCCY">
           <DataField>FactRealWeightCCY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightCCY">
           <DataField>FactRetWeightCCY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightCCY">
           <DataField>FactNetRealWeightCCY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightCYB">
           <DataField>FactRealWeightCYB</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightCYB">
           <DataField>FactRetWeightCYB</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightCBY">
           <DataField>FactNetRealWeightCBY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetSalesWeightCCY">
           <DataField>FactNetSalesWeightCCY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetSalesWeightCBY">
           <DataField>FactNetSalesWeightCBY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsLavash">
+    <DataSet Name="PlanFactBySalesChannelsLavash">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -501,7 +437,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -524,40 +460,8 @@ WHERE SK_Date_ID =
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="UaExpName">
@@ -714,7 +618,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsKKC">
+    <DataSet Name="PlanFactBySalesChannelsKKC">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -726,7 +630,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirectionsKKC</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannelsKKC</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -757,38 +661,6 @@ WHERE SK_Date_ID =
           <DataField>TypePlanName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
@@ -807,31 +679,31 @@ WHERE SK_Date_ID =
         </Field>
         <Field Name="FactShipWeightCM">
           <DataField>FactShipWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRealWeightCM">
           <DataField>FactRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactRetWeightCM">
           <DataField>FactRetWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetShipWeightCM">
           <DataField>FactNetShipWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetRealWeightCM">
           <DataField>FactNetRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="FactNetShipToRealWeightCM">
           <DataField>FactNetShipToRealWeightCM</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsPHV">
+    <DataSet Name="PlanFactBySalesChannelsPHV">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -849,7 +721,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -871,38 +743,6 @@ WHERE SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -1062,7 +902,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsPTZ">
+    <DataSet Name="PlanFactBySalesChannelsPTZ">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -1080,7 +920,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -1102,38 +942,6 @@ WHERE SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -1293,7 +1101,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsMML">
+    <DataSet Name="PlanFactBySalesChannelsMML">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -1311,7 +1119,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -1333,38 +1141,6 @@ WHERE SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -1524,7 +1300,7 @@ WHERE SK_Date_ID =
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="PlanFactByRegionDirectionsBPS">
+    <DataSet Name="PlanFactBySalesChannelsBPS">
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
@@ -1542,7 +1318,7 @@ WHERE SK_Date_ID =
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpt.PlanFactByRegionDirections</CommandText>
+        <CommandText>rpt.PlanFactBySalesChannels</CommandText>
       </Query>
       <Fields>
         <Field Name="SK_Month_ID">
@@ -1564,38 +1340,6 @@ WHERE SK_Date_ID =
         <Field Name="TotalWorkDays">
           <DataField>TotalWorkDays</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirection_ID">
-          <DataField>RegionDirection_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sort_ID">
-          <DataField>Sort_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="RegionDirectionName">
-          <DataField>RegionDirectionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BigRegion_ID">
-          <DataField>BigRegion_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="BigRegionName">
-          <DataField>BigRegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Department_ID">
-          <DataField>Department_ID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentName">
-          <DataField>DepartmentName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DepartmentSortID">
-          <DataField>DepartmentSortID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="Ua_Exp_ID">
           <DataField>Ua_Exp_ID</DataField>
@@ -4137,7 +3881,7 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirections</DataSetName>
+            <DataSetName>PlanFactBySalesChannels</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -6168,7 +5912,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsTB</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsTB</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -8242,7 +7986,7 @@ IIF(
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsLavash</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsLavash</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -10199,7 +9943,7 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsKKC</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsKKC</DataSetName>
             <PageName>Паски</PageName>
             <Top>23.8cm</Top>
             <Left>0.1cm</Left>
@@ -12163,7 +11907,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsPHV</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsPHV</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -14127,7 +13871,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsPTZ</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsPTZ</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -16091,7 +15835,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsMML</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsMML</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -18055,7 +17799,7 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
-            <DataSetName>PlanFactByRegionDirectionsBPS</DataSetName>
+            <DataSetName>PlanFactBySalesChannelsBPS</DataSetName>
             <PageName>БПС</PageName>
             <Top>20.42042cm</Top>
             <Left>0.1cm</Left>

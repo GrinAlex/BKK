@@ -197,49 +197,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox30">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=CountRows()</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox30</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>DarkGoldenrod</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gold</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <ColSpan>3</ColSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox24">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -447,7 +404,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>КАМ / Мережа / Контрагент - Адреса доставки</Value>
+                                <Value>Мережа / Контрагент - Адреса доставки</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -479,14 +436,14 @@
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="KAMName">
+                  <Group Name="ChainName">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!KAMName.Value</GroupExpression>
+                      <GroupExpression>=Fields!ChainName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!KAMName.Value</Value>
+                      <Value>=Fields!ChainName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -494,30 +451,29 @@
                       <TablixHeader>
                         <Size>13.10635cm</Size>
                         <CellContents>
-                          <Textbox Name="KAMName1">
+                          <Textbox Name="ChainName1">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!KAMName.Value</Value>
+                                    <Value>=Fields!ChainName.Value</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
-                                      <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>KAMName1</rd:DefaultName>
+                            <rd:DefaultName>ChainName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DarkGoldenrod</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>Gold</BackgroundColor>
+                              <BackgroundColor>Yellow</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -529,109 +485,58 @@
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="ChainName">
+                      <Group Name="Group1">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!ChainName.Value</GroupExpression>
+                          <GroupExpression>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!ChainName.Value</Value>
+                          <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <TablixHeader>
+                        <Size>13.10635cm</Size>
+                        <CellContents>
+                          <Textbox Name="Group1">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
+                                    <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <ListLevel>1</ListLevel>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Group1</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>DarkGoldenrod</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
                       <TablixMembers>
-                        <TablixMember>
-                          <TablixHeader>
-                            <Size>13.10635cm</Size>
-                            <CellContents>
-                              <Textbox Name="ChainName1">
-                                <CanGrow>true</CanGrow>
-                                <KeepTogether>true</KeepTogether>
-                                <Paragraphs>
-                                  <Paragraph>
-                                    <TextRuns>
-                                      <TextRun>
-                                        <Value>=Fields!ChainName.Value</Value>
-                                        <Style>
-                                          <FontFamily>Arial</FontFamily>
-                                        </Style>
-                                      </TextRun>
-                                    </TextRuns>
-                                    <Style />
-                                  </Paragraph>
-                                </Paragraphs>
-                                <rd:DefaultName>ChainName1</rd:DefaultName>
-                                <Style>
-                                  <Border>
-                                    <Color>DarkGoldenrod</Color>
-                                    <Style>Solid</Style>
-                                  </Border>
-                                  <BackgroundColor>Yellow</BackgroundColor>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
-                                </Style>
-                              </Textbox>
-                            </CellContents>
-                          </TablixHeader>
-                          <KeepWithGroup>After</KeepWithGroup>
-                        </TablixMember>
-                        <TablixMember>
-                          <Group Name="Group1">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</GroupExpression>
-                            </GroupExpressions>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
-                          <TablixHeader>
-                            <Size>13.10635cm</Size>
-                            <CellContents>
-                              <Textbox Name="Group1">
-                                <CanGrow>true</CanGrow>
-                                <KeepTogether>true</KeepTogether>
-                                <Paragraphs>
-                                  <Paragraph>
-                                    <TextRuns>
-                                      <TextRun>
-                                        <Value>=Fields!BuyerName.Value &amp; " - " &amp; Fields!DeliveryAddress.Value</Value>
-                                        <Style>
-                                          <FontFamily>Arial</FontFamily>
-                                          <FontSize>9pt</FontSize>
-                                        </Style>
-                                      </TextRun>
-                                    </TextRuns>
-                                    <ListLevel>1</ListLevel>
-                                    <Style />
-                                  </Paragraph>
-                                </Paragraphs>
-                                <rd:DefaultName>Group1</rd:DefaultName>
-                                <Style>
-                                  <Border>
-                                    <Color>DarkGoldenrod</Color>
-                                    <Style>Solid</Style>
-                                  </Border>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
-                                </Style>
-                              </Textbox>
-                            </CellContents>
-                          </TablixHeader>
-                          <TablixMembers>
-                            <TablixMember />
-                          </TablixMembers>
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                            <ToggleItem>ChainName1</ToggleItem>
-                          </Visibility>
-                        </TablixMember>
+                        <TablixMember />
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>ChainName1</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -683,7 +588,7 @@
             <PageName>КАМ-Мережа</PageName>
             <Top>0.12847cm</Top>
             <Left>0.12912cm</Left>
-            <Height>3cm</Height>
+            <Height>2.4cm</Height>
             <Width>20.60635cm</Width>
             <Style>
               <Border>
@@ -1234,7 +1139,7 @@
             <KeepTogether>true</KeepTogether>
             <DataSetName>TTNoShippedInWeekBefore</DataSetName>
             <PageName>РМ-СВ-ТА</PageName>
-            <Top>3.2343cm</Top>
+            <Top>2.70486cm</Top>
             <Left>0.12912cm</Left>
             <Height>3.6cm</Height>
             <Width>20.60635cm</Width>
@@ -1246,7 +1151,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.74981in</Height>
+        <Height>2.54148in</Height>
         <Style />
       </Body>
       <Width>8.25199in</Width>

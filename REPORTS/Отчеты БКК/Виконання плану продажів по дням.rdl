@@ -5031,7 +5031,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_MKI") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_MKI") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -5149,7 +5149,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -5223,7 +5223,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 <TextRun>
                                   <Value>=IIF(SUM(Fields!PlanByDay.Value) = 0,
 " - ",
-(Sum(Fields!FactNetShipToRealWeightCM.Value) / AVG(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+(Sum(Fields!FactNetShipToRealWeightCM.Value) / AVG(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -5604,7 +5604,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_LVSh") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_LVSh") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -5722,7 +5722,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -5794,7 +5794,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -9618,7 +9618,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_PHV") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_PHV") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -9736,7 +9736,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value) / 1000</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -9808,7 +9808,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -13632,7 +13632,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_PTZ") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_PTZ") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -13750,7 +13750,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -13822,7 +13822,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -17646,7 +17646,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_MML") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_MML") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -17764,7 +17764,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -17836,7 +17836,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -21661,7 +21661,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                                 </TextRun>
                                 <TextRun>
                                   <Label>План</Label>
-                                  <Value>=format(Avg(Fields!PlanByDay.Value, "PlanFactByDays_BPS") / 1000, "0.0")</Value>
+                                  <Value>=format(Max(Fields!PlanByDay.Value, "PlanFactByDays_BPS") / 1000, "0.0")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#480c04</Color>
@@ -21779,7 +21779,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
+                                  <Value>=Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)</Value>
                                   <Style>
                                     <Format>#,0.0</Format>
                                     <Color>#480c04</Color>
@@ -21851,7 +21851,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Avg(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
+                                  <Value>=IIF(Sum(Fields!PlanByDay.Value) = 0, " - ", (Sum(Fields!FactNetShipToRealWeightCM.Value) / Avg(Fields!CurrDay.Value)) / (Max(Fields!PlanByDay.Value) / Avg(Fields!TotalDays.Value)))</Value>
                                   <Style>
                                     <Format>0.0%</Format>
                                     <Color>=switch(
@@ -21885,6 +21885,7 @@ IIF(SUM(Fields!PlanByDay.Value) = 0,
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

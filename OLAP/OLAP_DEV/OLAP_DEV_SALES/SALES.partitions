@@ -1,170 +1,170 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="83c8c588-564e-433c-bb2c-2a553cff3dbc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d5591ba4-ff50-4f84-a0dd-b793e98e22ed" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>SALES</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Reimbursements</ID>
       <Partitions>
-        <Partition dwd:design-time-name="95ff3ca6-c456-472c-81de-9e3effc396c1">
+        <Partition dwd:design-time-name="379f0538-4e52-473c-a2d0-c441b1c8f213">
           <ID>Reimbursements 2020</ID>
           <Name>Reimbursements 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:31.863333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.56Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:07.22Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="19848aa3-07ce-4f5e-83ec-9d5afd64962b">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="31808fd5-926d-41a3-9e8a-550ff683e65e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="e390afdd-6d17-4ba5-8fbf-dd6e26d0fd06">
+          <ProactiveCaching dwd:design-time-name="c1e93633-8c20-4d1d-8610-d0a5e722627c">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ae8f71fc-6d63-4d02-aac2-30b9d2356040" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="acfbb640-73be-4589-8bed-8120bbc366fc" />
           </ProactiveCaching>
           <EstimatedSize>17796909</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d9d06587-8af2-47ef-a29c-61ed7f1e026f">
+        <Partition dwd:design-time-name="675fb9f0-1238-4f13-b16e-f7a0b2c7e638">
           <ID>Reimbursements 2021</ID>
           <Name>Reimbursements 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:31.943333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.623333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:22.156667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e4368fb3-8bb2-49ed-a306-45d63bc08a71">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ecb43110-12cb-457f-aec3-2e7dd3b28d57">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="05754e0f-847f-45e5-89b0-dfbb6a6aa37a">
+          <ProactiveCaching dwd:design-time-name="6df2b9fb-cff3-4a21-a6a1-9a864353173b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="dcd7a077-1564-4d67-844b-33cad0978135" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5316bc1c-5669-4429-a4d3-45e14a818f1b" />
           </ProactiveCaching>
           <EstimatedSize>20311859</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="81de7782-4267-4894-8b8d-d7712145de85">
+        <Partition dwd:design-time-name="bab7e6bc-8ec2-4bbe-a070-3b551e3df6c8">
           <ID>Reimbursements 2022</ID>
           <Name>Reimbursements 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.036667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.733333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:11.406667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5c83bbb7-c7b1-4c63-8c7c-8c7e6a3bbc9b">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="63894f44-f20d-42be-b557-a931e75259d2">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="1bc69f0c-7214-46fc-a273-628a035a59f7">
+          <ProactiveCaching dwd:design-time-name="83460200-4e41-40ff-9939-d785af609d30">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7b101d7c-ada1-42de-a211-575f00b0dc71" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ced1713f-3dcd-4558-ba0d-41c3375c0832" />
           </ProactiveCaching>
           <EstimatedSize>9686251</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="280e6cd9-a71c-49af-bfc8-ce4871b1232e">
+        <Partition dwd:design-time-name="b1f76eb4-4ec1-446d-871f-9738920bcafc">
           <ID>Reimbursements 2023</ID>
           <Name>Reimbursements 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.066667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.823333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:14.686667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0437540e-ad99-416a-b670-fe8cd9359c0c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="dbf2aea0-73da-49f4-938c-e4960c42bb28">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d1eea49c-15fa-4ba6-a1be-4d781c5323b8">
+          <ProactiveCaching dwd:design-time-name="48e269ae-a0ac-457c-b0e8-da3fc2360109">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c5087d04-04f2-4491-8b3c-35a75c8568b5" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ac1797d1-4d34-4ec9-8e7f-71f253a0f3fa" />
           </ProactiveCaching>
           <EstimatedSize>12209819</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="4201a013-6846-4160-9792-ce9fb912bd32">
+        <Partition dwd:design-time-name="ed3aa348-2e35-453b-b17d-1e3485b03043">
           <ID>Reimbursements 2024</ID>
           <Name>Reimbursements 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.146667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.873333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:18.143333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f8a29753-e628-40cf-bbae-17adfd1743f5">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b3ed14b8-4371-4f81-b97b-b418604258d9">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="493a8a52-f1c3-4934-8323-9f2088b5f4e8">
+          <ProactiveCaching dwd:design-time-name="bf731062-dd30-4123-a499-473996477b47">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fe8d592f-1a2c-43eb-aa7a-8f99604be6f4" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="81cab413-08ae-43cd-b12d-0c88f89117a3" />
           </ProactiveCaching>
           <EstimatedSize>11076525</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d746541c-c112-41ee-98a2-ed803746dd4e">
+        <Partition dwd:design-time-name="1503b785-ff10-4558-be4f-b62de53478ed">
           <ID>Reimbursements New</ID>
           <Name>Reimbursements New</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.223333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:09.983333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:37:06.04Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5e4b9e67-dc69-45ef-be14-e04383365229">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="45e03d29-5a40-4ceb-b7dc-26f15b835723">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="3ffc5c28-e590-4211-a804-c02b9837b299">
+          <ProactiveCaching dwd:design-time-name="d06e26d6-0315-4eeb-ba62-4de81f99ea31">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1c0af71d-2713-4d78-8867-0dc1ce3c53fa" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c3548815-679e-4a07-9537-d7a435b77214" />
           </ProactiveCaching>
           <EstimatedSize>292887</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="daaca361-8595-4eaa-a457-d093623cadb5">
+        <Partition dwd:design-time-name="c9763131-b994-4aca-94c3-3a7f234a9b0e">
           <ID>Reimbursements 2025</ID>
           <Name>Reimbursements 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="114b0f34-2c33-4961-9c9d-adfe7045ad16">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="a268afbf-f5c8-4188-bc86-87aa7750a643">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReimbursementsTest AS r WITH (NOLOCK)
+FROM fact.qry_Reimbursements AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -176,167 +176,167 @@ WHERE r.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Returns</ID>
       <Partitions>
-        <Partition dwd:design-time-name="f2117299-7297-4a32-86fb-b6a78b1937ef">
+        <Partition dwd:design-time-name="953ea41e-82b8-4bf8-b32f-8f60e28c2e1b">
           <ID>Returns 2020</ID>
           <Name>Returns 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.486667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.216667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:27.156667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="18071d1a-d8fe-486f-bbab-b32148187f81">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d2cd0f6f-7f68-4b04-8a5f-209bab654056">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d8d7bfd1-466b-4fe8-a4ce-faeace389939">
+          <ProactiveCaching dwd:design-time-name="c2361b10-da9c-42e0-9cfc-0cbfab3c3a3b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0907778f-cec7-4f89-b6ea-95965e72a1e3" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="be98897c-5fcc-425b-9610-548ac5de5866" />
           </ProactiveCaching>
           <EstimatedSize>2470222</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a7dbccfe-7dc2-4a05-982c-04d6b5dad46f">
+        <Partition dwd:design-time-name="0bd4229c-64dc-4adb-b183-b71cad1427f8">
           <ID>Returns 2021</ID>
           <Name>Returns 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.566667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.276667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:02.093333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="398c10fc-4125-4894-8a3f-a2fc0e51f64f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d0073e49-6407-4b66-9492-4f3be01be38a">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="ef416789-081b-4256-82b7-5c2cf3c598e2">
+          <ProactiveCaching dwd:design-time-name="380d658b-767c-451b-9bd5-1223686dd5ee">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="10127461-40cb-46a8-a1a8-4e00fd3b5a12" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7c355663-4c85-45af-a528-88385faae1c6" />
           </ProactiveCaching>
           <EstimatedSize>2587902</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="b0ce3338-7bab-49d8-ad9c-74c8f39fc005">
+        <Partition dwd:design-time-name="b22559e0-6ac4-49a0-befd-53d63659ddee">
           <ID>Returns 2022</ID>
           <Name>Returns 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.596667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.356667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:08.686667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="10395ea5-48f9-4531-9507-dc0744974c83">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f522155f-107d-4426-91e2-9ec6eeb11ccf">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="22f52ea3-fe0a-419f-8855-76060ab90302">
+          <ProactiveCaching dwd:design-time-name="b0261b22-96c4-4a1d-b04c-29bab8500e14">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="133cbc67-76a6-4652-86fa-f5121e23c35c" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4ac79182-c7c1-49bb-995f-6dfbe1f16b71" />
           </ProactiveCaching>
           <EstimatedSize>1597281</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="41d4ab6e-d5da-4968-a8b4-5df4e737a575">
+        <Partition dwd:design-time-name="2bbe6dae-31a3-47fc-8187-8b562c4efe1a">
           <ID>Returns 2023</ID>
           <Name>Returns 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.693333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.826667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:24.22Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f4881c3d-b30f-4a6c-b975-751aab561d2e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="53d86a80-8179-4360-b21e-fb13fc6660bc">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="52ceaa03-8e44-4745-a174-c08b1eb97b16">
+          <ProactiveCaching dwd:design-time-name="d19608d2-9d75-44bf-ba4d-65431b0caf1f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="846d1566-bdad-4dd8-a219-8c0ea4e53b24" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="bb542f38-22c0-45bf-b602-c298899e57a1" />
           </ProactiveCaching>
           <EstimatedSize>3282654</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="93983503-3554-409e-8ae5-b468bfe02b35">
+        <Partition dwd:design-time-name="625283b5-fb07-4090-b50a-da7a6ad7e06a">
           <ID>Returns 2024</ID>
           <Name>Returns 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.77Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.856667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:18.5Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="63439674-aa49-4dd0-85a5-63754d656e02">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f4c0c9d9-4ec4-4fe7-af23-d59867acc4ad">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="ffebea77-6e1a-454d-a0de-cba6c5686b62">
+          <ProactiveCaching dwd:design-time-name="fa274e0f-4e58-4602-87ee-3d1f80614375">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d0d7b1a7-7462-4630-8347-6209cf534455" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4afdd54d-922a-4a7e-8505-1199fe3ddc79" />
           </ProactiveCaching>
           <EstimatedSize>2601458</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8e3778cb-75ad-4e7c-8a9b-54b7da424c0e">
+        <Partition dwd:design-time-name="847f82ec-2b3c-4392-979d-bb6446dd4826">
           <ID>Returns New</ID>
           <Name>Returns New</Name>
           <CreatedTimestamp>2024-08-21T08:25:32.833333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:10.933333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:37:09.946667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="6917df84-3228-46bc-b338-429c844d91c5">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e89b19d7-b45b-4ca6-8740-300612ba7c3c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="b574a6d8-7c34-452e-8f2c-2cbb7d116ea2">
+          <ProactiveCaching dwd:design-time-name="9bc0a552-3bc4-4eab-9a4d-44ca206f4bd1">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ce76ba59-5069-4141-b8dc-9b90ce5adaea" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9e1a114a-2db9-4a02-911c-943c6e46c3f0" />
           </ProactiveCaching>
           <EstimatedSize>345366</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="239d96fd-644f-47ce-a0eb-ab8a595c444b">
+        <Partition dwd:design-time-name="3340592f-9608-41d4-bff5-5e8a7e4cd658">
           <ID>Returns 2025</ID>
           <Name>Returns 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8a454bfd-4572-4412-be0b-02f07317c030">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ee27f735-69ce-452b-afcb-9a4c97ae8415">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_ReturnsTest AS r WITH (NOLOCK)
+FROM fact.qry_Returns AS r WITH (NOLOCK)
 WHERE r.SK_ShipDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -348,167 +348,167 @@ WHERE r.SK_ShipDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Plans</ID>
       <Partitions>
-        <Partition dwd:design-time-name="e4b0bc54-7f51-408a-bc93-a8bfc7a2164e">
+        <Partition dwd:design-time-name="db26ca81-05be-44cd-bdbf-7d2b33cdcac8">
           <ID>Plans 2020</ID>
           <Name>Plans 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.02Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.263333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:22.546667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="18de87c6-9188-4393-a76a-dffbf4faec46">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="29474982-af56-401f-8437-0c6ecbd761e6">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6948ff3a-836b-4a73-9c72-dd5af34f409a">
+          <ProactiveCaching dwd:design-time-name="3f5dd229-bccd-4d7e-a12e-8cd14cfb5d50">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5194a413-afec-4cfe-8e26-67fa777ff471" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="58a534e3-379b-45c1-b2f8-93247281b801" />
           </ProactiveCaching>
           <EstimatedSize>40173841</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="c5e96a38-2406-4ea8-8c11-ff496633114b">
+        <Partition dwd:design-time-name="20c73cf5-2299-4042-9e13-d4795e983bd1">
           <ID>Plans 2021</ID>
           <Name>Plans 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.083333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.31Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:17.736667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c393b163-9745-4cc3-8453-a4ab64c2d3dc">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b15c4d6a-83f9-4f42-8d41-980672273ab3">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="b75938ba-4140-4ffe-b806-93baf204deb9">
+          <ProactiveCaching dwd:design-time-name="84e4b27f-abfc-4bf3-a52d-c631056fa7e1">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="31055ba8-0c4b-44e7-a252-483185ec163a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9338bf4e-4e27-4827-a18f-4d4df4644210" />
           </ProactiveCaching>
           <EstimatedSize>59932655</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="49f2bbb3-c415-47c6-a8b1-f5c9fe1cf585">
+        <Partition dwd:design-time-name="b4918098-b228-43c7-a20f-4bafa397454c">
           <ID>Plans 2022</ID>
           <Name>Plans 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.223333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.373333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:06Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="1e4d43f1-2e47-4263-8ecd-02368e34c1fa">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3b2d46a9-2676-4f98-ac78-e5617a18779e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4af0318e-fde0-4551-be6d-2365e652f133">
+          <ProactiveCaching dwd:design-time-name="f095e1fe-d4b7-4903-99c7-5717132a8b3c">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0fc7b133-89fa-4ef2-8343-03d9aaf32816" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="98f70a0b-370f-408c-9672-64b8c4a79a43" />
           </ProactiveCaching>
           <EstimatedSize>178500677</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ea4f984d-bcac-4dc3-b1dd-f300ab00102e">
+        <Partition dwd:design-time-name="b92f7258-74a0-4ff5-824d-acb859783f4f">
           <ID>Plans 2023</ID>
           <Name>Plans 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.363333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.433333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:26.846667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ca11fe52-4d0f-4a1c-967a-9114f569a444">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e3558e1c-7df4-4020-90d5-4e7dac682b83">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a671b60e-eda5-4c18-af03-8a4d116967b5">
+          <ProactiveCaching dwd:design-time-name="9868673c-ecd3-4ffd-a1c0-ca9738b1f794">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="493a2472-94dc-4768-b176-addd51fb9865" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="63318c86-e075-4e31-b2e9-96e4fa454e53" />
           </ProactiveCaching>
           <EstimatedSize>94442121</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="885e8f9b-2a53-4a78-870b-4940822b0462">
+        <Partition dwd:design-time-name="2a56ca05-29be-45b8-a2f3-a6b9ac0e3db3">
           <ID>Plans 2024</ID>
           <Name>Plans 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.456667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.496667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:13.953333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="3b21fa64-33ea-4159-b32f-72756b242c2a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="59d9919d-757f-4192-b36d-062baf7b8d9c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="92085f61-952f-4002-94fd-704a5a6518a6">
+          <ProactiveCaching dwd:design-time-name="087bb036-a7d1-4f22-9cc6-f1c658e96ef3">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="172f7d7c-ea76-4cd9-8214-a7f96c37faf7" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b829d77d-7e59-4071-9bab-483fcbe383a8" />
           </ProactiveCaching>
           <EstimatedSize>68218725</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="22c4ae59-1185-4d08-ab4e-f144c6829066">
+        <Partition dwd:design-time-name="cc9ad879-028e-4104-a9bd-9029dd81fa5e">
           <ID>Plans New</ID>
           <Name>Plans New</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.583333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.56Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:40:08.34Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="dbfa3f3a-9af0-4b3f-b4e5-7d0396bbf434">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6cff7b3d-b871-4572-bc6b-a11041f2c494">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="57e0cf3c-d103-4a3a-88cc-b6cd615ed5ca">
+          <ProactiveCaching dwd:design-time-name="18fab3ae-0d2e-48d5-93a4-dda5673ddd20">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8405195e-d273-4bbe-8c5b-2cc67a34c9a5" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b8808e6a-bc78-4fb0-8f98-0db5eb46b6c9" />
           </ProactiveCaching>
           <EstimatedSize>9216869</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="eae223a2-a59e-4d48-9f15-659d3ccc2234">
+        <Partition dwd:design-time-name="e137a58a-7ce1-49b4-8485-23796b06f1bc">
           <ID>Plans 2025</ID>
           <Name>Plans 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5360b17c-6db3-4ecc-9e36-ade407c7bb3c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b19a0fc6-5b30-423c-8fbf-2df8216e20c0">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT  *
-FROM fact.qry_PlansTest AS p WITH (NOLOCK)
+FROM fact.qry_Plans AS p WITH (NOLOCK)
 WHERE p.SK_ShipDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -520,167 +520,167 @@ WHERE p.SK_ShipDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Sales</ID>
       <Partitions>
-        <Partition dwd:design-time-name="31fe0761-6102-4167-a008-a639befd84ea">
+        <Partition dwd:design-time-name="1c2881e2-2366-43fe-9317-d4d2bf2365cb">
           <ID>Sales 2020</ID>
           <Name>Sales 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.77Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:11.823333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:24.923333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7f636ab3-5abc-448c-899e-91ca6bb3547d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e5225509-9c5e-43a2-b94c-0f91a3d3a94e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="7ea70044-3fb9-4078-a888-fbf411eec54d">
+          <ProactiveCaching dwd:design-time-name="c21cb73c-2a99-4070-915e-3d994e5fa56d">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ac2e4ed2-aa2d-4275-8057-696b00690517" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ae8cbf57-ebed-4794-b74f-327c09187bf0" />
           </ProactiveCaching>
           <EstimatedSize>160233255</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="3754e13b-1a92-47aa-9f7f-555f8ee59a65">
+        <Partition dwd:design-time-name="3a800023-4990-45d7-8cad-2100e593b12d">
           <ID>Sales 2021</ID>
           <Name>Sales 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.88Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.013333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:26.47Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="cb166363-8c8c-4115-a776-2444a70c2ca4">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c1a1c51d-9e3e-4cab-a9bd-eb2a0af2a1e8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="148fbf41-dbde-4fcb-908c-90b719818da6">
+          <ProactiveCaching dwd:design-time-name="deeeda8c-ab0a-464e-8c75-093f1d6e740a">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="804d26ff-3449-45c6-b325-42bac982b83e" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="67a3718c-3cec-4c53-bebb-5fdcccb7bc85" />
           </ProactiveCaching>
           <EstimatedSize>167476448</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7975b593-fb74-4245-ad64-3a98457cc425">
+        <Partition dwd:design-time-name="9c0653d2-e817-4835-856c-4ec9eeb0352f">
           <ID>Sales 2022</ID>
           <Name>Sales 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:33.943333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.09Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:20.516667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="300fac33-bac0-4503-88ea-b15a1d98e72e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1580c1a8-b67d-49cd-971e-b0f12fa7ee78">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="ecbca3e6-77da-4aa1-800f-8f2c043a581b">
+          <ProactiveCaching dwd:design-time-name="76453da6-0273-4e0a-b450-fedb1fc856c6">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8622d368-238d-454e-a251-d78eb1aab9f7" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="04e8b52d-ca03-41f3-9ab5-681c44fb8272" />
           </ProactiveCaching>
           <EstimatedSize>113219029</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="c83b06bf-e0b8-46bb-9aa9-4c402952733d">
+        <Partition dwd:design-time-name="f8f08619-7c9f-4ceb-8d66-4d1660c941c9">
           <ID>Sales 2023</ID>
           <Name>Sales 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.036667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.17Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:13.61Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="56684169-1640-4364-8780-f743d39aa374">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="19da98c3-4b58-48f8-ba07-1a5f762cfea2">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="3afbe0d0-32d3-432e-a141-1a6cee3fda91">
+          <ProactiveCaching dwd:design-time-name="eb04358a-7225-4ad1-aa1d-b74e7c37b718">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a7862690-143a-4489-9a73-eceeb6541071" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c44923c4-484e-45ec-80cd-d90ae5fe7d0f" />
           </ProactiveCaching>
           <EstimatedSize>142315498</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8092df86-d93a-41e7-87e5-707164d55ff4">
+        <Partition dwd:design-time-name="d8211b62-65ac-4058-8261-8957c6ad7aaf">
           <ID>Sales 2024</ID>
           <Name>Sales 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.113333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.263333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:28.69Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0039fd1f-71aa-43d1-9848-012635f7cfda">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="27128a71-1fce-4404-b9f7-5102df2dc157">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="30313dc1-c4ec-4581-8cd5-0a380539b388">
+          <ProactiveCaching dwd:design-time-name="be5822db-615f-4a7a-868e-2813f8adb3b5">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2ac99ad8-e7d8-4140-bd09-c14ce115f500" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="069a8b86-b574-453d-9cee-7597f9bf5238" />
           </ProactiveCaching>
           <EstimatedSize>124973137</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="de108cc7-5a97-4907-a9ca-99a910ea8bad">
+        <Partition dwd:design-time-name="9c980fb8-e222-4f66-b2f6-a5d82aed8a45">
           <ID>Sales New</ID>
           <Name>Sales New</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.176667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.356667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:37:41.226667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="79c56cd5-1cf2-4c5b-a7da-17b2e7832661">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2e1c9460-ba21-4b1b-8706-7b34e0f5a100">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="175930f1-9ab7-4dc9-8074-fd125fb26f71">
+          <ProactiveCaching dwd:design-time-name="926e7533-7275-4ea6-93a7-db46b9cc0f2f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="39b377cb-c2df-41a2-a3d0-9f57f856c744" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cc6b5935-db7b-4497-a79e-bfe0a82e8d1a" />
           </ProactiveCaching>
           <EstimatedSize>15521770</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d2a61fa5-5bab-466f-ad68-562a12cbe83f">
+        <Partition dwd:design-time-name="8cb94ad9-fd34-44c7-87dc-604efc28aac4">
           <ID>Sales 2025</ID>
           <Name>Sales 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="1bfaf0a0-3407-4ce2-af56-3811f68435c7">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2b73ec2e-559c-4095-8503-66154a34377e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -692,167 +692,167 @@ WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Продажі</ID>
       <Partitions>
-        <Partition dwd:design-time-name="bad905d3-e325-459b-a588-05273daca904">
+        <Partition dwd:design-time-name="926a8d9d-10dd-47df-b6ac-366388229452">
           <ID>TMA 2020</ID>
           <Name>TMA 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.316667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.683333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:31.093333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c0e33ad7-51a0-4aa1-a1e6-e0adc0a6f7d7">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="aae334bf-8838-4ae2-bb3e-8afe66d57202">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6ffafef8-760b-42fd-9dc6-aec042837dfe">
+          <ProactiveCaching dwd:design-time-name="d4bb1a13-14bc-4f74-8eeb-d0fd4e4aacf2">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4dcc3681-ce55-49c5-ba3c-451623781f78" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2670fdf5-3a69-4846-b8b6-80790a119c17" />
           </ProactiveCaching>
           <EstimatedSize>59345247</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="9d94d092-6b58-4907-a1fe-177f074995fb">
+        <Partition dwd:design-time-name="85255685-cea4-4512-94f3-528ca93170d0">
           <ID>TMA 2021</ID>
           <Name>TMA 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.41Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.763333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:11.986667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="d204660e-15c8-4417-975a-12154031b822">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="007a4d00-bfd4-4553-8f5a-e0faafb20ff5">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="470240ec-8a4a-4578-a9fe-8125bcc83e74">
+          <ProactiveCaching dwd:design-time-name="46a68e51-100b-46f2-89f5-512e8907b976">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6604bc8f-da2c-445d-8f1b-c6ce43c2eaf1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="068debaa-1657-4047-9369-e02a4e28955e" />
           </ProactiveCaching>
           <EstimatedSize>62599209</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="b3285b8c-0a44-4900-a0d5-83271e4956a2">
+        <Partition dwd:design-time-name="181be430-d242-4efe-aba7-6dec4ef93f03">
           <ID>TMA 2022</ID>
           <Name>TMA 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.486667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.84Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:10.61Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9917dcf1-67dd-400b-88d0-37bdffa20a57">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="eb3d2b15-bda6-417f-bf85-45cd7f6455a2">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="bb2e2228-c38e-4e77-85b5-2e3f57972d3e">
+          <ProactiveCaching dwd:design-time-name="c1f7b0da-21bf-4a81-a6c8-f0864c1678a4">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4296d7ea-efcb-4a2f-8ccc-dcd51eac666b" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="efc7192d-1f26-4bb1-97f5-96fd1d9ecd67" />
           </ProactiveCaching>
           <EstimatedSize>40935695</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8c531853-3aca-481f-83d5-0396059a977b">
+        <Partition dwd:design-time-name="baebd0b5-f11a-4c07-b4b7-13f9fdbf9a20">
           <ID>TMA 2023</ID>
           <Name>TMA 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.613333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:12.903333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:14.233333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9169da29-46f1-4386-8361-4b8e1a0e34ad">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f4676567-de91-489b-9c19-eab2020dad9e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6013632a-be04-4361-b74f-63a6818efd45">
+          <ProactiveCaching dwd:design-time-name="c1bdd6da-ccfe-46d4-bdef-3b666b0bc3ba">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="96f82a33-3d96-4e8b-95bf-baf16dbc6a6d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="17da1ac9-212a-4dd5-9976-05afed12cbc8" />
           </ProactiveCaching>
           <EstimatedSize>51863834</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="34e8bd6c-574d-45ea-9125-6c277d0923f2">
+        <Partition dwd:design-time-name="5ffb07f6-01d7-42ef-95d4-b609c20ab0c1">
           <ID>TMA 2024</ID>
           <Name>TMA 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.676667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.013333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:12.626667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="78b6aa28-cadc-41da-a62f-3b2f92dbf34f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6f2d3f0a-ea82-4ef5-83ef-cd83af04e901">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="db6807f5-df96-49ad-bd1c-ac51bd65fe01">
+          <ProactiveCaching dwd:design-time-name="deac50be-a9e0-4642-8419-be00a5ce18c0">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3e051637-0790-4aea-8990-a9006bd80bd1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="26a3e62b-9a8b-4a8d-943e-c428d04b7f1f" />
           </ProactiveCaching>
           <EstimatedSize>45009715</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="096e77a2-8ff5-4e88-9906-cdd4c641cd6f">
+        <Partition dwd:design-time-name="1cc15144-ccb7-43d6-af29-8b5ef5863110">
           <ID>TMA New</ID>
           <Name>TMA New</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.783333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.076667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:41:58.746667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5caf69d6-e096-4192-955f-bc2cb5d96b0c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cc840d2a-20b4-4c13-9551-0b7955329711">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="edd1ad6f-03f2-4e8e-80f2-33c37022a570">
+          <ProactiveCaching dwd:design-time-name="b5563059-c15f-4e4c-8828-807972a104c4">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="34b471cd-0d19-4f6b-a9a2-46b4a87c1209" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f224247d-b093-43a8-84fd-3b86804abdd6" />
           </ProactiveCaching>
           <EstimatedSize>6456523</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="2567a023-c9a8-4c9a-9f6e-a174b9442899">
+        <Partition dwd:design-time-name="f86b5d7c-a8a4-43cf-a2e1-73b3cea22707">
           <ID>Sales 2025</ID>
           <Name>Sales 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="3dce2a94-f243-4b20-a5e1-693628c781a4">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="52192a45-7a05-43b2-a68a-1adc432d0289">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -864,167 +864,167 @@ WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Продажі 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="94c0df2d-85f6-4f36-9a7f-d337decf254c">
+        <Partition dwd:design-time-name="5cfb3693-64d8-457f-9d72-1c54a0172f8c">
           <ID>Distr 2020</ID>
           <Name>Distr 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:34.956667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.34Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:25.986667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="b87878e2-f1dc-4e8e-ac19-d4fb6aeccd32">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ff14c6ec-c8fd-4ac9-b7d0-3843f52c97a8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="510f81a2-c1e5-4dfa-9fba-74c962cc78ef">
+          <ProactiveCaching dwd:design-time-name="c3eeab48-9449-42ef-afef-7b6d09ba24e6">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b8a1eac3-2400-47b0-a8f7-bc87f728dddd" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="156349d7-ad40-4150-9f69-7c58bf5f7a60" />
           </ProactiveCaching>
           <EstimatedSize>70582442</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="59c8218e-62b8-4d47-8333-871346dec5c1">
+        <Partition dwd:design-time-name="43d45a93-8464-4f89-a6c7-576c1027b538">
           <ID>Distr 2021</ID>
           <Name>Distr 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.02Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.403333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:23.736667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="386afb9d-34c2-4cbf-b02a-c80775142937">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bdf6cc23-873e-45c8-853a-a3bbb58998cb">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="de8707f9-7588-43a9-a0df-59b6f5aceda2">
+          <ProactiveCaching dwd:design-time-name="6fda9b92-9377-4bf6-99c5-cac5b17fed8f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="81a00e7f-94df-46c6-9bee-26e6b15798f1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0ba23174-18d7-488a-86a3-4e3d2b4359a4" />
           </ProactiveCaching>
           <EstimatedSize>74211561</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="bd86a535-f958-44ec-9c2f-3e31fa54312e">
+        <Partition dwd:design-time-name="120e03d7-faa0-4377-83c7-230296f0d293">
           <ID>Distr 2022</ID>
           <Name>Distr 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.083333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.436667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:05.093333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="690045d4-c1d6-44a3-acac-06be532cee30">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cbb6d5ed-16b6-4568-b9e4-89d90293bac6">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="3b12604c-712e-43dd-a3a3-fdcf108af973">
+          <ProactiveCaching dwd:design-time-name="6979c6a2-2887-4776-9672-c87ba6407dd9">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0c9ca3d0-1f21-48c8-8d93-396a8ca3a7bc" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4ca7831a-fe55-4a3e-a47f-a71c46ec1df3" />
           </ProactiveCaching>
           <EstimatedSize>49356839</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="4ef16f9a-7479-4244-9f05-53f7e6bd45a0">
+        <Partition dwd:design-time-name="67f0a7b4-f2f8-4c0b-a0b6-7856f4806030">
           <ID>Distr 2023</ID>
           <Name>Distr 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.176667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.496667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:29.44Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="17b750a8-0411-41d9-9fa9-84a77232b0d1">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f4a910cf-e133-45b1-bcca-f80fb6a44947">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="fc183727-8d9c-4a80-b644-43b523f173b6">
+          <ProactiveCaching dwd:design-time-name="ab37add5-6855-425b-9c3d-729afabb3075">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b08162cf-8816-44f3-b866-9a226b3850f3" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2427f667-2ace-4a81-82ef-6429d2bf388c" />
           </ProactiveCaching>
           <EstimatedSize>61620648</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="178507e7-fd05-4961-ac68-a2b671080e84">
+        <Partition dwd:design-time-name="43f4bc5b-bda5-44ba-9acf-0a53b8e2aa8d">
           <ID>Distr 2024</ID>
           <Name>Distr 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.253333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.576667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:11.016667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="93df27ac-9153-4536-a5ab-ac58e6d44b2d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="159b46ce-624d-4d2e-92f3-4dc7fdad038a">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="14885c0d-1d02-4783-93cc-5d5d89789426">
+          <ProactiveCaching dwd:design-time-name="61cb8e79-3040-4f1e-bf80-b3427cf394ee">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="23080a98-03dc-43fd-898c-d81474af6e45" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="41531d14-a1bb-4f3f-a5e4-8a3bd45cf660" />
           </ProactiveCaching>
           <EstimatedSize>53605395</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="119dd750-7ca5-44f9-b583-fff2d60ad0c0">
+        <Partition dwd:design-time-name="693ffdb4-2071-42fe-abb0-f6d494a6c2b7">
           <ID>Distr New</ID>
           <Name>Distr New</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.286667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.623333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:43:13.906667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7c80fb0c-76fc-4f19-bac6-e4a3c5447332">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c3a27f7b-f485-4636-a36a-0f341a46649e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c41319e3-59a6-4118-b3c6-9f9d259766af">
+          <ProactiveCaching dwd:design-time-name="7030ea8c-1046-4a2b-b663-aea4941b437d">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="133885f2-c1e9-4f11-8a34-5627df9ab02d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="128de198-b155-4558-bba4-f5aa33e49b44" />
           </ProactiveCaching>
           <EstimatedSize>5853861</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="080cdb8d-a489-4a77-a9d7-5e0467de36fb">
+        <Partition dwd:design-time-name="5a1316d6-e054-4c8e-b8c8-46e76a6066df">
           <ID>Distr 2025</ID>
           <Name>Distr 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="70db609d-9236-47c8-a39a-168b9a6a0acf">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d51f7dd0-4d97-4a46-80a9-26ae7412eb4e">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1036,167 +1036,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Продажі 3</ID>
       <Partitions>
-        <Partition dwd:design-time-name="dbcf2ea9-5c67-4dab-a04f-228e0f56417f">
+        <Partition dwd:design-time-name="2d47fda3-5cc9-4e89-9773-db57669ee031">
           <ID>SKU 2020</ID>
           <Name>SKU 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.456667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.886667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:06.483333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="40155823-d43d-404a-be55-c6c81bc4d084">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8018e8fe-b8a9-46ae-b5c8-0658440584b4">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="cfa4d8ed-f5ec-47b2-a706-e273d4766a83">
+          <ProactiveCaching dwd:design-time-name="b336682d-49cb-40b1-8a26-9930930117e1">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="31353a09-e35e-4fc1-a745-063194378d08" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="82afa795-b743-4e9c-b34d-fe6c6d587bc4" />
           </ProactiveCaching>
           <EstimatedSize>90055677</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="91e293c5-85ff-467b-a901-aec082d9d90f">
+        <Partition dwd:design-time-name="3de70cbb-6076-4370-84da-fa30ad52fa2a">
           <ID>SKU 2021</ID>
           <Name>SKU 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.536667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.95Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:00.61Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="f91626d0-6ad6-43c3-95b9-4c9ba5f4854a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="82d21b79-2212-4129-ac81-d28fe16ee87c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="72fe4d67-6984-4ca2-802d-eb4f910102dc">
+          <ProactiveCaching dwd:design-time-name="d9c4354b-039b-4387-80db-a43f509a5722">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2f64463e-757d-4200-ad90-92e9b1a0359b" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="0d851861-bfe4-4f81-86cd-135b96430018" />
           </ProactiveCaching>
           <EstimatedSize>93630630</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="57d73eee-ee7f-40eb-a233-9221b62bc4b4">
+        <Partition dwd:design-time-name="027ed6e1-5860-477d-abb9-8de88be20030">
           <ID>SKU 2022</ID>
           <Name>SKU 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.596667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:13.996667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:20.126667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0746c200-6312-408b-b138-2f38c712f762">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="83fd379b-cdfd-4fbc-9876-654007718115">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a30d9490-5ac6-473b-ad19-50062cc234c6">
+          <ProactiveCaching dwd:design-time-name="d780d30c-33b8-402f-b4df-65901b703bb8">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="74510bcb-f219-4e86-a2f7-369f6f65e773" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="57e44ca1-3bf1-409a-9f22-470f7cc19095" />
           </ProactiveCaching>
           <EstimatedSize>59693769</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="621e1f90-97e6-4f09-bf05-d126098d7adf">
+        <Partition dwd:design-time-name="bd7191f6-a7ad-4603-960d-934ccf4daae0">
           <ID>SKU 2023</ID>
           <Name>SKU 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.706667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.06Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:21.203333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="20dad241-0f6f-4964-80b1-6e7f542a329c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c6621e66-70e2-4884-93a9-6ebef00db104">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="f15031b3-0e5b-482c-af26-bf58732ec3ef">
+          <ProactiveCaching dwd:design-time-name="552c3b4b-72ca-483d-808f-edfcd83fbb96">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8c003862-a400-4a07-855d-1a1aacc2ce67" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="370f32f7-c134-4870-8882-19f22af6d5f2" />
           </ProactiveCaching>
           <EstimatedSize>73650177</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="2a8f9f1c-2994-4d89-a80a-e474111945ae">
+        <Partition dwd:design-time-name="400e6daf-b395-4c74-8bc1-db2607d98f7a">
           <ID>SKU 2024</ID>
           <Name>SKU 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.816667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.153333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:18.94Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ecb5bc3f-73a4-4571-82c0-7f37ca89076d">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c1aaa698-69ea-4a6a-892a-47087e19b266">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="65238517-6957-454b-a6ce-ef9cee2812b0">
+          <ProactiveCaching dwd:design-time-name="1a3e0dbb-c70a-4319-a7b2-8ca7b932cfcd">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="dabec025-b516-4c36-b7de-02fcd8937e05" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b428ed39-6852-4bc0-834f-7682bcd093bf" />
           </ProactiveCaching>
           <EstimatedSize>64752082</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="cd78a982-a8e7-48b1-9e5c-332946cc8ee9">
+        <Partition dwd:design-time-name="1a1f37b4-b04d-4e13-b2ef-5e48eed682ad">
           <ID>SKU New</ID>
           <Name>SKU New</Name>
           <CreatedTimestamp>2024-08-21T08:25:35.88Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.53Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:36:07.803333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="55df7d42-2e06-4507-86a3-a2edcee9940f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="22db9247-4e77-4fb6-a06b-9a3b028985c0">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="6cb52f89-5af8-4134-81ad-4aa4d63cf44a">
+          <ProactiveCaching dwd:design-time-name="9599bcb8-ecef-4163-9b7d-2a99270296fe">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1deeacc8-0065-4b9d-98de-ce64511a8326" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="12dd325d-a09f-43d1-8e17-618194eec763" />
           </ProactiveCaching>
           <EstimatedSize>7283568</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8ae31c0a-9bba-4488-af71-9a33eb73f814">
+        <Partition dwd:design-time-name="4a1f11c1-ec4c-46b2-84bc-e9723707a53b">
           <ID>SKU 2025</ID>
           <Name>SKU 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="34b28b57-3360-4932-af0a-88665e0d7965">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1bcd394a-7c31-4863-aa7c-c060dd978e3a">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1208,167 +1208,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Продажі 2</ID>
       <Partitions>
-        <Partition dwd:design-time-name="4eb007d7-82b9-4968-b149-003d6af7ff3b">
+        <Partition dwd:design-time-name="9109b302-a958-4215-8030-9a9dec620ddc">
           <ID>Freq 2020</ID>
           <Name>Freq 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.083333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.763333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:03.156667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8f58c8b3-c5ac-4e00-835a-fffb5ac45fb5">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ff9cab5a-8624-440d-b9d7-b24fb9b96d8b">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="e28c43fc-bbf2-4176-b6ee-d4f43c6bff5a">
+          <ProactiveCaching dwd:design-time-name="e60335af-b7a0-487e-a063-504175264bf5">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2956ae41-153c-409f-87c6-079cb4453407" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c9c80b34-4d5d-4bd9-99f8-416a3c94bcff" />
           </ProactiveCaching>
           <EstimatedSize>62715649</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7e1dfe3f-fb38-4d37-a2b2-9e8b70767efe">
+        <Partition dwd:design-time-name="7b6c6c67-55f6-4d5b-9fd3-ddc5f84fe991">
           <ID>Freq 2021</ID>
           <Name>Freq 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.13Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.81Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:16.436667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="97d8761f-d7ee-4b89-adc3-7fc79f0fb1c1">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="5409a727-12e2-451a-8833-0f0d00d19886">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="cff610ff-371c-44c9-856a-016cd24606fe">
+          <ProactiveCaching dwd:design-time-name="755b3e71-46e0-4969-87bc-1ea391e64bb8">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1fff2fd6-47c2-4252-977a-6c2b0054314b" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="32bd8ed1-7c1b-4c06-b635-02f043727921" />
           </ProactiveCaching>
           <EstimatedSize>66855245</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="3392e2e0-9af0-49ee-b1dd-c14b7b18bf07">
+        <Partition dwd:design-time-name="8ec93e49-aff0-4c76-b063-d7452857e785">
           <ID>Freq 2022</ID>
           <Name>Freq 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.223333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.856667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:02.703333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="862f8a35-96b7-4380-b44c-8e34d943e8a4">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f5fcd772-dacd-472c-b9ba-76058eea8156">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c389dea6-18a6-43cc-b6e0-ccdb98928031">
+          <ProactiveCaching dwd:design-time-name="a0bf381e-e3ad-4d98-8563-96aaf48960ea">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="269c2393-5899-46ee-98a1-e184a9d016fa" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5a83bb4d-3832-4773-9509-71693a03d31e" />
           </ProactiveCaching>
           <EstimatedSize>42996134</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="f40b4f00-721a-4ecd-8621-af49bf64629f">
+        <Partition dwd:design-time-name="d363ffa7-b28a-4da2-9925-6b8cab12167b">
           <ID>Freq 2023</ID>
           <Name>Freq 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.3Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.92Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:21.75Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="209ecaa6-64ee-4367-828b-aaea1b2fc942">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9b4d623f-521f-43e8-9c00-a62faf52a83f">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="ff209634-55b7-4656-a807-a4de906c82b7">
+          <ProactiveCaching dwd:design-time-name="80089c2b-ea71-45d8-9566-a1b53e31aae3">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="800af696-d849-4cd6-b742-d8ed8cf9ce23" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3e8dbeb0-4e81-4c6d-a550-f8f9609f405c" />
           </ProactiveCaching>
           <EstimatedSize>54277684</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="80db29c3-b631-4ba3-a1be-ef2f6f5b30c4">
+        <Partition dwd:design-time-name="5961c313-a6cb-4a08-a0cc-15c7f6d97ba3">
           <ID>Freq 2024</ID>
           <Name>Freq 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.38Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:14.966667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:04.173333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="bba2e7b6-a6ae-444f-be19-e963b3dbaa38">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="38f958cb-c336-497c-9583-45fbca95ee49">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d442fdda-9113-41ed-96f4-60e195c801f5">
+          <ProactiveCaching dwd:design-time-name="bfceffcb-6fb3-41fa-b014-9b1366dfbf19">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b2551358-159f-4c0e-95a5-bd1e40b2287a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1b1c1f93-83ad-4604-888d-eb4daf29f21d" />
           </ProactiveCaching>
           <EstimatedSize>47488546</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d0c5901b-fe5f-4cb1-8738-6d207f0cd85b">
+        <Partition dwd:design-time-name="871949de-a9c4-4661-9c93-561f59a387f8">
           <ID>Freq New</ID>
           <Name>Freq New</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.503333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.013333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:39:26.51Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="5a8ace44-2402-442a-8676-b354a044c997">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="aa1ff93d-1d31-4ea0-8073-fe7f6550e5e8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="883cdebc-0cc5-41cc-b4b5-967fecdb2f4d">
+          <ProactiveCaching dwd:design-time-name="dc5182c3-4344-446f-b018-97855d66ae2b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c28509db-0a94-42aa-8793-37df5ec7a7ac" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b5958f93-63b3-4932-a82b-a6bbc049f64d" />
           </ProactiveCaching>
           <EstimatedSize>6281120</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="6d6dd0f5-c341-4a75-b531-c9aaae24350f">
+        <Partition dwd:design-time-name="279956fd-1ab9-48a2-9f0a-94d9219a04d3">
           <ID>Freq 2025</ID>
           <Name>Freq 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="de6b57f0-2878-4bb7-a889-32773c4bf747">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="d45c09b4-d21c-4134-819d-d708d369f961">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1380,167 +1380,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Продажі 4</ID>
       <Partitions>
-        <Partition dwd:design-time-name="14a92e03-1979-4d5c-acb3-b5ef6947f923">
+        <Partition dwd:design-time-name="53ab2b06-2385-4351-b5cc-76ec9fc5ba51">
           <ID>Intens 2020</ID>
           <Name>Intens 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.693333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.263333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:15.016667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="fd58768f-6625-42a9-8640-19c0525c9c8a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="7e733b8b-697c-4c01-ab1c-d427009af03a">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c58100e6-8d1f-4f02-8c3b-038f47756c89">
+          <ProactiveCaching dwd:design-time-name="f2e44b41-0186-41df-abf7-7433e1aea020">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a13ca0e1-ff5c-4aa5-8592-5985cdad11a4" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f3ade202-90bc-4cf2-9b9e-96d03a12463f" />
           </ProactiveCaching>
           <EstimatedSize>77718581</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7249af84-600a-47d5-a0d2-ad3e45f66372">
+        <Partition dwd:design-time-name="9b42a136-51ee-4179-9f07-a2abae9c1dcc">
           <ID>Intens 2021</ID>
           <Name>Intens 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.77Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.326667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:30.173333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="cf35638d-9175-4cbd-a457-8cd30116f227">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9540f687-e505-48fb-be24-87bf5d994793">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4771a4fe-3f16-47c1-8949-1ab01fddcfe9">
+          <ProactiveCaching dwd:design-time-name="d75fb96a-7829-4517-b938-1e087c9f41f3">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e3253865-90ee-4cb9-88c7-eb2745c186d9" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f38c2e84-1c53-4e3b-8222-779af44277a1" />
           </ProactiveCaching>
           <EstimatedSize>81533970</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="d2eda35f-9b72-4382-b135-490c86294dcf">
+        <Partition dwd:design-time-name="ca51c685-84e0-48c3-ae3a-94ad838d05d5">
           <ID>Intens 2022</ID>
           <Name>Intens 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.863333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.373333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:01.483333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="558fde9b-96b6-49b4-8284-ce7aeb164a26">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8666e08a-cb02-4248-a735-5d845ec85676">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="518d50b7-524f-4034-baeb-3d655ca96331">
+          <ProactiveCaching dwd:design-time-name="d66e14ea-9439-476d-bef6-34fc63a785c2">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3dbe6fbd-848b-4359-8f19-697eadc33c46" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="352bff2d-60cb-449b-a316-ce451160838f" />
           </ProactiveCaching>
           <EstimatedSize>54790480</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="cfaa2625-a527-4bcb-aa4e-7b6216d8f4bb">
+        <Partition dwd:design-time-name="3aed152b-6528-4737-9c10-7cb375602635">
           <ID>Intens 2023</ID>
           <Name>Intens 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:36.973333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.466667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:05.516667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="e43b0cc9-eece-484e-bdd8-5e26bed44e76">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f4c4c69c-ccbd-42a5-a303-547399500ef6">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="931b6d1b-fcda-4878-ab1c-58dff3e397d9">
+          <ProactiveCaching dwd:design-time-name="62f1cdca-ca59-4f06-bb7b-8a68dcc8c942">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cd9381a2-055d-46f7-a498-46a1f398fee8" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="40540e3b-33fa-4019-8012-a0a80f9fbca0" />
           </ProactiveCaching>
           <EstimatedSize>67944262</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="5c45116b-279c-4893-9e30-393b9a77fe72">
+        <Partition dwd:design-time-name="9b7a3c73-1c90-4dd3-9c0a-14639d1edba6">
           <ID>Intens 2024</ID>
           <Name>Intens 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.066667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.496667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:08.186667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="75a03047-c248-49b9-846e-eb64ab472f04">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="80655310-0803-46b9-86df-f86fb70aaf3c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a79b7944-2c83-4bbb-95ad-1f378169955c">
+          <ProactiveCaching dwd:design-time-name="110fcb62-6c6d-4761-9870-deb0a5139142">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="cdeaf1fa-707c-4b1a-a963-4c790bce8f92" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b97e6e47-229d-470c-91e7-be8471abc4b5" />
           </ProactiveCaching>
           <EstimatedSize>58901660</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="e5fb0579-2d70-4951-8b63-54c43b14b18f">
+        <Partition dwd:design-time-name="bde6b3a1-f891-4658-98e9-4f67fdb1884f">
           <ID>Intens New</ID>
           <Name>Intens New</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.13Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.543333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:43:35.876667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="1bc1efd6-b3a6-4d9d-be30-fee761c3554e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9a2facf3-5782-4b52-8b16-3940f96f80da">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="62d4e205-6fa5-4f74-b7b6-5fa522787d04">
+          <ProactiveCaching dwd:design-time-name="a6fe04f8-40ed-407c-9da5-d6b187ac3836">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9a43f25d-eec7-4f3a-a915-1587561daa00" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="302533b0-5735-440a-bd7d-b2ada3e13ac4" />
           </ProactiveCaching>
           <EstimatedSize>7372666</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="265173a9-9141-46e8-a7b5-e939c5537c5b">
+        <Partition dwd:design-time-name="c4bdf892-562c-4d3d-acf7-95efd7e9d27d">
           <ID>Intens 2025</ID>
           <Name>Intens 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="1d5492c0-7151-4140-8c82-57b9349fdaa7">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="55e9d8e3-cae4-4123-bd45-e1607553e524">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1552,167 +1552,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Продажі 5</ID>
       <Partitions>
-        <Partition dwd:design-time-name="a6ad0d8c-bf45-4821-b085-471382301207">
+        <Partition dwd:design-time-name="de4c314e-c60e-41df-828c-fba969eb79eb">
           <ID>TT SKU 2020</ID>
           <Name>TT SKU 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.3Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.683333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:27.893333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ad997e7a-f97f-4a44-a04d-82be10c51a40">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3b5fece0-5758-433b-b203-506c9375b8ae">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="30ddf8cf-0c45-4bd3-8e39-aa581fbd0246">
+          <ProactiveCaching dwd:design-time-name="a6b6539a-2b40-491b-9c33-8e5c1a478ba8">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9b992db0-2579-4946-9925-98723e4bbe24" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1b1c8d6a-ab02-4115-97cb-ec8758ca0c0a" />
           </ProactiveCaching>
           <EstimatedSize>240540893</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="5ccfffca-ca79-4627-9853-5bb773d55bac">
+        <Partition dwd:design-time-name="cf3f915e-cfc4-44fe-8db7-21bb0d6ff2a5">
           <ID>TT SKU 2021</ID>
           <Name>TT SKU 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.363333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.716667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:19.33Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9540f74b-49c9-4161-96e0-98d56a7e1432">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8aba0368-c36a-45ab-b8d8-ada10499f70c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="eb5f0f02-a0a7-4799-a85d-f275bd07b616">
+          <ProactiveCaching dwd:design-time-name="3a8bd08b-fa73-4a77-8855-d251d95ec5dd">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5493d95f-3b95-4008-9984-08463da17616" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ba18acf1-08b2-49d5-8b7f-fac47f8471bb" />
           </ProactiveCaching>
           <EstimatedSize>252431949</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="26e91e36-c29a-42ee-8d33-27260c7eefd9">
+        <Partition dwd:design-time-name="2ffbb7ee-5f48-48b5-8d35-889fd0888788">
           <ID>TT SKU 2022</ID>
           <Name>TT SKU 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.456667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.776667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:04.61Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="15ba5e70-3b09-41a3-b212-147e5e00bda9">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="02e5a376-07b8-4060-89b6-6ce4dd63375d">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2daca56f-a740-42ee-9b02-fcbfe698d515">
+          <ProactiveCaching dwd:design-time-name="5df6c5ff-04f3-4bcd-8b2a-98959d3e5443">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c701a284-9049-4ede-8d33-5b996e876cbc" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="adcfa7b5-0212-40e6-a73e-473357453cae" />
           </ProactiveCaching>
           <EstimatedSize>168533444</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="361e83cb-7926-4c95-96f6-c3db40352868">
+        <Partition dwd:design-time-name="1d7457e6-96e2-4aae-bf40-55ad01b515fe">
           <ID>TT SKU 2023</ID>
           <Name>TT SKU 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.55Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.823333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:09.483333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="91d18731-39b1-4d24-ac6d-bdfd08a9b6dc">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="69d58b47-0c02-4005-8099-d4dd723ecf22">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="858a4398-6d5e-484f-b0d1-59cb45202850">
+          <ProactiveCaching dwd:design-time-name="fa550a7e-86c1-4563-b006-fe145ebc1896">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b000cdeb-b429-4aaa-a0ac-eb296acecd0f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="392d671d-2f87-4d20-9d8a-fcfeb6f13690" />
           </ProactiveCaching>
           <EstimatedSize>204424984</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="9d5cef50-018e-4bc5-ab7f-3f1794575863">
+        <Partition dwd:design-time-name="bedd107c-d8d3-4c75-9838-83b42da569d5">
           <ID>TT SKU 2024</ID>
           <Name>TT SKU 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.693333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.903333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:10.173333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c6f2da55-26f4-4bc8-9c70-f4376fc76385">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="b07ae5f8-aaf1-449f-a536-b4483c7bbde7">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c437292d-8706-4f50-991f-71b662eee87d">
+          <ProactiveCaching dwd:design-time-name="b353c404-dcc8-4933-8160-b7dd9029baa5">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="61b58369-9398-4e7c-b243-2013d5860986" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4274bae8-bf25-4b13-b0c3-88b147aa50a2" />
           </ProactiveCaching>
           <EstimatedSize>176320774</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="68d73013-162b-4ae9-bc13-b0f01c23bc17">
+        <Partition dwd:design-time-name="0128f826-5c43-4dad-b8ed-8ab5edf5a5cb">
           <ID>TT SKU New</ID>
           <Name>TT SKU New</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.77Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:15.95Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:38:52.683333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="900b8deb-075e-4a38-84b3-35bbd848db0a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="68f05bf9-8686-4f49-bd19-fd9890ee3872">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="36a41a2a-9592-4354-9fb5-b883b51ae468">
+          <ProactiveCaching dwd:design-time-name="b4529963-86e2-4d6e-b13d-52923e84f039">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f67c05d7-d98a-490c-8f11-1f46b9c53ed1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4a4afb95-314c-4c79-a1ba-2b10ccbcf2aa" />
           </ProactiveCaching>
           <EstimatedSize>21906784</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="3744486a-c954-4929-9297-f3715a47eba6">
+        <Partition dwd:design-time-name="e1be060c-7ee5-4ecf-899a-a03da14f24b8">
           <ID>TT SKU 2025</ID>
           <Name>TT SKU 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="fd54c8d0-7b2f-4cff-a797-b2523c206028">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="94ec2716-1556-4d51-be21-376a1caaa665">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1724,167 +1724,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Продажі 6</ID>
       <Partitions>
-        <Partition dwd:design-time-name="d2ca8812-5cf3-4fb4-9794-f002bc62d70e">
+        <Partition dwd:design-time-name="67a3e8d5-ba6a-4105-80de-d8abd45a6d1c">
           <ID>Sales be Days TT 2020</ID>
           <Name>Sales by Days TT 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:37.943333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.106667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:23.33Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="3da9b247-ec24-4b95-8c7e-716674ad4420">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="627ed222-01de-4235-9fa8-1e95ddb651e8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2e100fed-a836-4e59-bf83-7b779ee808aa">
+          <ProactiveCaching dwd:design-time-name="48cd9941-408c-4216-b6d1-16c955f367fa">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2ea78f8f-eaee-4bdd-8f2d-94aae20334b6" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d2a2a875-5eb6-4940-83bd-42dc3febd7d0" />
           </ProactiveCaching>
           <EstimatedSize>82042917</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="7a1e341f-9969-48ed-82b5-8fb5521fafe3">
+        <Partition dwd:design-time-name="25c98f8c-ca45-4e17-bc05-60f77c89644b">
           <ID>Sales by Days TT 2021</ID>
           <Name>Sales by Days TT 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.003333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.17Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:03.656667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0b7603d0-88d1-47d0-86ba-30ec52910702">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="97e047a3-8357-4a72-9711-0f8142893cec">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="027b55ee-7405-4700-9c25-2298a33a5007">
+          <ProactiveCaching dwd:design-time-name="046846e1-c76a-444a-9c58-8898c74aef85">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4496b7e9-6f62-4212-8f92-9846b0fcede5" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="962c8a08-6bfd-42fb-8d90-b807d4440bec" />
           </ProactiveCaching>
           <EstimatedSize>87039752</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ee6ebc26-28a7-4a3d-a7e9-076562ba92ed">
+        <Partition dwd:design-time-name="e9bb4987-f7e8-4c87-a67a-d164e44eb3a8">
           <ID>Sales by Days TT 2022</ID>
           <Name>Sales by Days TT 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.05Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.263333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:17.313333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="b93c8fe8-1e9a-4c32-94aa-c276748b755f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e8f6d665-6018-481d-aad0-25123112b458">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="1d887c05-85f5-45ea-9d05-f165173355c6">
+          <ProactiveCaching dwd:design-time-name="2b2a3af1-89c3-4290-81d4-f21f71c5b8ed">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d3623608-8132-49e5-9247-2c5e66e76df5" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3d5abc7d-2aca-4663-99c5-5ad68cdae5d9" />
           </ProactiveCaching>
           <EstimatedSize>56519054</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="f5096ba8-8d06-4a51-97dc-e9deda981925">
+        <Partition dwd:design-time-name="21f10b99-add4-432f-9d30-7bf1e60a1f5b">
           <ID>Sales by Days TT 2023</ID>
           <Name>Sales by Days TT 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.096667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.326667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:13.233333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="b432f331-1412-4a0a-81b4-c190383b52ea">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ce43533a-7336-4878-a5bb-063fd2b0c74d">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="0a9358d7-abbe-46b9-bdcc-f21bee5989af">
+          <ProactiveCaching dwd:design-time-name="b907851f-5788-444f-babb-1f74541a5222">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6a616c72-ec2b-4bfe-aea2-c84f3601b6b7" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a90f1a5d-76af-4586-ba96-523728b0d25f" />
           </ProactiveCaching>
           <EstimatedSize>72055690</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="05aa808e-0667-40a3-8433-a7b9e8946830">
+        <Partition dwd:design-time-name="d0993316-59b3-4d3b-8007-fb464af9ba47">
           <ID>Sales by Days TT 2024</ID>
           <Name>Sales by Days TT 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.146667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.373333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:30.626667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="37038360-1f49-432a-98c1-0c0d0362e4d3">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="16072625-ba50-437a-b97f-84134477c8b8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="625cf164-da4c-4ea5-bb8c-000a245e7fef">
+          <ProactiveCaching dwd:design-time-name="44a23356-504a-4bde-b491-664c7bf5543e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a2e8f441-92ed-482c-a980-5c434091bed1" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fe630662-8926-461f-aee5-04b46b7c01ab" />
           </ProactiveCaching>
           <EstimatedSize>62912826</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="1347e1c3-be50-4b60-8d90-af93e1bfdadd">
+        <Partition dwd:design-time-name="4c76f8d8-2785-45fa-8481-bc6f1fae7d26">
           <ID>Sales by Days TT New</ID>
           <Name>Sales by Days TT New</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.206667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.513333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:43:57.686667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9c87cc4a-027b-42e5-b569-2ee43d1032c5">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f777d2d3-c0c7-46a7-bee3-87223ac4d8df">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="e45d9313-bc06-4a91-80be-76f59269db5c">
+          <ProactiveCaching dwd:design-time-name="2b190b46-39c1-4c04-8e61-b25b5f6232e6">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c87cd214-a323-4b19-b5fb-3fcaa002b4ba" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b450544a-bbf8-4d31-8f0f-20bd3934a9ad" />
           </ProactiveCaching>
           <EstimatedSize>7826809</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="27d5656a-1424-481a-a238-0cc12215812f">
+        <Partition dwd:design-time-name="5ea925e0-8387-4c09-b018-f40b114f3e62">
           <ID>Sales by Days TT 2025</ID>
           <Name>Sales by Days TT 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="96e44318-a999-45ed-aa1a-db2c6bca45a8">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8d627405-6c2a-44c3-a617-f5bf8d84d2d9">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_SalesTest AS s WITH (NOLOCK)
+FROM fact.qry_Sales AS s WITH (NOLOCK)
 WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -1896,167 +1896,167 @@ WHERE s.ShipAmount &gt; 0.0 AND  s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231
     <MeasureGroup>
       <ID>Returns Quality Products</ID>
       <Partitions>
-        <Partition dwd:design-time-name="726cf71b-fb17-4707-8e6e-ec27c379957b">
+        <Partition dwd:design-time-name="c91196f9-4a41-41b5-b729-9dfd10ce9ec9">
           <ID>Returns QP 2020</ID>
           <Name>Returns QP 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.443333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.763333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:15.25Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="65c3abf6-9ce5-4021-982b-4503061a8141">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3869754c-be44-4743-9a09-c671526ed568">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c6a45276-14d8-4003-9745-64b40a620952">
+          <ProactiveCaching dwd:design-time-name="953bb869-2782-411a-9404-4aa5f81c5cf3">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="805d475e-e07c-4002-a951-930b4a79eef8" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b86eb5ea-a438-436a-8d15-7ddcfda18851" />
           </ProactiveCaching>
           <EstimatedSize>477</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="c99462a0-3e72-4ccd-8fb2-ecedda4465c1">
+        <Partition dwd:design-time-name="75a5ee0c-c508-4d52-903c-8aafcaa80125">
           <ID>Returns QP 2021</ID>
           <Name>Returns QP 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.49Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.81Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:06.846667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="d0696c3c-00fc-4f23-a223-5de9564a6bcf">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="444096f0-ade9-4848-a55a-736cdd28d322">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4ea7c275-a90d-433d-937b-1516c4cf9048">
+          <ProactiveCaching dwd:design-time-name="9f3b3d67-ff70-4b8c-99ab-bf973bdb2810">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b0eb4807-9a2a-49a3-8d48-b093fd275635" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="34c91dd8-e3cd-4db3-a0fd-afff031254cf" />
           </ProactiveCaching>
           <EstimatedSize>400</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="1a31c9ba-7523-491b-a3d2-95fa11ef9cca">
+        <Partition dwd:design-time-name="e6a4df1b-12f4-4120-b3bd-508ed920a3c7">
           <ID>Returns QP 2022</ID>
           <Name>Returns QP 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.613333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.903333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:25.61Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="02b62e0c-2c34-4c21-8d43-432811877f50">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="06094d02-df75-4490-83d0-841a798fe568">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="89157fab-1ace-4f0c-9d4d-bec73ac61bdb">
+          <ProactiveCaching dwd:design-time-name="5d13ac6a-00b9-43fb-a5bf-ab18cf209418">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fb6a3ea1-1ae3-4d7a-8677-9c2f2a6cef08" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4782370c-4ce7-4f63-8c89-02e7b2b1cf3f" />
           </ProactiveCaching>
           <EstimatedSize>156</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="9a7054d1-2001-45ef-849d-caa196aad4fd">
+        <Partition dwd:design-time-name="9bfb74fe-22fa-4b46-b5b9-6f74c30ee057">
           <ID>Returns QP 2023</ID>
           <Name>Returns QP 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.66Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.95Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:15.596667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="0541630b-a87b-44ba-9040-262f539d1278">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="44d97596-416c-4d26-b4c7-3e3efe58c078">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="5c4c0596-bcae-422b-9128-af7560827d10">
+          <ProactiveCaching dwd:design-time-name="329ee9c1-5f08-4dae-841b-4552754b88d7">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b992bcc7-6f07-4792-92f9-fdf3f2b0a032" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="aecf15f3-a68a-45ea-96f0-db4aa205011e" />
           </ProactiveCaching>
           <EstimatedSize>289442</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="f42cfb77-b9dd-4d17-a904-755a75d2ff7e">
+        <Partition dwd:design-time-name="10e6db45-c81d-44bc-bf07-585cd4535468">
           <ID>Returns QP 2024</ID>
           <Name>Returns QP 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.706667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:16.996667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:20.766667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="4f0d2e2a-9905-4d11-924c-5acd38fb81ff">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8346dd9f-cccf-4cbf-8c6a-225e0c741ae2">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="30eae45a-1f70-4dbf-82a0-b7ccd54d1e42">
+          <ProactiveCaching dwd:design-time-name="9ed5e0c1-a073-4c22-9924-e04780617718">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f2554f3e-1fb8-48a4-adff-bc7d9de79ba2" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="201ea885-3979-4873-aaee-a530a445915b" />
           </ProactiveCaching>
           <EstimatedSize>3114</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="19c580f2-b024-4e0f-8f6e-e81fa32d788d">
+        <Partition dwd:design-time-name="ef0f35c3-994e-4ff9-aeea-96cc91b7dd15">
           <ID>Returns QP New</ID>
           <Name>Returns QP New</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.753333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.09Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:38:23.056667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9f3658f0-b570-49aa-8464-0e4080f0eb5a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9658d8ec-46ad-4760-984b-07cf6c3581a8">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="83c519cf-9f6f-4c45-8b82-1e0800de4e1a">
+          <ProactiveCaching dwd:design-time-name="57939105-2169-45f6-994c-1f9325b32249">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8450e9f7-1a79-40ce-b8b9-8d613b0aff0b" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3d71ac67-a3e6-4f09-b9a8-694fc778d4a3" />
           </ProactiveCaching>
           <EstimatedSize>1240</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="1488cec5-be8c-4b43-b2ee-5b89813d71ed">
+        <Partition dwd:design-time-name="ba0a7455-d1b8-4a33-ad9c-909003b4df1e">
           <ID>Returns QP 2025</ID>
           <Name>Returns QP 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="31d3743d-a9cf-4c02-bbfd-9ce64c88965c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3b021136-7354-4bcf-8f97-b537a4169b1b">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_ReturnsQualityProductsTest AS r WITH (NOLOCK)
+FROM fact.qry_ReturnsQualityProducts AS r WITH (NOLOCK)
 WHERE r.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -2068,167 +2068,167 @@ WHERE r.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Primary Orders</ID>
       <Partitions>
-        <Partition dwd:design-time-name="aacd51bc-dbb1-4927-86af-99e6c2aebc46">
+        <Partition dwd:design-time-name="5d48ea74-3890-4128-883a-62398bf04c95">
           <ID>PO 2020</ID>
           <Name>PO 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:38.99Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.28Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:09.813333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="d26b437b-f60f-46f5-b22e-797edc2df6a1">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="900155cd-ccda-4dba-a36c-bd9857bcca98">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="dbd3e588-cbed-4a32-82d4-fca2d395c6ef">
+          <ProactiveCaching dwd:design-time-name="bb5c6930-9da2-4429-8179-a445403682c5">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6fa12ed6-5c44-4064-bd35-9cdda9b02d86" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="14b7dfdf-c57b-4f5c-b292-79775417ed4a" />
           </ProactiveCaching>
           <EstimatedSize>107015330</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="ffa8d9d6-0160-4ce7-8bba-a7905140831b">
+        <Partition dwd:design-time-name="258f9412-37c2-4a93-bd3e-80e135380920">
           <ID>PO 2021</ID>
           <Name>PO 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.206667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.373333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:22.97Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="ce90ec38-91e8-4ed2-b254-f9e4a4537ea3">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="36838ca6-8c57-4eb1-b1c3-36830aa374e7">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4f05119e-90c8-4d66-abca-304205fca495">
+          <ProactiveCaching dwd:design-time-name="0cc774bf-8be4-471c-b42a-af70561cc768">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="54c015df-44ad-4afb-82fe-afe544ca4d9c" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fd11ffd6-3065-41fd-b3e4-435ca4400e8a" />
           </ProactiveCaching>
           <EstimatedSize>111838904</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="cd895374-9c49-4d90-9613-993474178b03">
+        <Partition dwd:design-time-name="571c95a7-4b79-4879-b33b-0cad72e7dea1">
           <ID>PO 2022</ID>
           <Name>PO 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.27Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.433333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:25.313333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="825462af-9e99-4db4-9380-8adf7ca711f8">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e34a2f7d-d7c0-471e-aee7-12714ba5d495">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="543a905b-9930-4cb5-b372-2952a465281c">
+          <ProactiveCaching dwd:design-time-name="9bdd530d-bb9e-46a6-9033-c2838a6063b9">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="59022b59-d419-4d62-9a6c-388167b09e30" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="aab8c751-7406-4d01-a4ac-a74877ed6570" />
           </ProactiveCaching>
           <EstimatedSize>75772246</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="b5d5e04e-9c02-4635-84fb-334900481fab">
+        <Partition dwd:design-time-name="0627f2f6-aac3-43af-94ff-eecc7c540828">
           <ID>PO 2023</ID>
           <Name>PO 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.38Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.483333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:09.173333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="a593fbea-a1e6-4315-819c-86f1e7f00625">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="c482fc26-9b7a-44c6-83ac-3875202e9afe">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="94918231-15fd-4ad1-9153-f861ea2304d4">
+          <ProactiveCaching dwd:design-time-name="8aeff530-9308-47f5-a830-83569e004b31">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b4a55f5f-56bb-429e-a561-1e81224e8ff2" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9cc99cfb-99fc-4c89-9538-16c84c3248b1" />
           </ProactiveCaching>
           <EstimatedSize>90581533</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="560a7b7f-060d-44f0-a21c-ef55b4c51aae">
+        <Partition dwd:design-time-name="51a527a1-a36b-4d8b-aab0-ff6c75723257">
           <ID>PO 2024</ID>
           <Name>PO 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.426667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.53Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:15.986667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="7c8691fe-1c98-4975-a952-719cc27cc5e6">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e6d7e5dc-71a0-49ec-a2e5-41d245552b08">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9e43955d-e910-4f5a-8061-7d6ea8f429f6">
+          <ProactiveCaching dwd:design-time-name="b97c1dba-1436-462f-8519-3e977b969c3e">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="72511ee2-9a16-494b-bdda-0bb55ea085c0" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8a852e96-0e9b-460f-bf72-fb6ba6f0ce80" />
           </ProactiveCaching>
           <EstimatedSize>79455035</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="12cbcedc-50ae-40b4-855e-85ce9a3334f0">
+        <Partition dwd:design-time-name="06b18376-f069-4ba3-b9d8-f68e27493a06">
           <ID>PO New</ID>
           <Name>PO New</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.536667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.573333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:41:24.043333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="a5765244-ab63-47ba-a122-11ce331f659b">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="0da66cf1-ead3-4bea-a452-181d95b73f3c">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="a1143732-958e-4667-9266-60f74e88802e">
+          <ProactiveCaching dwd:design-time-name="9ce179c7-436c-4ef8-b74e-6dcb78840544">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="86af5372-daff-4cd6-a070-0af8c7f8e80c" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="bb3156b6-ffba-47ca-ab0d-d1d3980b73f3" />
           </ProactiveCaching>
           <EstimatedSize>7405385</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="e4e48c62-9930-40d4-abcd-035a45590ed8">
+        <Partition dwd:design-time-name="52691fb3-da35-4b71-8087-d5236e008d93">
           <ID>PO 2025</ID>
           <Name>PO 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="4507f984-2c31-46f8-9210-24533c6b3a6a">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="e39bdb1b-62dc-4ebb-8bbb-8c69f25f68d5">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_PrimaryOrdersTest AS s WITH (NOLOCK)
+FROM fact.qry_PrimaryOrders AS s WITH (NOLOCK)
 WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -2240,167 +2240,167 @@ WHERE s.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Orders</ID>
       <Partitions>
-        <Partition dwd:design-time-name="5d4d8898-a7ed-4187-92c0-ceee463bc300">
+        <Partition dwd:design-time-name="d3a6ffb7-d0c1-479b-aedb-97b4a3aa1b29">
           <ID>O 2020</ID>
           <Name>O 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.74Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.81Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:16.906667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="c7e31083-b0e8-406a-b089-7a4910abc95f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="7cd348fd-dd5c-4297-8feb-ce5ad09d4001">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="2b1c89a7-e84b-4d92-9502-5065dffbcd87">
+          <ProactiveCaching dwd:design-time-name="51f0cd56-405c-482a-84b3-77db274013ed">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="334fcbc6-4391-4d2d-b277-31502a48de2e" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="67b74e20-6faf-476c-b8f3-9ac87a08d869" />
           </ProactiveCaching>
           <EstimatedSize>137797460</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="32b449b9-5205-480f-a21b-c89654ce0dd7">
+        <Partition dwd:design-time-name="7b7e99fd-1f95-4180-9ccc-982e5f2da046">
           <ID>O 2021</ID>
           <Name>O 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.833333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.92Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:29.83Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="2a4aae50-03c4-4371-b041-765609a30b9e">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="08ed207f-9e8c-413d-ab0c-d5c8ce57a5d6">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="cd51b180-3f77-48db-9363-0e5fe092421a">
+          <ProactiveCaching dwd:design-time-name="c4c46e61-c6f3-4d4a-a1e2-f5147ed0a3eb">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7d242739-05d2-4d55-9559-b4b91601e936" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7704b0a5-1612-45aa-a811-bc40d2f5b8da" />
           </ProactiveCaching>
           <EstimatedSize>144660429</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="2462d06f-3cd3-479c-b92b-a7463732795d">
+        <Partition dwd:design-time-name="d4443347-2594-415a-83e3-1f1745f2c40c">
           <ID>O 2022</ID>
           <Name>O 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:39.926667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:17.983333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:24.58Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="2ca69793-0cf1-4851-887a-bf6b7817f577">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="de896486-dbf9-410a-a84b-e415816d3071">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9c9d540a-8c36-4f6e-a5c1-6b3fe9329883">
+          <ProactiveCaching dwd:design-time-name="feaa1b09-93da-4b81-86b8-eb25466b0bbe">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8fae79b4-a30e-4773-a318-01f3379e9f0a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="18ee0370-977e-4e20-bdb4-78876c206abf" />
           </ProactiveCaching>
           <EstimatedSize>102747808</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="03581d1c-bff4-442e-a32b-686f7ce0abef">
+        <Partition dwd:design-time-name="ec733f7b-4919-49de-9453-2d770af69d48">
           <ID>O 2023</ID>
           <Name>O 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.036667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.043333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:12.343333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="872aad65-bf39-4f75-a71c-a99f29bdb819">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cd042dcc-775d-46bc-9c77-ff8db2c6b676">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="89fdfa8b-83b9-4967-9747-1f64a6fdae82">
+          <ProactiveCaching dwd:design-time-name="09bc0621-37b5-471f-97df-ee5c18d3e360">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fe22fce1-807a-4644-a1c3-d9801ca726e5" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="3096972b-10e4-4737-ab86-6c6b11e5fc7b" />
           </ProactiveCaching>
           <EstimatedSize>121963016</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="4aa92cab-d621-474a-b276-8b0f6eb01496">
+        <Partition dwd:design-time-name="eeff330f-81f1-4972-bc67-c61c37b0a29c">
           <ID>O 2024</ID>
           <Name>O 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.16Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.09Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:07.656667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8a97321d-ec48-430e-8f4c-3b90bb095116">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="cdd8d837-7f6b-4e83-a3a4-bcf885ca53d2">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="ffcc072f-4f67-43e4-8ab1-de56e8fbb4bf">
+          <ProactiveCaching dwd:design-time-name="611bb541-4917-4590-bb66-bad5fda9fa32">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e8c1b5e0-f983-405f-a2d8-1ed73db4f430" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8c94d536-023d-4bcb-897a-c5a25fb55af7" />
           </ProactiveCaching>
           <EstimatedSize>108916044</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="35fcdc6f-bce0-430d-bf90-7f0202b23a2b">
+        <Partition dwd:design-time-name="45085159-4d6d-4128-9e5a-5781c4634b91">
           <ID>O New</ID>
           <Name>O New</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.253333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.136667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:42:39.64Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8108c852-9f69-4762-9517-37e0f195aeb9">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="805b50d4-4792-48fd-8fbf-563809eccab6">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d5695f71-d707-4a4b-9dc8-ada01b4e250d">
+          <ProactiveCaching dwd:design-time-name="bb0d52f1-554c-4ca9-b39a-1ee8633e6124">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f8b672b6-2620-477b-a572-9b304ec0762a" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="72e1cdc9-da24-4e61-a694-91aa6a757fb2" />
           </ProactiveCaching>
           <EstimatedSize>14421606</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="dd1a0fb0-c339-4ebe-88de-c6422628914e">
+        <Partition dwd:design-time-name="f8d1b422-2c84-45f4-992b-ddf3ee8f01ae">
           <ID>O 2025</ID>
           <Name>O 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="03508fd0-397e-47a8-bd46-72f885928a83">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9b210e48-e703-42a3-b65e-93c09f954a93">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_OrdersTest AS o WITH (NOLOCK)
+FROM fact.qry_Orders AS o WITH (NOLOCK)
 WHERE o.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
@@ -2412,26 +2412,26 @@ WHERE o.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Current Assort Matrix</ID>
       <Partitions>
-        <Partition dwd:design-time-name="932aa050-bb18-493f-ac6b-9357b269c75e">
+        <Partition dwd:design-time-name="4acb3350-bff3-4568-aa2d-dbd3228878ac">
           <ID>Current Assort Matrix</ID>
           <Name>Current Assort Matrix</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.456667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.326667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:42:03.873333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7d26e9aa-376c-4e5f-9ebb-59bab3bf9d06">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7bb0cb4c-35f6-4ae7-8372-40dcc726a592">
             <DataSourceViewID>CAKE WH</DataSourceViewID>
             <TableID>fact_qry_CurrentAssortMatrix</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="241015ed-67d4-4f1c-adce-045b30735180">
+          <ProactiveCaching dwd:design-time-name="cdcaba0f-e01d-4710-aaf5-10de8d3dd48f">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="26ebbe4b-45a7-4a69-a25d-77b3a193e02f" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2ba4c559-0887-4b0c-89ba-cb5b6bf37d3c" />
           </ProactiveCaching>
           <EstimatedSize>286596</EstimatedSize>
         </Partition>
@@ -2440,167 +2440,167 @@ WHERE o.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
     <MeasureGroup>
       <ID>Losses</ID>
       <Partitions>
-        <Partition dwd:design-time-name="bc992166-3206-4835-9efd-724ed462d973">
+        <Partition dwd:design-time-name="dbab33ff-5a74-4232-9597-901818abe05a">
           <ID>Losses 2020</ID>
           <Name>Losses 2020</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.676667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.606667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:27.563333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="a90f0df3-c3b1-4668-9272-1b0da76ba143">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="6e77ba91-8109-498f-85f6-b220bb4e2d6d">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20200101 AND 20201231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="0e45b12f-92fa-45a1-9598-3e218a060fcb">
+          <ProactiveCaching dwd:design-time-name="ab07f78a-e6fb-4056-9552-3355ebad2d99">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="36219092-ceab-4c98-8f7a-8d6fe54a4c76" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="53dc63ad-626d-4670-a430-6874ba56dc6b" />
           </ProactiveCaching>
           <EstimatedSize>4770688</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="79080740-c855-424e-be55-fb6380622abf">
+        <Partition dwd:design-time-name="fc8f7a75-cc7e-4bdc-a10d-3330822b8a67">
           <ID>Losses 2021</ID>
           <Name>Losses 2021</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.723333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.67Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:12.936667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="595840ae-52d9-47b9-bfb4-66822b8d36db">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="1ddba6d0-d0b9-478a-9687-848f890d8ec0">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20210101 AND 20211231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="7a24ccb1-b45f-42dc-ae74-b0a572cfb59c">
+          <ProactiveCaching dwd:design-time-name="cd18a5a1-5621-49fd-a4ff-34cbab14f77b">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2d8c5a7d-9236-4fbe-9b2f-0ee74d4b7138" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b8ca9cb8-3194-4087-9829-f2769000c5a0" />
           </ProactiveCaching>
           <EstimatedSize>2999970</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="6bcba801-29b3-43fa-926f-ba657c7191c5">
+        <Partition dwd:design-time-name="dd83a143-1a47-4620-8d65-64683d5bf99e">
           <ID>Losses 2022</ID>
           <Name>Losses 2022</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.753333Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.716667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:19.673333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="4a2f28c3-a02a-49df-944c-bbfb4c53ec20">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="3fd90cbe-f0f5-4f3f-a714-5bbe2d16b064">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20220101 AND 20221231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="d4903181-f753-4bd7-b743-bbaf5641324d">
+          <ProactiveCaching dwd:design-time-name="1c507d90-33e7-4df9-b15f-529ecaf6bcca">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="102c213a-46d6-40d8-97c3-a514a5b44a4d" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="db999534-7f39-4276-b738-8c10edb4fa1b" />
           </ProactiveCaching>
           <EstimatedSize>6476751</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="665aab78-3d0e-4fa8-8e41-e3cd9c73f223">
+        <Partition dwd:design-time-name="cc695aa2-8237-4abc-ac55-8d19f80b5c57">
           <ID>Losses 2023</ID>
           <Name>Losses 2023</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.8Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.763333Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:28.296667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="b6b51045-2320-49eb-9a70-4f3e19167c63">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="2b130c40-7884-4a47-a5f1-f30d7b5ab337">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20230101 AND 20231231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="c874d211-bbe3-4fa1-aa93-de7892435380">
+          <ProactiveCaching dwd:design-time-name="4a0ef8b5-36b7-4c99-8c31-247ea10d3494">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="bad079ed-8bc3-4deb-8669-daaf3a8b25eb" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d857d9eb-2d73-4a97-89ca-3739ba7b4575" />
           </ProactiveCaching>
           <EstimatedSize>3687879</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="edf07d6e-bb99-49bc-80ca-0c2e214f4c70">
+        <Partition dwd:design-time-name="9fc8936f-23fb-42a6-b3ce-80550655c13b">
           <ID>Losses 2024</ID>
           <Name>Losses 2024</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.846667Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.81Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:44:29.096667Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="96f636da-b3ad-4d39-959a-56b1f205b78f">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="f661fcc8-6160-4893-8dbe-f26d6f6d1410">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20240101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="4af47206-7ecb-4052-9080-ff0e866e2e4c">
+          <ProactiveCaching dwd:design-time-name="df401317-2d9f-42be-9c2a-16e0fe7bef03">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="97faed2f-88d2-4935-85b7-15a30a1a49d9" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="92504b98-8a52-4dc7-b805-75cf2e89efb6" />
           </ProactiveCaching>
           <EstimatedSize>5141671</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="8511e670-be85-4b5f-bc6d-7fc949b4f422">
+        <Partition dwd:design-time-name="ce0bc4f2-0de5-4e71-93a9-bd04c8e4ffe1">
           <ID>Losses New</ID>
           <Name>Losses New</Name>
           <CreatedTimestamp>2024-08-21T08:25:40.88Z</CreatedTimestamp>
           <LastSchemaUpdate>2024-12-20T10:41:18.856667Z</LastSchemaUpdate>
           <LastProcessed>2025-01-13T06:38:22.383333Z</LastProcessed>
           <State>Processed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="58b887e6-12de-4ef0-8956-a8d18191e10c">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="81039586-c084-45c4-a75e-98a21d80c1ae">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID &gt; 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-          <ProactiveCaching dwd:design-time-name="9e2e395b-b20b-4529-b438-57a6f9b21bbf">
+          <ProactiveCaching dwd:design-time-name="a06e2171-7174-4518-abe7-705a8e366466">
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
             <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
             <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f2a8ebea-9468-42b9-aa11-a33e31fcfc62" />
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="06f44f0b-556a-4827-ba44-72e35648edea" />
           </ProactiveCaching>
           <EstimatedSize>1345449</EstimatedSize>
         </Partition>
-        <Partition dwd:design-time-name="a57ec201-b868-4a6f-be48-13878207eef3">
+        <Partition dwd:design-time-name="50196144-58f8-4a3c-b8de-cb79afc8c8fe">
           <ID>Losses 2025</ID>
           <Name>Losses 2025</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="54098cf4-91b4-49b4-8b04-a1d343308f70">
+          <Source xsi:type="QueryBinding" dwd:design-time-name="4d1c7e4a-75e9-4727-9188-babe47b80e59">
             <DataSourceID>CAKE WH</DataSourceID>
             <QueryDefinition>SELECT *
-FROM fact.qry_LossesTest AS l WITH (NOLOCK)
+FROM fact.qry_Losses AS l WITH (NOLOCK)
 WHERE l.SK_SalesDate_ID BETWEEN 20250101 AND 20241231</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>

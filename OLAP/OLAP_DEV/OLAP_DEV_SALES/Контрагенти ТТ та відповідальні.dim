@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ae1a7fb1-0427-4ba3-a831-f3ca815b76b2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Торговые точки</ID>
   <Name>Контрагенти ТТ та відповідальні</Name>
   <CreatedTimestamp>2024-08-21T08:25:30.88Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="748" scrolltop="-3026" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8017" y="22463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="748" scrolltop="-3026" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8864" y="22463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
             </font>
@@ -68,17 +68,17 @@
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
       <Value>
-        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+        <DiagramLayout ZoomPercent="100" ViewPortX="9" ViewPortY="0" xmlns="">
           <Shapes NodeWidth="191">
             <Shape Id="SK Outlet ID" Expanded="true">
               <Attributes>
                 <Attribute Id="SK Outlet ID" />
                 <Attribute Id="Chain ID" />
                 <Attribute Id="SK Buyer ID" />
-                <Attribute Id="KAM Tub Num Curr" />
                 <Attribute Id="Buyer Code" />
                 <Attribute Id="Logistic Key" />
                 <Attribute Id="Locality" />
+                <Attribute Id="Is Sales" />
                 <Attribute Id="RM Tab Num Curr 1" />
                 <Attribute Id="SV Tab Num Curr 1" />
                 <Attribute Id="TA Tab Num Curr" />
@@ -154,12 +154,6 @@
               </Attributes>
               <Position x="751" y="164" />
             </Shape>
-            <Shape Id="KAM Name Curr" Expanded="false">
-              <Attributes>
-                <Attribute Id="KAM Name Curr" />
-              </Attributes>
-              <Position x="995" y="164" />
-            </Shape>
             <Shape Id="Sales Channel Mki Pdh ID" Expanded="false">
               <Attributes>
                 <Attribute Id="Sales Channel Mki Pdh ID" />
@@ -179,10 +173,10 @@
   </Annotations>
   <LastProcessed>2025-01-13T06:33:18.236667Z</LastProcessed>
   <State>Processed</State>
-  <Source xsi:type="DataSourceViewBinding">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="6c91d5b3-629b-45a8-b28e-064b0cf8d7e6">
     <DataSourceViewID>CAKE WH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration>
+  <ErrorConfiguration dwd:design-time-name="4f0f4457-b69d-41c0-aa77-74813be94223">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
@@ -192,85 +186,81 @@
   <Collation>Cyrillic_General_CI_AS</Collation>
   <UnknownMemberName>Unknown</UnknownMemberName>
   <Attributes>
-    <Attribute>
+    <Attribute dwd:design-time-name="49420019-7375-401d-8ce5-ad79dbf7e5b3">
       <ID>SK Outlet ID</ID>
       <Name>SK Outlet ID</Name>
       <Usage>Key</Usage>
       <EstimatedCount>45736</EstimatedCount>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="fa2402cd-b8d8-4bfc-8260-d5e442634928">
           <DataType>BigInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="86950b46-67e1-433e-990a-6a4e41bef51d">
             <TableID>Outlets</TableID>
             <ColumnID>SK_Outlet_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="fd91481b-534b-4a6f-8b30-202698b2fa58">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f1101dd5-dae5-41ff-aaaf-24378ac0bbab">
           <TableID>Outlets</TableID>
           <ColumnID>SK_Outlet_ID</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e3a6fbc3-1a49-4144-a6b8-0c6cd25680d7">
           <AttributeID>Chain ID</AttributeID>
           <Name>Chain ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5de8777e-e235-477b-b215-03aead07b26e">
           <AttributeID>SK Buyer ID</AttributeID>
           <Name>SK Buyer ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c15e5b0d-26ea-4322-a579-de7dfd624aa0">
           <AttributeID>SK Outlet ID 1</AttributeID>
           <Name>Адреса доставки</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
-          <AttributeID>KAM Tub Num Curr</AttributeID>
-          <Name>КАМ поточний таб ном</Name>
-        </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4d02f371-9007-44bd-b4f6-c00768b2e369">
           <AttributeID>Buyer Code</AttributeID>
           <Name>Код контрагента в 1С</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7ebf2c77-14cc-4584-89c4-91c978526f00">
           <AttributeID>Logistic Key</AttributeID>
           <Name>Логістичний код</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f7fcf26b-8b3f-4755-8f4d-abab53200b89">
           <AttributeID>Locality</AttributeID>
           <Name>Населений пункт</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="98c5a4ca-9065-4049-8715-d49f072c1fa1">
           <AttributeID>RM Tab Num Curr 1</AttributeID>
           <Name>РМ поточний таб ном</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9a6d78c9-d838-4339-a151-0f17abb8d6bc">
           <AttributeID>SV Tab Num Curr 1</AttributeID>
           <Name>СВ поточний таб ном</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="81e2810c-e045-48bb-a122-116f6ef7b18c">
           <AttributeID>TA Name Curr</AttributeID>
           <Name>ТА поточний</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="39521add-582d-4fb0-9740-879fa4d59458">
           <AttributeID>TA Tab Num Curr</AttributeID>
           <Name>ТА поточний таб ном</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2b106f3e-2be0-42dd-a695-ee966cd3832f">
           <AttributeID>TM Tab Num Curr</AttributeID>
           <Name>ТМ поточний таб ном</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f28f15f9-afd1-4ccb-b89b-d1073bfadfa5">
           <AttributeID>Transport Key</AttributeID>
           <Name>Транспортний код</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="58f052fa-d56b-4df3-9e9b-10db300fd924">
           <AttributeID>Is RC</AttributeID>
           <Name>ТТ є РЦ</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="97198ef6-8144-40b2-b425-193027c918e1">
           <AttributeID>Is Sales</AttributeID>
           <Name>Продажі та списання</Name>
         </AttributeRelationship>
@@ -280,21 +270,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="5e91d99c-674e-4117-9eea-40f24e2f18de">
       <ID>Chain ID</ID>
       <Name>Chain ID</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="8af710ba-6275-46d5-b61d-8189413e5b32">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d25dfd29-3a98-4989-a97f-57ddf3ed868f">
             <TableID>Outlets</TableID>
             <ColumnID>Chain_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="12f85fe2-b232-4d0c-b45a-162036a067c4">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b8637247-22fe-4aca-8215-ff4edd591e2b">
           <TableID>Outlets</TableID>
           <ColumnID>Chain_ID</ColumnID>
         </Source>
@@ -303,21 +293,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="4d3ee15b-5bce-404e-bd45-eeae8a986c63">
       <ID>SK Buyer ID</ID>
       <Name>SK Buyer ID</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="6f2a8a95-98c3-4a86-bd12-4e26be44d9d1">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e648996a-c555-4e12-82a0-9265a13bc707">
             <TableID>Outlets</TableID>
             <ColumnID>SK_Buyer_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="03cc1d10-5953-4435-ab82-d050f68b74a8">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="50e27835-f1f5-48f4-be6b-fca497ffd0e8">
           <TableID>Outlets</TableID>
           <ColumnID>SK_Buyer_ID</ColumnID>
         </Source>
@@ -326,32 +316,32 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="94a15f05-c84f-4f8d-aa47-0fe36ff81519">
       <ID>SK Outlet ID 1</ID>
       <Name>Адреса доставки</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="2ba515d8-a437-4421-ae8c-8f20f95e53fb">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b71b681-d0b6-4f7f-b4b4-6d7284e70da7">
             <TableID>Outlets</TableID>
             <ColumnID>SK_Outlet_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="7e486c06-bcfe-40ef-9294-9a24d12af1ec">
         <DataType>WChar</DataType>
         <DataSize>150</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="12d40d96-d722-443a-a578-dc20ab108ffb">
           <TableID>Outlets</TableID>
           <ColumnID>DeliveryAddress</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9ed8dffb-1949-4451-a86c-a6135b5da48a">
           <AttributeID>Buyer Name</AttributeID>
           <Name>Контрагент</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fde52293-4113-4524-aeb2-561e70089e1d">
           <AttributeID>Delivery Area ID</AttributeID>
           <Name>Район доставки</Name>
         </AttributeRelationship>
@@ -360,78 +350,28 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
-      <ID>KAM Name Curr</ID>
-      <Name>КАМ поточний</Name>
-      <KeyColumns>
-        <KeyColumn>
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding">
-            <TableID>Outlets</TableID>
-            <ColumnID>KAMNameCurr</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <NameColumn>
-        <DataType>WChar</DataType>
-        <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
-          <TableID>Outlets</TableID>
-          <ColumnID>KAMNameCurr</ColumnID>
-        </Source>
-      </NameColumn>
-      <AttributeHierarchyDisplayFolder>Відповідальні</AttributeHierarchyDisplayFolder>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute>
-      <ID>KAM Tub Num Curr</ID>
-      <Name>КАМ поточний таб ном</Name>
-      <KeyColumns>
-        <KeyColumn>
-          <DataType>WChar</DataType>
-          <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
-            <TableID>Outlets</TableID>
-            <ColumnID>KAM_Tub_NumCurr</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <NameColumn>
-        <DataType>WChar</DataType>
-        <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding">
-          <TableID>Outlets</TableID>
-          <ColumnID>KAM_Tub_NumCurr</ColumnID>
-        </Source>
-      </NameColumn>
-      <AttributeHierarchyDisplayFolder>Відповідальні</AttributeHierarchyDisplayFolder>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="37b78284-f021-48ce-86a8-6b89b769334b">
       <ID>Sales Channel Mki Pdh ID</ID>
       <Name>Канал збуту</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="26010fb2-d2ff-4cdf-afdb-16688f7c4d7a">
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab3a9c53-f993-4c4b-9508-ccf3164d0cc8">
             <TableID>Outlets</TableID>
             <ColumnID>SalesChannelMkiPdh_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="9a20659a-a5d1-413f-9f6a-ad716bc262c3">
         <DataType>WChar</DataType>
         <DataSize>100</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b7c21f5c-05f4-4e74-bd9a-f34be5f037aa">
           <TableID>Outlets</TableID>
           <ColumnID>SalesChannelMkiPdhName</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2441decf-128f-4393-8c6e-d98b5fdc8873">
           <AttributeID>Ua Exp ID</AttributeID>
           <Name>Україна чи Експорт</Name>
         </AttributeRelationship>
@@ -440,23 +380,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="2f93e413-43e6-4d69-b216-238e3ec4a3c7">
       <ID>Buyer Code</ID>
       <Name>Код контрагента в 1С</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="6cc0d609-59c6-464d-a04b-dcce6b346f57">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="334edcf6-851c-4083-a39f-dfe1e044e894">
             <TableID>Outlets</TableID>
             <ColumnID>BuyerCode</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="52bfb9bd-533f-497d-ab62-0b5500369844">
         <DataType>WChar</DataType>
         <DataSize>9</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="592f6889-5a6c-482e-ac2a-49a62f340149">
           <TableID>Outlets</TableID>
           <ColumnID>BuyerCode</ColumnID>
         </Source>
@@ -465,32 +405,32 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="0335c7bf-48db-44e2-b84c-547ff36c0eeb">
       <ID>Buyer Name</ID>
       <Name>Контрагент</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="1d50abde-1959-43c9-83ac-0ee13f147992">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0f8872d2-3d65-4dab-a005-576ca17831ac">
             <TableID>Outlets</TableID>
             <ColumnID>SK_Buyer_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="55d1b775-ee01-469c-a5a7-65d91aca9559">
         <DataType>WChar</DataType>
         <DataSize>100</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8de88e28-fade-49c2-9039-67e60d137a12">
           <TableID>Outlets</TableID>
           <ColumnID>BuyerName</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="328a4230-53f0-44c3-b4ec-275325877b74">
           <AttributeID>Sales Channel Mki Pdh ID</AttributeID>
           <Name>Канал збуту</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d60ee557-0d93-4932-b04a-ab9cc74c2016">
           <AttributeID>Chain ID 1</AttributeID>
           <Name>Мережа</Name>
         </AttributeRelationship>
@@ -499,28 +439,28 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="f01c3d8a-2c73-4214-b83e-9645fd4a4937">
       <ID>Logistic Key</ID>
       <Name>Логістичний код</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="c92ab444-8434-4665-b063-8e9abc100fb8">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e28d25ea-9b56-4d5e-939e-da9700b005eb">
             <TableID>Outlets</TableID>
             <ColumnID>LogisticKey</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="4c9098f9-1fd2-4db2-89bd-29a67acf2336">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="386706f2-752e-4f6b-9244-4d4cd570385d">
             <TableID>Outlets</TableID>
             <ColumnID>SK_Buyer_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="65c7e7b4-3ad7-424d-851b-0bf8b243ad9f">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fe4a46d1-8a2d-4d8e-9f36-22f3148e7502">
           <TableID>Outlets</TableID>
           <ColumnID>LogisticKey</ColumnID>
         </Source>
@@ -530,53 +470,47 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="fe74825e-652e-4e90-8655-e295922b3529">
       <ID>Chain ID 1</ID>
       <Name>Мережа</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="863751be-e261-4efc-9b77-10bd6572a792">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0da6855a-11aa-43cc-b0a3-fd20818d9e1a">
             <TableID>Outlets</TableID>
             <ColumnID>Chain_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="cf6f3320-69a5-45e8-a3e8-69c1ab52d866">
         <DataType>WChar</DataType>
         <DataSize>100</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fe2d8806-b8e9-4a1a-bf84-e667c7439ef3">
           <TableID>Outlets</TableID>
           <ColumnID>ChainName</ColumnID>
         </Source>
       </NameColumn>
-      <AttributeRelationships>
-        <AttributeRelationship>
-          <AttributeID>KAM Name Curr</AttributeID>
-          <Name>КАМ поточний</Name>
-        </AttributeRelationship>
-      </AttributeRelationships>
       <AttributeHierarchyDisplayFolder>Додаткові характеристики</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="f2b27fdf-140a-4e4e-a91c-0466d233eb00">
       <ID>Locality</ID>
       <Name>Населений пункт</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="c894112f-7aca-4298-9efd-9e4ec63a4f3e">
           <DataType>WChar</DataType>
           <DataSize>150</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6c280091-bc38-4b36-a059-b763cf597a7e">
             <TableID>Outlets</TableID>
             <ColumnID>Locality</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="880973c8-04c4-498e-8802-585092e3aeaf">
         <DataType>WChar</DataType>
         <DataSize>150</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1c90b61f-9d61-4290-a3b8-151f3b5e2b67">
           <TableID>Outlets</TableID>
           <ColumnID>Locality</ColumnID>
         </Source>
@@ -585,23 +519,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="a44e20d3-a3d5-4c3c-89be-f89cd95f8064">
       <ID>Region Name</ID>
       <Name>Область</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="055414be-396e-492e-8949-6d0b4b46b57e">
           <DataType>WChar</DataType>
           <DataSize>25</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b5822b5b-534c-4f71-9107-72496da06397">
             <TableID>Outlets</TableID>
             <ColumnID>RegionName</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="a7fd40b9-09af-404c-b6a1-607ba34f6e26">
         <DataType>WChar</DataType>
         <DataSize>25</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2cf83cc3-4e8a-433a-82b7-5b720c32c36b">
           <TableID>Outlets</TableID>
           <ColumnID>RegionName</ColumnID>
         </Source>
@@ -610,32 +544,32 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="287a591b-1053-48df-9eac-e1c1b6927131">
       <ID>Delivery Area ID</ID>
       <Name>Район доставки</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="24a6f614-5df1-4021-aabb-435e99e357e2">
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5cec1a51-10d0-488c-8c93-f1e9e8c39d81">
             <TableID>Outlets</TableID>
             <ColumnID>DeliveryArea_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="02dd7651-427d-4c89-9f4c-7c8779982b73">
         <DataType>WChar</DataType>
         <DataSize>100</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="702c6793-43aa-44b1-807f-899d2194e434">
           <TableID>Outlets</TableID>
           <ColumnID>DeliveryAreaName</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="518d6326-35ae-43db-a9ae-23e820def45a">
           <AttributeID>Territory ID</AttributeID>
           <Name>Територія</Name>
         </AttributeRelationship>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e09a4493-38a6-4b78-a29a-f91b08d1ab79">
           <AttributeID>Region Name</AttributeID>
           <Name>Область</Name>
         </AttributeRelationship>
@@ -644,23 +578,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="1be8148e-ca97-49a0-9c1c-ffe46906bf98">
       <ID>RM Tab Num Curr</ID>
       <Name>РМ поточний</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="0d09c79f-11ec-4c19-ba65-8112dc7ad9a2">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d26ba69c-6ece-4ec6-88ee-4f2a8028cdc0">
             <TableID>Outlets</TableID>
             <ColumnID>RM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="6ab1352e-946b-4881-aadd-3bce71da8957">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8e951794-bd5c-4cda-bece-752751b126eb">
           <TableID>Outlets</TableID>
           <ColumnID>RMNameCurr</ColumnID>
         </Source>
@@ -669,23 +603,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="0ab87c7b-5418-4f72-9dde-e6d14a8d8d80">
       <ID>RM Tab Num Curr 1</ID>
       <Name>РМ поточний таб ном</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="99188606-a7a2-41e6-9982-bd97eacb7528">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b9763c5c-d546-4d56-9c5f-b69072d8e165">
             <TableID>Outlets</TableID>
             <ColumnID>RM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="ed3a2b7c-e912-4bfe-9f6c-20983ccb075e">
         <DataType>WChar</DataType>
         <DataSize>9</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="45a9dceb-f081-4852-9cb3-a63286abdeff">
           <TableID>Outlets</TableID>
           <ColumnID>RM_Tab_NumCurr</ColumnID>
         </Source>
@@ -694,45 +628,45 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="0117d529-c62a-4054-89f0-152d5f7314ce">
       <ID>SV Tab Num Curr</ID>
       <Name>СВ поточний</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="59e04b10-089b-4a7e-80ab-c1bbe2754082">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ca14f1be-00e5-4edb-9c65-2bb960193f8d">
             <TableID>Outlets</TableID>
             <ColumnID>RM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="8d438a04-4172-47b1-9e92-52e4c23d6563">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f8540eab-7442-47ee-bdaa-41c7df17b961">
             <TableID>Outlets</TableID>
             <ColumnID>TM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="40484163-2be2-4e13-ab35-d17c34641c83">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6e54bf24-65b7-44bf-b775-b29939be0777">
             <TableID>Outlets</TableID>
             <ColumnID>SV_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="ba9e0832-d9f3-425e-8d6b-debcfd9345ee">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8beca75c-27a3-4e21-afcf-36118bc30c9d">
           <TableID>Outlets</TableID>
           <ColumnID>SVNameCurr</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1ddfd77d-b21e-40ea-b004-92619f29748c">
           <AttributeID>TM Name Curr</AttributeID>
           <Name>ТМ поточний</Name>
         </AttributeRelationship>
@@ -741,23 +675,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="edb696b8-a292-4874-9cc0-42684dbbe123">
       <ID>SV Tab Num Curr 1</ID>
       <Name>СВ поточний таб ном</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="2c05517e-314d-4ca3-b0d7-ac9884a11696">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eff7189a-ea4f-460d-923e-97619697c8a5">
             <TableID>Outlets</TableID>
             <ColumnID>SV_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="d19b7803-b2a6-4a5d-a5ec-5271a429f84e">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="30a2a6be-7436-437c-85fe-17e2969f9d1d">
           <TableID>Outlets</TableID>
           <ColumnID>SV_Tab_NumCurr</ColumnID>
         </Source>
@@ -766,53 +700,53 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="16f9463b-df8a-42de-a854-a056d53b1c3b">
       <ID>TA Name Curr</ID>
       <Name>ТА поточний</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="c81b4ecf-f7d0-4332-a38e-6ed1583beb43">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6d5de6ff-22ba-4b49-a7a3-83c64c069d64">
             <TableID>Outlets</TableID>
             <ColumnID>RM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="2908e2c3-bdd9-402f-9ea3-eb03634b7daf">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ad7c2e8-974f-4a4c-b8ba-a7fa6c86cd00">
             <TableID>Outlets</TableID>
             <ColumnID>TM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="b5c6a03d-8d15-4fcc-aadd-df7c41bf592c">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4ca2868e-775f-48b0-9903-c276a096caa0">
             <TableID>Outlets</TableID>
             <ColumnID>SV_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="bc9b0c64-d19e-411a-8272-d4aaab897750">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d881fc5-8837-4a79-a508-032150b9de0e">
             <TableID>Outlets</TableID>
             <ColumnID>TA_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="d85edaa4-ac72-49a5-9cd3-e664869e568f">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d4ed214e-6683-49f3-90e5-2f43018b89ee">
           <TableID>Outlets</TableID>
           <ColumnID>TANameCurr</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0201b868-5fcf-4a01-b158-6ba0ed910682">
           <AttributeID>SV Tab Num Curr</AttributeID>
           <Name>СВ поточний</Name>
         </AttributeRelationship>
@@ -821,23 +755,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="6eae15c2-b004-4014-adc9-a1366e738d1e">
       <ID>TA Tab Num Curr</ID>
       <Name>ТА поточний таб ном</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="dfdc25a6-3915-4c43-ba24-c229fa73131d">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3aa11997-e050-4b67-9352-8db4499423e0">
             <TableID>Outlets</TableID>
             <ColumnID>TA_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="ff5f4ce3-3f06-4aac-a7c9-8e5cdc9ddb41">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="85a26899-dd2a-4dcf-83a5-67fe48405cb4">
           <TableID>Outlets</TableID>
           <ColumnID>TA_Tab_NumCurr</ColumnID>
         </Source>
@@ -846,28 +780,28 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="880cafc9-326f-4ebc-b61c-2114be67b951">
       <ID>Territory ID</ID>
       <Name>Територія</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="acf494eb-2471-4228-832e-c49d6c623705">
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="78079367-5af3-4b19-b217-7a7cd99a399a">
             <TableID>Outlets</TableID>
             <ColumnID>Territory_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="fc8f5da7-7838-4526-9ea6-950910b4b2ef">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f15ef5dc-16ce-4154-9cb3-14185f1b8096">
           <TableID>Outlets</TableID>
           <ColumnID>TerritoryName</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="11e507e0-c52f-45f0-bba6-c48e4fab75de">
           <AttributeID>Territory Main ID</AttributeID>
           <Name>Територія основна</Name>
         </AttributeRelationship>
@@ -876,22 +810,22 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="57b738c9-0ba6-40fa-8093-a2003e90a322">
       <ID>Territory Main ID</ID>
       <Name>Територія основна</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="c426dc3b-3268-4173-b038-d506f5381b24">
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="22c2c832-6340-4af4-87e5-7b76c2174a44">
             <TableID>Outlets</TableID>
             <ColumnID>TerritoryMain_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="298236ad-1994-4f0f-8b2d-49670f9e177b">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2d96a936-ffce-49fd-988f-8d3aa70b576a">
           <TableID>Outlets</TableID>
           <ColumnID>TerritoryMainName</ColumnID>
         </Source>
@@ -900,37 +834,37 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="89f22ffe-7abd-4a37-ae76-9def3071cde6">
       <ID>TM Name Curr</ID>
       <Name>ТМ поточний</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="90fb6018-7317-40a8-b2f7-677c24fc7235">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="307b96ed-7b73-4122-874b-205f54ca5f97">
             <TableID>Outlets</TableID>
             <ColumnID>RM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="75e6a840-1b3c-41a6-8669-639afcf52aa3">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1776e6ba-1069-44b3-ab09-09a6f2e28038">
             <TableID>Outlets</TableID>
             <ColumnID>TM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="c74638f2-73b3-4aee-affc-41c44605ab78">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b7ea49bc-78a8-4eea-b1d2-50d266c6ce79">
           <TableID>Outlets</TableID>
           <ColumnID>TMNameCurr</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9b6c466b-8986-4b27-a873-df62dfbe0e15">
           <AttributeID>RM Tab Num Curr</AttributeID>
           <Name>РМ поточний</Name>
         </AttributeRelationship>
@@ -939,23 +873,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="5593006d-f17f-4a27-80ff-84359d9fb001">
       <ID>TM Tab Num Curr</ID>
       <Name>ТМ поточний таб ном</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="28d34c9d-eb06-4631-9047-f17f8dd9aeb7">
           <DataType>WChar</DataType>
           <DataSize>9</DataSize>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e830e545-d20c-41ed-8732-372fb0cc444e">
             <TableID>Outlets</TableID>
             <ColumnID>TM_Tab_NumCurr</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="342ef977-01c9-4143-bdc3-331eda399712">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b20e179a-3b7b-4989-9031-f3bfd96bc413">
           <TableID>Outlets</TableID>
           <ColumnID>TMNameCurr</ColumnID>
         </Source>
@@ -964,21 +898,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="fee16996-7053-418b-85fa-d798a9a2a076">
       <ID>Transport Key</ID>
       <Name>Транспортний код</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="fd799385-c5e7-47ff-9241-31793b602a67">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e0a30925-e081-4828-ab0a-cdeaa5ed2aca">
             <TableID>Outlets</TableID>
             <ColumnID>TransportKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="52e29d9e-6960-4f11-a367-23a4577ee9b8">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d59c720c-d988-4520-b0d1-3b1e50384b04">
           <TableID>Outlets</TableID>
           <ColumnID>TransportKey</ColumnID>
         </Source>
@@ -987,21 +921,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="bfa64bf3-0829-4420-973a-efb6e5d64dc5">
       <ID>Is RC</ID>
       <Name>ТТ є РЦ</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="fe62f606-d64c-4cf0-aaee-d4f8832e8076">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2acdf2f1-ad74-4502-93e2-d23c06d2cb5a">
             <TableID>Outlets</TableID>
             <ColumnID>IsRC</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="0ca82385-257a-4857-b61f-4367039e6492">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="053eb3e8-49e2-4439-b6dc-76c6d0678515">
           <TableID>Outlets</TableID>
           <ColumnID>IsRC</ColumnID>
         </Source>
@@ -1010,22 +944,22 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="be7f036b-6161-4538-a4c6-58ff310d52c2">
       <ID>Ua Exp ID</ID>
       <Name>Україна чи Експорт</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="79558408-341a-4c25-bd24-e52356e79e6a">
           <DataType>SmallInt</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c820acd9-ed6b-48bd-8438-9cb32931e6bc">
             <TableID>Outlets</TableID>
             <ColumnID>Ua_Exp_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="e4a14ccd-83ec-41ae-957b-23686d2b619f">
         <DataType>WChar</DataType>
         <DataSize>12</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="edad5b16-ec7f-4ee4-9bbf-ebaabe0f0474">
           <TableID>Outlets</TableID>
           <ColumnID>UaExpName</ColumnID>
         </Source>
@@ -1034,22 +968,22 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute>
+    <Attribute dwd:design-time-name="6f3a7fec-817d-4585-9fcd-be861cc564a8">
       <ID>Is Sales</ID>
       <Name>Продажі та списання</Name>
       <KeyColumns>
-        <KeyColumn>
+        <KeyColumn dwd:design-time-name="09031499-d1d2-488b-b295-2846177a2c2f">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0bf88596-cdb1-477c-9df4-010c54daa1d7">
             <TableID>Outlets</TableID>
             <ColumnID>IsSales</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn>
+      <NameColumn dwd:design-time-name="0a867ab8-5399-44bd-a652-f579d22584c3">
         <DataType>WChar</DataType>
         <DataSize>8</DataSize>
-        <Source xsi:type="ColumnBinding">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="800853e0-0e60-497b-b630-ac751b800929">
           <TableID>Outlets</TableID>
           <ColumnID>IsSelectedName</ColumnID>
         </Source>
@@ -1061,197 +995,192 @@
     </Attribute>
   </Attributes>
   <Hierarchies>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="54ddee9b-a9ba-4e44-a8f6-a03c93853767">
       <ID>Hierarchy</ID>
       <Name>УкрЕксп-КЗ-Контрагент-ТТ</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="f185767a-6f6c-4e21-9366-23e5899274bc">
           <ID>Україна чи Експорт</ID>
           <Name>Україна чи Експорт</Name>
           <SourceAttributeID>Ua Exp ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="2c82a25b-eebd-4bab-a29b-2f0008ca5eea">
           <ID>Канал збуту</ID>
           <Name>Канал збуту</Name>
           <SourceAttributeID>Sales Channel Mki Pdh ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="a630864d-a6bb-4cbd-bcad-ff9a13ebc96c">
           <ID>Контрагент</ID>
           <Name>Контрагент</Name>
           <SourceAttributeID>Buyer Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="728c35e7-303d-4dde-9388-87211012aa96">
           <ID>Адреса доставки</ID>
           <Name>Адреса доставки</Name>
           <SourceAttributeID>SK Outlet ID 1</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="68d5c99a-2e31-4b9e-9a52-0bdbc1027128">
       <ID>Hierarchy 1</ID>
       <Name>УкрЕксп-КЗ-Мережа-Контрагент-ТТ</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="e68c2f46-4ba1-4d56-92d7-2ea26f6b02f3">
           <ID>Україна чи Експорт</ID>
           <Name>Україна чи Експорт</Name>
           <SourceAttributeID>Ua Exp ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="6d181dec-5e07-44b9-8470-5e3ecb41038e">
           <ID>Канал збуту</ID>
           <Name>Канал збуту</Name>
           <SourceAttributeID>Sales Channel Mki Pdh ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="c2bb55ad-816d-411f-af4c-32fa21e7fd8d">
           <ID>Мережа</ID>
           <Name>Мережа</Name>
           <SourceAttributeID>Chain ID 1</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="9cf97e4e-7961-4cc1-a7fa-4d922c17adbd">
           <ID>Контрагент</ID>
           <Name>Контрагент</Name>
           <SourceAttributeID>Buyer Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="1c659a9f-d6e5-4e98-8dfb-bb8a84af904e">
           <ID>Адреса доставки</ID>
           <Name>Адреса доставки</Name>
           <SourceAttributeID>SK Outlet ID 1</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="5834afc6-080f-4f6d-a207-7b204fccff35">
       <ID>Hierarchy 2</ID>
       <Name>Територія-Область-Район доставки-ТТ</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="b09024ae-8736-488a-81b3-757a6eb3f6fb">
           <ID>Територія основна</ID>
           <Name>Територія основна</Name>
           <SourceAttributeID>Territory Main ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="ed332ac4-81d6-40b1-96a9-266591c98585">
           <ID>Територія</ID>
           <Name>Територія</Name>
           <SourceAttributeID>Territory ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="dc8f5e22-92db-423a-9514-71d4c3a09cdb">
           <ID>Область</ID>
           <Name>Область</Name>
           <SourceAttributeID>Region Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="eae70bad-fb22-4cab-8350-2ee8e00660e1">
           <ID>Район доставки</ID>
           <Name>Район доставки</Name>
           <SourceAttributeID>Delivery Area ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="57678c5c-8ae2-403c-87a0-e20f709b150d">
           <ID>Контрагент</ID>
           <Name>Контрагент</Name>
           <SourceAttributeID>Buyer Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="6e5b7bca-e852-4fd2-b805-2fa3970b2e51">
           <ID>Адреса доставки</ID>
           <Name>Адреса доставки</Name>
           <SourceAttributeID>SK Outlet ID 1</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="0e1a72a9-7a3f-4e35-970f-deeb30ecab5d">
       <ID>Hierarchy 3</ID>
       <Name>РМ-ТМ-СВ-ТА</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="a14fdb78-9951-4a48-9d7d-f2a1940be5fa">
           <ID>РМ поточний</ID>
           <Name>РМ поточний</Name>
           <SourceAttributeID>RM Tab Num Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="d493b9f7-796a-49a5-823f-9f1466dbfaa2">
           <ID>ТМ поточний</ID>
           <Name>ТМ поточний</Name>
           <SourceAttributeID>TM Name Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="7b9a30b9-0a8e-408f-a653-803db54360e3">
           <ID>СВ поточний</ID>
           <Name>СВ поточний</Name>
           <SourceAttributeID>SV Tab Num Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="dee826b7-942b-47b9-8fdc-5acfeabdc8d9">
           <ID>ТА поточний</ID>
           <Name>ТА поточний</Name>
           <SourceAttributeID>TA Name Curr</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="61713073-d92d-4cca-ad79-e4becd3b9803">
       <ID>Hierarchy 4</ID>
       <Name>КАМ-Мережа-Контрагент-ТТ</Name>
       <Levels>
-        <Level>
-          <ID>КАМ поточний</ID>
-          <Name>КАМ поточний</Name>
-          <SourceAttributeID>KAM Name Curr</SourceAttributeID>
-        </Level>
-        <Level>
+        <Level dwd:design-time-name="a2ec9658-524c-4525-a4a2-63b489b94e4f">
           <ID>Мережа</ID>
           <Name>Мережа</Name>
           <SourceAttributeID>Chain ID 1</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="18be3302-db5e-471a-b05a-c4ab70617d85">
           <ID>Контрагент</ID>
           <Name>Контрагент</Name>
           <SourceAttributeID>Buyer Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="9597bf9a-b8ba-4f54-8601-97e4bad80e06">
           <ID>Адреса доставки</ID>
           <Name>Адреса доставки</Name>
           <SourceAttributeID>SK Outlet ID 1</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="3009f640-9319-4909-8099-84a3dea9dfe3">
       <ID>Hierarchy 5</ID>
       <Name>Канал збуту-Мережа</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="174f5543-a4c2-4da4-a7a9-a0019a7aaa35">
           <ID>Канал збуту</ID>
           <Name>Канал збуту</Name>
           <SourceAttributeID>Sales Channel Mki Pdh ID</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="5e20de32-daf2-4d77-b499-6e1fffabd0ba">
           <ID>Мережа</ID>
           <Name>Мережа</Name>
           <SourceAttributeID>Chain ID 1</SourceAttributeID>
         </Level>
       </Levels>
     </Hierarchy>
-    <Hierarchy>
+    <Hierarchy dwd:design-time-name="307fe610-e1df-422a-95c8-bc328171bcbb">
       <ID>Hierarchy 6</ID>
       <Name>РМ-ТМ-СВ-ТА-Контрагент-ТТ</Name>
       <Levels>
-        <Level>
+        <Level dwd:design-time-name="50154164-e06c-4391-b67a-bdefdcd5075a">
           <ID>РМ поточний</ID>
           <Name>РМ поточний</Name>
           <SourceAttributeID>RM Tab Num Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="6f90c9c8-0280-40ef-824a-b79cc6c4448c">
           <ID>ТМ поточний</ID>
           <Name>ТМ поточний</Name>
           <SourceAttributeID>TM Name Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="21238413-9d28-4204-b1ee-680b88b82a83">
           <ID>СВ поточний</ID>
           <Name>СВ поточний</Name>
           <SourceAttributeID>SV Tab Num Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="f87dce5f-d476-4148-a59d-bf28819f22c2">
           <ID>ТА поточний</ID>
           <Name>ТА поточний</Name>
           <SourceAttributeID>TA Name Curr</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="4f5c0e1b-52cd-4342-9068-193ecc2e5396">
           <ID>Контрагент</ID>
           <Name>Контрагент</Name>
           <SourceAttributeID>Buyer Name</SourceAttributeID>
         </Level>
-        <Level>
+        <Level dwd:design-time-name="0bc82e95-384f-44fb-a119-b25e5b7e8d90">
           <ID>Адреса доставки</ID>
           <Name>Адреса доставки</Name>
           <SourceAttributeID>SK Outlet ID 1</SourceAttributeID>
@@ -1259,12 +1188,12 @@
       </Levels>
     </Hierarchy>
   </Hierarchies>
-  <ProactiveCaching>
+  <ProactiveCaching dwd:design-time-name="02987a85-6984-4e63-9737-f948c136a340">
     <SilenceInterval>-PT1S</SilenceInterval>
     <Latency>-PT1S</Latency>
     <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
     <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-    <Source xsi:type="ProactiveCachingInheritedBinding" />
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="c08845eb-7606-49ff-9a29-30ea3f81bb57" />
   </ProactiveCaching>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>
