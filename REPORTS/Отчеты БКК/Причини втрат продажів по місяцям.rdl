@@ -2291,7 +2291,8 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=DateAdd("d", -1, DateSerial(Year(Now()), Month(Now()), 1))</Value>
+          <Value>=DateSerial(Year(Now()), Month(Now()), Day(Now()))
+'DateAdd("d", -1, DateSerial(Year(Now()), Month(Now()), 1))</Value>
         </Values>
       </DefaultValue>
       <Prompt>Дата продажі по</Prompt>

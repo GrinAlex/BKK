@@ -9950,9 +9950,6 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
             <Height>3.47667cm</Height>
             <Width>23.79743cm</Width>
             <ZIndex>3</ZIndex>
-            <Visibility>
-              <Hidden>true</Hidden>
-            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -17800,6 +17797,9 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>PlanFactBySalesChannelsBPS</DataSetName>
+            <PageBreak>
+              <BreakLocation>End</BreakLocation>
+            </PageBreak>
             <PageName>БПС</PageName>
             <Top>20.42042cm</Top>
             <Left>0.1cm</Left>
@@ -17866,11 +17866,8 @@ Globals!PageNumber = 3, "Лавашам.",
 Globals!PageNumber = 4, "Пахлаві.",
 Globals!PageNumber = 5, "Продукції тривалого зберігання.",
 Globals!PageNumber = 6, "Маршмеллоу.",
-Globals!PageNumber = 7, "Батончикам, Пастилі, Східним солодощам, Цукеркам.")
-',
-'Globals!PageNumber = 7, "Паскам.")
-',
-'</Value>
+Globals!PageNumber = 7, "Батончикам, Пастилі, Східним солодощам, Цукеркам.",
+Globals!PageNumber = 8, "Паскам.")</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -17992,59 +17989,6 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>.  |  </Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>На</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Label>День</Label>
-                      <Value>=First(Fields!CurrDayOfMonth.Value, "Days")</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>-й </Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>день з </Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Label>Дней</Label>
-                      <Value>=First(Fields!EndDayOfMonth.Value, "Days")</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Color>#480c04</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
                       <Value>.</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
@@ -18059,7 +18003,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
               <Top>1.04577cm</Top>
               <Left>0.1cm</Left>
               <Height>0.55cm</Height>
-              <Width>9.39743cm</Width>
+              <Width>7.79743cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
