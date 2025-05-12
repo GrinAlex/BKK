@@ -29,6 +29,10 @@
           <DataField>SK_Promo_ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="KAM_ShortName">
+          <DataField>KAM_ShortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DocNumberOrderPromo">
           <DataField>DocNumberOrderPromo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -165,6 +169,10 @@
           <DataField>AdditionalCost</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="ProductionCostDateFrom">
+          <DataField>ProductionCostDateFrom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DiscountCompensationSum">
           <DataField>DiscountCompensationSum</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
@@ -172,6 +180,10 @@
         <Field Name="FullCost">
           <DataField>FullCost</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ProductionCostLastDateUpdate">
+          <DataField>ProductionCostLastDateUpdate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="FullCostWithDiscount">
           <DataField>FullCostWithDiscount</DataField>
@@ -343,7 +355,8 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Label>Наказ</Label>
-                                      <Value>=Fields!DocNumberOrderPromo.Value</Value>
+                                      <Value>=IIf(Fields!DocDateOrderPromo.Value = "01.01.9999", "",
+Fields!DocNumberOrderPromo.Value)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
@@ -414,7 +427,8 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Label>НаказДата</Label>
-                                      <Value>=Fields!DocDateOrderPromo.Value</Value>
+                                      <Value>=Iif(Fields!DocDateOrderPromo.Value = "01.01.9999", "", 
+Fields!DocDateOrderPromo.Value)</Value>
                                       <Style>
                                         <Format>d</Format>
                                         <Color>#5f0e06</Color>
@@ -1482,15 +1496,30 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value> (дата розрахунку: </Value>
+                                      <Value> (с.в.від: </Value>
                                       <Style>
                                         <FontWeight>Normal</FontWeight>
                                         <Color>#5f0e06</Color>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Label>ДатаЧас</Label>
-                                      <Value>=Globals!ExecutionTime</Value>
+                                      <Label>ВирСобівартістьДатаЗ</Label>
+                                      <Value>=Fields!ProductionCostDateFrom.Value</Value>
+                                      <Style>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#5f0e06</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value> актуалізовано: </Value>
+                                      <Style>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#5f0e06</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Label>ДатаАктуал</Label>
+                                      <Value>=Fields!ProductionCostLastDateUpdate.Value</Value>
                                       <Style>
                                         <FontWeight>Normal</FontWeight>
                                         <Color>#5f0e06</Color>
@@ -3596,7 +3625,7 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Виконавець</Value>
+                                      <Value>Відповідальний КАМ</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
@@ -3631,14 +3660,14 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=First(Fields!KAM_ShortName.Value)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <TextAlign>Center</TextAlign>
+                                    <TextAlign>Left</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
@@ -3666,7 +3695,8 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Label>ДатаФормування</Label>
+                                      <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.ShortDate)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
@@ -3806,7 +3836,8 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Label>ДатаФормування</Label>
+                                      <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.ShortDate)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
@@ -3841,7 +3872,8 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Label>ДатаФормування</Label>
+                                      <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.ShortDate)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>
@@ -3981,7 +4013,8 @@ Fields!ProfitBeforePromo.Value &gt; Fields!ProfitOnPromo.Value, "Проведе�
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Label>ДатаФормування</Label>
+                                      <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.ShortDate)</Value>
                                       <Style>
                                         <Color>#5f0e06</Color>
                                       </Style>

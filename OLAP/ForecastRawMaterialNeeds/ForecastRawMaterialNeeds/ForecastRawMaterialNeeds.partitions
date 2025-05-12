@@ -1,0 +1,145 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3b57038a-2e2c-44c5-bff2-a2b8449ef06b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>ForecastRawMaterialNeeds</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Qry Costs On Plan By Products</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2521fa99-c80d-45a6-aa99-abaa798a0837">
+          <ID>Qry Costs On Plan By Products</ID>
+          <Name>Qry Costs On Plan By Products</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c716aacc-9cbd-4c76-9acc-9eb3f9fcec26">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_CostsOnPlanByProducts</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Sales Plan By Products</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fbce0117-67ca-416d-adda-74e6059db970">
+          <ID>Qry Sales Plan By Products</ID>
+          <Name>Qry Sales Plan By Products</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9d71db7f-e9fc-4e26-a05d-6f2136347052">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_SalesPlanByProducts</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Future Forecast Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4da4cd58-f18c-4ba8-aae8-a2bca7403480">
+          <ID>Future Forecast Sales</ID>
+          <Name>Future Forecast Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="3ae8377d-ca6a-4276-8e0c-60eeebc9943a">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>FutureForecastSales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Costs On Future Forecast Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2a579166-03ae-4cc1-9338-2a3b6545703b">
+          <ID>Qry Costs On Future Forecast Sales</ID>
+          <Name>Qry Costs On Future Forecast Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a82a00f9-fd7b-406a-9955-bfe329724fd9">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_CostsOnFutureForecastSales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Residue Raw Materials For Today</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="80a0d8ba-cf40-4cec-9692-4a6bd8316cc1">
+          <ID>Qry Residue Raw Materials For Today</ID>
+          <Name>Qry Residue Raw Materials For Today</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b504c247-d3ad-47f3-bbb4-bc9b9df7625b">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ResidueRawMaterialsForToday</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Residue Products For Today</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fcad1484-9f25-429a-ac43-321d3d96b1f1">
+          <ID>Qry Residue Products For Today</ID>
+          <Name>Qry Residue Products For Today</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a38bd114-3683-4724-8692-c1611b8eb8c3">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_ResidueProductsForToday</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Qry Costs In Residue Products For Todaty</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a9424c16-1ca4-4a2d-a4e3-7599c3b74313">
+          <ID>Qry Costs In Residue Products For Todaty</ID>
+          <Name>Qry Costs In Residue Products For Todaty</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a76bcd2b-57de-4647-8e36-b7268f780948">
+            <DataSourceViewID>CAKE WH</DataSourceViewID>
+            <TableID>fact_qry_CostsInResidueProductsForTodaty</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

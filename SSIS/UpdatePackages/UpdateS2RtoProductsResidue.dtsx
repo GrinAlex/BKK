@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateS2RtoProductsResidue"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{171F5D52-A4B9-4F42-BD71-8BF14E66BB62}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{BCBD75DC-5EBA-4A12-A928-BFCFDC35535A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -751,7 +751,6 @@ WHERE
 	(VendorCode &lt;&gt; '')	
 	--AND p.Valid = 1
 	AND p.ValidForSpot2R = 1
-	AND p.IsDeleted = 0	
 	AND p.Groupping_ID &lt;&gt; 9</property>
                     <property
                       dataType="System.String"
@@ -766,7 +765,6 @@ WHERE
 	(VendorCode &lt;&gt; '')	
 	--AND p.Valid = 1
 	AND p.ValidForSpot2R = 1
-	AND p.IsDeleted = 0	
 	AND p.Groupping_ID &lt;&gt; 9) [refTable]
 where [refTable].[VendorCode] = ?</property>
                     <property
@@ -2909,7 +2907,7 @@ where [refTable].[VendorCode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2919,7 +2917,7 @@ where [refTable].[VendorCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2943,7 +2941,7 @@ where [refTable].[VendorCode] = ?</property>
     design-time-name="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="188,42"
           Id="Package\Заливка данных с файла spot2d\Заливка данных в таблицу tmp_S2R_ProductsResidue\Производный столбец"
@@ -2975,7 +2973,9 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2997,7 +2997,9 @@ where [refTable].[VendorCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
