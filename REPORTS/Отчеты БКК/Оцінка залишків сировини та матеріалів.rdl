@@ -1187,7 +1187,6 @@ And Sum(Fields!Value.Value) &lt; Parameters!ForecastDaysAmount.Value,
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
-                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -1225,7 +1224,7 @@ And Sum(Fields!Value.Value) &lt; Parameters!ForecastDaysAmount.Value,
         <Height>3.26542in</Height>
         <Style />
       </Body>
-      <Width>8.25673in</Width>
+      <Width>4.32965in</Width>
       <Page>
         <PageHeader>
           <Height>1.67917cm</Height>
@@ -1239,17 +1238,68 @@ And Sum(Fields!Value.Value) &lt; Parameters!ForecastDaysAmount.Value,
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value xml:space="preserve">  </Value>
+                      <Value>Оціника залишків для прогнозу продажів на </Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
                         <Color>#480c04</Color>
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Label>Отчет</Label>
-                      <Value>="Оціника поточних залишків сировини та матеріалів для прогнозу продажів на" &amp; 
-Parameters!ForecastDaysAmount.Value &amp; " днів."</Value>
+                      <Label>Період</Label>
+                      <Value>=CStr(Parameters!ForecastDaysAmount.Value)</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value> днів з </Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Label>ДатаЗ</Label>
+                      <Value>=FormatDateTime(DateSerial(Year(DateAdd("d", 1, Now())), 
+Month(DateAdd("d", 1, Now())), 
+Day(DateAdd("d", 1, Now()))), DateFormat.ShortDate)</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value> по </Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Label>ДатаПо</Label>
+                      <Value>=FormatDateTime(DateSerial(Year(DateAdd("d", Parameters!ForecastDaysAmount.Value, Now())), 
+Month(DateAdd("d", Parameters!ForecastDaysAmount.Value, Now())), 
+Day(DateAdd("d", Parameters!ForecastDaysAmount.Value, Now()))), DateFormat.ShortDate)</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#480c04</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>.</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1264,7 +1314,7 @@ Parameters!ForecastDaysAmount.Value &amp; " днів."</Value>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Left>1.41479cm</Left>
               <Height>0.95278cm</Height>
-              <Width>19.5573cm</Width>
+              <Width>9.48376cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

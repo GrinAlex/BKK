@@ -51,6 +51,10 @@
           <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="BaseLine">
+          <DataField>BaseLine</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Weight">
           <DataField>Weight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
@@ -238,6 +242,113 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Weight.Value)</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style>
+                                    <Format>#,0</Format>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Textbox18">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -261,7 +372,7 @@
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -295,7 +406,7 @@
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -329,7 +440,7 @@
                               <Color>DarkGoldenrod</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Khaki</BackgroundColor>
+                            <BackgroundColor>Yellow</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -800,53 +911,111 @@
                       </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="ProductName1">
+                          <Group Name="BaseLine">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+                              <GroupExpression>=Fields!BaseLine.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!ProductName.Value</Value>
+                              <Value>=Fields!BaseLine.Value</Value>
                             </SortExpression>
                           </SortExpressions>
-                          <TablixHeader>
-                            <Size>9.35083cm</Size>
-                            <CellContents>
-                              <Textbox Name="ProductName1">
-                                <CanGrow>true</CanGrow>
-                                <KeepTogether>true</KeepTogether>
-                                <Paragraphs>
-                                  <Paragraph>
-                                    <TextRuns>
-                                      <TextRun>
-                                        <Value>=Fields!ProductName.Value</Value>
-                                        <Style>
-                                          <Color>#5f0e06</Color>
-                                        </Style>
-                                      </TextRun>
-                                    </TextRuns>
-                                    <ListLevel>1</ListLevel>
-                                    <Style />
-                                  </Paragraph>
-                                </Paragraphs>
-                                <rd:DefaultName>ProductName1</rd:DefaultName>
-                                <Style>
-                                  <Border>
-                                    <Color>DarkGoldenrod</Color>
-                                    <Style>Solid</Style>
-                                  </Border>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
-                                </Style>
-                              </Textbox>
-                            </CellContents>
-                          </TablixHeader>
                           <TablixMembers>
-                            <TablixMember />
+                            <TablixMember>
+                              <Group Name="ProductName1">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!ProductName.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                              <TablixHeader>
+                                <Size>9.35083cm</Size>
+                                <CellContents>
+                                  <Textbox Name="ProductName1">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!ProductName.Value</Value>
+                                            <Style>
+                                              <Color>#5f0e06</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <ListLevel>2</ListLevel>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>ProductName1</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DarkGoldenrod</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <TablixMembers>
+                                <TablixMember />
+                              </TablixMembers>
+                              <Visibility>
+                                <ToggleItem>BaseLine1</ToggleItem>
+                              </Visibility>
+                            </TablixMember>
+                            <TablixMember>
+                              <TablixHeader>
+                                <Size>9.35083cm</Size>
+                                <CellContents>
+                                  <Textbox Name="BaseLine1">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!BaseLine.Value</Value>
+                                            <Style>
+                                              <Color>#5f0e06</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <ListLevel>1</ListLevel>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>BaseLine1</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DarkGoldenrod</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>Khaki</BackgroundColor>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <KeepWithGroup>Before</KeepWithGroup>
+                            </TablixMember>
                           </TablixMembers>
+                          <Visibility>
+                            <ToggleItem>GroupName</ToggleItem>
+                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
@@ -865,7 +1034,6 @@
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <ListLevel>1</ListLevel>
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
@@ -875,7 +1043,7 @@
                                     <Color>DarkGoldenrod</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>Khaki</BackgroundColor>
+                                  <BackgroundColor>Yellow</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -887,9 +1055,11 @@
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
-                          <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
+                      <Visibility>
+                        <ToggleItem>GrouppingName</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
@@ -908,7 +1078,6 @@
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <ListLevel>1</ListLevel>
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
@@ -930,7 +1099,6 @@
                       <TablixMembers>
                         <TablixMember />
                       </TablixMembers>
-                      <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -973,7 +1141,6 @@
                   <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
-                  <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
@@ -981,7 +1148,7 @@
             <DataSetName>PlanSalesByProductsByPeriod</DataSetName>
             <Top>0.07056cm</Top>
             <Left>0.1cm</Left>
-            <Height>4.12514cm</Height>
+            <Height>4.72514cm</Height>
             <Width>15.85083cm</Width>
             <Style>
               <Border>
@@ -990,10 +1157,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.77685in</Height>
+        <Height>1.88807in</Height>
         <Style />
       </Body>
-      <Width>6.42486in</Width>
+      <Width>7.26411in</Width>
       <Page>
         <PageHeader>
           <Height>1.72945cm</Height>
