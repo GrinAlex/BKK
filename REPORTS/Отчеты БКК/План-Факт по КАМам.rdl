@@ -3839,8 +3839,11 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -6517,8 +6520,11 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName2</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -9242,8 +9248,11 @@ IIF(
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName3</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -11874,8 +11883,11 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName4</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -14506,8 +14518,11 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName5</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -16438,14 +16453,18 @@ Sum(Fields!PlanWeight.Value) &lt; 1, "Red")</Color>
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName8</ToggleItem>
                           </Visibility>
                         </TablixMember>
@@ -19076,8 +19095,11 @@ Sum(Fields!PlanReturnsWeight.Value) / (Sum(Fields!PlanWeight.Value) + Sum(Fields
                             <TablixMember />
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 Or Fields!SalesChannelMkiPdh_ID.Value = 6, True, False)
-'Приховуємо Роздріб та Фірмову торівлю</Hidden>
+                            <Hidden>=iif(Fields!SalesChannelMkiPdh_ID.Value = 5 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 6 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 14 
+	Or Fields!SalesChannelMkiPdh_ID.Value = 15, True, False)
+'Приховуємо Роздріб, Кінцевий споживач, Фірмову торівлю та -Commerce</Hidden>
                             <ToggleItem>SalesChannelMkiPdhName7</ToggleItem>
                           </Visibility>
                         </TablixMember>
