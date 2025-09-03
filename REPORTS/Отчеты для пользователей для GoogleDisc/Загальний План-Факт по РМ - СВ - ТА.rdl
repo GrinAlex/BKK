@@ -2328,6 +2328,9 @@ WHERE(Domain + Login = @paramLoginFull)
             <Left>0.1cm</Left>
             <Height>1.2cm</Height>
             <Width>53.18853cm</Width>
+            <Visibility>
+              <Hidden>=iif(Parameters!HideRepresentationAndNoLinkedTT.Value, True, False)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -10598,6 +10601,9 @@ SUM(Fields!FactNetSalesWeightCCY.Value) / SUM(Fields!FactNetSalesWeightCBY.Value
             <Height>5.90562cm</Height>
             <Width>20.20687cm</Width>
             <ZIndex>4</ZIndex>
+            <Visibility>
+              <Hidden>=iif(Parameters!HideRepresentationAndNoLinkedTT.Value, True, False)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -12751,6 +12757,15 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
       </DefaultValue>
       <Prompt>paramUserName</Prompt>
     </ReportParameter>
+    <ReportParameter Name="HideRepresentationAndNoLinkedTT">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>HideRepresentationAndNoLinkedTT</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -12791,6 +12806,11 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>paramUserName</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>HideRepresentationAndNoLinkedTT</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
