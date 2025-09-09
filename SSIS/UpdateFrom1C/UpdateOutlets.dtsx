@@ -7,12 +7,12 @@
   DTS:CreatorName="TARGET\o.grynenko"
   DTS:DTSID="{4F3592F5-4296-437B-A163-F35F3AA003DE}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1049"
   DTS:ObjectName="UpdateOutlets"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{C9F0240A-1E64-4722-85EB-5E2A20EC73FE}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{00A60272-78F6-4B6A-9958-CC2E16498B2F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,6 +23,8 @@
       DTS:ObjectName="OLAPBKK2.CAKE_ST">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=OLAPBKK2;Initial Catalog=CAKE_ST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -33,6 +35,8 @@
       DTS:ObjectName="olapbkk2.CAKE_WH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=olapbkk2;Initial Catalog=CAKE_WH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -88,7 +92,7 @@
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Source_ID]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Source_ID]
       ,[IDRRef]
       ,[IsDeleted]
       ,[OwnerIDRRef]
@@ -722,7 +726,7 @@
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -1151,6 +1155,10 @@
                           refId="Package\Заливка справочника в промежуточную базу\Добавление новых данных в CAKE_WH dim Outlets\CAKE_WH dim Outlets.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LogDate]"
                           dataType="dbTimeStamp"
                           name="LogDate" />
+                        <externalMetadataColumn
+                          refId="Package\Заливка справочника в промежуточную базу\Добавление новых данных в CAKE_WH dim Outlets\CAKE_WH dim Outlets.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[IsSales]"
+                          dataType="bool"
+                          name="IsSales" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1289,7 +1297,7 @@
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT o.[IDRRef]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT o.[IDRRef]
 FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
 WHERE o.Source_ID = 2
 	AND o.IDRRef IS NOT NULL</property>
@@ -1298,7 +1306,7 @@ WHERE o.Source_ID = 2
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT o.[IDRRef]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT o.[IDRRef]
 FROM [CAKE_WH].[dim].[Outlets] AS o WITH (NOLOCK)
 WHERE o.Source_ID = 2
 	AND o.IDRRef IS NOT NULL) [refTable]
@@ -1583,28 +1591,28 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- 1C Экспедиция --
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- 1C Экспедиция --
 SELECT 
 	   [Справочник.ТочкиДоставок].[_IDRRef]
       ,CAST([Справочник.ТочкиДоставок].[_Marked] AS bit) AS IsDeleted
       ,[Справочник.ТочкиДоставок].[_OwnerIDRRef]
       ,[Справочник.ТочкиДоставок].[_Code] AS AddressCode
-      ,CASE
-			WHEN [Справочник.ТочкиДоставок].[_Code] like '%0-%' THEN NULL
-			ELSE CAST([Справочник.ТочкиДоставок].[_Code] AS int)
-		END AS TransportCode
+  --    ,CASE
+		--	WHEN [Справочник.ТочкиДоставок].[_Code] like '%0-%' THEN NULL
+		--	ELSE CAST([Справочник.ТочкиДоставок].[_Code] AS int)
+		--END AS TransportCode
+	  ,CAST([Справочник.ТочкиДоставок]._Fld485 AS int) AS TransportCode
       ,[Справочник.ТочкиДоставок].[_Description] AS DeliveryAddress
       ,[Справочник.ТочкиДоставок].[_Fld481RRef] AS DeliveryAreaIDRRef
       ,[Справочник.ТочкиДоставок].[_Fld479] AS Locality
       ,CAST([Справочник.ТочкиДоставок].[_Fld2086] AS bit) AS NotActual
       ,CAST([Справочник.ТочкиДоставок].[_Fld486] AS bit) AS SelfDelivery
       ,[Справочник.ТочкиДоставок].[_Fld1694] AS GLN
-      ,CAST([Справочник.ТочкиДоставок].[_Fld1434] AS varchar(12)) AS Longitude
-      ,CAST([Справочник.ТочкиДоставок].[_Fld1435] AS varchar(12)) AS Latitude
+      ,CAST(REPLACE([Справочник.ТочкиДоставок].[_Fld1434], '-', '') AS varchar(12)) AS Longitude
+      ,CAST(REPLACE([Справочник.ТочкиДоставок].[_Fld1435], '-', '') AS varchar(12)) AS Latitude
       ,[Справочник.ТочкиДоставок].[_Fld2409] AS DeliveryAddressFact
 	  ,ISNULL([Справочник.ФорматыТТ].[_Code], '-777') AS FormatTTCode
 	  ,ISNULL([Справочник.ФорматыТТ].[_Description], 'Не определен') AS FormatTT
---INTO CAKE_ST.dbo.Temp
   FROM [DB_1C].[EXP_BKK].[dbo].[_Reference42] AS [Справочник.ТочкиДоставок] WITH (NOLOCK)
 	LEFT OUTER JOIN CAKE_ST.dim.Outlets AS o WITH (NOLOCK) ON [Справочник.ТочкиДоставок].[_IDRRef] = o.[IDRRef] AND o.[Source_ID] = 2
 	LEFT OUTER JOIN [DB_1C].[EXP_BKK].[dbo].[_Reference2471] AS [Справочник.ФорматыТТ] WITH (NOLOCK)
@@ -2016,7 +2024,7 @@ WHERE o.[IDRRef] IS NULL</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -2028,7 +2036,7 @@ AND b.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -2202,7 +2210,7 @@ where [refTable].[IDRRef] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -2212,7 +2220,7 @@ WHERE da.Source_ID = 2 AND da.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -2253,7 +2261,7 @@ where [refTable].[IDRRef] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
-                      name="ParameterMap">#{Package\Заливка справочника в промежуточную базу\Дозаливка данных из 1С Сбыт\294:invalid};</property>
+                      name="ParameterMap">#{Package\Заливка справочника в промежуточную базу\Дозаливка данных из 1С Сбыт\327:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -2380,7 +2388,7 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -3023,12 +3031,13 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 	   [Справочник.ТочкиДоставок].[_IDRRef]
       ,CAST([Справочник.ТочкиДоставок].[_Marked] AS bit) AS IsDeleted
       ,[Справочник.ТочкиДоставок].[_OwnerIDRRef]
       ,[Справочник.ТочкиДоставок].[_Code] AS AddressCode
-      ,CAST(REPLACE([Справочник.ТочкиДоставок].[_Code], ' ', '') AS int) AS TransportCode
+      --,CAST(REPLACE([Справочник.ТочкиДоставок].[_Code], ' ', '') AS int) AS TransportCode
+	  ,CAST([Справочник.ТочкиДоставок].[_Fld1035] AS int) AS TransportCode
       ,[Справочник.ТочкиДоставок].[_Description] AS DeliveryAddress
       ,[Справочник.ТочкиДоставок].[_Fld1029RRef] AS DeliveryAreaIDRRef
       ,[Справочник.ТочкиДоставок].[_Fld1027] AS Locality
@@ -3451,7 +3460,7 @@ WHERE o.[IDRRef] IS NULL</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -3463,7 +3472,7 @@ AND b.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -3637,7 +3646,7 @@ where [refTable].[IDRRef] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -3647,7 +3656,7 @@ WHERE da.Source_ID = 2 AND da.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -3815,7 +3824,7 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -4458,7 +4467,7 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- УПП --
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- УПП --
 SELECT
 	   [Справочник.АдресаДоставки].[_IDRRef]
       ,CAST([Справочник.АдресаДоставки].[_Marked] AS bit) AS IsDeleted
@@ -5000,7 +5009,7 @@ SELECT
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -5012,7 +5021,7 @@ AND b.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	b.IDRRef
 	,b.SK_Buyer_ID
 	,b.BuyerCode
@@ -5186,7 +5195,7 @@ where [refTable].[IDRRef] = ?</property>
                       description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -5196,7 +5205,7 @@ WHERE da.Source_ID = 2 AND da.IDRRef IS NOT NULL</property>
                       description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
 	da.IDRRef
 	,da.DeliveryArea_ID
 FROM CAKE_WH.dim.DeliveryArea AS da WITH (NOLOCK)
@@ -5364,7 +5373,7 @@ where [refTable].[IDRRef] = ?</property>
                       dataType="System.String"
                       description="Команда SQL для выполнения."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
@@ -6141,12 +6150,12 @@ where [refTable].[IDRRef] = ?</property>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
-<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
-<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -6533,7 +6542,7 @@ where [refTable].[IDRRef] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6557,7 +6566,7 @@ where [refTable].[IDRRef] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6581,7 +6590,7 @@ where [refTable].[IDRRef] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6605,7 +6614,7 @@ where [refTable].[IDRRef] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-134.68986328125,20.25,269.3797265625,12"
+              BoundingBox="-134.68986328125,20.25,309.700143229167,12"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6629,7 +6638,7 @@ where [refTable].[IDRRef] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-134.68986328125,20.25,269.3797265625,12"
+              BoundingBox="-134.68986328125,20.25,309.700143229167,12"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6740,9 +6749,7 @@ where [refTable].[IDRRef] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6764,9 +6771,7 @@ where [refTable].[IDRRef] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6788,9 +6793,7 @@ where [refTable].[IDRRef] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
