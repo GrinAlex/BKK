@@ -106,6 +106,7 @@ FROM dim.Chains AS c
 WHERE c.Valid = 1
 	AND c.Chain_ID IN (SELECT Chain_ID FROM dim.Buyers AS b WITH (NOLOCK) WHERE b.SalesChannelMkiPdh_ID IN (2, 6, 9) )
 	AND c.Chain_ID NOT IN (1, -777)
+	AND c.Source_ID = 2
 ORDER BY 
 	c.ChainName</CommandText>
       </Query>
@@ -452,7 +453,6 @@ ORDER BY
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -830,7 +830,7 @@ ORDER BY
                     </TextRun>
                     <TextRun>
                       <Label>Мережа</Label>
-                      <Value>="Метро"</Value>
+                      <Value>=Parameters!ChainId.Label</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
