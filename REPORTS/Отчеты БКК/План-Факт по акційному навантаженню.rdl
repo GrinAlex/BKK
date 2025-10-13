@@ -95,12 +95,20 @@
           <DataField>NetShipToRealWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="NetShipToRealSum">
+          <DataField>NetShipToRealSum</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
         <Field Name="NetPromoShipToRealWeight">
           <DataField>NetPromoShipToRealWeight</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="NetPromoShipToRealWeightOnDiscount">
           <DataField>NetPromoShipToRealWeightOnDiscount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NetPromoShipToRealSum">
+          <DataField>NetPromoShipToRealSum</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
@@ -389,6 +397,12 @@
                 <TablixColumn>
                   <Width>2cm</Width>
                 </TablixColumn>
+                <TablixColumn>
+                  <Width>2cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2cm</Width>
+                </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
@@ -579,6 +593,42 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -599,6 +649,42 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gold</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -896,6 +982,42 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -916,6 +1038,42 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Yellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1208,6 +1366,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1227,6 +1420,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1517,6 +1745,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightYellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1536,6 +1799,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightYellow</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -1821,6 +2119,40 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1840,6 +2172,40 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -2126,6 +2492,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NetShipToRealSum">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetShipToRealSum</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="NetPromoShipToRealWeight">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -2146,6 +2547,41 @@ Sum(Fields!PartialPromoPlanWeightOnDiscount.Value) / Sum(Fields!PartialPromoPlan
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NetPromoShipToRealWeight</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="NetPromoShipToRealSum">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!NetPromoShipToRealSum.Value)</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>#,0</Format>
+                                    <Color>#480c04</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NetPromoShipToRealSum</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -2529,6 +2965,46 @@ Sum(Fields!NetPromoShipToRealWeightOnDiscount.Value) / Sum(Fields!NetPromoShipTo
                           <TablixHeader>
                             <Size>1.20612cm</Size>
                             <CellContents>
+                              <Textbox Name="Textbox9">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>ТО (Факт прод., грн)</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox9</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>DarkGoldenrod</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Orange</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>1.20612cm</Size>
+                            <CellContents>
                               <Textbox Name="Textbox195">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
@@ -2567,6 +3043,46 @@ Sum(Fields!NetPromoShipToRealWeightOnDiscount.Value) / Sum(Fields!NetPromoShipTo
                           <TablixMembers>
                             <TablixMember />
                           </TablixMembers>
+                        </TablixMember>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>1.20612cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox48">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>ТО ТМА (Факт ТМА, грн)</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox48</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>DarkGoldenrod</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Orange</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
@@ -2998,7 +3514,7 @@ Sum(Fields!NetPromoShipToRealWeightOnDiscount.Value) / Sum(Fields!NetPromoShipTo
             <Top>0.17639cm</Top>
             <Left>0.1cm</Left>
             <Height>5.40612cm</Height>
-            <Width>23.79743cm</Width>
+            <Width>27.79743cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -7648,7 +8164,7 @@ Sum(Fields!NetPromoShipToRealWeightOnDiscount.Value) / Sum(Fields!NetPromoShipTo
         <Height>6.11972in</Height>
         <Style />
       </Body>
-      <Width>9.40844in</Width>
+      <Width>11.18009in</Width>
       <Page>
         <PageHeader>
           <Height>1.7016cm</Height>
