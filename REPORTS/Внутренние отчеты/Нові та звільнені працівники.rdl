@@ -55,6 +55,10 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
           <DataField>CurrentPositionName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CurrentPositionCode">
+          <DataField>CurrentPositionCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -86,6 +90,9 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                 <TablixColumn>
                   <Width>6.23375cm</Width>
                 </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
@@ -102,6 +109,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                                 <TextRun>
                                   <Value>Personal Code</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#5f0e06</Color>
                                   </Style>
@@ -138,6 +146,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                                 <TextRun>
                                   <Value>ПІБ</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#5f0e06</Color>
                                   </Style>
@@ -174,6 +183,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                                 <TextRun>
                                   <Value>Employee Code</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#5f0e06</Color>
                                   </Style>
@@ -333,6 +343,43 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox146</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Код посади</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>DarkGoldenrod</Color>
@@ -586,12 +633,46 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CurrentPositionCode">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CurrentPositionCode.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CurrentPositionCode</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGoldenrod</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -640,6 +721,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -795,7 +877,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
             <Top>0.07056cm</Top>
             <Left>0.1cm</Left>
             <Height>1.57042cm</Height>
-            <Width>29.49042cm</Width>
+            <Width>31.99042cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -806,7 +888,7 @@ FROM            rpt.qry_NewFiredEmployee</CommandText>
         <Height>0.7073in</Height>
         <Style />
       </Body>
-      <Width>11.71014in</Width>
+      <Width>12.63402in</Width>
       <Page>
         <PageHeader>
           <Height>1.72945cm</Height>
