@@ -67,6 +67,14 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
           <DataField>DateTo</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="CurrentDepartmentName">
+          <DataField>CurrentDepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentPositionName">
+          <DataField>CurrentPositionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -276,8 +284,15 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Label>Посада</Label>
-                                  <Value>=Fields!PositionName.Value</Value>
+                                  <Value>Посада в 1С: </Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Label>Посада в 1С</Label>
+                                  <Value>=Fields!CurrentPositionName.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#5f0e06</Color>
@@ -296,7 +311,22 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>Підрозділ в Адмінці: </Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Label>Підрозділ в Адмінці</Label>
+                                  <Value>=Fields!DepartmentName.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#5f0e06</Color>
@@ -308,7 +338,34 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>з </Value>
+                                  <Value>Посада в Адмінці: </Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Label>Посада в Адмінці</Label>
+                                  <Value>=Fields!PositionName.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#5f0e06</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Дати в Адмінці: з </Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#5f0e06</Color>
@@ -465,7 +522,7 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Підрозділ</Value>
+                                <Value>Підрозділ в 1С</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -499,27 +556,27 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="DepartmentName">
+                  <Group Name="CurrentDepartmentName">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!DepartmentName.Value</GroupExpression>
+                      <GroupExpression>=Fields!CurrentDepartmentName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!DepartmentName.Value</Value>
+                      <Value>=Fields!CurrentDepartmentName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
                     <Size>2.5cm</Size>
                     <CellContents>
-                      <Textbox Name="DepartmentName">
+                      <Textbox Name="CurrentDepartmentName">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!DepartmentName.Value</Value>
+                                <Value>=Fields!CurrentDepartmentName.Value</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -530,7 +587,7 @@ FROM            rpt.qry_EmployeeWithPhotos</CommandText>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>DepartmentName</rd:DefaultName>
+                        <rd:DefaultName>CurrentDepartmentName</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>DarkGoldenrod</Color>
