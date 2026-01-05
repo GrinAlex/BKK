@@ -635,11 +635,11 @@ WHERE tb.SK_Month_ID = @paramSK_Month_ID</CommandText>
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@SK_DateFrom_ID">
-            <Value>=Parameters!SK_DateFrom_ID.Value</Value>
+          <QueryParameter Name="@Y">
+            <Value>=Parameters!paramYear.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@SK_DateTo_ID">
-            <Value>=Parameters!SK_DateTo_ID.Value</Value>
+          <QueryParameter Name="@M">
+            <Value>=Parameters!paramMonth.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@paramLoginFull">
             <Value>AllTT</Value>
@@ -703,10 +703,6 @@ WHERE tb.SK_Month_ID = @paramSK_Month_ID</CommandText>
         </Field>
         <Field Name="RegionName">
           <DataField>RegionName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NKAMName">
-          <DataField>NKAMName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="KAMName">
@@ -12363,26 +12359,6 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
         </ParameterValues>
       </ValidValues>
     </ReportParameter>
-    <ReportParameter Name="SK_DateFrom_ID">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ForParams</DataSetName>
-          <ValueField>paramDateFrom</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>SK Date From ID</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="SK_DateTo_ID">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ForParams</DataSetName>
-          <ValueField>paramDateTo</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>SK Date To ID</Prompt>
-    </ReportParameter>
     <ReportParameter Name="paramSK_Month_ID">
       <DataType>Integer</DataType>
       <DefaultValue>
@@ -12397,7 +12373,7 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -12410,19 +12386,9 @@ DateDiff(DateInterval.Second, Globals!ExecutionTime,  Now()) mod 60, 2)</Value>
           <ParameterName>paramMonth</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>paramSK_Month_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>SK_DateFrom_ID</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>SK_DateTo_ID</ParameterName>
+          <ParameterName>paramSK_Month_ID</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

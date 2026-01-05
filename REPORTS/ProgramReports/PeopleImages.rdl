@@ -85,14 +85,13 @@
                           <Value>=Fields!ImageData.Value</Value>
                           <MIMEType>=Switch(Fields!ImageType.Value="jpeg", "image/jpeg",
 Fields!ImageType.Value="png", "image/png")</MIMEType>
-                          <Sizing>FitProportional</Sizing>
+                          <Sizing>Clip</Sizing>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
                           </Style>
                         </Image>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
