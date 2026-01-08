@@ -59,14 +59,17 @@ ORDER BY KAMName</CommandText>
             <Value>=Parameters!KAM_ID.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        
-	ctk.Chain_ID
-	,ctk.ChainName
-FROM dim.ChainsToKAMs AS ctk WITH (NOLOCK)
-WHERE dbo.ufn_DateToInt(GETDATE()) BETWEEN ctk.SK_Date_From AND ctk.SK_Date_To
-	AND ctk.SK_KamEmployee_ID = @CurrentKAM
+        <CommandText>SELECT 
+	DISTINCT
+	scnpck.Chain_ID
+	,c.ChainName
+FROM dim.qry_SalesChannelNetProductCategoryToKAM AS scnpck WITH (NOLOCK)
+	INNER JOIN dim.Chains AS c WITH (NOLOCK)
+		ON scnpck.Chain_ID = c.Chain_ID
+WHERE dbo.ufn_DateToInt(GETDATE()) BETWEEN scnpck.SK_Date_From AND scnpck.SK_Date_To
+	AND  scnpck.SK_KamEmployee_ID = @CurrentKAM
 ORDER BY
-	ctk.ChainName</CommandText>
+	c.ChainName</CommandText>
       </Query>
       <Fields>
         <Field Name="Chain_ID">
