@@ -14,11 +14,11 @@
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@SK_DateFrom_ID">
-            <Value>=Parameters!ParamDateFrom.Value</Value>
+          <QueryParameter Name="@Y">
+            <Value>=Parameters!Y.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@SK_DateTo_ID">
-            <Value>=Parameters!ParamDateTo.Value</Value>
+          <QueryParameter Name="@M">
+            <Value>=Parameters!M.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@paramLoginFull">
             <Value>=Parameters!paramLoginFull.Value</Value>
@@ -84,10 +84,6 @@
           <DataField>RegionName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NKAMName">
-          <DataField>NKAMName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="KAMName">
           <DataField>KAMName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -142,23 +138,16 @@
       <Query>
         <DataSourceName>OLTP_CAKE_WH</DataSourceName>
         <CommandText>SELECT 
-	MIN(d.SK_Date_ID) AS paramDateFrom
-	,MAX(d.SK_Date_ID) AS paramDateTo
-FROM dim.Date AS d WITH (NOLOCK)
-WHERE SK_Month_ID = 
-    CASE 
-		WHEN (SELECT WorkDayOfMonth FROM dim.[Date] WITH (NOLOCK) WHERE SK_Date_ID = dbo.ufn_DateToInt(GETDATE())) &lt;= 1 
-		THEN dbo.ufn_DateToInt(EOMONTH(DATEADD(MONTH, -1,GETDATE()))) / 100
-    ELSE dbo.ufn_DateToInt(GETDATE()) / 100
-    END</CommandText>
+	YEAR(DATEADD(MONTH, -1, GETDATE())) AS paramYear
+	,MONTH(DATEADD(MONTH, -1, GETDATE())) AS paramMonth</CommandText>
       </Query>
       <Fields>
-        <Field Name="paramDateFrom">
-          <DataField>paramDateFrom</DataField>
+        <Field Name="paramYear">
+          <DataField>paramYear</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="paramDateTo">
-          <DataField>paramDateTo</DataField>
+        <Field Name="paramMonth">
+          <DataField>paramMonth</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -3998,344 +3987,6 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox127">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!PlanAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox93</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox128">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!FactAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox86</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox129">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
-" - ",
-SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
-)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>0.0%</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox71</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox22">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!PlanAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox18</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox23">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!FactAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox130">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
-" - ",
-SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
-)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>0.0%</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox39</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox131">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!PlanAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox132">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!FactAvailability.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>#,0</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox51</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox133">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=IIF(SUM(Fields!PlanAvailability.Value) = 0,
-" - ",
-SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
-)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>0.0%</Format>
-                                    <Color>#480c04</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox57</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e8c46a</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox134">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -4994,7 +4645,6 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -5599,14 +5249,14 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="NKAMName">
+                  <Group Name="KAMName">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!NKAMName.Value</GroupExpression>
+                      <GroupExpression>=Fields!KAMName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!NKAMName.Value</Value>
+                      <Value>=Fields!KAMName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -5614,14 +5264,14 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                       <TablixHeader>
                         <Size>11.20687cm</Size>
                         <CellContents>
-                          <Textbox Name="ManagerName3">
+                          <Textbox Name="TAName3">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!NKAMName.Value</Value>
+                                    <Value>=Fields!KAMName.Value</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -5632,13 +5282,13 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>ManagerName1</rd:DefaultName>
+                            <rd:DefaultName>TAName1</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>#e8c46a</BackgroundColor>
+                              <BackgroundColor>#feffbf</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -5649,14 +5299,14 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                       </TablixHeader>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="KAMName">
+                      <Group Name="DeliveryAddress3">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!KAMName.Value</GroupExpression>
+                          <GroupExpression>=Fields!SK_Outlet_ID.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!KAMName.Value</Value>
+                          <Value>=Fields!DeliveryAddress.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -5664,14 +5314,22 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                           <TablixHeader>
                             <Size>11.20687cm</Size>
                             <CellContents>
-                              <Textbox Name="TAName3">
+                              <Textbox Name="Textbox126">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!KAMName.Value</Value>
+                                        <Value xml:space="preserve">    </Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#480c04</Color>
+                                        </Style>
+                                      </TextRun>
+                                      <TextRun>
+                                        <Value>=Fields!ChainName.Value + " - " + Fields!DeliveryAddress.Value</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -5682,13 +5340,12 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>TAName1</rd:DefaultName>
+                                <rd:DefaultName>Textbox34</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>LightGrey</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>#feffbf</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -5698,70 +5355,11 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                             </CellContents>
                           </TablixHeader>
                         </TablixMember>
-                        <TablixMember>
-                          <Group Name="DeliveryAddress3">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!SK_Outlet_ID.Value</GroupExpression>
-                            </GroupExpressions>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!DeliveryAddress.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
-                          <TablixMembers>
-                            <TablixMember>
-                              <TablixHeader>
-                                <Size>11.20687cm</Size>
-                                <CellContents>
-                                  <Textbox Name="Textbox126">
-                                    <CanGrow>true</CanGrow>
-                                    <KeepTogether>true</KeepTogether>
-                                    <Paragraphs>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value xml:space="preserve">    </Value>
-                                            <Style>
-                                              <FontFamily>Arial</FontFamily>
-                                              <FontWeight>Bold</FontWeight>
-                                              <Color>#480c04</Color>
-                                            </Style>
-                                          </TextRun>
-                                          <TextRun>
-                                            <Value>=Fields!ChainName.Value + " - " + Fields!DeliveryAddress.Value</Value>
-                                            <Style>
-                                              <FontFamily>Arial</FontFamily>
-                                              <FontWeight>Bold</FontWeight>
-                                              <Color>#480c04</Color>
-                                            </Style>
-                                          </TextRun>
-                                        </TextRuns>
-                                        <Style />
-                                      </Paragraph>
-                                    </Paragraphs>
-                                    <rd:DefaultName>Textbox34</rd:DefaultName>
-                                    <Style>
-                                      <Border>
-                                        <Color>LightGrey</Color>
-                                        <Style>Solid</Style>
-                                      </Border>
-                                      <PaddingLeft>2pt</PaddingLeft>
-                                      <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>
-                                      <PaddingBottom>2pt</PaddingBottom>
-                                    </Style>
-                                  </Textbox>
-                                </CellContents>
-                              </TablixHeader>
-                            </TablixMember>
-                          </TablixMembers>
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                            <ToggleItem>TAName3</ToggleItem>
-                          </Visibility>
-                        </TablixMember>
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>TAName3</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -5772,7 +5370,7 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
             <PageName>По НКАМ и КАМ</PageName>
             <Top>8.47555cm</Top>
             <Left>0.25cm</Left>
-            <Height>4.10562cm</Height>
+            <Height>3.50562cm</Height>
             <Width>24.70687cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -5799,7 +5397,7 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Отчет по представленности продукции в ТТ за период с </Value>
+                      <Value>Звіт по представленості продукції в ТТ </Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5807,8 +5405,8 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Label>ДатаС</Label>
-                      <Value>=Parameters!ParamDateFrom.Value</Value>
+                      <Label>Місяць</Label>
+                      <Value>=Parameters!M.Value</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5816,7 +5414,7 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value> по </Value>
+                      <Value>.</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5824,8 +5422,8 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Label>ДатаПо</Label>
-                      <Value>=Parameters!ParamDateTo.Value</Value>
+                      <Label>Рік</Label>
+                      <Value>=Parameters!Y.Value</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5872,25 +5470,25 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="ParamDateFrom">
+    <ReportParameter Name="Y">
       <DataType>Integer</DataType>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>ForParams</DataSetName>
-          <ValueField>paramDateFrom</ValueField>
+          <ValueField>paramYear</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Param Date From</Prompt>
+      <Prompt>Рік</Prompt>
     </ReportParameter>
-    <ReportParameter Name="ParamDateTo">
+    <ReportParameter Name="M">
       <DataType>Integer</DataType>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>ForParams</DataSetName>
-          <ValueField>paramDateTo</ValueField>
+          <ValueField>paramMonth</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Param Date To</Prompt>
+      <Prompt>Місяць</Prompt>
     </ReportParameter>
     <ReportParameter Name="paramLoginFull">
       <DataType>String</DataType>
@@ -5909,19 +5507,19 @@ SUM(Fields!FactAvailabilityNorm.Value) / SUM(Fields!PlanAvailability.Value)
       <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>paramLoginFull</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ParamDateFrom</ParameterName>
+          <ParameterName>Y</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ParamDateTo</ParameterName>
+          <ParameterName>M</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>paramLoginFull</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
